@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "original",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8971",
+        "--directory",
+        "/private/tmp/claude-501/-Users-jadoeechirag-Desktop-magicmond-com/1ce2341c-8c13-404b-b351-32c30df1cd80/scratchpad/original"
+      ],
+      "port": 8971
+    },
+    {
+      "name": "site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "port": 8972
+    }
+  ]
+}

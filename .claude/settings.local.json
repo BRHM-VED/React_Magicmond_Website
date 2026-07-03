@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/126.0 Safari/537.36\" https://magicmond.com -o /private/tmp/claude-501/-Users-jadoeechirag-Desktop-magicmond-com/1ce2341c-8c13-404b-b351-32c30df1cd80/scratchpad/magicmond_raw.html)",
+      "Bash(grep -oE '<\\(section|header|footer|nav\\)[^>]{0,200}' magicmond_raw.html)",
+      "Bash(python3 -)",
+      "Bash(cp /private/tmp/claude-501/-Users-jadoeechirag-Desktop-magicmond-com/1ce2341c-8c13-404b-b351-32c30df1cd80/scratchpad/brand_svgs/*.svg /Users/jadoeechirag/Desktop/magicmond.com/assets/icons/ && ls /Users/jadoeechirag/Desktop/magicmond.com/assets/icons | wc -l)",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude-in-chrome__navigate",
+      "mcp__claude-in-chrome__browser_batch",
+      "Bash(python3 typo.py page_Case-study-1-sm.html)",
+      "Bash(python3 typo.py page_case-srudy-2-AV.html)",
+      "Bash(python3 typo.py page_Case-study-ri.html)",
+      "Bash(python3 typo.py page_sports.html)",
+      "Bash(python3 extract_icons.py page_infraedge.html /Users/jadoeechirag/Desktop/magicmond.com/assets/icons ie)",
+      "Bash(python3 extract_icons.py page_sports.html /Users/jadoeechirag/Desktop/magicmond.com/assets/icons sp)",
+      "Bash(python3 typo.py page_0-1-consultation.html)",
+      "Bash(python3 extract_icons.py page_Case-study-1-sm.html /Users/jadoeechirag/Desktop/magicmond.com/assets/icons cs1)",
+      "Bash(python3 extract_icons.py page_case-srudy-2-AV.html /Users/jadoeechirag/Desktop/magicmond.com/assets/icons cs2)",
+      "Bash(python3 extract_icons.py page_Case-study-ri.html /Users/jadoeechirag/Desktop/magicmond.com/assets/icons cs3)",
+      "Bash(python3 css_lookup.py framer-1wyrxga framer-1j9u56d framer-1w8bc0h framer-z4b12f)",
+      "Bash(curl -sf -o /Users/jadoeechirag/Desktop/magicmond.com/assets/fonts/Satoshi-500.woff2 --create-dirs \"https://framerusercontent.com/third-party-assets/fontshare/wf/P2LQKHE6KA6ZP4AAGN72KDWMHH6ZH3TA/ZC32TK2P7FPS5GFTL46EU6KQJA24ZYDB/7AHDUZ4A7LFLVFUIFSARGIWCRQJHISQP.woff2\")",
+      "Bash(python3 typo.py page_infraedge.html)",
+      "mcp__claude-in-chrome__javascript_tool",
+      "Bash(awk '!seen[$0]++')",
+      "Bash(awk '!seen[substr\\($0,1,60\\)]++')",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(npm run *)",
+      "Bash(sed -i '' 's/body\\\\.infraedge/.infraedge/g' infraedge.css)",
+      "Bash(sed -i '' 's/body\\\\.sports/.sports/g' sports.css)",
+      "Bash(sed -i '' 's/body\\\\.consult/.consult/g' consultation.css)",
+      "Bash(sed -i '' 's/body\\\\.case-study/.case-study/g' case-study.css)"
+    ]
+  }
+}

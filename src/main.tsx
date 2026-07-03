@@ -1,0 +1,22 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import "./index.css";
+// Page styles ported 1:1 from the audited static build — kept as plain CSS
+// for pixel fidelity with the original Framer site. Tailwind supplies the
+// token layer and utilities on top.
+import "./styles/base.css";
+import "./styles/home.css";
+import "./styles/infraedge.css";
+import "./styles/sports.css";
+import "./styles/consultation.css";
+import "./styles/case-study.css";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
