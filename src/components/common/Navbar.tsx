@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { navLinks } from '../../data/navData';
+import { navLinks } from '../../data/nav.data';
 import { CALENDLY } from '../../utils/constants';
 
 interface Props {

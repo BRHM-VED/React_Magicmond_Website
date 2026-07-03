@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
+import { Sparkle } from 'lucide-react';
 import { useCarousel } from '../../hooks/useCarousel';
-import { caseSlides } from '../../data/homeData';
+import { caseSlides } from '../../data/home.data';
 
 const ArrowUpSvg = ({ id }: { id: string }) => (
   <svg className="case-slide__arrow-up" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,9 +39,9 @@ export function CaseStudiesCarousel() {
             </div>
             <div className="case-slide__visual">
               <ArrowUpSvg id={`arrgrad${i}`} />
-              <img className="case-slide__star case-slide__star--1" src="/assets/icons/star.svg" alt="" />
-              <img className="case-slide__star case-slide__star--2" src="/assets/icons/star.svg" alt="" />
-              <img className="case-slide__star case-slide__star--3" src="/assets/icons/star.svg" alt="" />
+              <Sparkle className="case-slide__star case-slide__star--1 text-[#6F2888] fill-[#6F2888]" />
+              <Sparkle className="case-slide__star case-slide__star--2 text-[#6F2888] fill-[#6F2888]" />
+              <Sparkle className="case-slide__star case-slide__star--3 text-[#6F2888] fill-[#6F2888]" />
               <div className="case-slide__metric-label">{slide.metricLabel}</div>
               <div className="case-slide__metric">{slide.metric}</div>
             </div>
@@ -49,10 +50,10 @@ export function CaseStudiesCarousel() {
       </div>
 
       <button className="cases__nav cases__nav--prev" aria-label="Previous case study" onClick={cases.prev}>
-        <img src="/assets/images/tClsk29yXAxXjS5RQmNDjQxc00.svg" alt="" />
+        <img src="/assets/images/common/carousel-prev.svg" alt="" />
       </button>
       <button className="cases__nav cases__nav--next" aria-label="Next case study" onClick={cases.next}>
-        <img src="/assets/images/ccJoA18MLqdkv8w5guTbuvMZ7E.svg" alt="" />
+        <img src="/assets/images/common/carousel-next.svg" alt="" />
       </button>
 
       <div className="cases__dots">

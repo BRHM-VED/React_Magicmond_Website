@@ -1,5 +1,5 @@
 import { useTicker } from '../../hooks/useTicker';
-import { uspItems } from '../../data/homeData';
+import { uspItems } from '../../data/home.data';
 
 export function UspTickerSection() {
   const ticker = useTicker(uspItems.length, 2000);

@@ -1,5 +1,5 @@
 import { Workflow, MousePointerClick, Rocket } from 'lucide-react';
-import { processSteps } from '../../data/homeData';
+import { processSteps } from '../../data/home.data';
 import { CALENDLY } from '../../utils/constants';
 
 const STEP_ICONS = [

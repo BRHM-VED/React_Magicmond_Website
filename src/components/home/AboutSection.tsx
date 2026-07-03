@@ -1,3 +1,4 @@
+import { CheckCircle } from 'lucide-react';
 import { CALENDLY } from '../../utils/constants';
 
 export function AboutSection() {
@@ -5,7 +6,7 @@ export function AboutSection() {
     <section className="about" id="about">
       <div className="container">
         <div className="about__grid">
-          <img className="about__photo reveal" src="/assets/images/home/6wKQ0uQIcfUQhGTlTLohEWCmr4.png" alt="The MagicMond team receiving an award" />
+          <img className="about__photo reveal" src="/assets/images/home/about-team-award.webp" alt="The MagicMond team receiving an award" />
           <div>
             <h2 className="about__title reveal">
               We’re one of India’s top<br />
@@ -14,7 +15,7 @@ export function AboutSection() {
             <ul className="about__list">
               {['8 yrs+ experience in scaling brands digitally', 'Acquired 10 Cr+ customers', 'Generated 500 Cr+ in revenue.'].map((item, i) => (
                 <li key={item} className="reveal" style={{ '--d': `${0.1 * (i + 1)}s` } as React.CSSProperties}>
-                  <img src="/assets/icons/check-circle.svg" alt="" />{item}
+                  <CheckCircle size={22} className="text-[#692083] fill-white shrink-0" />{item}
                 </li>
               ))}
             </ul>

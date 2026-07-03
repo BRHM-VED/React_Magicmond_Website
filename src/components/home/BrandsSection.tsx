@@ -1,5 +1,5 @@
 import { BrandMarquee } from '../common/BrandMarquee';
-import { brandRows } from '../../data/homeData';
+import { brandRows } from '../../data/home.data';
 
 export function BrandsSection() {
   return (

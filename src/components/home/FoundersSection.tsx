@@ -1,4 +1,4 @@
-import { founderPills } from '../../data/homeData';
+import { founderPills } from '../../data/home.data';
 
 export function FoundersSection() {
   return (

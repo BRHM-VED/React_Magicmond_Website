@@ -1,11 +1,11 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { MainLayout } from './layouts/MainLayout';
-import Home from './pages/Home';
-import InfraEdge from './pages/InfraEdge';
-import Sports from './pages/Sports';
-import Consultation from './pages/Consultation';
-import CaseStudy from './pages/CaseStudy';
-import { caseStudies } from './data/caseStudiesData';
+import Home from './pages/HomePage';
+import InfraEdge from './pages/InfraEdgePage';
+import Sports from './pages/SportsPage';
+import Consultation from './pages/ConsultationPage';
+import CaseStudy from './pages/CaseStudyPage';
+import { caseStudies } from './data/case-studies.data';
 
 export default function App() {
   const location = useLocation();

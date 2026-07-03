@@ -6,7 +6,7 @@ export function CtaSection() {
     <section className="cta" id="cta">
       <div className="container">
         <div className="cta__card">
-          <img className="cta__dots" src="/assets/images/common/1xOqMa4sAAwBCrdkiSJfIXups.png" alt="" />
+          <img className="cta__dots" src="/assets/images/common/cta-dots-pattern.webp" alt="" />
           <LightRays theme="cta" className="cta__rays" />
           <div className="cta__content">
             <h2 className="cta__title words">

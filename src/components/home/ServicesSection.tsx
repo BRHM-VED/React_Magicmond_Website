@@ -1,4 +1,4 @@
-import { services } from '../../data/homeData';
+import { services } from '../../data/home.data';
 import { CALENDLY } from '../../utils/constants';
 
 export function ServicesSection() {

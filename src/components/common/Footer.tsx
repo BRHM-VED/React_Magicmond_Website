@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { footerHomeLinks } from '../../data/navData';
+import { footerHomeLinks } from '../../data/nav.data';
 import { CALENDLY, COPYRIGHT_TEXT } from '../../utils/constants';
 
 interface Props {
