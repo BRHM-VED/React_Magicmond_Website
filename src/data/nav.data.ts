@@ -1,5 +1,5 @@
 import type { NavLink } from "./types";
-import { CALENDLY } from "../utils/constants";
+import { CALENDLY } from "../utils/constants/constants";
 
 export { CALENDLY };
 

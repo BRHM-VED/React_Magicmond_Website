@@ -2,42 +2,42 @@ import type { Service, ProcessStep, Stat, CaseSlide, BrandTile } from "./types";
 
 export const services: Service[] = [
   {
-    icon: "/assets/icons/svc-brand.svg",
+    icon: "Target",
     title: "Brand Identity Development",
     description: "Build a cohesive identity that reflects your brand’s values and resonates across every audience touchpoint.",
     image: "/assets/images/home/service-brand-identity.webp",
     imageAlt: "Brand identity work samples",
   },
   {
-    icon: "/assets/icons/svc-web.svg",
+    icon: "Monitor",
     title: "Website Design & Development",
     description: "Mobile-friendly and on-brand websites & landing pages that reflect brand values and convert clients/customers.",
     image: "/assets/images/home/service-website-design.webp",
     imageAlt: "Website design sample",
   },
   {
-    icon: "/assets/icons/svc-content.svg",
+    icon: "MessageSquare",
     title: "Content Marketing",
     description: "Build communities through meaningful content and campaigns that resonate, inspire sharing, and drive organic reach.",
     image: "/assets/images/home/service-content-marketing.webp",
     imageAlt: "Content marketing videos",
   },
   {
-    icon: "/assets/icons/svc-creative.svg",
+    icon: "Palette",
     title: "Creative Strategy & Design",
     description: "Creative strategies and designs crafted for every business objective, from brand brochures to high-impact ad campaigns.",
     image: "/assets/images/home/service-creative-strategy.webp",
     imageAlt: "Creative design samples",
   },
   {
-    icon: "/assets/icons/svc-performance.svg",
+    icon: "TrendingUp",
     title: "Performance / Growth Marketing",
     description: "Attract, nurture, and convert your ideal audience through full-funnel, ROI-driven digital campaigns.",
     image: "/assets/images/home/service-growth-marketing.webp",
     imageAlt: "Growth marketing example",
   },
   {
-    icon: "/assets/icons/svc-erp.svg",
+    icon: "Cpu",
     title: "ERP Solutions & App Development",
     description: "Build high-performance systems and streamline IT operations with tailored technology solutions, highlighted by our work on Onsite and ReidiusOne.",
     image: "/assets/images/home/service-erp-solutions.webp",
@@ -63,9 +63,9 @@ export const stats: Stat[] = [
       "/assets/images/home/stat-avatar-3.webp",
     ],
   },
-  { value: "500CR+", label: "Business Generated", icon: "/assets/icons/stat-bolt-1.svg" },
-  { value: "100M+", label: "Customers Acquired", icon: "/assets/icons/stat-bolt-2.svg" },
-  { value: "120M+", label: "Video Views", icon: "/assets/icons/stat-bolt-3.svg" },
+  { value: "500CR+", label: "Business Generated", icon: "Zap" },
+  { value: "100M+", label: "Customers Acquired", icon: "Users" },
+  { value: "120M+", label: "Video Views", icon: "Play" },
 ];
 
 export const processSteps: ProcessStep[] = [

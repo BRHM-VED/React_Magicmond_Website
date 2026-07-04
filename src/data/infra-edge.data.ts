@@ -1,10 +1,10 @@
 export const ieServices = [
-  { icon: "/assets/icons/ie-svc-brand.svg", title: "Brand Identity Development", tag: "Standout Visually", desc: "Craft a distinctive, memorable identity that captures your brand’s essence across all touchpoints." },
-  { icon: "/assets/icons/ie-svc-lead.svg", title: "Lead Generation & Brand Marketing", tag: "Fuel Your Brand", desc: "Run strategic digital campaigns to generate qualified leads and strengthen your market presence." },
-  { icon: "/assets/icons/ie-svc-web.svg", title: "Website & Landing Page Design", tag: "Convert with Website and Design", desc: "Build high-converting, mobile-friendly websites and landing pages designed to drive measurable results." },
-  { icon: "/assets/icons/ie-svc-social.svg", title: "Social Media & Content Marketing", tag: "Engage & Grow", desc: "Curate compelling content and targeted campaigns that turn followers into loyal customers." },
-  { icon: "/assets/icons/ie-svc-creative.svg", title: "Marketing & Sales Creatives", tag: "Ready-to-Use Assets", desc: "From pitch decks to brochures and digital creatives — everything your brand needs to sell better." },
-  { icon: "/assets/icons/ie-svc-outreach.svg", title: "WhatsApp & Digital Outreach", tag: "Direct Connection", desc: "Reach your audience where they are most active with personalized, automated outreach." },
+  { icon: "Target", title: "Brand Identity Development", tag: "Standout Visually", desc: "Craft a distinctive, memorable identity that captures your brand’s essence across all touchpoints." },
+  { icon: "TrendingUp", title: "Lead Generation & Brand Marketing", tag: "Fuel Your Brand", desc: "Run strategic digital campaigns to generate qualified leads and strengthen your market presence." },
+  { icon: "Monitor", title: "Website & Landing Page Design", tag: "Convert with Website and Design", desc: "Build high-converting, mobile-friendly websites and landing pages designed to drive measurable results." },
+  { icon: "MessageSquare", title: "Social Media & Content Marketing", tag: "Engage & Grow", desc: "Curate compelling content and targeted campaigns that turn followers into loyal customers." },
+  { icon: "Palette", title: "Marketing & Sales Creatives", tag: "Ready-to-Use Assets", desc: "From pitch decks to brochures and digital creatives — everything your brand needs to sell better." },
+  { icon: "MessageCircle", title: "WhatsApp & Digital Outreach", tag: "Direct Connection", desc: "Reach your audience where they are most active with personalized, automated outreach." },
 ];
 
 export const ieSteps = [
