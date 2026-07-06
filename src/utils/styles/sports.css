@@ -404,3 +404,8 @@
   .sp-case__type { font-size: 13px; }
   .sp-cta__title { font-size: 35px; }
 }
+
+/* Green theme glow for process section on sports page */
+.sports .ie-how::after {
+  background: radial-gradient(60% 200px at 50% 100%, rgba(31, 249, 184, 0.25), transparent 75%);
+}

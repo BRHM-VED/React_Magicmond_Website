@@ -14,10 +14,9 @@ import { BrandsSection } from '../components/infra-edge/BrandsSection';
 import { CtaSection } from '../components/infra-edge/CtaSection';
 
 export default function InfraEdge() {
-  usePageMeta(
-    'MagicMond InfraEdge',
-    'The future of real estate growth starts here. Transforming traditional businesses into digitally strong brands that thrive in today’s digital world.'
-  );
+  const metaTitle = 'MagicMond InfraEdge';
+  const metaDesc = 'The future of real estate growth starts here. Transforming traditional businesses into digitally strong brands that thrive in today’s digital world.';
+  usePageMeta(metaTitle, metaDesc);
   useReveal();
 
   return (
@@ -36,7 +35,7 @@ export default function InfraEdge() {
         <CtaSection />
       </main>
       <Footer suffix="InfraEdge" />
-      <OfferSection end />
+      <OfferSection />
     </div>
   );
 }

@@ -4,13 +4,16 @@ export const services: Service[] = [
   {
     icon: "Target",
     title: "Brand Identity Development",
-    description: "Build a cohesive identity that reflects your brand’s values and resonates across every audience touchpoint.",
+    subtitle: "Standout Visually",
+    description: "Craft a distinctive, memorable identity that captures your brand's essence across all touchpoints.",
     image: "/assets/images/home/service-brand-identity.webp",
     imageAlt: "Brand identity work samples",
+    badge: "Recommended",
   },
   {
     icon: "Monitor",
     title: "Website Design & Development",
+    subtitle: "Convert More Visitors",
     description: "Mobile-friendly and on-brand websites & landing pages that reflect brand values and convert clients/customers.",
     image: "/assets/images/home/service-website-design.webp",
     imageAlt: "Website design sample",
@@ -18,6 +21,7 @@ export const services: Service[] = [
   {
     icon: "MessageSquare",
     title: "Content Marketing",
+    subtitle: "Build Your Community",
     description: "Build communities through meaningful content and campaigns that resonate, inspire sharing, and drive organic reach.",
     image: "/assets/images/home/service-content-marketing.webp",
     imageAlt: "Content marketing videos",
@@ -25,6 +29,7 @@ export const services: Service[] = [
   {
     icon: "Palette",
     title: "Creative Strategy & Design",
+    subtitle: "Elevate Every Touchpoint",
     description: "Creative strategies and designs crafted for every business objective, from brand brochures to high-impact ad campaigns.",
     image: "/assets/images/home/service-creative-strategy.webp",
     imageAlt: "Creative design samples",
@@ -32,6 +37,7 @@ export const services: Service[] = [
   {
     icon: "TrendingUp",
     title: "Performance / Growth Marketing",
+    subtitle: "Fuel Your Pipeline",
     description: "Attract, nurture, and convert your ideal audience through full-funnel, ROI-driven digital campaigns.",
     image: "/assets/images/home/service-growth-marketing.webp",
     imageAlt: "Growth marketing example",
@@ -39,6 +45,7 @@ export const services: Service[] = [
   {
     icon: "Cpu",
     title: "ERP Solutions & App Development",
+    subtitle: "Streamline Operations",
     description: "Build high-performance systems and streamline IT operations with tailored technology solutions, highlighted by our work on Onsite and ReidiusOne.",
     image: "/assets/images/home/service-erp-solutions.webp",
     imageAlt: "ERP and app development",
@@ -46,7 +53,7 @@ export const services: Service[] = [
 ];
 
 export const uspItems = [
-  "Tailored solution",
+  "<s>Services</s> Tailored solution",
   "results that, speak.",
   "conversion focused",
   "fullstack digital partner",
@@ -121,10 +128,10 @@ export const caseSlides: CaseSlide[] = [
 ];
 
 export const founderPills = [
-  "You’re passionate & ambitious",
   "You believe in the scope of online growth",
-  "You wanna focus on your core business",
+  "You’re passionate & ambitious",
   "You value high quality design & deep work",
+  "You wanna focus on your core business",
 ];
 
 export const brandRows: BrandTile[][] = [

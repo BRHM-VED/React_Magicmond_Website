@@ -8,9 +8,11 @@ export interface NavLink {
 export interface Service {
   icon: string;
   title: string;
+  subtitle: string;
   description: string;
   image: string;
   imageAlt: string;
+  badge?: string;
 }
 
 export interface ProcessStep {

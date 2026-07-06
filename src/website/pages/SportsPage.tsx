@@ -4,10 +4,8 @@ import { Navbar } from '../../common/Navbar';
 import { Footer } from '../../common/Footer';
 import { HeroSection } from '../components/sports/HeroSection';
 import { VisionSection } from '../components/sports/VisionSection';
-import { ChannelSection } from '../components/sports/ChannelSection';
-import { AthletesSection } from '../components/sports/AthletesSection';
 import { ServicesSection } from '../components/sports/ServicesSection';
-import { CasesSection } from '../components/sports/CasesSection';
+import { ProcessSection } from '../components/sports/ProcessSection';
 import { BrandsSection } from '../components/sports/BrandsSection';
 import { CtaSection } from '../components/sports/CtaSection';
 
@@ -24,10 +22,8 @@ export default function Sports() {
       <main>
         <HeroSection />
         <VisionSection />
-        <ChannelSection />
-        <AthletesSection />
         <ServicesSection />
-        <CasesSection />
+        <ProcessSection />
         <BrandsSection />
         <CtaSection />
       </main>

@@ -1,6 +1,6 @@
 export const spStats = [
   { value: "07", label: "years industry experience" },
-  { value: "30", label: "projects successfully done" },
+  { value: "30", label: "Brands we’ve worked with" },
   { value: "45", label: "franchises/athletes partners" },
 ];
 
@@ -14,7 +14,7 @@ export const spChannelLogos = [
 
 export const spServices = [
   { title: "Sports Partnerships", desc: "Strategic tie-ups with top cricket leagues, IPs, and franchises.", image: "/assets/images/sports/service-sports-partnerships.webp", tall: false },
-  { title: "Athlete Management", desc: "Connect your brand with cricket’s biggest names and influencers.", image: "/assets/images/sports/service-athlete-management.webp", tall: false },
+  { title: "Athlete Sponsorship", desc: "Connect your brand with cricket’s biggest names and influencers.", image: "/assets/images/sports/service-athlete-management.webp", tall: false },
   { title: "IP Creation & Content Management", desc: "Build owned cricket IPs and branded content that fans remember.", image: "/assets/images/sports/service-ip-content.webp", tall: true },
   { title: "Digital Sports Marketing", desc: "Drive visibility through digital campaigns across top cricket apps.", image: "/assets/images/sports/service-digital-sports.webp", tall: false },
   { title: "Activation & On-Ground", desc: "Create on-ground experiences that engage and excite fans.", image: "/assets/images/sports/service-activation-ground.webp", tall: false },
@@ -52,4 +52,10 @@ export const spBrandRows = [
     { image: "/assets/images/sports/brand-hsbc.webp", alt: "HSBC" },
     { image: "/assets/images/sports/brand-extra.webp", alt: "" },
   ],
+];
+
+export const spSteps = [
+  { badge: "Step-1", title: "Book a free consultation", desc: "We kick things off with a no‑obligation call to learn your goals, challenges, and vision for digital growth." },
+  { badge: "Step-2", title: "Get a tailored plan", desc: "Curate compelling content and targeted campaigns that turn followers into loyal customers." },
+  { badge: "Step-3", title: "Let’s get started 🚀", desc: "Curate compelling content and targeted campaigns that turn followers into loyal customers." },
 ];

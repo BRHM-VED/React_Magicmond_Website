@@ -19,9 +19,8 @@ export function Footer({ suffix }: Props) {
             <p className="footer__tagline">Let's create magic together! 🪄</p>
             <p className="footer__social-title">Our Social Handles</p>
             <div className="footer__social">
-              <Link to="/0-1-consultation" aria-label="LinkedIn"><img src="/assets/icons/social-linkedin.svg" alt="" /></Link>
-              <Link to="/0-1-consultation" aria-label="X"><img src="/assets/icons/social-x.svg" alt="" /></Link>
-              <Link to="/0-1-consultation" aria-label="Instagram"><img src="/assets/icons/social-instagram.svg" alt="" /></Link>
+              <a href="https://www.linkedin.com/company/magicmondglobal/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><img src="/assets/icons/social-linkedin.svg" alt="" /></a>
+              <a href="https://www.instagram.com/reidiusinfra/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="/assets/icons/social-instagram.svg" alt="" /></a>
             </div>
             <p className="footer__copy">{COPYRIGHT_TEXT}</p>
           </div>

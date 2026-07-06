@@ -100,34 +100,7 @@ ul {
 /* --------------------------------------------------------------------------
    Buttons
    -------------------------------------------------------------------------- */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
-  padding: 0 24px;
-  border-radius: 8px;
-  background: var(--btn-bg);
-  box-shadow: rgba(18, 24, 33, 0.2) 0 0 35px 1px inset, 0 0 0 1px rgba(255, 255, 255, 0.14);
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 16px;
-  color: #fff;
-  transition: background .3s ease, transform .3s ease, box-shadow .3s ease;
-}
 
-.btn:hover {
-  background: #7d279c;
-  box-shadow: rgba(18, 24, 33, 0.2) 0 0 35px 1px inset, 0 0 24px rgba(192, 85, 229, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.btn--sm {
-  height: 44px;
-  padding: 0 20px;
-  font-weight: 500;
-  font-size: 15.9px;
-  letter-spacing: -0.5px;
-}
 
 /* --------------------------------------------------------------------------
    Reveal-on-scroll animation
@@ -155,6 +128,7 @@ ul {
   opacity: 1;
   transform: none;
 }
+
 
 /* Word-by-word heading rise */
 .words .w {
@@ -245,147 +219,7 @@ ul {
 /* --------------------------------------------------------------------------
    Navigation
    -------------------------------------------------------------------------- */
-.nav {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-  height: var(--nav-h);
-  display: flex;
-  align-items: center;
-  padding: 12px 40px;
-}
-
-.nav__inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.nav__logo {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-head);
-  font-weight: 600;
-  font-size: 18.9px;
-  color: #fff;
-}
-
-.nav__logo img {
-  width: 28px;
-  height: 28px;
-}
-
-.nav__links {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-
-.nav__link {
-  position: relative;
-  font-family: "Inter", var(--font-body), sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: -0.32px;
-  color: #fff;
-  opacity: .9;
-  transition: opacity .25s ease;
-}
-
-.nav__link:hover {
-  opacity: 1;
-}
-
-.nav__link .badge {
-  position: absolute;
-  top: -10px;
-  right: -34px;
-  background: #cfe0ff;
-  color: #0055ff;
-  font-weight: 700;
-  font-size: 8px;
-  line-height: 1;
-  padding: 3px 5px;
-  border-radius: 3px;
-  white-space: nowrap;
-}
-
-.nav__cta {
-  height: 46px;
-  padding: 10px 13px;
-  border-radius: 10px;
-  box-shadow: rgba(105, 32, 131, 0.5) 0 8px 40px 0, rgba(105, 32, 131, 0.12) 0 0 0 1px;
-}
-
-.nav__toggle {
-  display: none;
-}
-
-/* Mobile nav */
-@media (max-width: 899.98px) {
-  .nav {
-    position: fixed;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(0, 0, 0, 0.3);
-  }
-
-  .nav__links {
-    position: fixed;
-    top: var(--nav-h);
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 24px 40px 32px;
-    background: rgba(4, 2, 12, 0.92);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-    transform: translateY(-110%);
-    opacity: 0;
-    pointer-events: none;
-    transition: transform .45s cubic-bezier(.21, .47, .32, .98), opacity .35s ease;
-  }
-
-  .nav.open .nav__links {
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav__toggle {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    padding: 8px;
-  }
-
-  .nav__toggle span {
-    width: 22px;
-    height: 2px;
-    background: #fff;
-    border-radius: 2px;
-    transition: transform .3s ease, opacity .3s ease;
-  }
-
-  .nav.open .nav__toggle span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .nav.open .nav__toggle span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .nav.open .nav__toggle span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-}
+/* Navigation styles are fully managed by Tailwind CSS utility classes directly inside Navbar.tsx */
 
 /* --------------------------------------------------------------------------
    Footer

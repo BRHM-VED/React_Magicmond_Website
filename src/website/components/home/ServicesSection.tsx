@@ -1,70 +1,70 @@
-import * as Icons from 'lucide-react';
 import { services } from '../../../data/home.data';
 import { CALENDLY } from '../../../utils/constants/constants';
-
-const iconStyles: Record<string, { bg: string; color: string }> = {
-  Target: { bg: 'linear-gradient(180deg, #FE8550 0%, #E14601 100%)', color: '#ffffff' },
-  Monitor: { bg: '#70218B', color: '#ffffff' },
-  MessageSquare: { bg: '#413BAC', color: '#ffffff' },
-  Palette: { bg: 'linear-gradient(180deg, #FBFBFB 0%, #D0D0D0 100%)', color: '#000000' },
-  TrendingUp: { bg: 'linear-gradient(180deg, #FEE863 0%, #9F8D22 100%)', color: '#000000' },
-  Cpu: { bg: 'linear-gradient(180deg, #09406E 0%, #061F54 100%)', color: '#ffffff' },
-};
+import { Button } from '../../../common/button/homeButton';
+import { ServiceCard } from '../../../common/ServiceCard';
 
 export function ServicesSection() {
   return (
-    <section className="services" id="service">
-      <h2 className="services__title words">
-        <span className="w-src">Fueling growth through <span className="serif">creativity</span>,</span><br />
-        <span className="w-src"><span className="serif">strategy</span> &amp; <span className="serif">innovation</span></span>
-      </h2>
-      <p className="services__sub reveal">Grow smarter with strategy, design, and tech.<br />Scale your brand without limits.</p>
-      <div className="services__cta reveal" style={{ '--d': '.15s' } as React.CSSProperties}>
-        <a className="btn btn--sm" href={CALENDLY}>Transform my business</a>
+    <section className="relative px-5 md:px-10 pt-[60px] md:pt-20 text-center overflow-x-clip" id="service">
+
+      {/* Header Container flanking the wings */}
+      <div className="relative max-w-[1425px] w-full mx-auto pb-10">
+
+        {/* Left wing graphic (Desktop / Mobile positions from Figma) */}
+        <img
+          src="/assets/images/home/wing-left.svg"
+          alt=""
+          className="pointer-events-none absolute left-0 bottom-[-25px] w-[120px] h-[50px] md:w-[150px] md:h-[63px] lg:left-[-83px] lg:top-[146px] lg:bottom-auto lg:w-[567px] lg:h-[237px] object-contain opacity-60 lg:opacity-100 select-none z-0"
+        />
+
+        {/* Right wing graphic (Desktop / Mobile positions from Figma) */}
+        <img
+          src="/assets/images/home/wing-right.svg"
+          alt=""
+          className="pointer-events-none absolute right-0 bottom-[-25px] w-[120px] h-[50px] md:w-[150px] md:h-[63px] lg:right-[-83px] lg:top-[146px] lg:bottom-auto lg:w-[567px] lg:h-[237px] object-contain opacity-60 lg:opacity-100 select-none z-0"
+        />
+
+        {/* Section title & description */}
+        <h2 className="font-head font-normal text-[22px] sm:text-[32px] md:text-[52px] leading-[1.25] md:leading-[65px] tracking-[-1px] md:tracking-[-1.9px] text-white words relative z-10">
+          <span className="w-src whitespace-nowrap sm:whitespace-normal">Fueling growth through <span className="font-serif italic text-[#e0b6ff]">creativity</span>,</span><br />
+          <span className="w-src whitespace-nowrap sm:whitespace-normal"><span className="font-serif italic text-[#e0b6ff]">strategy</span> &amp; <span className="font-serif italic text-[#e0b6ff]">technology</span></span>
+        </h2>
+
+        <p className="mt-5 mx-auto max-w-[460px] font-body text-[14px] md:text-[16px] leading-[22px] md:leading-[26px] tracking-[-0.2px] text-white/60 reveal relative z-10">
+          Grow smarter with strategy, design, and tech.<br />
+          Scale your brand without limits.
+        </p>
+
+        <div className="mt-7 reveal relative z-10" style={{ '--d': '.15s' } as React.CSSProperties}>
+          <Button
+            variant="small"
+            href={CALENDLY}
+            className="border border-white/20 shadow-[0_0_20px_rgba(105,32,131,0.5)] hover:shadow-[0_0_30px_rgba(192,85,229,0.8)] transition-shadow duration-300"
+          >
+            Transform my business
+          </Button>
+        </div>
+
       </div>
 
-      <div className="services__stack">
-        {services.map((svc) => (
-          <article className="svc-card" key={svc.title}>
-            <div className="svc-card__info">
-              <div className="services__icon-wrapper" style={{ width: '44px', height: '44px', marginBottom: '26px' }}>
-                {(() => {
-                  const cfg = iconStyles[svc.icon] || { bg: '#70218B', color: '#ffffff' };
-                  const LucideIcon = (Icons as any)[svc.icon];
-                  return LucideIcon ? (
-                    <div
-                      style={{
-                        background: cfg.bg,
-                        borderRadius: '50%',
-                        border: '1px solid rgba(255, 255, 255, 0.07)',
-                        boxShadow: 'inset 0 4px 4px rgba(255, 255, 255, 0.15)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        width: '100%',
-                        height: '100%',
-                      }}
-                    >
-                      <LucideIcon
-                        size={22}
-                        strokeWidth={1.8}
-                        color={cfg.color}
-                        style={{
-                          filter: 'drop-shadow(0px 3px 1.5px rgba(0, 0, 0, 0.25))',
-                        }}
-                      />
-                    </div>
-                  ) : null;
-                })()}
-              </div>
-              <h3 className="svc-card__title">{svc.title}</h3>
-              <p className="svc-card__desc">{svc.description}</p>
-            </div>
-            <img className="svc-card__img" src={svc.image} alt={svc.imageAlt} />
-          </article>
+      {/* Stacked service cards */}
+      <div className="relative max-w-[1185px] mx-auto mt-[50px] md:mt-[70px] z-10">
+        {services.map((svc, i) => (
+          <ServiceCard
+            key={svc.title}
+            icon={svc.icon}
+            title={svc.title}
+            subtitle={svc.subtitle}
+            description={svc.description}
+            image={svc.image}
+            imageAlt={svc.imageAlt}
+            badge={svc.badge}
+            index={i}
+          />
         ))}
       </div>
     </section>
   );
 }
+
 export default ServicesSection;

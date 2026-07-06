@@ -7,7 +7,7 @@ import { ServicesSection } from '../components/home/ServicesSection';
 import { UspTickerSection } from '../components/home/UspTickerSection';
 import { StatsSection } from '../components/home/StatsSection';
 import { ProcessSection } from '../components/home/ProcessSection';
-import { CaseStudiesCarousel } from '../components/home/CaseStudiesCarousel';
+// import { CaseStudiesCarousel } from '../components/home/CaseStudiesCarousel';
 import { FoundersSection } from '../components/home/FoundersSection';
 import { BrandsSection } from '../components/home/BrandsSection';
 import { CtaSection } from '../components/home/CtaSection';
@@ -25,7 +25,7 @@ export default function Home() {
         <UspTickerSection />
         <StatsSection />
         <ProcessSection />
-        <CaseStudiesCarousel />
+        {/* <CaseStudiesCarousel /> */}
         <FoundersSection />
         <BrandsSection />
         <CtaSection />
