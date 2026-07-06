@@ -28,7 +28,7 @@ export function ProblemSection() {
             No Digital Team = Limited <span className="font-serif italic text-[#7ebaff]">business growth</span>
           </h2>
           <p className="mt-4 font-inter text-[14px] md:text-[16px] leading-[1.6] text-white/60 max-w-[440px]">
-            Grow smarter with strategy, design, and tech.<br className="hidden md:block" />Scale your brand without limits.
+            Grow smarter with strategy, design, and tech.<br />Scale your brand without limits.
           </p>
           <div className="mt-8 w-full md:w-auto">
             <InfraEdgeButton className="w-full md:w-auto" variant="small" href={CALENDLY}>
@@ -75,7 +75,7 @@ export function ProblemSection() {
         </div>
 
         {/* Mobile View Layout: Skyscraper Image on top, horizontal scrolling cards below */}
-        <div className="block md:hidden w-full mt-10 pb-12">
+        <div className="block md:hidden w-full mt-10 pb-2">
           {/* Mobile Skyscraper Graphic */}
           <div className="w-full max-w-[340px] mx-auto pointer-events-none mb-4 px-5">
             <img

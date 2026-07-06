@@ -5,13 +5,12 @@ import { IeStepCard } from './IeStepCard';
 
 export function HowSection() {
   return (
-    <section className="relative py-20 md:py-[120px] text-center bg-[#0e081d] overflow-hidden">
+    <section className="relative pt-10 pb-16 md:py-[120px] text-center bg-[#0e081d] overflow-hidden">
 
       {/* Bottom radial glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-[240px] pointer-events-none"
-        style={{ background: 'radial-gradient(60% 200px at 50% 100%, rgba(30,78,216,0.45), transparent 75%)' }} />
+      <div className="absolute bottom-0 left-0 right-0 h-[240px] pointer-events-none bg-[radial-gradient(60%_200px_at_50%_100%,rgba(30,78,216,0.45),transparent_75%)]" />
 
-      <div className="relative z-10 w-full max-w-[1425px] mx-auto px-5 md:px-10 flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-[1425px] mx-auto px-5 md:px-10 flex flex-col items-start md:items-center text-left md:text-center">
 
         {/* Heading */}
         <h2 className="font-head font-normal text-[22px] xs:text-[25px] sm:text-[36px] md:text-[54px] text-white tracking-[-1px] md:tracking-[-1.5px] leading-[1.2] md:leading-[1.15]">
@@ -20,12 +19,13 @@ export function HowSection() {
         </h2>
 
         {/* Sub */}
-        <p className="mt-4 mx-auto max-w-[500px] text-[13px] leading-[20px] xs:text-[14px] md:text-[16px] md:leading-[26px] text-white/60">
-          From insights to execution, we craft solutions that drive real results.
+        <p className="mt-4 max-w-[500px] text-[11.5px] leading-[18px] xs:text-[12.5px] xs:leading-[20px] sm:text-[15.5px] sm:leading-[24px] md:text-[16px] md:leading-[26px] text-white/60">
+          Grow smarter with strategy, design, and tech.<br />
+          Scale your brand without limits.
         </p>
 
         {/* CTA */}
-        <div className="relative z-10 mt-7 w-full md:w-auto px-5 md:px-0 flex justify-center">
+        <div className="relative z-10 mt-7 w-full md:w-auto flex justify-start md:justify-center">
           <InfraEdgeButton variant="small" href={CALENDLY} className="w-full md:w-auto">
             Transform my business
           </InfraEdgeButton>

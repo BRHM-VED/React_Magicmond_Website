@@ -18,6 +18,12 @@ export const COLORS = {
   ieSerif: '#7db9ff',
   spGreen: '#1ff9b8',
 
+  // Quarters
+  ieQ1: '#00c285',
+  ieQ2: '#b48cf2',
+  ieQ3: '#7fb0f7',
+  ieQ4: '#e8a04c',
+
   // Text
   text: '#ffffff',
   textDim: 'rgba(255, 255, 255, 0.6)',
