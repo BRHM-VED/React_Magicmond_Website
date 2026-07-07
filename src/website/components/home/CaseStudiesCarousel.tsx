@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { Sparkle } from 'lucide-react';
 import { useCarousel } from '../../../hooks/useCarousel';
 import { caseSlides } from '../../../data/home.data';
 
@@ -8,8 +7,8 @@ const ArrowUpSvg = ({ id }: { id: string }) => (
     <path d="M100 10 L170 90 H135 V210 H65 V90 H30 Z" fill={`url(#${id})`} opacity=".55" />
     <defs>
       <linearGradient id={id} x1="100" y1="10" x2="100" y2="210" gradientUnits="userSpaceOnUse">
-        <stop stopColor="#3b4bd8" />
-        <stop offset="1" stopColor="#3b4bd8" stopOpacity="0" />
+        <stop stopColor="#C258E8" />
+        <stop offset="1" stopColor="#C258E8" stopOpacity="0" />
       </linearGradient>
     </defs>
   </svg>
@@ -39,9 +38,6 @@ export function CaseStudiesCarousel() {
             </div>
             <div className="case-slide__visual">
               <ArrowUpSvg id={`arrgrad${i}`} />
-              <Sparkle className="case-slide__star case-slide__star--1 text-[#6F2888] fill-[#6F2888]" />
-              <Sparkle className="case-slide__star case-slide__star--2 text-[#6F2888] fill-[#6F2888]" />
-              <Sparkle className="case-slide__star case-slide__star--3 text-[#6F2888] fill-[#6F2888]" />
               <div className="case-slide__metric-label">{slide.metricLabel}</div>
               <div className="case-slide__metric">{slide.metric}</div>
             </div>
