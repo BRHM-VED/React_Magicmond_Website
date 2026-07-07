@@ -20,7 +20,7 @@ export default function InfraEdge() {
   useReveal();
 
   return (
-    <div className="infraedge">
+    <div className="bg-[#04060f] min-h-screen text-white">
       <Navbar suffix="InfraEdge" activePath="/infraedge" />
       <main>
         <HeroSection />
@@ -37,6 +37,7 @@ export default function InfraEdge() {
       <Footer
         gradientColor="rgba(0, 85, 255, 0.45)"
         wordmarkColor="#05F"
+        backgroundColor="#05070f"
       />
     </div>
   );

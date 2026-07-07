@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { ieGallery } from '../../../data/infra-edge.data';
+import { ieGallery } from '../../../data/infraEdge/infraEdge';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 import { CALENDLY } from '../../../utils/constants/constants';
 

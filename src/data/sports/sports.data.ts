@@ -1,7 +1,7 @@
 export const spStats = [
-  { value: "07", label: "years industry experience" },
-  { value: "30", label: "Brands we’ve worked with" },
-  { value: "45", label: "franchises/athletes partners" },
+  { value: "7", symbol: "+", label: "years industry experience" },
+  { value: "40", symbol: "+", label: "projects successfully done" },
+  { value: "99", symbol: "%", label: "clients satisfaction rate" },
 ];
 
 export const spChannelLogos = [
@@ -13,11 +13,11 @@ export const spChannelLogos = [
 ];
 
 export const spServices = [
-  { title: "Sports Partnerships", desc: "Strategic tie-ups with top cricket leagues, IPs, and franchises.", image: "/assets/images/sports/service-sports-partnerships.webp", tall: false },
-  { title: "Athlete Sponsorship", desc: "Connect your brand with cricket’s biggest names and influencers.", image: "/assets/images/sports/service-athlete-management.webp", tall: false },
-  { title: "IP Creation & Content Management", desc: "Build owned cricket IPs and branded content that fans remember.", image: "/assets/images/sports/service-ip-content.webp", tall: true },
-  { title: "Digital Sports Marketing", desc: "Drive visibility through digital campaigns across top cricket apps.", image: "/assets/images/sports/service-digital-sports.webp", tall: false },
-  { title: "Activation & On-Ground", desc: "Create on-ground experiences that engage and excite fans.", image: "/assets/images/sports/service-activation-ground.webp", tall: false },
+  { title: "Sports Partnerships", desc: "Logos, design systems, brand tone, and personality.", image: "/assets/images/sports/SportsPartnerships.webp", tall: false },
+  { title: "Athlete Sponsorship", desc: "Business cards, letterheads, envelopes, merchandise, & more.", image: "/assets/images/sports/AthleteSponsorship.webp", tall: false },
+  { title: "IP Creation & Content Management", desc: "Mobile-friendly and on-brand websites that reflect brand values and get clients.", image: "/assets/images/sports/contentManagement.webp", tall: true },
+  { title: "Digital Sports Marketing", desc: "Branded materials driving outreach and conversions.", image: "/assets/images/sports/DigitalMarketing.webp", tall: false },
+  { title: "Activation & On-Ground", desc: "Define brand's look across social platforms.", image: "/assets/images/sports/GroundFlag.webp", tall: false },
 ];
 
 export const spCases = [

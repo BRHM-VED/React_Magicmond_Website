@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ieQuarters } from '../../../data/infra-edge.data';
+import { ieQuarters } from '../../../data/infraEdge/infraEdge';
 import { IeDonutChart } from './IeDonutChart';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 import { CALENDLY } from '../../../utils/constants/constants';
@@ -41,7 +41,7 @@ export function JourneySection() {
           {/* Reidius Logo - centered horizontally on mobile */}
           <Link to="/" className="hover:opacity-80 transition-opacity shrink-0">
             <img
-              src="/assets/images/infraedge/reidiusInfraLogo.png"
+              src="/assets/images/infraedge/reidius-infra-logo.png"
               alt="Reidius"
               className="w-12 h-12 object-contain"
             />

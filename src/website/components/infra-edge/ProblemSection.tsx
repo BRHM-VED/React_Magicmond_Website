@@ -15,7 +15,7 @@ export function ProblemSection() {
       {/* Background Image */}
       <div className="absolute inset-0 pointer-events-none z-0">
         <img
-          src="/assets/images/infraedge/problemSection.png"
+          src="/assets/images/infraedge/problem-section.png"
           className="w-full h-full object-cover select-none"
           alt=""
         />
@@ -66,7 +66,7 @@ export function ProblemSection() {
           {/* Desktop Skyscraper Graphic (overlaps bottom/right of blue box) */}
           <div className="hidden md:block absolute left-[600px] bottom-[-24px] w-[449px] h-[449px] pointer-events-none z-0">
             <img
-              src="/assets/images/infraedge/bussinessGrowth.png"
+              src="/assets/images/infraedge/business-growth.png"
               className="w-full h-full object-contain object-bottom"
               alt="360° digital growth"
             />
@@ -79,7 +79,7 @@ export function ProblemSection() {
           {/* Mobile Skyscraper Graphic */}
           <div className="w-full max-w-[340px] mx-auto pointer-events-none mb-4 px-5">
             <img
-              src="/assets/images/infraedge/bussinessGrowth.png"
+              src="/assets/images/infraedge/business-growth.png"
               className="w-full h-auto object-contain"
               alt="360° digital growth"
             />

@@ -16,10 +16,33 @@ export function Navbar({ suffix, activePath }: Props) {
   const [open, setOpen] = useState(false);
   const [servicesExpanded, setServicesExpanded] = useState(false);
 
+  const handleNavClick = (to: string) => {
+    setOpen(false);
+    setServicesExpanded(false);
+
+    if (to.includes('#')) {
+      const hashIndex = to.indexOf('#');
+      const targetPath = to.substring(0, hashIndex) || '/';
+      const targetHash = to.substring(hashIndex);
+
+      const currentPath = window.location.pathname;
+      const currentHash = window.location.hash;
+
+      if ((currentPath === targetPath || (currentPath === '/' && targetPath === '/')) && currentHash === targetHash) {
+        const el = document.querySelector(targetHash);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  };
+
   const handleServicesClick = (e: React.MouseEvent) => {
     if (window.innerWidth < 900) {
       e.preventDefault();
       setServicesExpanded((prev) => !prev);
+    } else {
+      handleNavClick('/#service');
     }
   };
 
@@ -50,7 +73,7 @@ export function Navbar({ suffix, activePath }: Props) {
             px-6 py-6 md:p-0 
             flex flex-col md:flex-row items-stretch md:items-center gap-5 md:gap-8 
             transition-all duration-300 ease-in-out z-[998] md:z-auto 
-            ${open ? "translate-y-0 opacity-100 pointer-events-auto" : "max-md:-translate-y-full max-md:opacity-0 max-md:pointer-events-none"}
+            ${open ? "translate-y-0 opacity-100 pointer-events-auto max-md:visible" : "max-md:-translate-y-full max-md:opacity-0 max-md:pointer-events-none max-md:invisible"}
           `}
         >
           {navLinks.map((l) => {
@@ -68,7 +91,7 @@ export function Navbar({ suffix, activePath }: Props) {
                     ${activePath === l.to ? 'text-white font-semibold' : ''}
                   `}
                   to={l.to}
-                  onClick={isServices ? handleServicesClick : () => { setOpen(false); setServicesExpanded(false); }}
+                  onClick={isServices ? handleServicesClick : () => handleNavClick(l.to)}
                 >
                   <span className="nav__link-text">{l.label}</span>
                   {isServices && (
@@ -90,10 +113,10 @@ export function Navbar({ suffix, activePath }: Props) {
                 {/* Services Dropdown (Desktop) */}
                 {isServices && (
                   <div className="hidden md:flex absolute top-full left-1/2 -translate-x-1/2 translate-y-3 bg-[#080412]/95 backdrop-blur-md border border-white/8 rounded-xl p-2.5 min-w-[230px] flex-col gap-0.5 shadow-2xl transition-all duration-200 z-[1000] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-1">
-                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>Brand Identity</Link>
-                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>Growth Marketing</Link>
-                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>Website Design</Link>
-                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>WhatsApp Outreach</Link>
+                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => handleNavClick('/#service')}>Brand Identity</Link>
+                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => handleNavClick('/#service')}>Growth Marketing</Link>
+                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => handleNavClick('/#service')}>Website Design</Link>
+                    <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#service" onClick={() => handleNavClick('/#service')}>WhatsApp Outreach</Link>
                   </div>
                 )}
 
@@ -105,10 +128,10 @@ export function Navbar({ suffix, activePath }: Props) {
                       ${servicesExpanded ? "max-h-[500px] opacity-100 overflow-visible" : "max-h-0 opacity-0 overflow-hidden"}
                     `}
                   >
-                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>Brand Identity</Link>
-                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>Growth Marketing</Link>
-                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>Website Design</Link>
-                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => { setOpen(false); setServicesExpanded(false); }}>WhatsApp Outreach</Link>
+                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => handleNavClick('/#service')}>Brand Identity</Link>
+                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => handleNavClick('/#service')}>Growth Marketing</Link>
+                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => handleNavClick('/#service')}>Website Design</Link>
+                    <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-2 text-left" to="/#service" onClick={() => handleNavClick('/#service')}>WhatsApp Outreach</Link>
                   </div>
                 )}
               </div>
@@ -130,14 +153,14 @@ export function Navbar({ suffix, activePath }: Props) {
         <Button
           variant="header"
           href={CALENDLY}
-          className="hidden md:inline-flex"
+          className="hidden md:inline-flex relative z-50"
         >
           Get Started
         </Button>
 
         {/* Mobile Toggle Button */}
         <button
-          className="flex md:hidden flex-col gap-[5px] p-2 focus:outline-none"
+          className="flex md:hidden flex-col gap-[5px] p-2 focus:outline-none relative z-50"
           aria-label="Menu"
           onClick={() => setOpen((o) => !o)}
         >

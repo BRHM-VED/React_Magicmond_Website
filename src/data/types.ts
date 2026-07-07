@@ -24,6 +24,7 @@ export interface ProcessStep {
 export interface Stat {
   value: string;
   label: string;
+  symbol?: string;
   icon?: string;
   avatars?: string[];
 }

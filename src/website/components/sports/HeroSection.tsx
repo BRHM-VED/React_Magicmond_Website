@@ -1,26 +1,46 @@
 import { LightRays } from '../../../common/LightRays';
 import { CALENDLY } from '../../../utils/constants/constants';
 import { WatchVideoButton } from '../../../common/youtube/WatchVideoButton';
-import { Button } from '../../../common/button/homeButton';
+import { SportsButton } from '../../../common/button/SportsButton';
 
 export function HeroSection() {
   return (
-    <section className="sp-hero">
-      <img className="sp-hero__bg" src="/assets/images/common/hero-bg-stars.webp" alt="" />
-      <LightRays theme="green" className="sp-hero__rays" />
-      <div className="sp-hero__content">
-        <h1 className="sp-hero__title words">
-          <span className="w-src">Taking Indian sports</span><br />
-          <span className="w-src">to the <span className="serif">world of cricket</span></span>
+    <section className="relative pt-[120px] md:pt-[150px] px-0 pb-0 text-center overflow-hidden bg-[#010502]">
+      {/* Background elements */}
+      <img
+        className="absolute top-0 left-0 w-full h-[619px] object-cover object-top opacity-50 pointer-events-none z-0"
+        src="/assets/images/common/hero-bg-stars.webp"
+        alt=""
+      />
+      <LightRays theme="green" className="absolute top-0 left-0 w-full h-[640px] pointer-events-none z-0" />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-[1025px] mx-auto px-5 md:px-0 flex flex-col items-center">
+        <h1 className="font-head font-medium text-[28px] sm:text-[40px] md:text-[64px] lg:text-[96px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
+          <span className="w-src">The future of <span className="font-serif italic text-[#1ff9b8]">sports growth</span></span><br />
+          <span className="w-src">growth starts here.</span>
         </h1>
-        <p className="sp-hero__sub reveal" style={{ '--d': '.15s' } as React.CSSProperties}>From global tournaments to digital cricket platforms — we help brands unlock visibility, engagement, and trust without breaking the bank.</p>
-        <div className="sp-hero__cta reveal flex flex-row items-center justify-center gap-4 sm:gap-6" style={{ '--d': '.3s' } as React.CSSProperties}>
-          <Button variant="small" href={CALENDLY}>Let’s collaborate</Button>
-          <WatchVideoButton />
+
+        <p className="text-[#aaaaaa] font-head font-normal text-[14px] md:text-[16.6px] leading-[1.7] max-w-[560px] mx-auto mt-6 reveal" style={{ '--d': '.15s' } as React.CSSProperties}>
+          We transform your traditional business into a digitally strong brand, enabling a 360° growth ecosystem to thrive in the new era.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 reveal" style={{ '--d': '.3s' } as React.CSSProperties}>
+          <SportsButton variant="small" href={CALENDLY}>
+            Transform my business
+          </SportsButton>
+          <WatchVideoButton videoUrl="https://www.youtube.com/watch?v=p4mArfDZEgc" />
         </div>
-        <img className="sp-hero__stadium reveal" style={{ '--d': '.4s' } as React.CSSProperties} src="/assets/images/sports/hero-stadium.webp" alt="Cricket stadium" />
       </div>
+
+      <img
+        className="relative block w-full max-w-[1440px] mx-auto mt-11 md:mt-12 px-0 md:px-10 reveal z-10"
+        style={{ '--d': '.4s' } as React.CSSProperties}
+        src="/assets/images/sports/hero-stadium.webp"
+        alt="Cricket stadium"
+      />
     </section>
   );
 }
+
 export default HeroSection;

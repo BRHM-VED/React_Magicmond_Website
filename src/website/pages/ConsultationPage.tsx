@@ -16,16 +16,16 @@ export default function Consultation() {
   useReveal();
 
   return (
-    <div className="consult">
+    <div className="bg-[#07030f] font-body text-white min-h-screen relative w-full overflow-hidden">
       {/* Pill navigation */}
-      <header className="c-nav">
-        <Link className="c-nav__logo" to="/">
-          <img src="/assets/icons/logo-wand.svg" alt="" />
+      <header className="fixed top-[14px] left-1/2 -translate-x-1/2 z-50 w-[calc(100%-40px)] max-w-[1080px] flex items-center justify-between px-6 py-3 rounded-[14px] bg-[#0e081d]/75 backdrop-blur-[14px] border border-white/[0.08]">
+        <Link className="flex items-center gap-2 font-inter font-semibold text-[16px] text-white" to="/">
+          <img className="w-6 h-6" src="/assets/icons/logo-wand.svg" alt="" />
           MagicMond
         </Link>
-        <nav className="c-nav__links">
-          <a href="#offerings">Offerings</a>
-          <a href="#about-us">About Us</a>
+        <nav className="flex gap-[20px] md:gap-[34px] items-center">
+          <a className="text-[16px] text-white opacity-90 hover:opacity-100 transition-opacity duration-200" href="#offerings">Offerings</a>
+          <a className="text-[16px] text-white opacity-90 hover:opacity-100 transition-opacity duration-200" href="#about-us">About Us</a>
         </nav>
       </header>
 

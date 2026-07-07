@@ -1,4 +1,4 @@
-import { ieSteps } from '../../../data/infra-edge.data';
+import { ieSteps } from '../../../data/infraEdge/infraEdge';
 import { CALENDLY } from '../../../utils/constants/constants';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 import { IeStepCard } from './IeStepCard';

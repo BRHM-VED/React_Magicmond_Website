@@ -17,7 +17,7 @@ export default function Sports() {
   useReveal();
 
   return (
-    <div className="sports">
+    <div className="bg-[#010502] font-body text-white min-h-screen relative w-full overflow-hidden">
       <Navbar suffix="Sports" activePath="/sports" />
       <main>
         <HeroSection />
@@ -28,8 +28,9 @@ export default function Sports() {
         <CtaSection />
       </main>
       <Footer
-        gradientColor="rgba(16, 185, 129, 0.45)"
-        wordmarkColor="#10B981"
+        gradientColor="rgba(0, 172, 121, 0.45)"
+        wordmarkColor="#00ac79"
+        backgroundColor="#010502"
       />
     </div>
   );
