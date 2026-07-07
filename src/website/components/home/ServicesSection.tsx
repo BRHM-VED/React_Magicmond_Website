@@ -14,14 +14,14 @@ export function ServicesSection() {
         <img
           src="/assets/images/home/wing-left.svg"
           alt=""
-          className="pointer-events-none absolute left-0 bottom-[-25px] w-[120px] h-[50px] md:w-[150px] md:h-[63px] lg:left-[-83px] lg:top-[146px] lg:bottom-auto lg:w-[567px] lg:h-[237px] object-contain opacity-60 lg:opacity-100 select-none z-0"
+          className="pointer-events-none absolute left-[-20px] top-[-80px] w-[150px] h-[75px] md:left-[-40px] md:w-[240px] md:h-[100px] lg:left-[-83px] lg:top-[146px] lg:bottom-auto lg:w-[567px] lg:h-[237px] object-contain opacity-60 lg:opacity-100 select-none z-0"
         />
 
         {/* Right wing graphic (Desktop / Mobile positions from Figma) */}
         <img
           src="/assets/images/home/wing-right.svg"
           alt=""
-          className="pointer-events-none absolute right-0 bottom-[-25px] w-[120px] h-[50px] md:w-[150px] md:h-[63px] lg:right-[-83px] lg:top-[146px] lg:bottom-auto lg:w-[567px] lg:h-[237px] object-contain opacity-60 lg:opacity-100 select-none z-0"
+          className="pointer-events-none absolute right-[-20px] top-[-80px] w-[150px] h-[75px] md:right-[-40px] md:w-[240px] md:h-[100px] lg:right-[-83px] lg:top-[146px] lg:bottom-auto lg:w-[567px] lg:h-[237px] object-contain opacity-60 lg:opacity-100 select-none z-0"
         />
 
         {/* Section title & description */}
@@ -35,11 +35,11 @@ export function ServicesSection() {
           Scale your brand without limits.
         </p>
 
-        <div className="mt-7 reveal relative z-10" style={{ '--d': '.15s' } as React.CSSProperties}>
+        <div className="mt-8 mb-10 reveal relative z-10 w-full flex justify-center md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
           <Button
             variant="small"
             href={CALENDLY}
-            className="border border-white/20 shadow-[0_0_20px_rgba(105,32,131,0.5)] hover:shadow-[0_0_30px_rgba(192,85,229,0.8)] transition-shadow duration-300"
+            className="w-full md:w-auto border border-white/20 shadow-[0_0_20px_rgba(105,32,131,0.5)] hover:shadow-[0_0_30px_rgba(192,85,229,0.8)] transition-shadow duration-300"
           >
             Transform my business
           </Button>

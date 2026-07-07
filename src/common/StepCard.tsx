@@ -49,7 +49,7 @@ export function StepCard({
 
   return (
     <article
-      className={`bg-[#080808] rounded-[28px] shadow-[0px_9.5px_20.9px_-1.662px_rgba(0,0,0,0.16)] overflow-hidden reveal flex flex-col ${desktopMinHeight}`}
+      className={`sticky top-[120px] lg:top-[160px] bg-[#080808] rounded-[28px] shadow-[0px_9.5px_20.9px_-1.662px_rgba(0,0,0,0.16)] overflow-hidden reveal flex flex-col ${desktopMinHeight}`}
       style={delay ? ({ '--d': delay } as React.CSSProperties) : undefined}
     >
       {/* Inner panel — border-t border-x border-b-0 overlay will wrap it */}

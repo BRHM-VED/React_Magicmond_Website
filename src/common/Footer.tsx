@@ -68,52 +68,54 @@ export function Footer({
 
           {/* Navigation links columns matching Figma 325-5162 */}
           <div className="flex gap-[60px] md:gap-[120px] lg:mr-[100px] shrink-0 mt-6 lg:mt-0">
-            {/* Column 1: Home */}
-            <div className="flex flex-col">
-              <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
-                Home
-              </p>
-              <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
-                <li>
-                  <Link to="/#about" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                    About
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/#service" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/#process" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                    Process
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/#comparison" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                    Comparison
-                  </Link>
-                </li>
-              </ul>
-            </div>
+            <div className="flex w-full justify-between md:justify-start gap-[10px] md:gap-[120px] shrink-0 mt-6 lg:mt-0">
+              {/* Column 1: Home */}
+              <div className="flex flex-col">
+                <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
+                  Home
+                </p>
+                <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
+                  <li>
+                    <Link to="/#about" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/#service" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/#process" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                      Process
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/#comparison" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                      Comparison
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-            {/* Column 2: Contact */}
-            <div className="flex flex-col">
-              <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
-                Contact
-              </p>
-              <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
-                <li>
-                  <a href={CALENDLY} className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                    Contact
-                  </a>
-                </li>
-                <li>
-                  <Link to="/#faq" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                    FAQ’s
-                  </Link>
-                </li>
-              </ul>
+              {/* Column 2: Contact */}
+              <div className="flex flex-col">
+                <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
+                  Contact
+                </p>
+                <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
+                  <li>
+                    <a href={CALENDLY} className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                      Contact
+                    </a>
+                  </li>
+                  <li>
+                    <Link to="/#faq" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                      FAQ’s
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

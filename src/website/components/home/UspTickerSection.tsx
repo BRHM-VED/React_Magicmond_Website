@@ -38,9 +38,9 @@ export function UspTickerSection() {
           {/* Heading — left-aligned on mobile */}
           <div className="relative w-full md:max-w-[476px]">
             <h2 className={`${FONTS.head} font-semibold text-[32px] md:text-[48px] leading-[38px] md:leading-[55px] tracking-[-1px] md:tracking-[-1.86px] text-white text-left reveal`}>
-              {/* Sparkle Icon */}
+              {/* Sparkle Icon - white color */}
               <img
-                className="absolute top-[-30px] md:top-[-45px] left-[-6px] md:left-[-15px] w-[34px] md:w-[43px] h-[37px] md:h-[47px] select-none pointer-events-none"
+                className="absolute top-[-30px] md:top-[-45px] left-[-6px] md:left-[-15px] w-[34px] md:w-[43px] h-[37px] md:h-[47px] select-none pointer-events-none brightness-0 invert"
                 src="/assets/icons/sparkle.svg"
                 alt=""
               />

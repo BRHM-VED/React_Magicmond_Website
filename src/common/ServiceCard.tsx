@@ -57,29 +57,36 @@ export function ServiceCard({
 
       {/* Left: text content */}
       <div className="max-w-[420px] relative z-10 flex flex-col gap-[25px]">
-        {/* Icon */}
-        {LucideIcon && (
-          <div
-            className="w-[49px] h-[49px] rounded-full border border-white/[0.07] flex items-center justify-center shrink-0"
-            style={{ background: cfg.bg, boxShadow: cfg.shadow }}
-          >
-            <LucideIcon
-              size={24}
-              strokeWidth={1.8}
-              color={cfg.color}
-              style={{ filter: 'drop-shadow(0px 3px 1.5px rgba(0,0,0,0.25))' }}
-            />
-          </div>
-        )}
+        {/* Icon and Mobile Badge Row */}
+        <div className="flex items-center justify-between w-full md:block">
+          {LucideIcon && (
+            <div
+              className="w-[49px] h-[49px] rounded-full border border-white/[0.07] flex items-center justify-center shrink-0"
+              style={{ background: cfg.bg, boxShadow: cfg.shadow }}
+            >
+              <LucideIcon
+                size={24}
+                strokeWidth={1.8}
+                color={cfg.color}
+                style={{ filter: 'drop-shadow(0px 3px 1.5px rgba(0,0,0,0.25))' }}
+              />
+            </div>
+          )}
+          {badge && (
+            <span className="inline-flex items-center h-[25px] px-2 rounded-[7px] bg-[#692083] border border-white/15 font-body font-bold text-[11px] tracking-[-0.4px] text-white md:hidden">
+              {badge}
+            </span>
+          )}
+        </div>
 
-        {/* Title row with optional badge */}
+        {/* Title row with optional desktop badge */}
         <div>
           <div className="flex items-center gap-3 flex-wrap">
             <h3 className={`${FONTS.head} font-semibold text-[20px] md:text-[24px] leading-tight tracking-[-0.56px] text-white`}>
               {title}
             </h3>
             {badge && (
-              <span className="inline-flex items-center h-[25px] px-2 rounded-[7px] bg-[#692083] border border-white/15 font-body font-bold text-[11px] tracking-[-0.4px] text-white">
+              <span className="hidden md:inline-flex items-center h-[25px] px-2 rounded-[7px] bg-[#692083] border border-white/15 font-body font-bold text-[11px] tracking-[-0.4px] text-white">
                 {badge}
               </span>
             )}

@@ -4,12 +4,11 @@ import { FONTS } from '../../../utils/constants/fonts';
 import { LightRays } from '../../../common/LightRays';
 
 // Specific placement and rotation values for the founder pills matching original designs
-const DESKTOP_POSITIONS = [
-  'left-[8%] top-[26%] -rotate-[8deg]',
-  'right-[7%] top-[22%] rotate-[6deg]',
-  'left-[7%] bottom-[24%] rotate-[5deg]',
-  'right-[9%] bottom-[22%] -rotate-[5deg]',
-  'left-[42%] bottom-[4%] rotate-[3deg]',
+const DESKTOP_PILLS_CONFIG = [
+  { className: 'left-[8%] top-[26%]', rotate: -8 },
+  { className: 'right-[7%] top-[22%]', rotate: 6 },
+  { className: 'left-[7%] bottom-[24%]', rotate: 5 },
+  { className: 'right-[9%] bottom-[22%]', rotate: -5 },
 ];
 
 export function FoundersSection() {
@@ -27,9 +26,9 @@ export function FoundersSection() {
         <h2
           className={`${FONTS.head} relative inline-block font-normal text-[34px] lg:text-[54px] leading-tight lg:leading-[50px] tracking-[-1.9px] text-white reveal`}
         >
-          {/* Sparkle icon positioned next to header */}
+          {/* Sparkle icon positioned next to header - white color */}
           <img
-            className="absolute left-[-10px] lg:left-[-30px] top-[-10px] lg:top-[-40px] w-6 lg:w-[80px] select-none pointer-events-none"
+            className="absolute left-[-10px] lg:left-[-15px] top-[-10px] lg:top-[-30px] w-8 lg:w-[50px] select-none pointer-events-none brightness-0 invert"
             src="/assets/icons/sparkle.svg"
             alt=""
           />
@@ -43,13 +42,15 @@ export function FoundersSection() {
           {founderPills.map((pill, i) => (
             <div
               key={pill}
-              className={`px-6 py-[11px] rounded-full bg-[#692083] ${FONTS.body} font-normal text-[15.5px] leading-none text-white whitespace-nowrap reveal-scale`}
-              style={{
-                '--d': `${0.1 * (i + 1)}s`,
-                transform: `rotate(${i % 2 === 0 ? -3 : 3}deg)`,
-              } as React.CSSProperties}
+              className="reveal-scale"
+              style={{ '--d': `${0.1 * (i + 1)}s` } as React.CSSProperties}
             >
-              {pill}
+              <div
+                className={`px-6 py-[11px] rounded-full bg-[#692083] ${FONTS.body} font-normal text-[15.5px] leading-none text-white whitespace-nowrap`}
+                style={{ transform: `rotate(${i % 2 === 0 ? -3 : 3}deg)` }}
+              >
+                {pill}
+              </div>
             </div>
           ))}
         </div>
@@ -57,17 +58,23 @@ export function FoundersSection() {
 
       {/* ── DESKTOP LAYOUT (Pills positioned relative to the full section container, preventing overlap) ── */}
       <div className="hidden lg:block absolute inset-0 pointer-events-none">
-        {founderPills.map((pill, i) => (
-          <div
-            key={pill}
-            className={`absolute px-7 py-[9px] rounded-full bg-[#692083] ${FONTS.instrument} font-medium text-[18px] leading-none text-white whitespace-nowrap pointer-events-auto reveal-scale ${DESKTOP_POSITIONS[i] || ''}`}
-            style={{
-              '--d': `${0.1 * (i + 1)}s`,
-            } as React.CSSProperties}
-          >
-            {pill}
-          </div>
-        ))}
+        {founderPills.map((pill, i) => {
+          const config = DESKTOP_PILLS_CONFIG[i] || { className: '', rotate: 0 };
+          return (
+            <div
+              key={pill}
+              className={`absolute pointer-events-auto reveal-scale ${config.className}`}
+              style={{ '--d': `${0.1 * (i + 1)}s` } as React.CSSProperties}
+            >
+              <div
+                className={`px-7 py-[9px] rounded-full bg-[#692083] ${FONTS.instrument} font-medium text-[18px] leading-none text-white whitespace-nowrap`}
+                style={{ transform: `rotate(${config.rotate}deg)` }}
+              >
+                {pill}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

@@ -19,7 +19,7 @@ const STEP_TAGS: string[][] = [
 
 export function ProcessSection() {
   return (
-    <section className="relative bg-[#0d0817] py-16 md:py-[100px] overflow-hidden" id="process">
+    <section className="relative bg-[#0d0817] py-16 md:py-[100px] overflow-x-clip" id="process">
       {/* Top gradient divider */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1260px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
       {/* Bottom gradient divider */}
@@ -33,9 +33,9 @@ export function ProcessSection() {
           <div>
             {/* Section heading */}
             <div className="relative mb-11 lg:mb-16 max-w-[500px]">
-              {/* Sparkle icon */}
+              {/* Sparkle icon - white color */}
               <img
-                className="absolute top-[-35px] left-[-8px] w-[39px] h-[52px] select-none pointer-events-none"
+                className="absolute top-[-35px] left-[-8px] w-[39px] h-[52px] select-none pointer-events-none brightness-0 invert"
                 src="/assets/icons/sparkle.svg"
                 alt=""
               />
@@ -57,7 +57,7 @@ export function ProcessSection() {
             </div>
 
             {/* Step cards */}
-            <div className="flex flex-col gap-[49px]">
+            <div className="space-y-[49px] relative z-10">
               {processSteps.map((step, i) => (
                 <StepCard
                   key={step.badge}
@@ -74,8 +74,8 @@ export function ProcessSection() {
           </div>
 
           {/* Right Column: Sticky Wand visual panel */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-[120px]">
+          <aside className="hidden lg:block lg:-mt-[00px]">
+            <div className="sticky top-[0px]">
               <div
                 className="relative w-full lg:w-[345px] h-[250px] lg:h-[309px] lg:ml-auto rounded-[28px] overflow-hidden border border-white/[0.07] flex items-center justify-center"
                 style={{
@@ -95,13 +95,6 @@ export function ProcessSection() {
 
                 {/* Bottom gradient fade */}
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#0d0817]/40 to-transparent pointer-events-none" />
-
-                {/* Small faint label in bottom-left corner to match original design */}
-                <div
-                  className={`${FONTS.head} absolute bottom-5 left-6 text-white/30 text-[13px] font-medium tracking-[0.5px] uppercase`}
-                >
-                  Magicmond
-                </div>
               </div>
             </div>
           </aside>

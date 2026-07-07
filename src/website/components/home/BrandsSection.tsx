@@ -7,7 +7,7 @@ import { Button } from '../../../common/button/homeButton';
 
 export function BrandsSection() {
   return (
-    <section className="relative z-20 bg-[#0d0817] py-16 md:py-[60px] pb-24 md:pb-[90px] overflow-hidden">
+    <section className="relative z-20 bg-[#0d0817] py-16 md:py-[60px] pb-12 md:pb-[90px] overflow-hidden">
       <div className="container px-5 md:px-10 mx-auto max-w-[1360px]">
         {/* Two-Column Grid: Title + CTA on left, Marquee rows on right */}
         <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-12 lg:gap-[100px] items-center lg:items-end">
@@ -15,7 +15,13 @@ export function BrandsSection() {
           {/* Left Column: Heading & Button */}
           <div className="flex flex-col items-start text-left">
             {/* Title - lg:whitespace-nowrap ensures it stays on a single line on desktop */}
-            <h2 className={`${FONTS.head} font-normal text-[35px] md:text-[54px] leading-tight md:leading-[1.1] tracking-[-1.9px] text-white lg:whitespace-nowrap reveal`}>
+            <h2 className={`${FONTS.head} relative font-normal text-[35px] md:text-[54px] leading-tight md:leading-[1.1] tracking-[-1.9px] text-white lg:whitespace-nowrap reveal`}>
+              {/* Sparkle icon positioned next to header - white color */}
+              <img
+                className="absolute left-[-15px] lg:left-[-25px] top-[-10px] lg:top-[-18px] w-8 lg:w-[50px] select-none pointer-events-none brightness-0 invert"
+                src="/assets/icons/sparkle.svg"
+                alt=""
+              />
               Brands we <span className={`${FONTS.serif} italic text-[#e0b6ff]`}>grew with</span>
             </h2>
 
