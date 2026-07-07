@@ -31,8 +31,9 @@ export function IeServiceCard({ icon, title, tag, desc, isRecommended }: IeServi
         className="absolute top-0 left-5 right-5 md:left-[30px] md:right-[30px] h-px bg-gradient-to-r from-transparent via-[#0055ff]/45 to-transparent transition-all duration-300 group-hover:via-[#0055ff]"
       />
 
-      {/* Icon */}
-      <div className="mb-4 md:mb-5">
+      {/* Icon and Recommended Row */}
+      <div className="flex items-center justify-between mb-4 md:mb-5 w-full">
+        {/* Icon */}
         <div
           className={`w-10 h-10 md:w-11 md:h-11 rounded-full flex items-center justify-center border border-white/[0.07] shrink-0 ${cfg.bg} ${cfg.shadow}`}
         >
@@ -44,22 +45,22 @@ export function IeServiceCard({ icon, title, tag, desc, isRecommended }: IeServi
             />
           )}
         </div>
+
+        {/* Recommended Badge */}
+        {isRecommended && (
+          <div className="bg-[#0055ff] border border-white/15 px-[8px] md:px-[10px] py-[2px] md:py-[3px] rounded-[7px] shadow-[0px_0px_10px_rgba(0,85,255,0.5)] shrink-0">
+            <span className="font-head font-bold text-[9px] md:text-[10px] text-white tracking-[-0.4px] uppercase">
+              Recommended
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Title and tag */}
       <div className="flex flex-col gap-[3px]">
-        <div className="flex items-center gap-2 flex-wrap">
-          <h3 className="font-head font-semibold text-[16px] md:text-[18px] text-white tracking-[-0.5px] leading-tight">
-            {title}
-          </h3>
-          {isRecommended && (
-            <div className="bg-[#0055ff] border border-white/15 px-[8px] md:px-[10px] py-[2px] md:py-[3px] rounded-[7px] shadow-[0px_0px_10px_rgba(0,85,255,0.5)] shrink-0">
-              <span className="font-head font-bold text-[9px] md:text-[10px] text-white tracking-[-0.4px] uppercase">
-                Recommended
-              </span>
-            </div>
-          )}
-        </div>
+        <h3 className="font-head font-semibold text-[16px] md:text-[18px] text-white tracking-[-0.5px] leading-tight">
+          {title}
+        </h3>
         <p className="font-inter text-[13.5px] md:text-[16px] text-white/60 tracking-[-0.2px] leading-tight">
           {tag}
         </p>

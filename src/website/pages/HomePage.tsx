@@ -30,7 +30,10 @@ export default function Home() {
         <BrandsSection />
         <CtaSection />
       </main>
-      <Footer />
+      <Footer
+        gradientColor="rgba(193, 86, 230, 0.45)"
+        wordmarkColor="#C156E6"
+      />
     </>
   );
 }

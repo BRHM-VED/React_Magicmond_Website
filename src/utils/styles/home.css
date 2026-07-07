@@ -418,3 +418,44 @@
     max-height: 30px;
   }
 }
+
+@media (max-width: 899.98px) {
+  .hero__title {
+    font-size: 54px;
+    line-height: 1.1;
+    letter-spacing: -1.2px;
+    margin-top: 24px;
+  }
+
+  .hero__press {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    justify-content: center;
+  }
+
+  .hero__press-label {
+    white-space: nowrap;
+  }
+
+  .hero__press img {
+    height: 16px;
+  }
+
+  .hero__press img.press--ht {
+    height: 8px;
+  }
+
+  .hero__sub {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 18px;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .hero__title {
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+  }
+}

@@ -34,8 +34,10 @@ export default function InfraEdge() {
         <BrandsSection />
         <CtaSection />
       </main>
-      <Footer suffix="InfraEdge" />
-      <OfferSection />
+      <Footer
+        gradientColor="rgba(0, 85, 255, 0.45)"
+        wordmarkColor="#05F"
+      />
     </div>
   );
 }

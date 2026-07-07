@@ -4,111 +4,93 @@ import { FONTS } from '../utils/constants/fonts';
 
 interface Props {
   suffix?: string;
+  gradientColor?: string;
+  wordmarkColor?: string;
 }
 
-export function Footer({ suffix }: Props) {
+export function Footer({
+  gradientColor = 'rgba(193, 86, 230, 0.45)',
+  wordmarkColor = '#C156E6',
+}: Props) {
   return (
     <footer
-      className="relative overflow-hidden pt-16 pb-0 px-5 md:px-10 z-20 border-t border-white/[0.03]"
+      className="relative overflow-hidden pt-24 lg:pt-[110px] pb-0 px-5 md:px-10 z-20 border-t border-white/[0.03]"
       style={{
-        background:
-          'radial-gradient(900px 420px at 0% 0%, rgba(105, 32, 131, 0.55), transparent 65%), #0a0517',
+        background: `radial-gradient(900px 420px at 0% 0%, ${gradientColor}, transparent 65%), #0a0517`,
       }}
     >
       <div className="mx-auto max-w-[1200px] w-full">
         {/* Main Grid content layout */}
         <div className="flex flex-col lg:flex-row justify-between gap-12 lg:gap-20 pb-16">
           {/* Brand info column */}
-          <div className="max-w-[380px] w-full flex flex-col items-start">
-            <div className={`${FONTS.head} font-semibold text-[29px] text-white flex items-center gap-2.5`}>
+          <div className="max-w-[420px] w-full flex flex-col items-start">
+            <div className={`${FONTS.head} font-semibold text-[26px] md:text-[34px] text-white flex items-center gap-2.5`}>
               <img
                 src="/assets/icons/logo-wand-footer.svg"
                 alt=""
-                className="w-[34px] h-[34px] select-none pointer-events-none"
+                className="w-[47px] h-[45px] select-none pointer-events-none"
               />
-              <span>
-                MagicMond
-                {suffix ? (
-                  <>
-                    &nbsp;
-                    <span className="font-normal text-[22px] text-white/80">
-                      {suffix}
-                    </span>
-                  </>
-                ) : null}
-              </span>
+              <span>MagicMond</span>
             </div>
 
-            {/* Tagline matching Figma 325-5129 */}
-            <p className={`${FONTS.body} mt-4 text-[16px] leading-[26px] tracking-[-0.26px] text-white/60`}>
-              At magicmond, we’re transforming traditional businesses into digitally strong brands that drive growth.
+            {/* Tagline matching Figma 325-5129 / 325-2083 */}
+            <p className={`${FONTS.body} mt-4 tracking-[-0.26px] text-[#a7adbe] text-[16px] md:text-[28px] leading-[1.4] max-w-[534px]`}>
+              Let's create magic together! 🪄
             </p>
 
-            {/* Social handles list matching Figma 325-5139 */}
-            <p className={`${FONTS.body} mt-[34px] text-[20px] leading-[1.6] text-white/60 font-medium`}>
-              Our Social Handles
-            </p>
-            <div className="flex items-center gap-3 mt-3.5">
+            {/* Social handles list matching Figma (icons directly below tagline, no title) */}
+            <div className="flex items-center gap-3 mt-6">
               <a
                 href="https://www.linkedin.com/company/magicmondglobal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="w-10 h-10 rounded-[10px] bg-white/8 hover:bg-white/16 transition-all duration-300 flex items-center justify-center hover:-translate-y-[2px]"
+                className="hover:scale-105 transition-transform duration-300"
               >
-                <img src="/assets/icons/social-linkedin.svg" alt="" className="w-[18px] h-[18px]" />
-              </a>
-              <a
-                href="https://x.com/magicmondglobal"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="X (Twitter)"
-                className="w-10 h-10 rounded-[10px] bg-white/8 hover:bg-white/16 transition-all duration-300 flex items-center justify-center hover:-translate-y-[2px]"
-              >
-                <img src="/assets/icons/social-x.svg" alt="" className="w-[18px] h-[18px]" />
+                <img src="/assets/icons/social-linkedin.svg" alt="" className="w-10 h-10 md:w-[55px] md:h-[55px]" />
               </a>
               <a
                 href="https://www.instagram.com/reidiusinfra/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-10 h-10 rounded-[10px] bg-white/8 hover:bg-white/16 transition-all duration-300 flex items-center justify-center hover:-translate-y-[2px]"
+                className="hover:scale-105 transition-transform duration-300"
               >
-                <img src="/assets/icons/social-instagram.svg" alt="" className="w-[18px] h-[18px]" />
+                <img src="/assets/icons/social-instagram.svg" alt="" className="w-10 h-10 md:w-[55px] md:h-[55px]" />
               </a>
             </div>
 
             {/* Copyright matching Figma 325-5126 */}
-            <p className={`${FONTS.body} mt-10 text-[14px] text-[#a7adbe]`}>
+            <p className={`${FONTS.body} mt-10 text-[14px] sm:text-[23.4px] text-[#a7adbe] whitespace-nowrap`}>
               Magicmond Inc. ©2025, All Rights Reserved
             </p>
           </div>
 
           {/* Navigation links columns matching Figma 325-5162 */}
-          <div className="flex gap-[90px] md:gap-[120px] lg:mr-[100px] shrink-0">
+          <div className="flex gap-[60px] md:gap-[120px] lg:mr-[100px] shrink-0 mt-6 lg:mt-0">
             {/* Column 1: Home */}
             <div className="flex flex-col">
-              <p className={`${FONTS.body} font-medium text-[20px] text-[#f0f1f4]`}>
+              <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
                 Home
               </p>
-              <ul className="mt-[22px] flex flex-col gap-4">
+              <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
                 <li>
-                  <Link to="/#about" className={`${FONTS.body} text-[16px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                  <Link to="/#about" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#service" className={`${FONTS.body} text-[16px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                  <Link to="/#service" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
                     Services
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#process" className={`${FONTS.body} text-[16px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                  <Link to="/#process" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
                     Process
                   </Link>
                 </li>
                 <li>
-                  <Link to="/#comparison" className={`${FONTS.body} text-[16px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                  <Link to="/#comparison" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
                     Comparison
                   </Link>
                 </li>
@@ -117,17 +99,17 @@ export function Footer({ suffix }: Props) {
 
             {/* Column 2: Contact */}
             <div className="flex flex-col">
-              <p className={`${FONTS.body} font-medium text-[20px] text-[#f0f1f4]`}>
+              <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
                 Contact
               </p>
-              <ul className="mt-[22px] flex flex-col gap-4">
+              <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
                 <li>
-                  <a href={CALENDLY} className={`${FONTS.body} text-[16px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                  <a href={CALENDLY} className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
                     Contact
                   </a>
                 </li>
                 <li>
-                  <Link to="/#faq" className={`${FONTS.body} text-[16px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
+                  <Link to="/#faq" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
                     FAQ’s
                   </Link>
                 </li>
@@ -136,8 +118,20 @@ export function Footer({ suffix }: Props) {
           </div>
         </div>
 
-        {/* Large Brand Wordmark at bottom matching Figma 325-5181 */}
-        <div className="footer__wordmark text-center select-none font-instrument text-[clamp(60px,15vw,215px)] letter-spacing-[-1px] line-height-[0.78] text-white/[0.03] whitespace-nowrap translate-y-[18%]">
+        {/* Large Brand Wordmark at bottom matching Figma 325-5181 / 325-2069 */}
+        <div
+          className="footer-brand-wordmark-bottom text-center select-none font-instrument whitespace-nowrap translate-y-[8%] md:translate-y-[15%]"
+          style={{
+            color: wordmarkColor,
+            WebkitTextStrokeWidth: '1.35px',
+            WebkitTextStrokeColor: wordmarkColor,
+            fontSize: 'clamp(60px, 15vw, 215px)',
+            fontStyle: 'normal',
+            fontWeight: 400,
+            lineHeight: '0.8',
+            letterSpacing: '-1px',
+          }}
+        >
           magicmond
         </div>
       </div>

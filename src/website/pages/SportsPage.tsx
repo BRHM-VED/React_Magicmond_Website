@@ -27,7 +27,10 @@ export default function Sports() {
         <BrandsSection />
         <CtaSection />
       </main>
-      <Footer suffix="Sports" />
+      <Footer
+        gradientColor="rgba(16, 185, 129, 0.45)"
+        wordmarkColor="#10B981"
+      />
     </div>
   );
 }

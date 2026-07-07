@@ -5,7 +5,7 @@ import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 
 export function HeroSection() {
   return (
-    <section className="relative pt-[120px] md:pt-[150px] px-5 md:px-10 pb-0 text-center overflow-hidden">
+    <section className="relative pt-[120px] md:pt-[150px] px-0 pb-0 text-center overflow-hidden">
       {/* Background elements */}
       <img
         className="absolute top-0 left-0 w-full h-[619px] object-cover object-top opacity-55 pointer-events-none z-0"
@@ -15,7 +15,7 @@ export function HeroSection() {
       <LightRays theme="blue" className="absolute top-0 left-0 w-full h-[640px] pointer-events-none z-0" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1025px] mx-auto flex flex-col items-center">
+      <div className="relative z-10 max-w-[1025px] mx-auto px-5 md:px-0 flex flex-col items-center">
         <h1 className="font-head font-medium text-[28px] sm:text-[40px] md:text-[64px] lg:text-[96px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
           <span className="w-src">The future of <span className="font-serif italic text-[#7ebaff]">real estate</span></span><br />
           <span className="w-src">growth starts here.</span>
@@ -34,7 +34,7 @@ export function HeroSection() {
       </div>
 
       <img
-        className="relative block w-full max-w-[1440px] mx-auto mt-11 md:mt-12 px-5 md:px-10 reveal z-10"
+        className="relative block w-full max-w-[1440px] mx-auto mt-11 md:mt-12 px-0 md:px-10 reveal z-10"
         style={{ '--d': '.4s' } as React.CSSProperties}
         src="/assets/images/infraedge/hero-city-skyline.webp"
         alt="City skyline"

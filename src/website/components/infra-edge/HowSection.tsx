@@ -7,13 +7,13 @@ export function HowSection() {
   return (
     <section className="relative pt-10 pb-16 md:py-[120px] text-center bg-[#0e081d] overflow-hidden">
 
-      {/* Bottom radial glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-[240px] pointer-events-none bg-[radial-gradient(60%_200px_at_50%_100%,rgba(30,78,216,0.45),transparent_75%)]" />
+      {/* Left bottom corner glow */}
+      <div className="absolute bottom-0 left-0 w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle_at_bottom_left,rgba(30,78,216,0.22),transparent_70%)] filter blur-3xl pointer-events-none z-0" />
 
       <div className="relative z-10 w-full max-w-[1425px] mx-auto px-5 md:px-10 flex flex-col items-start md:items-center text-left md:text-center">
 
         {/* Heading */}
-        <h2 className="font-head font-normal text-[22px] xs:text-[25px] sm:text-[36px] md:text-[54px] text-white tracking-[-1px] md:tracking-[-1.5px] leading-[1.2] md:leading-[1.15]">
+        <h2 className="font-head font-normal text-[30px] xs:text-[35px] sm:text-[42px] md:text-[54px] text-white tracking-[-1px] md:tracking-[-1.5px] leading-[1.2] md:leading-[1.15]">
           Here's how it{' '}
           <span className="font-serif italic text-[#7db9ff]">works</span>
         </h2>

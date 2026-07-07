@@ -10,7 +10,9 @@ export function HeroSection() {
       <LightRays theme="purple" className="hero__rays" />
       <div className="hero__content">
         <div className="hero__press reveal">
-          <span className="press--lbl">FEATURED IN</span>
+          <span className="hero__press-label">As seen on</span>
+          <img src="/assets/images/common/logo-yourstory.webp" alt="YourStory" />
+          <img src="/assets/images/common/logo-timesofindia.webp" alt="The Times of India" />
           <img className="press--ht" src="/assets/images/common/logo-hindustantimes.webp" alt="Hindustan Times" />
         </div>
         <h1 className="hero__title words">
@@ -24,7 +26,7 @@ export function HeroSection() {
           <Button
             variant="large"
             href={CALENDLY}
-            className="!px-5 sm:!px-6"
+            className="!px-5 sm:!px-6 whitespace-nowrap"
           >
             Get Started Now
           </Button>
