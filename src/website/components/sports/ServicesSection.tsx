@@ -9,7 +9,7 @@ export function ServicesSection() {
         <h2 className="font-body font-medium text-[26px] sm:text-[36px] md:text-[54px] leading-[1.25] md:leading-[1.15] tracking-[-0.8px] md:tracking-[-1.9px] text-white text-center max-w-[900px] mx-auto reveal">
           Drive real
           <img
-            src="/assets/images/sports/leafSports.png"
+            src="/assets/images/sports/leafSports.webp"
             className="h-[24px] sm:h-[34px] md:h-[42px] lg:h-[72px] w-auto inline-block align-middle mx-2.5 md:mx-3.5 select-none pointer-events-none"
             alt=""
           />

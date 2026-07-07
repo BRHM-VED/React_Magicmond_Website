@@ -4,39 +4,12 @@ export const spStats = [
   { value: "99", symbol: "%", label: "clients satisfaction rate" },
 ];
 
-export const spChannelLogos = [
-  { image: "/assets/images/sports/channel-logo-jiohotstar.webp", alt: "JioHotstar" },
-  { image: "/assets/images/sports/channel-logo-cricketguru.webp", alt: "Cricket Guru" },
-  { image: "/assets/images/sports/channel-logo-sonyliv.webp", alt: "SonyLIV" },
-  { image: "/assets/images/sports/channel-logo-fancode.webp", alt: "FanCode" },
-  { image: "/assets/images/sports/channel-logo-starsports.webp", alt: "Star Sports" },
-];
-
 export const spServices = [
   { title: "Sports Partnerships", desc: "Logos, design systems, brand tone, and personality.", image: "/assets/images/sports/SportsPartnerships.webp", tall: false },
   { title: "Athlete Sponsorship", desc: "Business cards, letterheads, envelopes, merchandise, & more.", image: "/assets/images/sports/AthleteSponsorship.webp", tall: false },
   { title: "IP Creation & Content Management", desc: "Mobile-friendly and on-brand websites that reflect brand values and get clients.", image: "/assets/images/sports/contentManagement.webp", tall: true },
   { title: "Digital Sports Marketing", desc: "Branded materials driving outreach and conversions.", image: "/assets/images/sports/DigitalMarketing.webp", tall: false },
   { title: "Activation & On-Ground", desc: "Define brand's look across social platforms.", image: "/assets/images/sports/GroundFlag.webp", tall: false },
-];
-
-export const spCases = [
-  {
-    tag: "F&B Business",
-    title: "Brand Uplift for KFC",
-    type: "In-app Ads",
-    desc: "See the power of data in action as we break down how analytics-driven decisions led to a surge in campaign effectiveness.",
-    image: "/assets/images/sports/case-kfc.webp",
-    chips: ["1M+ Impressions", "400K+ Reach"],
-  },
-  {
-    tag: "Opinion Trading",
-    title: "Elevating brand impact for probo",
-    type: "In-app Ads, Brand Awareness",
-    desc: "Explore stories of brands that shaped culture, elevated their presence, and unlocked commercial opportunities through our work.",
-    image: "/assets/images/sports/case-probo.webp",
-    chips: [] as string[],
-  },
 ];
 
 export const spBrandRows = [

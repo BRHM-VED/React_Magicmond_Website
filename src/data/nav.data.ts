@@ -7,6 +7,8 @@ export const navLinks: NavLink[] = [
   { label: "About", to: "/#about" },
   { label: "InfraEdge", to: "/infraedge", badge: "Top Choice" },
   { label: "Sports", to: "/sports" },
+  { label: "Consultation", to: "/0-1-consultation" },
+  { label: "Case Studies", to: "/#case-studies" },
   { label: "Services", to: "/#service" },
   { label: "Process", to: "/#process" },
   { label: "Contact", to: "/#cta" },

@@ -15,13 +15,18 @@ export default function CaseStudy({ study }: Props) {
   useReveal();
 
   return (
-    <div className="case-study">
+    <div className="bg-white text-[#0e081d] min-h-screen relative w-full overflow-hidden">
       <Navbar />
-      <main>
+      <main className="pt-[64px]">
         <HeaderSection study={study} />
         <ArticleSection blocks={study.blocks} />
       </main>
-      <Footer />
+      <Footer
+        gradientColor="rgba(130, 45, 170, 0.65)"
+        wordmarkColor="#b45cf0"
+        backgroundColor="#2a0a3d"
+        rounded
+      />
     </div>
   );
 }

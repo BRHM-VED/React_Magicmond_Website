@@ -1,3 +1,130 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    margin: 0;
+    background-color: #0e081d;
+    color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(46px);
+    transition: opacity .9s cubic-bezier(.21, .47, .32, .98), transform .9s cubic-bezier(.21, .47, .32, .98);
+    transition-delay: var(--d, 0s);
+  }
+
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity .8s cubic-bezier(.21, .47, .32, .98), transform .8s cubic-bezier(.21, .47, .32, .98);
+    transition-delay: var(--d, 0s);
+  }
+
+  .reveal-scale.in {
+    opacity: 1;
+    transform: none;
+  }
+
+  .words .w {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+  }
+
+  .words .w>span {
+    display: inline-block;
+    transform: translateY(110%);
+    transition: transform .8s cubic-bezier(.21, .47, .32, .98);
+    transition-delay: var(--d, 0s);
+  }
+
+  .words.in .w>span {
+    transform: none;
+  }
+
+  /* Logo marquee (shared across pages) */
+  .marquee {
+    overflow: hidden;
+  }
+
+  .marquee__track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: marquee-left 26s linear infinite;
+  }
+
+  .marquee--reverse .marquee__track {
+    animation-name: marquee-right;
+  }
+
+  /* Brand tile (shared across pages) */
+  .brand-tile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 68px;
+    min-width: 110px;
+    padding: 0 26px;
+    border-radius: 12px;
+    background: #1c0c28;
+    flex-shrink: 0;
+  }
+
+  .brand-tile img,
+  .brand-tile svg {
+    max-height: 40px;
+    width: auto;
+  }
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal,
+  .reveal-scale,
+  .words .w>span {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

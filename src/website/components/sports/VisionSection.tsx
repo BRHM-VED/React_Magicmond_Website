@@ -7,7 +7,7 @@ export function VisionSection() {
       {/* Background Graphic Effect */}
       <img
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0 opacity-80"
-        src="/assets/images/sports/sportsBgEffect.png"
+        src="/assets/images/sports/sportsBgEffect.webp"
         alt=""
       />
 
@@ -23,7 +23,7 @@ export function VisionSection() {
           {/* Left Floral Accent */}
           <img
             className="absolute top-[0px] md:top-[-24px] w-[35px] md:w-[60px] lg:w-[86px] left-[-15px] sm:left-[-40px] md:left-[-70px] lg:left-[-140px] pointer-events-none select-none"
-            src="/assets/images/sports/leftFlower.png"
+            src="/assets/images/sports/leftFlower.webp"
             alt=""
           />
 
@@ -32,7 +32,7 @@ export function VisionSection() {
           {/* Right Floral Accent */}
           <img
             className="absolute top-[0px] md:top-[-24px] w-[35px] md:w-[60px] lg:w-[86px] right-[-15px] sm:right-[-40px] md:right-[-70px] lg:right-[-140px] pointer-events-none select-none"
-            src="/assets/images/sports/rightFlower.png"
+            src="/assets/images/sports/rightFlower.webp"
             alt=""
           />
         </p>

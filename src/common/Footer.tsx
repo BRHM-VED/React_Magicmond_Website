@@ -7,16 +7,19 @@ interface Props {
   gradientColor?: string;
   wordmarkColor?: string;
   backgroundColor?: string;
+  rounded?: boolean;
 }
 
 export function Footer({
   gradientColor = 'rgba(193, 86, 230, 0.45)',
   wordmarkColor = '#C156E6',
   backgroundColor = '#0a0517',
+  rounded = false,
 }: Props) {
   return (
     <footer
-      className="relative overflow-hidden pt-24 lg:pt-[110px] pb-0 px-5 md:px-10 z-20 border-t border-white/[0.03]"
+      className={`relative overflow-hidden pt-24 lg:pt-[110px] pb-0 px-5 md:px-10 z-20 border-t border-white/[0.03] ${rounded ? 'rounded-t-[24px] mx-2 md:mx-5' : ''
+        }`}
       style={{
         background: `radial-gradient(900px 420px at 0% 0%, ${gradientColor}, transparent 65%), ${backgroundColor}`,
       }}

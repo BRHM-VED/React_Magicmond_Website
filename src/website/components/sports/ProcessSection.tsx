@@ -8,7 +8,7 @@ export function ProcessSection() {
       {/* Stadium Background Graphic Overlay */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-0">
         <img
-          src="/assets/images/sports/stadiusBg.png"
+          src="/assets/images/sports/stadiusBg.webp"
           className="w-full h-full object-cover opacity-90"
           alt=""
         />
