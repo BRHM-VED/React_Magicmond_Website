@@ -5,6 +5,8 @@ import { Footer } from '../../common/Footer';
 import { HeroSection } from '../components/sports/HeroSection';
 import { VisionSection } from '../components/sports/VisionSection';
 import { ServicesSection } from '../components/sports/ServicesSection';
+import { PartnersSection } from '../components/sports/PartnersSection';
+import { SportsCaseStudiesSection } from '../components/sports/SportsCaseStudiesSection';
 import { ProcessSection } from '../components/sports/ProcessSection';
 import { BrandsSection } from '../components/sports/BrandsSection';
 import { CtaSection } from '../components/sports/CtaSection';
@@ -22,7 +24,9 @@ export default function Sports() {
       <main>
         <HeroSection />
         <VisionSection />
+        <PartnersSection />
         <ServicesSection />
+        <SportsCaseStudiesSection />
         <ProcessSection />
         <BrandsSection />
         <CtaSection />

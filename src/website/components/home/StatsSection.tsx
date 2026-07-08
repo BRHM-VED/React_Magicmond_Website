@@ -1,5 +1,5 @@
 import * as Icons from 'lucide-react';
-import { stats } from '../../../data/home.data';
+import { stats } from '../../../data/home/homeData';
 import { FONTS } from '../../../utils/constants/fonts';
 
 export function StatsSection() {
@@ -22,7 +22,7 @@ export function StatsSection() {
               <div key={s.label} className={`relative text-center px-3 reveal ${beforeClass}`} style={{ '--d': `${i * 0.1}s` } as React.CSSProperties}>
                 {s.avatars ? (
                   <div className="flex justify-center items-center mb-3.5 h-11">
-                    {s.avatars.map((a) => <img key={a} src={a} alt="" className="w-8 h-8 rounded-full border-2 border-[#0e081d] -ml-2.5 first:ml-0" />)}
+                    {s.avatars.map((a: string) => <img key={a} src={a} alt="" className="w-8 h-8 rounded-full border-2 border-[#0e081d] -ml-2.5 first:ml-0" />)}
                   </div>
                 ) : (
                   <div className="flex justify-center items-center mb-3.5 h-11">

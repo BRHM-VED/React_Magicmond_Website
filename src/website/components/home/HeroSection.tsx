@@ -20,7 +20,7 @@ export function HeroSection() {
           <span className="w-src">Your digital</span><br />
           <span className="w-src">growth <span className="text-[#c055e5]">partner</span></span>
         </h1>
-        <p className={`max-w-[640px] mx-auto mt-[18px] md:mt-9 text-[15px] leading-[22px] md:text-[20px] md:leading-[34px] text-[#a7adbe] reveal`} style={{ '--d': '.15s' } as React.CSSProperties}>
+        <p className={`text-[#aaaaaa] font-head font-normal text-[13px] md:text-[16.6px] leading-[1.7] max-w-[560px] mx-auto mt-6 reveal`} style={{ '--d': '.15s' } as React.CSSProperties}>
           We transform your traditional business into a digitally strong brand, enabling a 360° growth ecosystem to thrive in the new era.
         </p>
         <div className="mt-10 reveal flex flex-row items-center justify-center gap-4 sm:gap-6" style={{ '--d': '.3s' } as React.CSSProperties}>

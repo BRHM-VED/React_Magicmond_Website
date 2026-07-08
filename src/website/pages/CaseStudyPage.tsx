@@ -4,7 +4,7 @@ import { Navbar } from '../../common/Navbar';
 import { Footer } from '../../common/Footer';
 import { HeaderSection } from '../components/case-study/HeaderSection';
 import { ArticleSection } from '../components/case-study/ArticleSection';
-import type { CaseStudy as CaseStudyType } from '../../data/types';
+import type { CaseStudy as CaseStudyType } from '../../data/common/types';
 
 interface Props {
   study: CaseStudyType;

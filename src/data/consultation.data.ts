@@ -22,11 +22,11 @@ export const websiteTickerRows: string[][] = [
 export const growthStories = [
   {
     brand: "ShoeMonkies",
-    brandClass: "",
-    title: "ShoeMonkies' Amazon Business to a D2C Brand",
+    brandClass: "c-story__brand--sans",
+    title: "ShoeMonkies: Amazon Business to D2C Brand",
     desc: "A unique brand identity, an e-commerce website that converts, and digital Growth.",
-    href: "/Case-study-1-sm",
-    metricLabel: "Building a brand in",
+    href: "/case-study-shoemonkies",
+    metricLabel: "Building a Brand in",
     metric: "3 Months",
   },
   {
@@ -34,7 +34,7 @@ export const growthStories = [
     brandClass: "c-story__brand--serif",
     title: "₹1 Crore Annual Revenue stream for AstroVedansh",
     desc: "AstroVedansh see 1200% Revenue growth in very second month with Magicmond",
-    href: "/case-srudy-2-AV",
+    href: "/case-study-astrovedansh",
     metricLabel: "Revenue 2023",
     metric: "20 CR",
   },

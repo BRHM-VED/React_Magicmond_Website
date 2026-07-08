@@ -7,11 +7,21 @@ export default function ScrollManager() {
 
   useEffect(() => {
     if (hash) {
-      const el = document.querySelector(hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        return;
-      }
+      // Small timeout ensures the DOM has fully rendered and settled
+      const timer = setTimeout(() => {
+        const el = document.querySelector(hash) as HTMLElement;
+        if (el) {
+          const topOffset = window.innerWidth >= 768 ? 120 : 110;
+          const originalPosition = el.style.position;
+          el.style.position = 'relative';
+          const rect = el.getBoundingClientRect();
+          el.style.position = originalPosition;
+
+          const offset = rect.top + window.scrollY - topOffset;
+          window.scrollTo({ top: offset, behavior: "smooth" });
+        }
+      }, 50);
+      return () => clearTimeout(timer);
     }
     window.scrollTo(0, 0);
   }, [pathname, hash]);

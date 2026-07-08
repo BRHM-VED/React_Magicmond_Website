@@ -5,7 +5,7 @@ import { IeStepCard } from './IeStepCard';
 
 export function HowSection() {
   return (
-    <section className="relative pt-10 pb-16 md:py-[120px] text-center bg-[#0e081d] overflow-hidden">
+    <section id="process" className="relative pt-10 pb-16 md:py-[120px] text-center bg-[#0e081d] overflow-hidden">
 
       {/* Left bottom corner glow */}
       <div className="absolute bottom-0 left-0 w-[450px] h-[450px] rounded-full bg-[radial-gradient(circle_at_bottom_left,rgba(30,78,216,0.22),transparent_70%)] filter blur-3xl pointer-events-none z-0" />

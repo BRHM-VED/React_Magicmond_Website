@@ -1,5 +1,5 @@
 import React from 'react';
-import { founderPills } from '../../../data/home.data';
+import { founderPills } from '../../../data/home/homeData';
 import { FONTS } from '../../../utils/constants/fonts';
 import { LightRays } from '../../../common/LightRays';
 

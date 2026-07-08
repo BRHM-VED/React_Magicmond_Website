@@ -1,6 +1,6 @@
 import React from 'react';
 import { Workflow, MousePointerClick, Rocket } from 'lucide-react';
-import { processSteps } from '../../../data/home.data';
+import { processSteps } from '../../../data/home/homeData';
 import { FONTS } from '../../../utils/constants/fonts';
 import { StepCard } from '../../../common/StepCard';
 

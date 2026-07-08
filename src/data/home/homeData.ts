@@ -1,0 +1,180 @@
+import type { Service, ProcessStep, Stat, CaseSlide, BrandTile } from "../common/types";
+
+export const services: Service[] = [
+  {
+    icon: "Target",
+    title: "Brand Identity Development",
+    subtitle: "Standout Visually",
+    description: "Craft a distinctive, memorable identity that captures your brand's essence across all touchpoints.",
+    image: "/assets/images/home/service-brand-identity.webp",
+    imageAlt: "Brand identity work samples",
+    badge: "Recommended",
+  },
+  {
+    icon: "Monitor",
+    title: "Website Design & Development",
+    subtitle: "Convert More Visitors",
+    description: "Mobile-friendly and on-brand websites & landing pages that reflect brand values and convert clients/customers.",
+    image: "/assets/images/home/service-website-design.webp",
+    imageAlt: "Website design sample",
+  },
+  {
+    icon: "MessageSquare",
+    title: "Content Marketing",
+    subtitle: "Build Your Community",
+    description: "Build communities through meaningful content and campaigns that resonate, inspire sharing, and drive organic reach.",
+    image: "/assets/images/home/service-content-marketing.webp",
+    imageAlt: "Content marketing videos",
+  },
+  {
+    icon: "Palette",
+    title: "Creative Strategy & Design",
+    subtitle: "Elevate Every Touchpoint",
+    description: "Creative strategies and designs crafted for every business objective, from brand brochures to high-impact ad campaigns.",
+    image: "/assets/images/home/service-creative-strategy.webp",
+    imageAlt: "Creative design samples",
+  },
+  {
+    icon: "TrendingUp",
+    title: "Performance / Growth Marketing",
+    subtitle: "Fuel Your Pipeline",
+    description: "Attract, nurture, and convert your ideal audience through full-funnel, ROI-driven digital campaigns.",
+    image: "/assets/images/home/service-growth-marketing.webp",
+    imageAlt: "Growth marketing example",
+  },
+  {
+    icon: "Cpu",
+    title: "ERP Solutions & App Development",
+    subtitle: "Streamline Operations",
+    description: "Build high-performance systems and streamline IT operations with tailored technology solutions, highlighted by our work on Onsite and ReidiusOne.",
+    image: "/assets/images/home/service-erp-solutions.webp",
+    imageAlt: "ERP and app development",
+  },
+];
+
+export const uspItems = [
+  "<s>Services</s> Tailored solution",
+  "results that, speak.",
+  "conversion focused",
+  "fullstack digital partner",
+  "Omnichannel presence",
+];
+
+export const stats: Stat[] = [
+  {
+    value: "50+",
+    label: "Partners Served",
+    avatars: [
+      "/assets/images/home/stat-avatar-1.webp",
+      "/assets/images/home/stat-avatar-2.webp",
+      "/assets/images/home/stat-avatar-3.webp",
+    ],
+  },
+  { value: "500CR+", label: "Business Generated", icon: "Zap" },
+  { value: "100M+", label: "Customers Acquired", icon: "Users" },
+  { value: "120M+", label: "Video Views", icon: "Play" },
+];
+
+export const processSteps: ProcessStep[] = [
+  {
+    badge: "Step-1",
+    title: "Book a free consulation",
+    description: "We kick things off with a no‑obligation call to learn your goals, challenges, and vision for digital growth.",
+  },
+  {
+    badge: "Step-2",
+    title: "Gap Identification",
+    description: "We map out key opportunities, where your competitors lead, what your audience expects, and how to bridge the divide.",
+  },
+  {
+    badge: "Step-3",
+    title: "Tailored Growth Plan 🚀",
+    description: "With your roadmap in hand, we implement the strategy, optimize performance, and drive your digital growth.",
+  },
+];
+
+export const caseSlides: CaseSlide[] = [
+  {
+    logo: "/assets/icons/shoemonkies-mark.svg",
+    logoText: "ShoeMonkies",
+    logoClass: "shoemonkies-name",
+    titleLines: ["ShoeMonkies:", "Amazon Business to"],
+    serifLine: "D2C Brand",
+    description: "A unique brand identity, an e-commerce website that converts, and digital Growth.",
+    href: "/case-study-shoemonkies",
+    metricLabel: "Building a Brand in",
+    metric: "3 Months",
+  },
+  {
+    logo: "/assets/images/home/logo-astrovedansh.webp",
+    titleLines: ["₹10 Crore Annual", "Revenue stream for"],
+    serifLine: "AstroVedansh",
+    description: "AstroVedansh sees 1200% Revenue growth in very second month with MagicMond.",
+    href: "/case-study-astrovedansh",
+    metricLabel: "Revenue Growth",
+    metric: "1200%",
+  },
+  {
+    logo: "/assets/images/common/ReidiusInfraLogo.svg",
+    logoText: "",
+    logoClass: "reidius-name",
+    titleLines: ["Reidius Infra's", "Remarkable"],
+    serifLine: "Online Growth",
+    description: "Increased online revenue by 300% in 4 months through Strategic Marketing solution.",
+    href: "/Case-study-ri",
+    metricLabel: "Revenue Growth",
+    metric: "300%",
+  },
+  {
+    logo: "/assets/images/common/OneSiteLogo.webp",
+    logoText: "",
+    logoClass: "onsite-name text-[#0055cc]",
+    titleLines: ["Onsite: Predictable", "Growth Funnel for"],
+    serifLine: "Construction SaaS",
+    description: "Scale marketing pipelines from 15-20L to 35-40L while cutting cost per qualified prospect by 25%.",
+    href: "/case-study-onsite",
+    metricLabel: "Cost Reduction",
+    metric: "25%",
+  },
+  {
+    logo: "/assets/images/common/ShriYamunaLogo.svg",
+    logoText: "",
+    logoClass: "shri-yamuna-name text-[#e08c00]",
+    titleLines: ["Shri Yamuna: 120+", "Site Visits in 3"],
+    serifLine: "Months for Vrindavan",
+    description: "Building a high-demand pipeline reaching buyers from Delhi to the USA for newly launched residential projects.",
+    href: "/case-study-shri-yamuna-infra",
+    metricLabel: "Site Visits",
+    metric: "120+",
+  },
+];
+
+export const founderPills = [
+  "You believe in the scope of online growth",
+  "You’re passionate & ambitious",
+  "You value high quality design & deep work",
+  "You wanna focus on your core business",
+];
+
+export const brandRows: BrandTile[][] = [
+  [
+    { image: "/assets/images/home/logo-meta.svg", alt: "Meta", meta: true },
+    { image: "/assets/icons/pw-logo.svg", alt: "Physics Wallah" },
+    { image: "/assets/icons/kr-logo.svg", alt: "KR" },
+    { image: "/assets/icons/brand-r1-extra.svg", alt: "" },
+  ],
+  [
+    { image: "/assets/icons/parth-mark.svg", alt: "Parth" },
+    { image: "/assets/icons/av-mark.svg", alt: "AstroVedansh" },
+    { image: "/assets/icons/crex-mark.svg", alt: "CREX" },
+    { image: "/assets/icons/crex-mark2.svg", alt: "" },
+    { image: "/assets/icons/brand-r2-extra.svg", alt: "" },
+  ],
+  [
+    { image: "/assets/icons/brand-makelen.svg", alt: "Makelen" },
+    { image: "/assets/icons/brand-fur.svg", alt: "" },
+    { image: "/assets/icons/shoemonkies-mark.svg", alt: "ShoeMonkies" },
+    { image: "/assets/icons/brand-onsite.svg", alt: "Onsite" },
+    { image: "/assets/icons/brand-r3-extra.svg", alt: "" },
+  ],
+];

@@ -1,10 +1,10 @@
-import { spSteps } from '../../../data/sports/sports.data';
+import { spSteps } from '../../../data/sports/sportsData';
 import { CALENDLY } from '../../../utils/constants/constants';
 import { SportsButton } from '../../../common/button/SportsButton';
 
 export function ProcessSection() {
   return (
-    <section className="bg-[#010502] py-20 md:py-28 px-5 md:px-10 text-center overflow-hidden w-full relative">
+    <section id="process" className="bg-[#010502] py-20 md:py-28 px-5 md:px-10 text-center overflow-hidden w-full relative">
       {/* Stadium Background Graphic Overlay */}
       <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-0">
         <img

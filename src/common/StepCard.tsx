@@ -1,6 +1,7 @@
 import React from 'react';
 import { FONTS } from '../utils/constants/fonts';
 import { CALENDLY } from '../utils/constants/constants';
+import { Button } from './button/homeButton';
 
 /* ── Tag pill ── */
 export function StepTag({ label }: { label: string }) {
@@ -120,17 +121,18 @@ export function StepCard({
               {tags.map((t) => <StepTag key={t} label={t} />)}
             </div>
           ) : isLast ? (
-            <a
+            <Button
+              variant="small"
               href={CALENDLY}
-              className={`${FONTS.head} self-start inline-flex items-center justify-center h-[46px] px-5 rounded-[10px] bg-[#692083] hover:bg-[#7d279c] text-white font-medium text-[15.9px] tracking-[-0.5px] transition-all duration-300 shadow-[0_0_0_1px_rgba(105,32,131,0.12),0_8px_40px_0px_rgba(105,32,131,0.5)] hover:shadow-[0_0_0_1px_rgba(105,32,131,0.2),0_8px_40px_0px_rgba(192,85,229,0.6)]`}
+              className="self-start"
             >
               Start your growth journey
-            </a>
+            </Button>
           ) : null}
         </div>
 
-        {/* Purple border overlay (no bottom border to match Figma) */}
-        <div className="absolute inset-0 pointer-events-none rounded-[21px] border-t border-x border-b-0 border-[#c156e6]" />
+        {/* Purple border overlay (fully rounded and glowing) */}
+        <div className="absolute inset-0 pointer-events-none rounded-[21px] border border-[#c156e6] shadow-[0_0_15px_rgba(193,86,230,0.25)]" />
       </div>
     </article>
   );

@@ -1,9 +1,9 @@
 import React from 'react';
-import { spStats } from '../../../data/sports/sports.data';
+import { spStats } from '../../../data/sports/sportsData';
 
 export function VisionSection() {
   return (
-    <section className="relative py-24 md:py-[150px] md:pb-[110px] text-center overflow-hidden w-full">
+    <section id="about" className="relative py-24 md:py-[150px] md:pb-[110px] text-center overflow-hidden w-full">
       {/* Background Graphic Effect */}
       <img
         className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0 opacity-80"

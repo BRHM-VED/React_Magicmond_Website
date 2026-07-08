@@ -8,6 +8,7 @@ import { UspTickerSection } from '../components/home/UspTickerSection';
 import { StatsSection } from '../components/home/StatsSection';
 import { ProcessSection } from '../components/home/ProcessSection';
 import { FoundersSection } from '../components/home/FoundersSection';
+import { CaseStudiesCarousel } from '../components/home/CaseStudiesCarousel';
 import { BrandsSection } from '../components/home/BrandsSection';
 import { CtaSection } from '../components/home/CtaSection';
 
@@ -24,6 +25,7 @@ export default function Home() {
         <UspTickerSection />
         <StatsSection />
         <ProcessSection />
+        <CaseStudiesCarousel />
         <FoundersSection />
         <BrandsSection />
         <CtaSection />

@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { CALENDLY } from '../utils/constants/constants';
 import { FONTS } from '../utils/constants/fonts';
+import { footerHomeLinks } from '../data/common/navData';
 
 interface Props {
   suffix?: string;
@@ -10,12 +11,35 @@ interface Props {
   rounded?: boolean;
 }
 
+/** Smoothly scrolls to an element by id, accounting for fixed navbar height. */
+function scrollToId(id: string): boolean {
+  const el = document.getElementById(id);
+  if (!el) return false;
+  const topOffset = window.innerWidth >= 768 ? 120 : 110;
+  const rect = el.getBoundingClientRect();
+  const offset = rect.top + window.scrollY - topOffset;
+  window.scrollTo({ top: offset, behavior: 'smooth' });
+  return true;
+}
+
 export function Footer({
   gradientColor = 'rgba(193, 86, 230, 0.45)',
   wordmarkColor = '#C156E6',
   backgroundColor = '#0a0517',
   rounded = false,
 }: Props) {
+  const navigate = useNavigate();
+
+  const handleFooterLink = (to: string, e: React.MouseEvent) => {
+    if (!to.includes('#')) return;
+    e.preventDefault();
+    const hash = to.substring(to.indexOf('#') + 1);
+    const basePath = to.substring(0, to.indexOf('#')) || '/';
+    if (scrollToId(hash)) return;
+    navigate(basePath);
+    setTimeout(() => scrollToId(hash), 80);
+  };
+
   return (
     <footer
       className={`relative overflow-hidden pt-24 lg:pt-[110px] pb-0 px-5 md:px-10 z-20 border-t border-white/[0.03] ${rounded ? 'rounded-t-[24px] mx-2 md:mx-5' : ''
@@ -80,26 +104,17 @@ export function Footer({
                   Home
                 </p>
                 <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
-                  <li>
-                    <Link to="/#about" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/#service" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                      Services
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/#process" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                      Process
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/#comparison" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                      Comparison
-                    </Link>
-                  </li>
+                  {footerHomeLinks.map((link) => (
+                    <li key={link.label}>
+                      <Link
+                        to={link.to}
+                        onClick={(e) => handleFooterLink(link.to, e)}
+                        className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
@@ -115,8 +130,12 @@ export function Footer({
                     </a>
                   </li>
                   <li>
-                    <Link to="/#faq" className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                      FAQ’s
+                    <Link
+                      to="/#faq"
+                      onClick={(e) => handleFooterLink('/#faq', e)}
+                      className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}
+                    >
+                      FAQ's
                     </Link>
                   </li>
                 </ul>

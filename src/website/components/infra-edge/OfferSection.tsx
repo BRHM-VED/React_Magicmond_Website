@@ -1,4 +1,3 @@
-import { CALENDLY } from '../../../utils/constants/constants';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 
 function OfferCard() {
@@ -43,7 +42,7 @@ export function OfferSection() {
             </p>
 
             {/* CTA */}
-            <InfraEdgeButton variant="small" href={CALENDLY} className="w-full md:w-auto px-5">
+            <InfraEdgeButton variant="small" href="https://infraedgelp.magicmond.com/" className="w-full md:w-auto px-5">
               Explore this offer
             </InfraEdgeButton>
           </div>

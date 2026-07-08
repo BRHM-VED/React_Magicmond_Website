@@ -1,4 +1,4 @@
-import type { ArticleBlock } from '../../../data/types';
+import type { ArticleBlock } from '../../../data/common/types';
 
 interface Props {
   block: ArticleBlock;

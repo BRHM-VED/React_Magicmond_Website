@@ -1,5 +1,5 @@
+import type { ArticleBlock } from '../../../data/common/types';
 import { BlockSection } from './BlockSection';
-import type { ArticleBlock } from '../../../data/types';
 
 interface Props {
   blocks: ArticleBlock[];
@@ -7,7 +7,7 @@ interface Props {
 
 export function ArticleSection({ blocks }: Props) {
   return (
-    <article className="max-w-[700px] mx-auto px-5 md:px-10 py-[30px] pb-[70px] md:pb-[110px] text-left">
+    <article className="max-w-[700px] mx-auto px-5 pb-[100px]">
       {blocks.map((block, i) => (
         <BlockSection key={i} block={block} />
       ))}

@@ -1,10 +1,10 @@
-import { spServices } from '../../../data/sports/sports.data';
+import { spServices } from '../../../data/sports/sportsData';
 import { CALENDLY } from '../../../utils/constants/constants';
 import { SportsButton } from '../../../common/button/SportsButton';
 
 export function ServicesSection() {
   return (
-    <section className="bg-[#010502] pb-20 md:py-28 px-5 md:px-10 text-center overflow-hidden w-full relative">
+    <section id="service" className="bg-[#010502] pb-20 md:py-28 px-5 md:px-10 text-center overflow-hidden w-full relative">
       <div className="w-full md:container mx-auto px-0 max-w-[1240px] relative z-10">
         <h2 className="font-body font-medium text-[26px] sm:text-[36px] md:text-[54px] leading-[1.25] md:leading-[1.15] tracking-[-0.8px] md:tracking-[-1.9px] text-white text-center max-w-[900px] mx-auto reveal">
           Drive real

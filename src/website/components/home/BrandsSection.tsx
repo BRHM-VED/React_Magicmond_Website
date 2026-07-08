@@ -1,5 +1,5 @@
 import { CommonBrandsSection } from '../../../common/CommonBrandsSection';
-import { brandRows } from '../../../data/home.data';
+import { brandRows } from '../../../data/home/homeData';
 import { FONTS } from '../../../utils/constants/fonts';
 import { CALENDLY } from '../../../utils/constants/constants';
 

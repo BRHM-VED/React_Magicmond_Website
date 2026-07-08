@@ -4,7 +4,7 @@ const MEET_QUOTE = '\u201cWe don\u2019t provide services, we build partnerships 
 
 export function MeetSection() {
   return (
-    <section className="relative bg-[#0d0817] overflow-hidden w-full">
+    <section id="about" className="relative bg-[#0d0817] overflow-hidden w-full">
 
       {/* ── MOBILE layout (block, flex-col) ── hidden on md+ */}
       <div className="flex flex-col md:hidden">

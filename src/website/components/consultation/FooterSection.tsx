@@ -23,7 +23,7 @@ export function FooterSection() {
           <div className="flex flex-col">
             <h4 className="font-bold text-[16px] text-[#d86cff]">Growth Stories</h4>
             <ul className="mt-4 grid gap-2.5">
-              <li><Link className="text-[15px] text-white/75 hover:text-white transition-colors duration-200" to="/case-srudy-2-AV">AstroVedansh</Link></li>
+              <li><Link className="text-[15px] text-white/75 hover:text-white transition-colors duration-200" to="/case-study-astrovedansh">AstroVedansh</Link></li>
               <li><Link className="text-[15px] text-white/75 hover:text-white transition-colors duration-200" to="/Case-study-ri">Reidius Infra</Link></li>
               <li><Link className="text-[15px] text-white/75 hover:text-white transition-colors duration-200" to="/Case-study-1-sm">Shoemonkies</Link></li>
             </ul>

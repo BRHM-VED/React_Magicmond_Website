@@ -47,7 +47,7 @@ export function ServicesSection() {
   }, []);
 
   return (
-    <section className="relative pt-10 pb-12 md:py-28 text-center overflow-hidden bg-[#0e081d]">
+    <section id="service" className="relative pt-10 pb-12 md:py-28 text-center overflow-hidden bg-[#0e081d]">
 
       {/* Left Wing (Blue PNG) - Placed directly in section for full viewport width */}
       <div className="absolute left-[-20px] xs:left-[-30px] sm:left-[-40px] lg:left-0 top-[120px] lg:top-[146px] w-[110px] xs:w-[140px] sm:w-[220px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">

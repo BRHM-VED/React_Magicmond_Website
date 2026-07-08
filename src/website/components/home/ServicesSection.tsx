@@ -1,7 +1,16 @@
-import { services } from '../../../data/home.data';
+import { services } from '../../../data/home/homeData';
 import { CALENDLY } from '../../../utils/constants/constants';
 import { Button } from '../../../common/button/homeButton';
 import { ServiceCard } from '../../../common/ServiceCard';
+
+const serviceIds = [
+  'brand-identity',
+  'website-design',
+  'content-marketing',
+  'creative-strategy',
+  'growth-marketing',
+  'erp-solutions'
+];
 
 export function ServicesSection() {
   return (
@@ -52,6 +61,7 @@ export function ServicesSection() {
         {services.map((svc, i) => (
           <ServiceCard
             key={svc.title}
+            id={serviceIds[i]}
             icon={svc.icon}
             title={svc.title}
             subtitle={svc.subtitle}

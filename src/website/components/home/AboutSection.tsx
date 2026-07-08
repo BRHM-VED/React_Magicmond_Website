@@ -5,10 +5,10 @@ import { Button } from '../../../common/button/homeButton';
 export function AboutSection() {
   return (
     <section className="relative pt-10 pb-[60px] lg:py-20" id="about">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,543px)_1fr] gap-[44px] lg:gap-16 items-stretch">
-          {/* Left Photo Container (Stretches to same height as text on desktop) */}
-          <div className="relative w-full h-[280px] sm:h-[350px] lg:h-auto rounded-[20px] overflow-hidden reveal">
+      <div className="container px-5 md:px-10 mx-auto max-w-[1200px]">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,543px)_1fr] gap-[44px] lg:gap-16 items-center">
+          {/* Left Photo Container */}
+          <div className="relative w-full aspect-[2172/1752] rounded-[20px] overflow-hidden reveal">
             <img
               className="absolute inset-0 w-full h-full object-cover"
               src="/assets/images/home/about-team-award.webp"
@@ -18,15 +18,18 @@ export function AboutSection() {
 
           {/* Right Text Column */}
           <div className="flex flex-col justify-center">
-            <h2 className="font-head font-medium text-[29px] lg:text-[47px] leading-tight lg:leading-[53.8px] tracking-[-1px] lg:tracking-[-1.86px] text-white reveal">
-              We’re one of India’s top <br />
-              <span className="text-[var(--accent-light)]">Digital growth teams, driven <br className="hidden md:inline" />by Marketing, Design and Tech.</span>
+            <h2 className="font-head font-medium text-[20px] xs:text-[19px] sm:text-[22px] lg:text-[38px] leading-[1.3] lg:leading-[46px] tracking-[-0.5px] lg:tracking-[-1.2px] text-white reveal">
+              We're one of India's top <br />
+              <span className="text-[#E0B6FF]">
+                Digital growth teams, driven <br />
+                by Marketing, Design and Tech.
+              </span>
             </h2>
             <p
-              className="mt-3.5 lg:mt-[18px] font-body text-[14px] lg:text-[16px] leading-[22px] lg:leading-[26px] text-[var(--text-dim)] max-w-[520px] text-left reveal"
+              className="mt-3.5 lg:mt-[18px] font-body text-[13px] lg:text-[16px] leading-[22px] lg:leading-[26px] text-white/60 max-w-[520px] text-left reveal"
               style={{ '--d': '.15s' } as React.CSSProperties}
             >
-              At magicmond, we’re transforming traditional businesses into digitally strong brands that drive growth.
+              At magicmond, we're transforming traditional businesses into digitally strong brands that drive growth.
             </p>
             <ul className="mt-7 grid gap-3.5">
               {[
@@ -36,7 +39,7 @@ export function AboutSection() {
               ].map((item, i) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 font-body font-medium text-[14.5px] lg:text-[16px] leading-[22px] lg:leading-[26px] tracking-[-0.2px] text-[var(--text-dim)] reveal"
+                  className="flex items-start gap-3 font-body font-medium text-[14.5px] lg:text-[16px] leading-[22px] lg:leading-[26px] tracking-[-0.2px] text-white/60 reveal"
                   style={{ '--d': `${0.1 * (i + 1)}s` } as React.CSSProperties}
                 >
                   <CheckCircle size={20} className="text-white fill-[#692083] shrink-0 mt-[2px] lg:mt-[3px]" />
@@ -64,7 +67,7 @@ export function AboutSection() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 export default AboutSection;
