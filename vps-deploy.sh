@@ -26,7 +26,7 @@ echo "📁 Working directory: $(pwd)"
 # ── Step 2: Pull latest code from GitHub ──────────────────
 echo ""
 echo "📥 Pulling latest code from GitHub..."
-git pull origin main
+git pull origin master
 echo "✅ Code pulled successfully."
 
 # ── Step 3: Install / update Node.js dependencies ────────

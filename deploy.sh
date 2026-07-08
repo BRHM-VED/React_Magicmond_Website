@@ -36,7 +36,7 @@ fi
 # ── Step 3: Push to GitHub ─────────────────────────────────
 echo ""
 echo "📤 Pushing to GitHub..."
-git push origin main
+git push origin master
 echo "✅ Code pushed to GitHub successfully."
 
 echo ""
