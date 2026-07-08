@@ -8,12 +8,13 @@ interface Props {
 
 /** Renders a single text-only block: label on left, paragraphs on right (desktop),
  *  stacked on mobile. */
-function TextBlock({ block }: { block: CaseStudyBlock }) {
+function TextBlock({ block, accentColor }: { block: CaseStudyBlock; accentColor?: string }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-[301.76px_1fr] gap-x-6 gap-y-3 py-6 md:py-8">
       {/* Label */}
       <p
-        className={`${FONTS.body} font-semibold text-[18px] md:text-[20px] tracking-[0.08em] uppercase pt-[2px] leading-tight text-[#3e0078]`}
+        className={`${FONTS.body} font-semibold text-[18px] md:text-[20px] tracking-[0.08em] uppercase pt-[2px] leading-tight`}
+        style={{ color: accentColor || '#3e0078' }}
       >
         {block.label}
       </p>
@@ -35,7 +36,7 @@ function TextBlock({ block }: { block: CaseStudyBlock }) {
 /** Component 2 – Content Section
  *  White background. Renders text-only blocks (HIGHLIGHTS, CHALLENGE) and a full-width image block.
  */
-export function CsContentSection({ blocks }: Props) {
+export function CsContentSection({ blocks, accentColor }: Props) {
   // Separate the text blocks and image blocks
   const textBlocks = blocks.filter(
     (b) => b.label.includes('HIGHLIGHT') || b.label.includes('CHALLENGE')
@@ -48,7 +49,7 @@ export function CsContentSection({ blocks }: Props) {
       <div className="max-w-[1062px] mx-auto px-5 md:px-10 py-10 md:py-14">
         <div className="flex flex-col gap-4">
           {textBlocks.map((block, i) => (
-            <TextBlock key={i} block={block} />
+            <TextBlock key={i} block={block} accentColor={accentColor} />
           ))}
         </div>
       </div>

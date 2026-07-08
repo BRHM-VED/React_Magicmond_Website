@@ -49,9 +49,10 @@ export const reidiusCaseStudy: NewCaseStudy = {
       label: 'RESEARCH & EXECUTION',
       layoutType: 'text-with-image-pair',
       images: [
+        '/assets/images/caseStudy/ReidiusInfra/website.png',
         '/assets/images/caseStudy/ReidiusInfra/webApp.png',
       ],
-      imageCaptions: ['Reidius One CRM'],
+      imageCaptions: ['Reidius infra website', 'Reidius One CRM'],
       description: [
         'We engaged buyers earlier in their journey instead of waiting for them to be ready. A Vastu guide became a lead magnet that attracted genuine home-builders, distributed through social campaigns. We added hyperlocal offline branding across Jaipur for repeated recall, then layered in targeted Meta and Google campaigns aimed only at high-intent prospects planning to build.',
       ],
@@ -73,9 +74,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
     {
       sectionNumber: '06',
       label: 'OUTCOME',
-      layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/ReidiusInfra/website.png'],
-      title: 'Reidius infra website',
+      layoutType: 'text-only',
       description: [
         'Reidius moved from running scattered marketing to operating a predictable, measurable growth system. Lead quality rose, meeting alignment climbed month over month, and they could finally see their pipeline clearly — which channel drove which sale, at what cost. To go deeper, we implemented call-tracking and CRM so sales management became data-driven instead of guesswork.',
         'What started as a website redesign became a full business transformation.',

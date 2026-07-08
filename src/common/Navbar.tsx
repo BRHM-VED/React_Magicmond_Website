@@ -71,7 +71,7 @@ export function Navbar({ suffix, activePath }: Props) {
 
   return (
     <>
-      <header className={`${isHomePage ? 'fixed bg-[#010502]/75 backdrop-blur-md border-b border-white/5' : 'md:absolute fixed md:bg-transparent md:border-none md:backdrop-blur-none bg-[#010502]/75 backdrop-blur-md border-b border-white/5'} top-0 left-0 right-0 z-[999] h-[64px] flex items-center px-5 md:px-10 transition-colors duration-300`}>
+      <header className="md:absolute fixed md:bg-transparent md:border-none md:backdrop-blur-none bg-[#010502]/75 backdrop-blur-md border-b border-white/5 top-0 left-0 right-0 z-[999] h-[64px] flex items-center px-5 md:px-10 transition-colors duration-300">
         <div className="w-full flex items-center justify-between gap-5">
 
           {/* Mobile: Hamburger Button on Left (2 lines) */}

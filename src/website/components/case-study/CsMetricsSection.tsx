@@ -70,11 +70,12 @@ function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolea
 }
 
 /** Left-label / right-text block */
-function LabelTextBlock({ block }: { block: CaseStudyBlock }) {
+function LabelTextBlock({ block, accentColor }: { block: CaseStudyBlock; accentColor?: string }) {
   return (
     <div className="grid grid-cols-1 md:grid-cols-[301.76px_1fr] gap-x-6 gap-y-3 py-6 md:py-8">
       <p
-        className={`${FONTS.body} font-semibold text-[18px] md:text-[20px] tracking-[0.08em] uppercase leading-tight pt-[2px] text-[#3e0078]`}
+        className={`${FONTS.body} font-semibold text-[18px] md:text-[20px] tracking-[0.08em] uppercase leading-tight pt-[2px]`}
+        style={{ color: accentColor || '#3e0078' }}
       >
         {block.label}
       </p>
@@ -95,7 +96,7 @@ function LabelTextBlock({ block }: { block: CaseStudyBlock }) {
  *  - Second: AppStoreListing.png card (max-w-[1280px])
  *  - Third: Results intro + stats table (on light blue bg-e0f2ff w-full)
  */
-export function CsMetricsSection({ blocks, studySlug }: Props) {
+export function CsMetricsSection({ blocks, studySlug, accentColor }: Props) {
   const metricsBlock = blocks.find((b) => b.layoutType === 'metrics-grid');
   const pairBlock = blocks.find((b) => b.layoutType === 'text-with-image-pair');
   const tailoredBlock = blocks.find((b) => b.label.includes('SOLUTION') || b.label.includes('TAILORED'));
@@ -106,8 +107,8 @@ export function CsMetricsSection({ blocks, studySlug }: Props) {
       {/* 1. TAILORED SOLUTION + RESEARCH & EXECUTION text blocks */}
       <div className="max-w-[1062px] mx-auto px-5 md:px-10 py-4 md:py-8">
         <div className="flex flex-col gap-4">
-          {tailoredBlock && <LabelTextBlock block={tailoredBlock} />}
-          {researchBlock && <LabelTextBlock block={researchBlock} />}
+          {tailoredBlock && <LabelTextBlock block={tailoredBlock} accentColor={accentColor} />}
+          {researchBlock && <LabelTextBlock block={researchBlock} accentColor={accentColor} />}
         </div>
       </div>
 
@@ -157,7 +158,7 @@ export function CsMetricsSection({ blocks, studySlug }: Props) {
                     <img
                       src={src}
                       alt={`Screenshot ${i + 1}`}
-                      className="w-full h-auto md:h-[637px] object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
+                      className="w-full h-auto rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
                     />
                     {pairBlock.imageCaptions && pairBlock.imageCaptions[i] && (
                       <p className={`${FONTS.body} font-light leading-[1.6] opacity-80 mt-3 text-[13px] text-black text-center w-full`}>

@@ -1,6 +1,5 @@
 import { useReveal } from '../../hooks/useReveal';
 import { usePageMeta } from '../../hooks/usePageMeta';
-import { Navbar } from '../../common/Navbar';
 import { Footer } from '../../common/Footer';
 import { CsHeroSection } from '../components/case-study/CsHeroSection';
 import { CsContentSection } from '../components/case-study/CsContentSection';
@@ -23,8 +22,7 @@ export default function NewCaseStudyPage({ study, stripImages = [] }: Props) {
 
   return (
     <div className="bg-white text-[#0e1628] min-h-screen relative w-full overflow-hidden">
-      <Navbar />
-      <main className="pt-[64px]">
+      <main>
         {/* Component 1: Hero — full-width screenshot with gradient fade + text overlay */}
         <CsHeroSection study={study} heroImage={study.brand.logo} />
 
