@@ -41,7 +41,7 @@ export function JourneySection() {
           {/* Reidius Logo - centered horizontally on mobile */}
           <Link to="/" className="hover:opacity-80 transition-opacity shrink-0">
             <img
-              src="/assets/images/infraedge/reidius-infra-logo.png"
+              src="/assets/images/infraedge/reidius-infra-logo.webp"
               alt="Reidius"
               className="w-12 h-12 object-contain"
             />

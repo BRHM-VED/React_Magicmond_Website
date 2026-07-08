@@ -6,7 +6,7 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
   metaDescription: `SYI - 120 site visits in 3 months for a newly launched project. Making credibility visible: Shri Yamuna Infra. How a respected-but-invisible Vrindavan developer built a demand engine.`,
   brand: {
     name: 'Shri Yamuna Infra',
-    logo: '/assets/images/caseStudy/SriYamunaInfra/syi_dashboard.png',
+    logo: '/assets/images/caseStudy/SriYamunaInfra/syi_dashboard.webp',
     accentColor: '#e08c00',
     visitUrl: 'https://shriyamunainfra.com/',
     category: 'Real Estate',
@@ -35,7 +35,7 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
       layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/SriYamunaInfra/syiWebApp.png'],
+      images: ['/assets/images/caseStudy/SriYamunaInfra/syiGallary.webp'],
       description: [
         `We started where it mattered most — trust. We built the founder's public presence and the company's brand story, putting the leadership and their contribution to Vrindavan's growth front and centre. Then we created a real digital foundation: a landing page built not just to capture leads, but to validate the company. For many buyers, this became their first real interaction with the brand.`,
       ],
@@ -45,8 +45,8 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
       label: 'RESEARCH & EXECUTION',
       layoutType: 'text-with-image-pair',
       images: [
-        '/assets/images/caseStudy/SriYamunaInfra/syiBook.png',
-        '/assets/images/caseStudy/SriYamunaInfra/syiGallary.png'
+        '/assets/images/caseStudy/SriYamunaInfra/syiWebApp.webp',
+        '/assets/images/caseStudy/SriYamunaInfra/syiBook.webp'
       ],
       description: [
         `Then we did something most agencies wouldn't. We organised a large community event with spiritual leaders, existing customers, and prospects — and used it to officially launch a new project. Credibility-building and demand-generation in one move. We layered city-wide billboards for constant recall, then unlocked the real opportunity: Vrindavan doesn't just attract locals. It attracts NRIs, investors, retirees, and second-home buyers. So we pointed targeted Meta campaigns at Delhi NCR, tier-1 cities, and NRI audiences who'd never have found SYI through a broker.`,
@@ -88,5 +88,5 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
 };
 
 export const shriYamunaStripImages: string[] = [
-  '/assets/images/caseStudy/SriYamunaInfra/advertiseBanner.png',
+  '/assets/images/caseStudy/SriYamunaInfra/advertiseBanner.webp',
 ];

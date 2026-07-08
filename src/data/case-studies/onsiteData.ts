@@ -6,7 +6,7 @@ export const onsiteCaseStudy: NewCaseStudy = {
   metaDescription: 'How Onsite went from 15-20L to 35-40L. A predictable pipeline for a construction SaaS platform. How we cut cost per qualified prospect by 25% and built a repeatable growth engine.',
   brand: {
     name: 'Onsite',
-    logo: '/assets/images/caseStudy/Onsite/dashboard.png',
+    logo: '/assets/images/caseStudy/Onsite/dashboard.webp',
     accentColor: '#0055cc',
     visitUrl: 'https://onsite.in/',
     category: 'SaaS',
@@ -35,7 +35,7 @@ export const onsiteCaseStudy: NewCaseStudy = {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
       layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/Onsite/saveMonAndTime.png'],
+      images: ['/assets/images/caseStudy/Onsite/saveMonAndTime.webp'],
       description: [
         'Instead of rushing to launch campaigns, we started at the root. We ran workshops with the founders and built a complete sales portfolio — which became a deep product discovery exercise. Documenting every feature and workflow showed us what the product really solved and what customers actually cared about. From there, we mapped personas and built positioning around real pain, not guesses.',
       ],
@@ -44,7 +44,7 @@ export const onsiteCaseStudy: NewCaseStudy = {
       sectionNumber: '04',
       label: 'RESEARCH & EXECUTION',
       layoutType: 'text-with-image-pair',
-      images: ['/assets/images/caseStudy/Onsite/AppStoreListing.png'],
+      images: ['/assets/images/caseStudy/Onsite/AppStoreListing.webp'],
       description: [
         'The biggest breakthrough came from studying real sales calls. We found the pain behind the pain — project delays weren\'t really about time, they were about lost client trust; poor reporting wasn\'t about data, it was about bad decisions.',
         'And we found something that changed everything: the people using the product weren\'t the people buying it. The operational teams used the software daily, but the business owners signed the cheques. So we shifted all messaging from operational features to business outcomes — profitability, control, accountability, growth.',
@@ -88,5 +88,5 @@ export const onsiteCaseStudy: NewCaseStudy = {
 /** Strip images for the scrolling ad creative section in CsOutcomeSection.
  *  These are the horizontal ad cards (landscape format) shown in the grey strip. */
 export const onsiteStripImages: string[] = [
-  '/assets/images/caseStudy/Onsite/Advertise.png',
+  '/assets/images/caseStudy/Onsite/Advertise.webp',
 ];

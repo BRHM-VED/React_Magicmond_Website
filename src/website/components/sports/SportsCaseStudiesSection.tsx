@@ -19,7 +19,7 @@ const showcases: CaseStudyShowcase[] = [
     category: 'In-app Ads',
     desc: 'See the power of data in action as we break down how analytics-driven decisions led to a surge in campaign effectiveness.',
     metrics: ['1M+ Impressions', '400K+ Reach'],
-    bannerSrc: '/assets/images/sports/magicAndImage.png',
+    bannerSrc: '/assets/images/sports/magicAndImage.webp',
   },
   {
     tag: 'GAMING',
@@ -27,7 +27,7 @@ const showcases: CaseStudyShowcase[] = [
     category: 'In-app Ads, Brand awareness',
     desc: 'See the power of data in action as we break down how analytics-driven decisions led to a surge in campaign effectiveness.',
     metrics: ['210M+ Impressions per day', 'Full day Roadblock'],
-    bannerSrc: '/assets/images/sports/probo.png',
+    bannerSrc: '/assets/images/sports/probo.webp',
   },
 ];
 

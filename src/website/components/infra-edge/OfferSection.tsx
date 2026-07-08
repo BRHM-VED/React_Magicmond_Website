@@ -5,7 +5,7 @@ function OfferCard() {
     <div className="relative w-full md:w-[368px] border-t border-x border-[#4ea7e6] border-b-0 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] reveal-scale">
       <img
         className="w-full h-auto object-cover pointer-events-none block"
-        src="/assets/images/infraedge/offer-image.png"
+        src="/assets/images/infraedge/offer-image.webp"
         alt="100 Qualified Meetings in 90 Days Flagship Growth Offer"
       />
     </div>

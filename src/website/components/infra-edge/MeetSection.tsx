@@ -14,12 +14,12 @@ export function MeetSection() {
 
           {/* Left Hand */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[140px] sm:w-[180px] pointer-events-none select-none z-0" aria-hidden="true">
-            <img src="/assets/images/infraedge/left-hand.png" className="w-full h-auto object-contain" alt="" />
+            <img src="/assets/images/infraedge/left-hand.webp" className="w-full h-auto object-contain" alt="" />
           </div>
 
           {/* Right Hand */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[140px] sm:w-[180px] pointer-events-none select-none z-0" aria-hidden="true">
-            <img src="/assets/images/infraedge/right-hand.png" className="w-full h-auto object-contain" alt="" />
+            <img src="/assets/images/infraedge/right-hand.webp" className="w-full h-auto object-contain" alt="" />
           </div>
 
           {/* Heading — centered between hands */}
@@ -46,12 +46,12 @@ export function MeetSection() {
 
         {/* Left Hand */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[280px] lg:w-[360px] pointer-events-none select-none z-0" aria-hidden="true">
-          <img src="/assets/images/infraedge/left-hand.png" className="w-full h-auto object-contain" alt="" />
+          <img src="/assets/images/infraedge/left-hand.webp" className="w-full h-auto object-contain" alt="" />
         </div>
 
         {/* Right Hand */}
         <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[280px] lg:w-[360px] pointer-events-none select-none z-0" aria-hidden="true">
-          <img src="/assets/images/infraedge/right-hand.png" className="w-full h-auto object-contain" alt="" />
+          <img src="/assets/images/infraedge/right-hand.webp" className="w-full h-auto object-contain" alt="" />
         </div>
 
         {/* Center Text Block */}

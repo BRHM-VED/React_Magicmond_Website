@@ -52,7 +52,7 @@ export function ServicesSection() {
       {/* Left Wing (Blue PNG) - Placed directly in section for full viewport width */}
       <div className="absolute left-[-20px] xs:left-[-30px] sm:left-[-40px] lg:left-0 top-[120px] lg:top-[146px] w-[110px] xs:w-[140px] sm:w-[220px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">
         <img
-          src="/assets/images/infraedge/infra-edge-left-wings.png"
+          src="/assets/images/infraedge/infra-edge-left-wings.webp"
           alt=""
           className="w-full h-auto object-contain"
         />
@@ -61,7 +61,7 @@ export function ServicesSection() {
       {/* Right Wing (Blue PNG) - Placed directly in section for full viewport width */}
       <div className="absolute right-[-20px] xs:right-[-30px] sm:right-[-40px] lg:right-0 top-[120px] lg:top-[146px] w-[110px] xs:w-[140px] sm:w-[220px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">
         <img
-          src="/assets/images/infraedge/infra-edge-right-wings.png"
+          src="/assets/images/infraedge/infra-edge-right-wings.webp"
           alt=""
           className="w-full h-auto object-contain"
         />

@@ -6,7 +6,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
   metaDescription: 'How MagicMond helped Jaipur residential construction firm Reidius Infra scale to 60+ clients in 1 year and build a predictable growth engine.',
   brand: {
     name: 'Reidius Infra',
-    logo: '/assets/images/caseStudy/ReidiusInfra/dashboard.png',
+    logo: '/assets/images/caseStudy/ReidiusInfra/dashboard.webp',
     accentColor: '#3e0078',
     visitUrl: 'https://reidiusinfra.com/',
     category: 'Tech-enabled Construction',
@@ -14,7 +14,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
   },
   heroTitle: `Reidius Infra - 60+ clients\nin 1 year`,
   heroSubtitle: 'How a Jaipur residential construction firm built a predictable growth engine — and stopped competing on "we build houses."',
-  topImage: '/assets/images/caseStudy/ReidiusInfra/tabWebsite.png',
+  topImage: '/assets/images/caseStudy/ReidiusInfra/tabWebsite.webp',
   topImageCaption: 'Sales landing page',
   blocks: [
     {
@@ -37,7 +37,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
       layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/ReidiusInfra/portFolio.png'],
+      images: ['/assets/images/caseStudy/ReidiusInfra/portFolio.webp'],
       imageCaptions: ['Portfolio'],
       description: [
         'We started with the most important shift: positioning. Instead of "we build houses," Reidius became the partner who helps homeowners build their dream home without the stress and chaos of managing it themselves. We rebuilt their digital presence mobile-first (where nearly all their visitors actually were) to educate and build trust before asking for a single detail.',
@@ -49,8 +49,8 @@ export const reidiusCaseStudy: NewCaseStudy = {
       label: 'RESEARCH & EXECUTION',
       layoutType: 'text-with-image-pair',
       images: [
-        '/assets/images/caseStudy/ReidiusInfra/website.png',
-        '/assets/images/caseStudy/ReidiusInfra/webApp.png',
+        '/assets/images/caseStudy/ReidiusInfra/website.webp',
+        '/assets/images/caseStudy/ReidiusInfra/webApp.webp',
       ],
       imageCaptions: ['Reidius infra website', 'Reidius One CRM'],
       description: [
@@ -93,6 +93,6 @@ export const reidiusCaseStudy: NewCaseStudy = {
 };
 
 export const reidiusStripImages: string[] = [
-  '/assets/images/caseStudy/ReidiusInfra/advertise.png',
-  '/assets/images/caseStudy/ReidiusInfra/appFeatures.png',
+  '/assets/images/caseStudy/ReidiusInfra/advertise.webp',
+  '/assets/images/caseStudy/ReidiusInfra/appFeatures.webp',
 ];

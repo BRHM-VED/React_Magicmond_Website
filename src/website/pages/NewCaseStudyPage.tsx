@@ -52,6 +52,7 @@ export default function NewCaseStudyPage({ study, stripImages = [] }: Props) {
         <CsMetricsSection
           blocks={study.blocks}
           studySlug={study.slug}
+          accentColor={accent}
         />
 
 

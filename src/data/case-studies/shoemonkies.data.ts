@@ -6,7 +6,7 @@ export const shoemonkiesCaseStudy: NewCaseStudy = {
   metaDescription: 'How MagicMond helped ShoeMonkies transition from a loss-making Amazon business to a profitable, high-growth D2C brand in 3 months.',
   brand: {
     name: 'ShoeMonkies',
-    logo: '/assets/images/caseStudy/ShowMonkie/LandingPage.avif',
+    logo: '/assets/images/caseStudy/ShowMonkie/LandingPage.webp',
     accentColor: '#c055e5',
     visitUrl: 'https://shoemonkies.com/',
     category: 'D2C Footwear',
@@ -35,7 +35,7 @@ export const shoemonkiesCaseStudy: NewCaseStudy = {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
       layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/ShowMonkie/SecondLandingPage.avif'],
+      images: ['/assets/images/caseStudy/ShowMonkie/SecondLandingPage.webp'],
       description: [
         `To overcome these challenges, our first course of action was to establish ShoeMonkies’ identity as a brand. Our target audience comprised young professionals seeking quality leather shoes at reasonable prices. Our aim was to give ShoeMonkies an identity that truly resonated with this demographic – one that embodies youthfulness and a sense of adventure.`,
         `Additionally, pricing strategies were devised to ensure profitability without deterring first-time customers.`,
@@ -46,8 +46,8 @@ export const shoemonkiesCaseStudy: NewCaseStudy = {
       label: 'RESEARCH & EXECUTION',
       layoutType: 'text-with-image-pair',
       images: [
-        '/assets/images/caseStudy/ShowMonkie/FirstAdvertise.avif',
-        '/assets/images/caseStudy/ShowMonkie/secondAdvertise.avif',
+        '/assets/images/caseStudy/ShowMonkie/FirstAdvertise.webp',
+        '/assets/images/caseStudy/ShowMonkie/secondAdvertise.webp',
       ],
       description: [
         `We started running ads on Facebook and Instagram, conducting experiments along the way. Through these ads we were able to identify 3 winning products. We shifted our advertising efforts exclusively on these acquisition/winning products, and the results? Shoemonkies sold 1600 shoes through their newly launched website in 3 months. This achievement stands in stark contrast to the previous year when it took them 7 months to reach the same sales volume.`,

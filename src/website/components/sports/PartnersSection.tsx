@@ -1,19 +1,19 @@
 const franchiseLogos = [
-  { name: 'UP Warriorz', src: '/assets/images/sports/up-warriorz.png' },
-  { name: 'Sharjah Warriorz', src: '/assets/images/sports/sharjah-warriorz.png' },
-  { name: 'Gujarat Giants', src: '/assets/images/sports/gujarat-giants.png' },
-  { name: 'Gulf Giants', src: '/assets/images/sports/gulf-giants.png' },
+  { name: 'UP Warriorz', src: '/assets/images/sports/up-warriorz.webp' },
+  { name: 'Sharjah Warriorz', src: '/assets/images/sports/sharjah-warriorz.webp' },
+  { name: 'Gujarat Giants', src: '/assets/images/sports/gujarat-giants.webp' },
+  { name: 'Gulf Giants', src: '/assets/images/sports/gulf-giants.webp' },
 ];
 
 const athletesList = [
-  { name: 'Akash Chopra', image: '/assets/images/sports/akash-chopra.png' },
-  { name: 'Navjot S Sidhu', image: '/assets/images/sports/navjot-sidhu.png' },
-  { name: 'Irfan Pathan', image: '/assets/images/sports/irfan-pathan.png' },
-  { name: 'R Ashwin', image: '/assets/images/sports/r-ashwin.png' },
-  { name: 'Dhruv Jurel', image: '/assets/images/sports/dhruv-jurel.png' },
-  { name: 'Vimal Kumar', image: '/assets/images/sports/vimal-kumar.png' },
-  { name: 'Shardul Thakur', image: '/assets/images/sports/shardul-thakur.png' },
-  { name: 'Harmanpreet Kaur', image: '/assets/images/sports/harmanpreet-kaur.png' },
+  { name: 'Akash Chopra', image: '/assets/images/sports/akash-chopra.webp' },
+  { name: 'Navjot S Sidhu', image: '/assets/images/sports/navjot-sidhu.webp' },
+  { name: 'Irfan Pathan', image: '/assets/images/sports/irfan-pathan.webp' },
+  { name: 'R Ashwin', image: '/assets/images/sports/r-ashwin.webp' },
+  { name: 'Dhruv Jurel', image: '/assets/images/sports/dhruv-jurel.webp' },
+  { name: 'Vimal Kumar', image: '/assets/images/sports/vimal-kumar.webp' },
+  { name: 'Shardul Thakur', image: '/assets/images/sports/shardul-thakur.webp' },
+  { name: 'Harmanpreet Kaur', image: '/assets/images/sports/harmanpreet-kaur.webp' },
 ];
 
 function AthleteCard({ name, image }: { name: string; image: string }) {
@@ -75,7 +75,7 @@ export function PartnersSection() {
             {/* JioHoststar */}
             <div className="flex items-center justify-center">
               <img
-                src="/assets/images/sports/jioHoststar.png"
+                src="/assets/images/sports/jioHoststar.webp"
                 alt="JioHoststar"
                 className="h-[30px] md:h-[58px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
@@ -84,7 +84,7 @@ export function PartnersSection() {
             {/* Cricket Guru */}
             <div className="flex items-center justify-center">
               <img
-                src="/assets/images/sports/cricketGuru.png"
+                src="/assets/images/sports/cricketGuru.webp"
                 alt="Cricket Guru"
                 className="h-[30px] md:h-[43px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
@@ -93,7 +93,7 @@ export function PartnersSection() {
             {/* Sony Liv */}
             <div className="flex items-center justify-center">
               <img
-                src="/assets/images/sports/sonyLiv.png"
+                src="/assets/images/sports/sonyLiv.webp"
                 alt="Sony Liv"
                 className="h-[16px] md:h-[28px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
@@ -102,7 +102,7 @@ export function PartnersSection() {
             {/* FanCode */}
             <div className="flex items-center justify-center">
               <img
-                src="/assets/images/sports/fancode.png"
+                src="/assets/images/sports/fancode.webp"
                 alt="FanCode"
                 className="h-[28px] md:h-[56px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
@@ -111,7 +111,7 @@ export function PartnersSection() {
             {/* Star Sports */}
             <div className="col-span-2 md:col-span-1 flex items-center justify-center">
               <img
-                src="/assets/images/sports/starSports.png"
+                src="/assets/images/sports/starSports.webp"
                 alt="Star Sports"
                 className="h-[24px] md:h-[46px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />

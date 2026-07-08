@@ -6,7 +6,7 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
   metaDescription: 'Astro Vedansh sees a 1200% Growth in Revenues in the very second month with MagicMond. ₹10 Crore annual revenue stream for Astro Vedansh.',
   brand: {
     name: 'AstroVedansh',
-    logo: '/assets/images/caseStudy/AstroVedansh/Growth.avif',
+    logo: '/assets/images/caseStudy/AstroVedansh/Growth.webp',
     accentColor: '#c055e5',
     visitUrl: 'https://astrovedansh.com/',
     category: 'Creator',
@@ -35,7 +35,7 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
       layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/AstroVedansh/landingPage.avif'],
+      images: ['/assets/images/caseStudy/AstroVedansh/LandingPage.webp'],
       description: [
         `We digged deep into the Astrology industry and discovered some business and revenue opportunities for Astro Vedansh. Within a couple of meetings with Astro Vedansh, we were able to finalise the growth path. We worked hand in hand with the astrologer towards building some digital products that we could push through our growth marketing expertise.`,
       ],
@@ -45,7 +45,7 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
       label: 'RESEARCH & EXECUTION',
       layoutType: 'text-with-image-pair',
       images: [
-        '/assets/images/caseStudy/AstroVedansh/Reports.avif'
+        '/assets/images/caseStudy/AstroVedansh/Reports.webp'
       ],
       description: [
         `We managed to build the digital products within a period of 3 weeks. As soon as they were ready, our marketing experts prepared the funnel and framework to fetch revenue out of these digital products. Marketing channels were created, target audience was identified, campaigns were prepared to not just target the audience but also convert them and the funnel was launched, all in a span of two weeks.`,
@@ -84,5 +84,5 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
 };
 
 export const astrovedanshStripImages: string[] = [
-  '/assets/images/caseStudy/AstroVedansh/WebApp.avif',
+  '/assets/images/caseStudy/AstroVedansh/WebApp.webp',
 ];

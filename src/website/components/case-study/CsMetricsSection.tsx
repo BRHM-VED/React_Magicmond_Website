@@ -20,7 +20,7 @@ function parseMetricValue(valStr: string) {
   // Find the number (digits and decimals, e.g. 7.7, 24.6, 4208, 23, 5, 1000)
   const numMatch = valStr.match(/(\d+(?:\.\d+)?)/);
   if (!numMatch) {
-    return { prefix: '', number: valStr, suffix: '', details };
+    return { prefix: '', number: valStr, suffix: '', details, isNumeric: false };
   }
 
   const number = numMatch[1];
@@ -28,15 +28,33 @@ function parseMetricValue(valStr: string) {
   const prefix = valStr.substring(0, numberIndex).trim();
   const suffix = valStr.substring(numberIndex + number.length).trim();
 
-  return { prefix, number, suffix, details };
+  // Determine if it is a valid numeric stat vs plain text containing a number (like "tier-1")
+  const isNumeric =
+    prefix.length === 0 ||
+    /^(?:[₹$€\s]*|upto|held under the|on the top channels|across channels|approx\.?)$/i.test(prefix.trim()) ||
+    prefix.trim().length <= 4;
+
+  return { prefix, number, suffix, details, isNumeric };
 }
 
 /** Metrics table row */
 function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolean }) {
-  const { prefix, number, suffix } = parseMetricValue(metric.value);
+  const { prefix, number, suffix, isNumeric } = parseMetricValue(metric.value);
+
+  if (!isNumeric) {
+    return (
+      <div className={`grid grid-cols-[1fr_auto] gap-x-4 items-center py-5 md:py-7 ${!isLast ? 'border-b border-[#b8cfe0]' : ''}`}>
+        <span className={`${FONTS.body} text-[18px] md:text-[26px] font-light text-black`}>{metric.label}</span>
+        <span className={`${FONTS.body} text-[18px] md:text-[26px] font-light text-black text-right max-w-[280px] md:max-w-[600px]`}>
+          {metric.value}
+        </span>
+      </div>
+    );
+  }
 
   // Gradient text for unit suffix if it is '%' or 'M' or 'Cr'
   const isGradientSuffix = suffix === '%' || suffix === 'M' || suffix === 'Cr';
+  const isLongSuffix = suffix.length > 4;
 
   return (
     <div className={`grid grid-cols-[1fr_auto] items-center py-5 md:py-7 ${!isLast ? 'border-b border-[#b8cfe0]' : ''}`}>
@@ -49,16 +67,19 @@ function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolea
             </span>
           </div>
         )}
-        <div className="flex items-start gap-1">
+        <div className="flex items-baseline gap-1">
           <span className={`${FONTS.serif} text-[40px] md:text-[80px] font-normal text-black leading-none`}>
             {number}
           </span>
           {suffix && (
             <span
-              className={`${FONTS.body} text-[16px] md:text-[32px] font-semibold pt-[4px] md:pt-[12px] leading-none ${isGradientSuffix
-                ? 'bg-gradient-to-br from-[#49bfb5] to-[#4ea7e6] bg-clip-text text-transparent'
-                : 'text-black'
-                }`}
+              className={isLongSuffix
+                ? `${FONTS.body} text-[14px] md:text-[22px] font-light text-black/70 pl-1 leading-tight`
+                : `${FONTS.body} text-[16px] md:text-[32px] font-semibold pt-[4px] md:pt-[12px] leading-none ${isGradientSuffix
+                  ? 'bg-gradient-to-br from-[#49bfb5] to-[#4ea7e6] bg-clip-text text-transparent'
+                  : 'text-black'
+                }`
+              }
             >
               {suffix}
             </span>
