@@ -121,7 +121,7 @@ export const caseSlides: CaseSlide[] = [
     titleLines: ["Reidius Infra's", "Remarkable"],
     serifLine: "Online Growth",
     description: "Increased online revenue by 300% in 4 months through Strategic Marketing solution.",
-    href: "/Case-study-ri",
+    href: "/case-study-reidius-infra",
     metricLabel: "Revenue Growth",
     metric: "300%",
   },

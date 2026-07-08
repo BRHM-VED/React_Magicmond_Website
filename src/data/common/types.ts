@@ -78,6 +78,7 @@ export interface CaseStudyBlock {
   title?: string;        // Optional sub-title
   description: string[]; // Paragraphs of text
   images?: string[];     // Paths to images/illustrations (leave empty for now)
+  imageCaptions?: string[]; // Optional captions for images
   layoutType: 'text-only' | 'text-with-image' | 'text-with-image-pair' | 'metrics-grid';
   metrics?: CaseStudyMetric[];
 }
@@ -96,6 +97,9 @@ export interface NewCaseStudy {
   };
   heroTitle: string;
   heroSubtitle: string;
+  topImage?: string;
+  topImageCaption?: string;
   blocks: CaseStudyBlock[];
 }
+
 

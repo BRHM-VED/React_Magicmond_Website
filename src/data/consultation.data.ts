@@ -43,7 +43,7 @@ export const growthStories = [
     brandClass: "c-story__brand--grotesk",
     title: "Reidius Infra's Remarkable Online Growth",
     desc: "20 Crores in ‘23 Revenue Through Strategic Branding and Targeted Messaging",
-    href: "/Case-study-ri",
+    href: "/case-study-reidius-infra",
     metricLabel: "Revenue Growth",
     metric: "1200%",
   },

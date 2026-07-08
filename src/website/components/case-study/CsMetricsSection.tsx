@@ -4,6 +4,7 @@ import { FONTS } from '../../../utils/constants/fonts';
 interface Props {
   blocks: CaseStudyBlock[];
   accentColor?: string;
+  studySlug?: string;
 }
 
 /** Helper to parse a metric value string into prefix, number, suffix, and trailing details */
@@ -32,10 +33,10 @@ function parseMetricValue(valStr: string) {
 
 /** Metrics table row */
 function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolean }) {
-  const { prefix, number, suffix, details } = parseMetricValue(metric.value);
+  const { prefix, number, suffix } = parseMetricValue(metric.value);
 
-  // Gradient text for unit suffix if it is '%' or 'M'
-  const isGradientSuffix = suffix === '%' || suffix === 'M';
+  // Gradient text for unit suffix if it is '%' or 'M' or 'Cr'
+  const isGradientSuffix = suffix === '%' || suffix === 'M' || suffix === 'Cr';
 
   return (
     <div className={`grid grid-cols-[1fr_auto] items-center py-5 md:py-7 ${!isLast ? 'border-b border-[#b8cfe0]' : ''}`}>
@@ -43,25 +44,22 @@ function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolea
       <div className="flex items-start gap-2.5 md:gap-[18px] text-right">
         {prefix && (
           <div className="flex flex-col items-end pt-[4px] md:pt-[10px]">
-            <span className={`${FONTS.body} font-bold text-[18px] md:text-[26px] text-[#454545]`}>
+            <span className={`${FONTS.body} text-[12px] md:text-[18px] text-black opacity-60 leading-none`}>
               {prefix}
             </span>
-            {details && (
-              <span className={`${FONTS.body} font-light text-[12px] md:text-[14px] text-[#707070] mt-0.5 md:mt-1`}>
-                {details}
-              </span>
-            )}
           </div>
         )}
-        <div className="flex items-start gap-1 md:gap-[8px]">
-          <span className={`${FONTS.head} font-normal text-[48px] md:text-[80px] leading-none md:leading-[56px] tracking-[-0.5px] text-[#454545]`}>
+        <div className="flex items-start gap-1">
+          <span className={`${FONTS.serif} text-[40px] md:text-[80px] font-normal text-black leading-none`}>
             {number}
           </span>
           {suffix && (
-            <span className={`${FONTS.head} font-normal text-[20px] md:text-[32px] tracking-[-0.64px] ${isGradientSuffix
-              ? 'bg-gradient-to-br from-[#49bfb5] to-[#4ea7e6] bg-clip-text text-transparent transform -translate-y-[5px] md:-translate-y-[10px]'
-              : 'text-[#454545]'
-              }`}>
+            <span
+              className={`${FONTS.body} text-[16px] md:text-[32px] font-semibold pt-[4px] md:pt-[12px] leading-none ${isGradientSuffix
+                ? 'bg-gradient-to-br from-[#49bfb5] to-[#4ea7e6] bg-clip-text text-transparent'
+                : 'text-black'
+                }`}
+            >
               {suffix}
             </span>
           )}
@@ -97,7 +95,7 @@ function LabelTextBlock({ block }: { block: CaseStudyBlock }) {
  *  - Second: AppStoreListing.png card (max-w-[1280px])
  *  - Third: Results intro + stats table (on light blue bg-e0f2ff w-full)
  */
-export function CsMetricsSection({ blocks }: Props) {
+export function CsMetricsSection({ blocks, studySlug }: Props) {
   const metricsBlock = blocks.find((b) => b.layoutType === 'metrics-grid');
   const pairBlock = blocks.find((b) => b.layoutType === 'text-with-image-pair');
   const tailoredBlock = blocks.find((b) => b.label.includes('SOLUTION') || b.label.includes('TAILORED'));
@@ -108,12 +106,8 @@ export function CsMetricsSection({ blocks }: Props) {
       {/* 1. TAILORED SOLUTION + RESEARCH & EXECUTION text blocks */}
       <div className="max-w-[1062px] mx-auto px-5 md:px-10 py-4 md:py-8">
         <div className="flex flex-col gap-4">
-          {tailoredBlock && (
-            <LabelTextBlock block={tailoredBlock} />
-          )}
-          {researchBlock && (
-            <LabelTextBlock block={researchBlock} />
-          )}
+          {tailoredBlock && <LabelTextBlock block={tailoredBlock} />}
+          {researchBlock && <LabelTextBlock block={researchBlock} />}
         </div>
       </div>
 
@@ -122,12 +116,19 @@ export function CsMetricsSection({ blocks }: Props) {
         <div className="w-full px-5 md:px-10 pb-16">
           <div className="max-w-[1280px] mx-auto">
             {pairBlock.images.length === 1 ? (
-              <img
-                src={pairBlock.images[0]}
-                alt="App store listings"
-                className="w-full h-auto md:h-[706px] object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
-              />
-            ) : (
+              <div className="flex flex-col items-center">
+                <img
+                  src={pairBlock.images[0]}
+                  alt="App store listings"
+                  className="w-full h-auto md:h-[706px] object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
+                />
+                {pairBlock.imageCaptions && pairBlock.imageCaptions[0] && (
+                  <p className={`${FONTS.body} font-light leading-[1.6] opacity-80 mt-3 text-[13px] text-black text-center w-full`}>
+                    {pairBlock.imageCaptions[0]}
+                  </p>
+                )}
+              </div>
+            ) : studySlug === 'case-study-astrovedansh' ? (
               <div className="bg-[#fde8e4] rounded-[24px] p-4 overflow-hidden">
                 <div className="flex gap-3 overflow-x-auto scrollbar-none snap-x snap-mandatory pb-1">
                   {pairBlock.images.map((src, i) =>
@@ -148,6 +149,23 @@ export function CsMetricsSection({ blocks }: Props) {
                     )
                   )}
                 </div>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-6 md:gap-10">
+                {pairBlock.images.map((src, i) => (
+                  <div key={i} className="flex flex-col items-center">
+                    <img
+                      src={src}
+                      alt={`Screenshot ${i + 1}`}
+                      className="w-full h-auto md:h-[637px] object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
+                    />
+                    {pairBlock.imageCaptions && pairBlock.imageCaptions[i] && (
+                      <p className={`${FONTS.body} font-light leading-[1.6] opacity-80 mt-3 text-[13px] text-black text-center w-full`}>
+                        {pairBlock.imageCaptions[i]}
+                      </p>
+                    )}
+                  </div>
+                ))}
               </div>
             )}
           </div>

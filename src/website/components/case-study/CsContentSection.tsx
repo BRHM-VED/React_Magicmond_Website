@@ -55,15 +55,22 @@ export function CsContentSection({ blocks }: Props) {
 
       {/* Full-width image block (No extra container, exact size) */}
       {imageBlock && (
-        <div className="max-w-[1280px] mx-auto px-5 md:px-10 pb-10 md:pb-14">
+        <div className="max-w-[1280px] mx-auto px-5 md:px-10 pb-10 md:pb-14 flex flex-col items-center">
           {imageBlock.images && imageBlock.images[0] ? (
-            <img
-              src={imageBlock.images[0]}
-              alt={`${imageBlock.label} visual`}
-              className="w-full h-auto md:h-[637px] object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
-            />
+            <>
+              <img
+                src={imageBlock.images[0]}
+                alt={`${imageBlock.label} visual`}
+                className="w-full h-auto md:h-[637px] object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none"
+              />
+              {imageBlock.imageCaptions && imageBlock.imageCaptions[0] && (
+                <p className={`${FONTS.body} font-light leading-[1.6] opacity-80 mt-3 text-[13px] text-black text-center w-full`}>
+                  {imageBlock.imageCaptions[0]}
+                </p>
+              )}
+            </>
           ) : (
-            <div className="w-full aspect-[16/9] rounded-[24px] bg-[#f0f2f7] flex items-center justify-center border border-[#e0e4ee]">
+            <div className="w-full aspect-[16/9] rounded-[24px] bg-[#f0f2f7] flex items-center justify-center border border-[#e0e4ee] w-full">
               <p className={`${FONTS.body} text-[#9098b0] text-[14px]`}>Image placeholder</p>
             </div>
           )}

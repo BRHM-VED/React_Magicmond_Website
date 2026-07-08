@@ -57,13 +57,13 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
       label: 'RESULTS',
       layoutType: 'metrics-grid',
       metrics: [
-        { label: 'Meeting alignment rate', value: 'Upto 23% (from 15% prior month, 12% earlier)' },
-        { label: 'Cost per qualified meetings', value: 'On the top channels % 4208' },
-        { label: 'Cost per lead', value: 'Held under the 1000%' },
-        { label: 'Sales closed', value: '(Across channels) 5M' },
+        { label: 'Site visits generated', value: '120 site visits in 3 months' },
+        { label: 'Audience reach', value: 'Delhi NCR, tier-1 cities, NRI diaspora' },
+        { label: 'Community event attendance', value: 'Spiritual leaders, customers & prospects' },
+        { label: 'New project launched', value: 'Demand generated via digital + offline' },
       ],
       description: [
-        `The engine started compounding month over month:`,
+        'The engine started compounding month over month:',
       ],
     },
     {
@@ -71,8 +71,8 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
       label: 'OUTCOME',
       layoutType: 'text-only',
       description: [
-        `Reidius moved from running scattered marketing to operating a predictable, measurable growth system. Lead quality rose, meeting alignment climbed month over month, and they could finally see their pipeline clearly — which channel drove which sale, at what cost. To go deeper, we implemented call-tracking and CRM so sales management became data-driven instead of guesswork.`,
-        `What started as a website redesign became a full business transformation.`,
+        `SYI moved from near-total dependence on brokers and word-of-mouth to a system generating direct enquiries from buyers who had never heard of them before. The founder's public presence gave them credibility in new markets, and for the first time they had visibility into where leads were coming from and how to replicate it.`,
+        `What started as a visibility problem became a full demand-generation engine.`,
       ],
     },
     {
@@ -80,8 +80,8 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
       label: 'GROWTH PARTNERSHIP',
       layoutType: 'text-only',
       description: [
-        `We're now long-term growth partners. Beyond marketing, we've helped build a proprietary operating platform to manage the entire customer journey — from first enquiry to site execution — so the business can scale without breaking. Today Reidius is working toward franchise expansion and investment. The goal is no longer building houses. It's building a category-defining residential brand.`,
-        `Results based on the Reidius Infra Marketing Performance Report (May 2026) and engagement records, prepared by MagicMond.`,
+        `We're continuing to work with Shri Yamuna Infra as they expand into new project phases and deepen their NRI and investor outreach. The foundation is set — consistent brand, direct lead flow, and a growing community of buyers who chose them without a broker in between.`,
+        `Results based on the Shri Yamuna Infra Campaign Performance Report (2025–2026) and engagement records, prepared by MagicMond.`,
       ],
     },
   ],
