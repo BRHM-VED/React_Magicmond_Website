@@ -79,7 +79,7 @@ export function Footer({
                 <img src="/assets/icons/social-linkedin.svg" alt="" className="w-10 h-10 md:w-[55px] md:h-[55px]" />
               </a>
               <a
-                href="https://www.instagram.com/reidiusinfra/"
+                href="https://www.instagram.com/magicmond/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
