@@ -60,7 +60,7 @@ export function VisionSection() {
       const isMobile = window.innerWidth < 768;
       const maxOpacity = isMobile ? 0.5 : 1.0;
 
-      // Left 1 & Right 1: Visible from progress 0 to 0.4
+      // Left 1 & Right 1: Fades in from progress 0 to 0.1, fades out from 0.3 to 0.4
       let opacity1 = 0;
       if (progress > 0 && progress < 0.4) {
         if (progress < 0.1) {
@@ -72,43 +72,31 @@ export function VisionSection() {
         }
       }
 
-      // Left 2 (IPL): Visible from progress 0.3 to 1.0
-      let opacityLeft2 = 0;
-      if (progress > 0.3) {
-        if (progress < 0.45) {
-          opacityLeft2 = ((progress - 0.3) / 0.15) * maxOpacity;
+      // Left 2 (Woman) & Right 2 (IPL): Fades in from progress 0.2 to 0.35, remains visible
+      let opacity2 = 0;
+      if (progress > 0.2) {
+        if (progress < 0.35) {
+          opacity2 = ((progress - 0.2) / 0.15) * maxOpacity;
         } else {
-          opacityLeft2 = maxOpacity;
+          opacity2 = maxOpacity;
         }
       }
 
-      // Right 2 (Woman/Frame): Visible from progress 0.3 to 0.7
-      let opacityRight2 = 0;
-      if (progress > 0.3 && progress < 0.7) {
-        if (progress < 0.4) {
-          opacityRight2 = ((progress - 0.3) / 0.1) * maxOpacity;
-        } else if (progress > 0.6) {
-          opacityRight2 = ((0.7 - progress) / 0.1) * maxOpacity;
+      // Right 3 (Group Photo): Fades in from progress 0.5 to 0.65, remains visible
+      let opacity3 = 0;
+      if (progress > 0.5) {
+        if (progress < 0.65) {
+          opacity3 = ((progress - 0.5) / 0.15) * maxOpacity;
         } else {
-          opacityRight2 = maxOpacity;
-        }
-      }
-
-      // Right 3 (Group Photo): Visible from progress 0.6 to 1.0
-      let opacityRight3 = 0;
-      if (progress > 0.6) {
-        if (progress < 0.75) {
-          opacityRight3 = ((progress - 0.6) / 0.15) * maxOpacity;
-        } else {
-          opacityRight3 = maxOpacity;
+          opacity3 = maxOpacity;
         }
       }
 
       if (imgLeft1Ref.current) imgLeft1Ref.current.style.opacity = String(opacity1);
       if (imgRight1Ref.current) imgRight1Ref.current.style.opacity = String(opacity1);
-      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacityLeft2);
-      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacityRight2);
-      if (imgRight3Ref.current) imgRight3Ref.current.style.opacity = String(opacityRight3);
+      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacity2);
+      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacity2);
+      if (imgRight3Ref.current) imgRight3Ref.current.style.opacity = String(opacity3);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -148,7 +136,7 @@ export function VisionSection() {
           ref={imgLeft2Ref}
           className="absolute left-[3%] sm:left-[5%] top-[110vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Right Image 1 (Three partners, landscape) */}
@@ -164,7 +152,7 @@ export function VisionSection() {
           ref={imgRight2Ref}
           className="absolute right-[3%] sm:right-[5%] top-[120vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Right Image 3 (Group Photo, landscape) */}

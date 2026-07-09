@@ -1,8 +1,26 @@
+import { useState, useEffect } from 'react';
 import { LightRays } from '../../../common/LightRays';
 import { CALENDLY } from '../../../utils/constants/constants';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 
+const WORDS = ["real estate", "architecture", "interior design", "construction"];
+
 export function HeroSection() {
+  const [index, setIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % WORDS.length);
+        setFade(true);
+      }, 500); // Wait for fade-out before switching text
+    }, 3000); // Rotate word every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-[120px] md:pt-[150px] px-0 pb-0 text-center overflow-hidden">
       {/* Background elements */}
@@ -16,7 +34,15 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-[1025px] mx-auto px-5 md:px-0 flex flex-col items-center">
         <h1 className="font-head font-medium text-[28px] sm:text-[40px] md:text-[64px] lg:text-[96px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
-          <span className="w-src">The future of <span className="font-serif italic text-[#7ebaff]">real estate</span></span><br />
+          <span className="w-src">
+            The future of{' '}
+            <span
+              className={`font-serif italic text-[#7ebaff] inline-block transition-all duration-500 transform ${fade ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95'
+                }`}
+            >
+              {WORDS[index]}
+            </span>
+          </span><br />
           <span className="w-src">growth starts here.</span>
         </h1>
 
