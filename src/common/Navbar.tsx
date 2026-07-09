@@ -3,7 +3,9 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { ChevronDown, X } from 'lucide-react';
 import { navLinks } from '../data/common/navData';
 import { CALENDLY } from '../utils/constants/constants';
-import { Button } from './button/homeButton';
+import { Button as HomeButton } from './button/homeButton';
+import { InfraEdgeButton } from './button/InfraEdgeButton';
+import { SportsButton } from './button/SportsButton';
 
 interface Props {
   /** Suffix shown after the wordmark, e.g. "InfraEdge" or "Sports". */
@@ -29,6 +31,51 @@ export function Navbar({ suffix, activePath }: Props) {
   const navigate = useNavigate();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
+
+  // Dynamically select the button component based on suffix
+  const renderHeaderButton = (isMobileDrawer = false) => {
+    const btnClass = isMobileDrawer
+      ? "w-full h-[48px] rounded-[10px] flex items-center justify-center text-white font-head font-medium text-[16px]"
+      : "relative z-50 !h-[45px] md:!h-[46px] !py-0 !px-[15px] text-[14px] md:text-[16px]";
+
+    if (suffix === 'InfraEdge') {
+      return (
+        <InfraEdgeButton
+          variant="large"
+          href={CALENDLY}
+          className={`${btnClass} ${isMobileDrawer ? 'bg-[#0055ff] hover:bg-[#3572f5] border-none shadow-none' : ''}`}
+          onClick={() => isMobileDrawer && setOpen(false)}
+        >
+          Get Started
+        </InfraEdgeButton>
+      );
+    }
+
+    if (suffix === 'Sports') {
+      return (
+        <SportsButton
+          variant="large"
+          href={CALENDLY}
+          className={`${btnClass} ${isMobileDrawer ? 'bg-[#57bd8b] hover:bg-[#64cf9a] border-none shadow-none' : ''}`}
+          onClick={() => isMobileDrawer && setOpen(false)}
+        >
+          Get Started
+        </SportsButton>
+      );
+    }
+
+    // Default HomeButton
+    return (
+      <HomeButton
+        variant="header"
+        href={CALENDLY}
+        className={isMobileDrawer ? "w-full h-[46px] rounded-[10px] bg-[#692083] hover:bg-[#7d279c] flex items-center justify-center text-white font-head font-medium text-[16px]" : "relative z-50"}
+        onClick={() => isMobileDrawer && setOpen(false)}
+      >
+        Get Started
+      </HomeButton>
+    );
+  };
 
   /**
    * Handles all nav link clicks that may contain a hash.
@@ -151,13 +198,7 @@ export function Navbar({ suffix, activePath }: Props) {
           </nav>
 
           {/* Get Started Button on Right (Desktop & Mobile header) */}
-          <Button
-            variant="header"
-            href={CALENDLY}
-            className="relative z-50"
-          >
-            Get Started
-          </Button>
+          {renderHeaderButton(false)}
         </div>
       </header>
 
@@ -249,16 +290,7 @@ export function Navbar({ suffix, activePath }: Props) {
         </div>
 
         {/* Drawer Bottom CTA Button */}
-        <div className="w-full pb-4">
-          <Button
-            variant="header"
-            href={CALENDLY}
-            className="w-full h-[48px] rounded-[10px] bg-[#692083] hover:bg-[#7d279c] flex items-center justify-center text-white font-head font-medium text-[16px]"
-            onClick={() => setOpen(false)}
-          >
-            Get Started
-          </Button>
-        </div>
+        {renderHeaderButton(true)}
       </div>
     </>
   );

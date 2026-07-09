@@ -48,7 +48,7 @@ export function ServiceCard({
   return (
     <article
       id={id}
-      className="sticky top-[110px] md:top-[120px] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-12 min-h-0 md:min-h-[365px] mb-7 px-6 py-9 md:px-[95px] md:py-[60px] rounded-[20px] border border-white/[0.07] text-left overflow-hidden bg-[#0e081d] will-change-[transform,opacity] transform-gpu reveal-scale"
+      className="sticky top-[110px] md:top-[120px] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-12 min-h-0 md:min-h-[365px] mb-7 px-6 py-9 md:px-[95px] md:py-[60px] rounded-[20px] border border-white/[0.07] text-left overflow-hidden bg-[#0e081d] md:will-change-[transform,opacity] md:transform-gpu reveal-scale"
       style={{
         backgroundImage: 'linear-gradient(0deg, rgba(112,33,139,0.15) 0%, rgba(97,97,97,0.09) 100%)',
         boxShadow: '0 -18px 40px rgba(0,0,0,0.45)',
