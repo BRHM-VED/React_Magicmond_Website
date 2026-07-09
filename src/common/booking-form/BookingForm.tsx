@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
 import { FONTS } from '../../utils/constants/fonts';
+import { InputField } from './InputField';
+import { useBookingForm } from './useBookingForm';
 
 interface BookingFormProps {
   onSubmitSuccess?: () => void;
@@ -8,78 +8,10 @@ interface BookingFormProps {
 }
 
 export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-  });
-
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-
-  // Determine formTrack based on current page URL path
-  let formTrack = 'Home';
-  if (location.pathname.includes('/sports') || location.pathname.includes('/sport')) {
-    formTrack = 'Sport';
-  } else if (location.pathname.includes('/infraedge') || location.pathname.includes('/infra-edge')) {
-    formTrack = 'InfraEdge';
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (formData.phone.length !== 10) {
-      setError('Please enter a valid 10-digit phone number.');
-      return;
-    }
-
-    setLoading(true);
-    setError('');
-
-    const payload = {
-      name: formData.name,
-      email: formData.email,
-      phone: `+91${formData.phone}`,
-      company: formData.company,
-      message: formData.message,
-      date: new Date().toISOString(),
-      formTrack: formTrack,
-    };
-
-    try {
-      await fetch(
-        (import.meta as any).env?.VITE_API_URL || 'http://187.127.152.186:3001/api/magicmondWebLeads',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(payload),
-        }
-      );
-
-      onSubmitSuccess?.();
-      onClose?.();
-      navigate(`/thank-you?name=${encodeURIComponent(formData.name)}`);
-    } catch (err: any) {
-      console.warn('API error:', err);
-      // Fallback: navigate to success page for testing/demonstration if API fails
-      onSubmitSuccess?.();
-      onClose?.();
-      navigate(`/thank-you?name=${encodeURIComponent(formData.name)}`);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { formData, loading, error, handleChange, handleSubmit } = useBookingForm(
+    onSubmitSuccess,
+    onClose
+  );
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
@@ -93,60 +25,46 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
       </div>
 
       <div className="flex flex-col gap-3 mt-2">
-        <input
+        <InputField
           type="text"
           name="name"
           placeholder="Your Name *"
           required
           value={formData.name}
           onChange={handleChange}
-          className={`${FONTS.inter} w-full h-[48px] px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors`}
         />
-        <input
+        <InputField
           type="email"
           name="email"
           placeholder="Email Address *"
           required
           value={formData.email}
           onChange={handleChange}
-          className={`${FONTS.inter} w-full h-[48px] px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors`}
         />
-
-        {/* Phone Input with +91 Prefix, Digits only, exactly 10 digits validation */}
-        <div className="flex w-full h-[48px] rounded-lg bg-white/5 border border-white/10 focus-within:border-[#c055e5] transition-colors overflow-hidden">
-          <span className={`${FONTS.inter} flex items-center justify-center px-4 bg-white/5 border-r border-white/10 text-white/60 select-none text-[15px]`}>
-            +91
-          </span>
-          <input
-            type="text"
-            name="phone"
-            placeholder="Phone Number *"
-            required
-            pattern="[0-9]{10}"
-            title="Please enter exactly 10 digits"
-            value={formData.phone}
-            onChange={(e) => {
-              const val = e.target.value.replace(/\D/g, '').slice(0, 10);
-              setFormData((prev) => ({ ...prev, phone: val }));
-            }}
-            className={`${FONTS.inter} flex-1 bg-transparent px-4 text-white placeholder-white/40 focus:outline-none`}
-          />
-        </div>
-
-        <input
+        <InputField
+          type="text"
+          name="phone"
+          placeholder="Phone Number *"
+          required
+          pattern="[0-9]{10}"
+          title="Please enter exactly 10 digits"
+          prefixText="+91"
+          value={formData.phone}
+          onChange={handleChange}
+        />
+        <InputField
           type="text"
           name="company"
           placeholder="Company Name"
           value={formData.company}
           onChange={handleChange}
-          className={`${FONTS.inter} w-full h-[48px] px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors`}
         />
         <textarea
           name="message"
           placeholder="Tell us about your project..."
           rows={3}
           value={formData.message}
-          onChange={handleChange}
+          onChange={handleChange as any}
           className={`${FONTS.inter} w-full p-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors resize-none`}
         />
       </div>
