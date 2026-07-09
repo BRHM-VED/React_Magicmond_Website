@@ -51,7 +51,7 @@ export function VisionSection() {
         />
 
         {/* Floating Left Reel (parelexPhoto2 -> parelexPhoto5) */}
-        <div 
+        <div
           className="absolute left-[3%] sm:left-[5%] top-[10%] sm:top-[12%] w-[90px] sm:w-[140px] md:w-[280px] aspect-[565/425] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
         >
           <div ref={leftReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
@@ -65,7 +65,7 @@ export function VisionSection() {
         </div>
 
         {/* Floating Right Reel (parelexPhoto1 -> parelexPhoto4) */}
-        <div 
+        <div
           className="absolute right-[3%] sm:right-[5%] bottom-[5%] sm:bottom-[10%] w-[90px] sm:w-[140px] md:w-[280px] aspect-square rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
         >
           <div ref={rightReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
