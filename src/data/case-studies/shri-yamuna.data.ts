@@ -13,7 +13,7 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
     tagline: 'Making credibility visible: Shri Yamuna Infra',
   },
   heroTitle: `SYI - 120 site visits in\n3 months for a newly\nlaunched project`,
-  heroSubtitle: `Making credibility visible: Shri Yamuna Infra\nHow a respected-but-invisible Vrindavan developer built a demand engine reaching buyers from Delhi to the USA.`,
+  heroSubtitle: `How a respected-but-invisible Vrindavan developer built a demand engine reaching buyers from Delhi to the USA.`,
   blocks: [
     {
       sectionNumber: '01',
@@ -31,36 +31,84 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
         `We at MagicMond understand that being invisible online has a real cost. Because new buyers couldn't find or validate SYI for themselves, the company had to lean on brokers and referrals to reach them — which meant no direct customer relationships and lead flow they couldn't control or predict. The business was growing, but it was growing on someone else's terms.`,
       ],
     },
+    // Image after CHALLENGE — gallery
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/SriYamunaInfra/syiBook.webp'],
+      description: [],
+    },
     {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
-      layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/SriYamunaInfra/syiGallary.webp'],
+      layoutType: 'text-only',
       description: [
         `We started where it mattered most — trust. We built the founder's public presence and the company's brand story, putting the leadership and their contribution to Vrindavan's growth front and centre. Then we created a real digital foundation: a landing page built not just to capture leads, but to validate the company. For many buyers, this became their first real interaction with the brand.`,
       ],
     },
+    // Image between TAILORED SOLUTION and R&E — syiWebApp
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/SriYamunaInfra/syiWebApp.webp'],
+      description: [],
+    },
     {
       sectionNumber: '04',
       label: 'RESEARCH & EXECUTION',
-      layoutType: 'text-with-image-pair',
-      images: [
-        '/assets/images/caseStudy/SriYamunaInfra/syiWebApp.webp',
-        '/assets/images/caseStudy/SriYamunaInfra/syiBook.webp'
-      ],
+      layoutType: 'text-only',
       description: [
         `Then we did something most agencies wouldn't. We organised a large community event with spiritual leaders, existing customers, and prospects — and used it to officially launch a new project. Credibility-building and demand-generation in one move. We layered city-wide billboards for constant recall, then unlocked the real opportunity: Vrindavan doesn't just attract locals. It attracts NRIs, investors, retirees, and second-home buyers. So we pointed targeted Meta campaigns at Delhi NCR, tier-1 cities, and NRI audiences who'd never have found SYI through a broker.`,
       ],
+    },
+    // Image after R&E — syiBook
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/SriYamunaInfra/advertiseBanner.webp'],
+      description: [],
     },
     {
       sectionNumber: '05',
       label: 'RESULTS',
       layoutType: 'metrics-grid',
       metrics: [
-        { label: 'Site visits generated', value: '120 site visits in 3 months' },
-        { label: 'Audience reach', value: 'Delhi NCR, tier-1 cities, NRI diaspora' },
-        { label: 'Community event attendance', value: 'Spiritual leaders, customers & prospects' },
-        { label: 'New project launched', value: 'Demand generated via digital + offline' },
+        {
+          label: 'Meeting alignment rate',
+          value: 'Upto 23% ((from 15% prior month, 12% earlier))',
+          prefix: 'Upto',
+          number: '23',
+          suffix: '%',
+          details: '(from 15% prior month, 12% earlier)',
+          isNumeric: true,
+        },
+        {
+          label: 'Cost per qualified meetings',
+          value: '4208% (On the top channels)',
+          number: '4208',
+          suffix: '%',
+          details: 'On the top channels',
+          isNumeric: true,
+        },
+        {
+          label: 'Cost per lead',
+          value: '1000% (Held under the)',
+          number: '1000',
+          suffix: '%',
+          details: 'Held under the',
+          isNumeric: true,
+        },
+        {
+          label: 'Sales closed',
+          value: '5 M ((Across channels))',
+          number: '5',
+          suffix: 'M',
+          details: '(Across channels)',
+          isNumeric: true,
+        },
       ],
       description: [
         'The engine started compounding month over month:',
@@ -68,25 +116,25 @@ export const shriYamunaCaseStudy: NewCaseStudy = {
     },
     {
       sectionNumber: '06',
-      label: 'OUTCOME',
+      label: 'TAILORED SOLUTION',
       layoutType: 'text-only',
       description: [
-        `SYI moved from near-total dependence on brokers and word-of-mouth to a system generating direct enquiries from buyers who had never heard of them before. The founder's public presence gave them credibility in new markets, and for the first time they had visibility into where leads were coming from and how to replicate it.`,
-        `What started as a visibility problem became a full demand-generation engine.`,
+        'Reidius moved from running scattered marketing to operating a predictable, measurable growth system. Lead quality rose, meeting alignment climbed month over month, and they could finally see their pipeline clearly — which channel drove which sale, at what cost. To go deeper, we implemented call-tracking and CRM so sales management became data-driven instead of guesswork.',
+        'What started as a website redesign became a full business transformation.',
       ],
     },
     {
       sectionNumber: '07',
-      label: 'GROWTH PARTNERSHIP',
+      label: 'RESEARCH & EXECUTION',
       layoutType: 'text-only',
       description: [
-        `We're continuing to work with Shri Yamuna Infra as they expand into new project phases and deepen their NRI and investor outreach. The foundation is set — consistent brand, direct lead flow, and a growing community of buyers who chose them without a broker in between.`,
-        `Results based on the Shri Yamuna Infra Campaign Performance Report (2025–2026) and engagement records, prepared by MagicMond.`,
+        'We\'re now long-term growth partners. Beyond marketing, we\'ve helped build a proprietary operating platform to manage the entire customer journey – from first enquiry to site execution – so the business can scale without breaking. Today Reidius is working toward franchise expansion and investment. The goal is no longer building houses. It\'s building a category-defining residential brand.',
+        'Results based on the Reidius Infra Marketing Performance Report (May 2026) and engagement records, prepared by MagicMond.',
       ],
     },
   ],
 };
 
 export const shriYamunaStripImages: string[] = [
-  '/assets/images/caseStudy/SriYamunaInfra/advertiseBanner.webp',
+  '/assets/images/caseStudy/SriYamunaInfra/syiGallary.webp',
 ];

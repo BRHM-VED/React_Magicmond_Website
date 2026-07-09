@@ -31,11 +31,18 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
         `We at MagicMond understand the time crunch that comes with being a creator and how it gets really difficult to explore revenue opportunities other than brand collaborations. Hence, creators always seek a strong team to explore and execute new growth possibilities for their niche.`,
       ],
     },
+    // Image after CHALLENGE — LandingPage
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/AstroVedansh/LandingPage.webp'],
+      description: [],
+    },
     {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
-      layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/AstroVedansh/LandingPage.webp'],
+      layoutType: 'text-only',
       description: [
         `We digged deep into the Astrology industry and discovered some business and revenue opportunities for Astro Vedansh. Within a couple of meetings with Astro Vedansh, we were able to finalise the growth path. We worked hand in hand with the astrologer towards building some digital products that we could push through our growth marketing expertise.`,
       ],
@@ -43,22 +50,27 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
     {
       sectionNumber: '04',
       label: 'RESEARCH & EXECUTION',
-      layoutType: 'text-with-image-pair',
-      images: [
-        '/assets/images/caseStudy/AstroVedansh/Reports.webp'
-      ],
+      layoutType: 'text-only',
       description: [
         `We managed to build the digital products within a period of 3 weeks. As soon as they were ready, our marketing experts prepared the funnel and framework to fetch revenue out of these digital products. Marketing channels were created, target audience was identified, campaigns were prepared to not just target the audience but also convert them and the funnel was launched, all in a span of two weeks.`,
       ],
+    },
+    // Image after R&E — Reports
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/AstroVedansh/Reports.webp'],
+      description: [],
     },
     {
       sectionNumber: '05',
       label: 'RESULTS',
       layoutType: 'metrics-grid',
       metrics: [
-        { label: 'Revenue Growth', value: '1200%' },
-        { label: 'First Month Growth', value: '450%' },
-        { label: 'Annual Revenue', value: '1Cr+' },
+        { label: 'Revenue Growth', value: '1200%', number: '1200', suffix: '%', isNumeric: true },
+        { label: 'First Month Growth', value: '450%', number: '450', suffix: '%', isNumeric: true },
+        { label: 'Annual Revenue', value: '1Cr+', number: '1', suffix: 'Cr+', isNumeric: true },
       ],
       description: [
         `AstroVedansh sees growth stats compounding month over month:`,

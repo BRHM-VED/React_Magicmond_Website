@@ -70,6 +70,11 @@ export interface CaseStudy {
 export interface CaseStudyMetric {
   label: string;
   value: string;
+  prefix?: string;
+  number?: string;
+  suffix?: string;
+  details?: string;
+  isNumeric?: boolean;
 }
 
 export interface CaseStudyBlock {
@@ -79,7 +84,7 @@ export interface CaseStudyBlock {
   description: string[]; // Paragraphs of text
   images?: string[];     // Paths to images/illustrations (leave empty for now)
   imageCaptions?: string[]; // Optional captions for images
-  layoutType: 'text-only' | 'text-with-image' | 'text-with-image-pair' | 'metrics-grid';
+  layoutType: 'text-only' | 'full-width-image' | 'metrics-grid';
   metrics?: CaseStudyMetric[];
 }
 

@@ -31,11 +31,18 @@ export const onsiteCaseStudy: NewCaseStudy = {
         'We at MagicMond understand that a good product and a flow of leads don\'t automatically create growth. Their marketing was reactive — no clear positioning, no defined buyer, and messaging built around features instead of problems. The team was great at sales and product, but nobody inside owned branding, customer psychology, or a real marketing system. They needed a foundation, not just more ads.',
       ],
     },
+    // Image after CHALLENGE, before TAILORED SOLUTION
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/Onsite/saveMonAndTime.webp'],
+      description: [],
+    },
     {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
-      layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/Onsite/saveMonAndTime.webp'],
+      layoutType: 'text-only',
       description: [
         'Instead of rushing to launch campaigns, we started at the root. We ran workshops with the founders and built a complete sales portfolio — which became a deep product discovery exercise. Documenting every feature and workflow showed us what the product really solved and what customers actually cared about. From there, we mapped personas and built positioning around real pain, not guesses.',
       ],
@@ -43,23 +50,30 @@ export const onsiteCaseStudy: NewCaseStudy = {
     {
       sectionNumber: '04',
       label: 'RESEARCH & EXECUTION',
-      layoutType: 'text-with-image-pair',
-      images: ['/assets/images/caseStudy/Onsite/AppStoreListing.webp'],
+      layoutType: 'text-only',
       description: [
         'The biggest breakthrough came from studying real sales calls. We found the pain behind the pain — project delays weren\'t really about time, they were about lost client trust; poor reporting wasn\'t about data, it was about bad decisions.',
         'And we found something that changed everything: the people using the product weren\'t the people buying it. The operational teams used the software daily, but the business owners signed the cheques. So we shifted all messaging from operational features to business outcomes — profitability, control, accountability, growth.',
       ],
+    },
+    // Image after RESEARCH & EXECUTION, before RESULTS
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/Onsite/AppStoreListing.webp'],
+      description: [],
     },
     {
       sectionNumber: '05',
       label: 'RESULTS',
       layoutType: 'metrics-grid',
       metrics: [
-        { label: 'Total leads', value: '4900' },
-        { label: 'Salees', value: '319' },
-        { label: 'Demos', value: '2800+' },
-        { label: 'Cost per qualified lead', value: 'Down 7.7%' },
-        { label: 'Cost per strong prospect', value: 'Down 24.6%' },
+        { label: 'Total leads', value: '4900', number: '4900', isNumeric: true },
+        { label: 'Salees', value: '319', number: '319', isNumeric: true },
+        { label: 'Demos', value: '2800+', number: '2800', suffix: '+', isNumeric: true },
+        { label: 'Cost per qualified lead', value: 'Down 7.7%', prefix: 'Down', number: '7.7', suffix: '%', isNumeric: true },
+        { label: 'Cost per strong prospect', value: 'Down 24.6%', prefix: 'Down', number: '24.6', suffix: '%', isNumeric: true },
       ],
       description: [
         'Then we rebuilt the funnel around that insight. We focused on fit over volume, cut the campaigns bringing in the wrong people, and doubled down on what worked. The results:',

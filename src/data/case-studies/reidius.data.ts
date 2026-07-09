@@ -14,7 +14,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
   },
   heroTitle: `Reidius Infra - 60+ clients\nin 1 year`,
   heroSubtitle: 'How a Jaipur residential construction firm built a predictable growth engine — and stopped competing on "we build houses."',
-  topImage: '/assets/images/caseStudy/ReidiusInfra/tabWebsite.webp',
+  topImage: '/assets/images/caseStudy/ReidiusInfra/website.webp',
   topImageCaption: 'Sales landing page',
   blocks: [
     {
@@ -33,12 +33,19 @@ export const reidiusCaseStudy: NewCaseStudy = {
         'We at MagicMond understand that for a construction firm, growth often depends on referrals and luck. Reidius had a website that only collected enquiries, generic "we do architecture and construction" messaging, and no structured engine connecting branding, leads, sales, and operations. They didn\'t need more noise — they needed a foundation that could scale.',
       ],
     },
+    // Image after CHALLENGE — Portfolio
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/ReidiusInfra/portFolio.webp'],
+      imageCaptions: ['Portfolio'],
+      description: [],
+    },
     {
       sectionNumber: '03',
       label: 'TAILORED SOLUTION',
-      layoutType: 'text-with-image',
-      images: ['/assets/images/caseStudy/ReidiusInfra/portFolio.webp'],
-      imageCaptions: ['Portfolio'],
+      layoutType: 'text-only',
       description: [
         'We started with the most important shift: positioning. Instead of "we build houses," Reidius became the partner who helps homeowners build their dream home without the stress and chaos of managing it themselves. We rebuilt their digital presence mobile-first (where nearly all their visitors actually were) to educate and build trust before asking for a single detail.',
         'The real insight: Reidius wasn\'t selling construction. They were selling peace of mind.',
@@ -47,33 +54,83 @@ export const reidiusCaseStudy: NewCaseStudy = {
     {
       sectionNumber: '04',
       label: 'RESEARCH & EXECUTION',
-      layoutType: 'text-with-image-pair',
-      images: [
-        '/assets/images/caseStudy/ReidiusInfra/website.webp',
-        '/assets/images/caseStudy/ReidiusInfra/webApp.webp',
-      ],
-      imageCaptions: ['Reidius infra website', 'Reidius One CRM'],
+      layoutType: 'text-only',
       description: [
         'We engaged buyers earlier in their journey instead of waiting for them to be ready. A Vastu guide became a lead magnet that attracted genuine home-builders, distributed through social campaigns. We added hyperlocal offline branding across Jaipur for repeated recall, then layered in targeted Meta and Google campaigns aimed only at high-intent prospects planning to build.',
       ],
+    },
+    // Image after R&E — Reidius infra website
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/ReidiusInfra/tabWebsite.webp'],
+      imageCaptions: ['Reidius infra website'],
+      description: [],
+    },
+    // Image — Reidius One CRM
+    {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/ReidiusInfra/webApp.webp'],
+      imageCaptions: ['Reidius One CRM'],
+      description: [],
     },
     {
       sectionNumber: '05',
       label: 'RESULTS',
       layoutType: 'metrics-grid',
       metrics: [
-        { label: 'Meeting alignment rate', value: 'Upto 23% (from 15% prior month, 12% earlier)' },
-        { label: 'Cost per qualified meetings', value: '₹ 4208 (On the top channels)' },
-        { label: 'Cost per lead', value: 'Held under the ₹ 1000' },
-        { label: 'Sales closed', value: '₹ 5 Cr (Across channels)' },
+        {
+          label: 'Meeting alignment rate',
+          value: 'Upto 23% ((from 15% prior month, 12% earlier))',
+          prefix: 'Upto',
+          number: '23',
+          suffix: '%',
+          details: '(from 15% prior month, 12% earlier)',
+          isNumeric: true,
+        },
+        {
+          label: 'Cost per qualified meetings',
+          value: '4208% (On the top channels)',
+          number: '4208',
+          suffix: '%',
+          details: 'On the top channels',
+          isNumeric: true,
+        },
+        {
+          label: 'Cost per lead',
+          value: '1000% (Held under the)',
+          number: '1000',
+          suffix: '%',
+          details: 'Held under the',
+          isNumeric: true,
+        },
+        {
+          label: 'Sales closed',
+          value: '5 M ((Across channels))',
+          number: '5',
+          suffix: 'M',
+          details: '(Across channels)',
+          isNumeric: true,
+        },
       ],
       description: [
         'The primary campaign alone drove ~79% of leads at a healthy cost — clear proof the targeting was working.',
       ],
     },
     {
+      sectionNumber: '',
+      label: '',
+      layoutType: 'full-width-image',
+      images: ['/assets/images/caseStudy/ReidiusInfra/appFeatures.webp'],
+      imageCaptions: ['Reidius App Features'],
+      description: [],
+    },
+    {
       sectionNumber: '06',
-      label: 'OUTCOME',
+      label: 'TAILORED SOLUTION',
       layoutType: 'text-only',
       description: [
         'Reidius moved from running scattered marketing to operating a predictable, measurable growth system. Lead quality rose, meeting alignment climbed month over month, and they could finally see their pipeline clearly — which channel drove which sale, at what cost. To go deeper, we implemented call-tracking and CRM so sales management became data-driven instead of guesswork.',
@@ -82,7 +139,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
     },
     {
       sectionNumber: '07',
-      label: 'GROWTH PARTNERSHIP',
+      label: 'RESEARCH & EXECUTION',
       layoutType: 'text-only',
       description: [
         'We\'re now long-term growth partners. Beyond marketing, we\'ve helped build a proprietary operating platform to manage the entire customer journey — from first enquiry to site execution — so the business can scale without breaking. Today Reidius is working toward franchise expansion and investment. The goal is no longer building houses. It\'s building a category-defining residential brand.',
@@ -94,5 +151,4 @@ export const reidiusCaseStudy: NewCaseStudy = {
 
 export const reidiusStripImages: string[] = [
   '/assets/images/caseStudy/ReidiusInfra/advertise.webp',
-  '/assets/images/caseStudy/ReidiusInfra/appFeatures.webp',
 ];

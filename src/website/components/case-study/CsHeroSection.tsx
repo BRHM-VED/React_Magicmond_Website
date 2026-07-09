@@ -53,16 +53,16 @@ export function CsHeroSection({ study, heroImage }: Props) {
       </div>
 
       {/* ── Text content — sits over the gradient fade ── */}
-      <div className="relative w-full max-w-[1062px] mx-auto px-5 md:px-10 pb-10 md:pb-16 mt-[-120px] md:mt-[-160px]">
+      <div className="relative w-full max-w-[1062px] mx-auto px-5 md:px-10 pb-5 md:pb-8 mt-[-120px] md:mt-[-160px]">
 
         {/* Breadcrumb */}
-        <p className={`${FONTS.body} text-[13px] md:text-[15px] text-white/55 tracking-[0.01em] mb-4 md:mb-5`}>
+        <p className={`${FONTS.inter} text-[10px] md:text-[15px] text-white tracking-[0.01em] mb-0 md:mb-3`}>
           {study.brand.name} &middot; {study.brand.category || 'SaaS'}
         </p>
 
         {/* H1 heading */}
         <h1
-          className={`${FONTS.head} font-semibold text-[24px] md:text-[46px] lg:text-[54px] leading-[1.1] tracking-[-1.5px] text-white max-w-[700px]`}
+          className={`${FONTS.head} font-semibold text-[20px] md:text-[46px] lg:text-[54px] leading-[1.1]  tracking-[-1.5px] text-white max-w-[700px]`}
         >
           {study.heroTitle.split('\n').map((line, i) => (
             <span key={i} className="block">{line}</span>
@@ -70,12 +70,12 @@ export function CsHeroSection({ study, heroImage }: Props) {
         </h1>
 
         {/* Subtitle — two lines as shown in Figma */}
-        <div className={`mt-5 md:mt-6 max-w-[540px] ${FONTS.body} text-[12px] md:text-[16px] leading-[1.65] text-white/70`}>
-          <p className="font-semibold text-white/90 mb-[2px]">
+        <div className={`mt-2 md:mt-4 max-w-[540px] ${FONTS.inter} text-[10px] md:text-[16px] leading-[1.65] text-white/70`}>
+          <p className="font-semibold text-white/90 mb-0">
             {study.brand.tagline || 'A predictable pipeline for a construction SaaS platform.'}
           </p>
           {study.heroSubtitle.split('\n').map((line, i) => (
-            <p key={i} className="mt-1">{line}</p>
+            <p key={i} className="mt-[2px]">{line}</p>
           ))}
         </div>
       </div>
