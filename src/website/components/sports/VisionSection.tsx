@@ -4,12 +4,12 @@ import { spStats } from '../../../data/sports/sportsData';
 export function VisionSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-
+  
   const imgLeft1Ref = useRef<HTMLDivElement>(null);
   const imgLeft2Ref = useRef<HTMLDivElement>(null);
+  const imgLeft3Ref = useRef<HTMLDivElement>(null);
   const imgRight1Ref = useRef<HTMLDivElement>(null);
   const imgRight2Ref = useRef<HTMLDivElement>(null);
-  const imgRight3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,15 +46,15 @@ export function VisionSection() {
       // 2. Translate floating images dynamically
       const left1Y = progress * -(viewportHeight * 0.95);
       const left2Y = progress * -(viewportHeight * 0.90);
+      const left3Y = progress * -(viewportHeight * 0.85);
       const right1Y = progress * -(viewportHeight * 0.95);
       const right2Y = progress * -(viewportHeight * 0.90);
-      const right3Y = progress * -(viewportHeight * 0.85);
 
       if (imgLeft1Ref.current) imgLeft1Ref.current.style.transform = `translate3d(0, ${left1Y}px, 0)`;
       if (imgLeft2Ref.current) imgLeft2Ref.current.style.transform = `translate3d(0, ${left2Y}px, 0)`;
+      if (imgLeft3Ref.current) imgLeft3Ref.current.style.transform = `translate3d(0, ${left3Y}px, 0)`;
       if (imgRight1Ref.current) imgRight1Ref.current.style.transform = `translate3d(0, ${right1Y}px, 0)`;
       if (imgRight2Ref.current) imgRight2Ref.current.style.transform = `translate3d(0, ${right2Y}px, 0)`;
-      if (imgRight3Ref.current) imgRight3Ref.current.style.transform = `translate3d(0, ${right3Y}px, 0)`;
 
       // 3. Update opacities dynamically (hidden at first scroll, fades in surprises)
       const isMobile = window.innerWidth < 768;
@@ -72,31 +72,43 @@ export function VisionSection() {
         }
       }
 
-      // Left 2 (Woman) & Right 2 (IPL): Fades in from progress 0.2 to 0.35, remains visible
-      let opacity2 = 0;
-      if (progress > 0.2) {
+      // Left 2 (Two Guys Standing): Fades in from progress 0.2 to 0.35, fades out from 0.6 to 0.7
+      let opacityLeft2 = 0;
+      if (progress > 0.2 && progress < 0.7) {
         if (progress < 0.35) {
-          opacity2 = ((progress - 0.2) / 0.15) * maxOpacity;
+          opacityLeft2 = ((progress - 0.2) / 0.15) * maxOpacity;
+        } else if (progress > 0.6) {
+          opacityLeft2 = ((0.7 - progress) / 0.1) * maxOpacity;
         } else {
-          opacity2 = maxOpacity;
+          opacityLeft2 = maxOpacity;
         }
       }
 
-      // Right 3 (Group Photo): Fades in from progress 0.5 to 0.65, remains visible
-      let opacity3 = 0;
+      // Left 3 (IPL Photo): Fades in from progress 0.5 to 0.65, remains visible
+      let opacityLeft3 = 0;
       if (progress > 0.5) {
         if (progress < 0.65) {
-          opacity3 = ((progress - 0.5) / 0.15) * maxOpacity;
+          opacityLeft3 = ((progress - 0.5) / 0.15) * maxOpacity;
         } else {
-          opacity3 = maxOpacity;
+          opacityLeft3 = maxOpacity;
+        }
+      }
+
+      // Right 2 (Woman/Frame): Fades in from progress 0.2 to 0.35, remains visible
+      let opacityRight2 = 0;
+      if (progress > 0.2) {
+        if (progress < 0.35) {
+          opacityRight2 = ((progress - 0.2) / 0.15) * maxOpacity;
+        } else {
+          opacityRight2 = maxOpacity;
         }
       }
 
       if (imgLeft1Ref.current) imgLeft1Ref.current.style.opacity = String(opacity1);
       if (imgRight1Ref.current) imgRight1Ref.current.style.opacity = String(opacity1);
-      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacity2);
-      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacity2);
-      if (imgRight3Ref.current) imgRight3Ref.current.style.opacity = String(opacity3);
+      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacityLeft2);
+      if (imgLeft3Ref.current) imgLeft3Ref.current.style.opacity = String(opacityLeft3);
+      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacityRight2);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -111,9 +123,9 @@ export function VisionSection() {
 
   return (
     <div ref={containerRef} className="relative w-full h-[360vh] bg-[#010502]">
-      <section
-        ref={sectionRef}
-        id="about"
+      <section 
+        ref={sectionRef} 
+        id="about" 
         className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20 pt-[80px] md:pt-[149px] pb-[100px] md:pb-[182px]"
       >
         {/* Background Graphic Effect */}
@@ -124,43 +136,43 @@ export function VisionSection() {
         />
 
         {/* Floating Left Image 1 (Navjot Sidhu, square) */}
-        <div
+        <div 
           ref={imgLeft1Ref}
           className="absolute left-[3%] sm:left-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        {/* Floating Left Image 2 (IPL photo, vertical) */}
-        <div
+        {/* Floating Left Image 2 (Two Guys Standing, vertical) */}
+        <div 
           ref={imgLeft2Ref}
           className="absolute left-[3%] sm:left-[5%] top-[110vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-auto object-cover" alt="" />
+        </div>
+
+        {/* Floating Left Image 3 (IPL photo, landscape) */}
+        <div 
+          ref={imgLeft3Ref}
+          className="absolute left-[3%] sm:left-[5%] top-[180vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+        >
+          <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Right Image 1 (Three partners, landscape) */}
-        <div
+        <div 
           ref={imgRight1Ref}
           className="absolute right-[3%] sm:right-[5%] top-[45vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        {/* Floating Right Image 2 (Woman/Frame, landscape) */}
-        <div
+        {/* Floating Right Image 2 (Woman/Frame, portrait) */}
+        <div 
           ref={imgRight2Ref}
           className="absolute right-[3%] sm:right-[5%] top-[120vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
-        </div>
-
-        {/* Floating Right Image 3 (Group Photo, landscape) */}
-        <div
-          ref={imgRight3Ref}
-          className="absolute right-[3%] sm:right-[5%] top-[190vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
-        >
-          <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         <div className="container mx-auto px-5 md:px-10 relative z-10 h-full flex flex-col justify-center items-center">
@@ -169,7 +181,7 @@ export function VisionSection() {
           </span>
 
           <p
-            className="relative max-w-[760px] mx-auto mt-[24px] md:mt-[54px] px-6 sm:px-0 font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
+            className="relative max-w-[760px] mx-auto mt-[24px] md:mt-[54px] px-6 sm:px-0 font-head font-medium text-[18px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
             style={{ '--d': '.1s' } as React.CSSProperties}
           >
             {/* Left Floral Accent */}

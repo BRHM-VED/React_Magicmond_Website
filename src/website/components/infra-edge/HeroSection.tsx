@@ -37,16 +37,15 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[1025px] mx-auto px-5 md:px-0 flex flex-col items-center">
-        <h1 className="font-head font-medium text-[28px] sm:text-[40px] md:text-[64px] lg:text-[96px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
-          <span className="w-src">
-            The future of{' '}
-            <span
-              className={`font-serif italic text-[#7ebaff] inline-block transition-all duration-500 transform ${fade ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95'
-                }`}
-            >
-              {WORDS[index]}
-            </span>
-          </span><br />
+        <h1 className="font-head font-medium text-[28px] sm:text-[400px] md:text-[64px] lg:text-[96px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
+          <span className="w-src">The future of</span>{' '}
+          <span
+            className={`font-serif italic text-[#7ebaff] inline-block transition-all duration-500 transform ${fade ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95'
+              }`}
+          >
+            {WORDS[index]}
+          </span>
+          <br />
           <span className="w-src">growth starts here.</span>
         </h1>
 
@@ -60,7 +59,6 @@ export function HeroSection() {
           </InfraEdgeButton>
         </div>
       </div>
-      z
       <img
         className="relative block w-full max-w-[1440px] mx-auto mt-11 md:mt-12 px-0 md:px-10 reveal z-10"
         style={{ '--d': '.4s' } as React.CSSProperties}
