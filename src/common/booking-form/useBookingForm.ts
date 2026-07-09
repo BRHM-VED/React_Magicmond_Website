@@ -55,8 +55,12 @@ export function useBookingForm(onSubmitSuccess?: () => void, onClose?: () => voi
     };
 
     try {
+      const apiUrl = (import.meta as any).env?.VITE_API_URL;
+      if (!apiUrl) {
+        throw new Error('VITE_API_URL environment variable is not defined.');
+      }
       await fetch(
-        (import.meta as any).env?.VITE_API_URL || 'http://187.127.152.186:3001/api/magicmondWebLeads',
+        apiUrl,
         {
           method: 'POST',
           headers: {
