@@ -145,11 +145,11 @@ export function VisionSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[280vh] bg-[#010502]">
+    <div ref={containerRef} className="relative w-full h-[15₹0vh] md:h-[280vh] bg-[#010502] mb-[0px]">
       <section
         ref={sectionRef}
         id="about"
-        className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20 pt-[80px] md:pt-[149px] pb-[100px] md:pb-[182px]"
+        className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20 pt-[30px] md:pt-[149px] pb-[20px] md:pb-[182px]"
       >
         {/* Background Graphic Effect */}
         <img
@@ -198,13 +198,13 @@ export function VisionSection() {
           <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        <div className="container mx-auto px-5 md:px-10 relative z-[25] md:z-10 h-full flex flex-col justify-center items-center">
+        <div className="container mx-auto px-5 md:px-10 relative z-[25] md:z-10 h-full flex flex-col justify-center md:justify-between items-center">
           <span className="inline-flex items-center justify-center w-[95.3px] h-[34px] rounded-[20px] bg-white/[0.05] border border-white/10 text-[13.2px] text-white font-body font-medium tracking-[-0.28px] reveal">
             Our Vision
           </span>
 
           <p
-            className="relative max-w-[760px] mx-auto mt-[24px] md:mt-[54px] px-6 sm:px-0 font-head font-medium text-[18px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
+            className="relative max-w-[760px] mx-auto mt-[24px] md:mt-[54px] px-6 sm:px-0 font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
             style={{ '--d': '.1s' } as React.CSSProperties}
           >
             {/* Left Floral Accent */}
