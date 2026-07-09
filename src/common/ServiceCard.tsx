@@ -106,7 +106,7 @@ export function ServiceCard({
       </div>
 
       {/* Right: image with gradient backing */}
-      <div className="relative w-[calc(100%+3rem)] -mx-6 mb-[-2.25rem] md:w-[345px] h-[250px] md:h-[309px] shrink-0 self-stretch md:self-end rounded-t-none rounded-b-[19px] md:rounded-[28px] md:rounded-t-[28px] md:rounded-b-[28px] md:ml-0 md:mr-0 md:mb-[-60px] overflow-hidden">
+      <div className="relative w-[calc(100%+3rem)] -mx-6 mb-[-2.25rem] md:w-[345px] h-[250px] md:h-[309px] shrink-0 self-stretch md:self-end rounded-t-none rounded-b-[19px] md:rounded-[28px] md:rounded-t-[28px] md:rounded-b-[0px] md:ml-0 md:mr-100 md:mb-[-60px] overflow-hidden">
         {/* Gradient background behind image */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#c156e6] to-[#3c0051]" />
         {/* Card image */}

@@ -3,46 +3,77 @@ import { spStats } from '../../../data/sports/sportsData';
 
 export function VisionSection() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLDivElement>(null);
   const leftReelRef = useRef<HTMLDivElement>(null);
   const rightReelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!containerRef.current) return;
+      if (!containerRef.current || !sectionRef.current) return;
 
-      const rect = containerRef.current.getBoundingClientRect();
+      const containerRect = containerRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      const totalScrollable = rect.height - viewportHeight;
+      const containerHeight = containerRect.height;
+      const totalScrollable = containerHeight - viewportHeight;
 
       if (totalScrollable <= 0) return;
 
-      // Calculate how far the top of the container has scrolled past the top of the viewport
-      const scrolled = -rect.top;
-      let progress = scrolled / totalScrollable;
-      progress = Math.max(0, Math.min(1, progress));
+      if (containerRect.top > 0) {
+        // Initial state: Absolute top (scrolling with page before reaching top of viewport)
+        sectionRef.current.style.position = 'absolute';
+        sectionRef.current.style.top = '0';
+        sectionRef.current.style.bottom = 'auto';
 
-      // Translate reels from 0% (first image) to -50% (second image sliding up from bottom)
-      const translateVal = progress * -50;
+        if (leftReelRef.current) leftReelRef.current.style.transform = 'translate3d(0, 0%, 0)';
+        if (rightReelRef.current) rightReelRef.current.style.transform = 'translate3d(0, 0%, 0)';
+      } else if (containerRect.bottom < viewportHeight) {
+        // Past state: Absolute bottom (scrolling with page after finishing the image transitions)
+        sectionRef.current.style.position = 'absolute';
+        sectionRef.current.style.top = 'auto';
+        sectionRef.current.style.bottom = '0';
 
-      if (leftReelRef.current) {
-        leftReelRef.current.style.transform = `translate3d(0, ${translateVal}%, 0)`;
-      }
-      if (rightReelRef.current) {
-        rightReelRef.current.style.transform = `translate3d(0, ${translateVal}%, 0)`;
+        if (leftReelRef.current) leftReelRef.current.style.transform = 'translate3d(0, -50%, 0)';
+        if (rightReelRef.current) rightReelRef.current.style.transform = 'translate3d(0, -50%, 0)';
+      } else {
+        // Active state: Pinned to viewport (section remains completely fixed on screen)
+        sectionRef.current.style.position = 'fixed';
+        sectionRef.current.style.top = '0';
+        sectionRef.current.style.bottom = 'auto';
+
+        const scrolled = -containerRect.top;
+        let progress = scrolled / totalScrollable;
+        progress = Math.max(0, Math.min(1, progress));
+
+        // Reels scroll/translate from 0% (first image) to -50% (second image)
+        const translateVal = progress * -50;
+
+        if (leftReelRef.current) {
+          leftReelRef.current.style.transform = `translate3d(0, ${translateVal}%, 0)`;
+        }
+        if (rightReelRef.current) {
+          rightReelRef.current.style.transform = `translate3d(0, ${translateVal}%, 0)`;
+        }
       }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll);
+    // Initialize positioning
     handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
     };
   }, []);
 
   return (
     <div ref={containerRef} className="relative w-full h-[280vh] bg-[#010502]">
-      <section id="about" className="sticky top-0 h-screen flex flex-col justify-center items-center text-center overflow-hidden w-full">
+      <section
+        ref={sectionRef}
+        id="about"
+        className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20"
+      >
         {/* Background Graphic Effect */}
         <img
           className="absolute inset-0 w-full h-full object-cover pointer-events-none select-none z-0 opacity-80"
@@ -50,30 +81,30 @@ export function VisionSection() {
           alt=""
         />
 
-        {/* Floating Left Reel (parelexPhoto2 -> parelexPhoto5) */}
+        {/* Floating Left Reel (parelexPhoto1 -> parelexPhoto4) */}
         <div
-          className="absolute left-[3%] sm:left-[5%] top-[10%] sm:top-[12%] w-[90px] sm:w-[140px] md:w-[280px] aspect-[565/425] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
+          className="absolute left-[3%] sm:left-[5%] top-[10%] sm:top-[12%] w-[90px] sm:w-[140px] md:w-[280px] aspect-square rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
         >
           <div ref={leftReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Right Reel (parelexPhoto1 -> parelexPhoto4) */}
-        <div
-          className="absolute right-[3%] sm:right-[5%] bottom-[5%] sm:bottom-[10%] w-[90px] sm:w-[140px] md:w-[280px] aspect-square rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
-        >
-          <div ref={rightReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
             <div className="w-full h-1/2">
               <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-full object-cover" alt="" />
             </div>
             <div className="w-full h-1/2">
               <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-full object-cover" alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Right Reel (parelexPhoto2 -> parelexPhoto5) */}
+        <div
+          className="absolute right-[3%] sm:right-[5%] bottom-[5%] sm:bottom-[10%] w-[90px] sm:w-[140px] md:w-[280px] aspect-[565/425] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
+        >
+          <div ref={rightReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
+            <div className="w-full h-1/2">
+              <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-full object-cover" alt="" />
+            </div>
+            <div className="w-full h-1/2">
+              <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-full object-cover" alt="" />
             </div>
           </div>
         </div>
