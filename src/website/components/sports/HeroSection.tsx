@@ -16,8 +16,8 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-[1025px] mx-auto px-5 md:px-0 flex flex-col items-center">
         <h1 className="font-head font-medium text-[28px] sm:text-[40px] md:text-[64px] lg:text-[76px] xl:text-[96px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
-          <span className="w-src">Connecting ambitious brands</span><br />
-          <span className="w-src">to the <span className="font-serif italic text-[#00ac79]">world of cricket</span></span>
+          <span className="w-src sm:whitespace-nowrap">Connecting ambitious brands</span><br className="hidden sm:inline" />
+          <span className="w-src sm:whitespace-nowrap">to the <span className="font-serif italic text-[#00ac79]">world of cricket</span></span>
         </h1>
 
         <p className="text-[#aaaaaa] font-head font-normal text-[14px] md:text-[16.6px] leading-[1.7] max-w-[650px] mx-auto mt-6 reveal" style={{ '--d': '.15s' } as React.CSSProperties}>
