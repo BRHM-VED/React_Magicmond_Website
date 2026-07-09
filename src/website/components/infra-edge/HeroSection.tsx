@@ -10,15 +10,19 @@ export function HeroSection() {
   const [fade, setFade] = useState(true);
 
   useEffect(() => {
+    let timeoutId: any;
     const interval = setInterval(() => {
       setFade(false);
-      setTimeout(() => {
+      timeoutId = setTimeout(() => {
         setIndex((prevIndex) => (prevIndex + 1) % WORDS.length);
         setFade(true);
       }, 500); // Wait for fade-out before switching text
     }, 3000); // Rotate word every 3 seconds
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -56,7 +60,7 @@ export function HeroSection() {
           </InfraEdgeButton>
         </div>
       </div>
-
+      z
       <img
         className="relative block w-full max-w-[1440px] mx-auto mt-11 md:mt-12 px-0 md:px-10 reveal z-10"
         style={{ '--d': '.4s' } as React.CSSProperties}
