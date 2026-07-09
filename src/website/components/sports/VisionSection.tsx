@@ -9,6 +9,7 @@ export function VisionSection() {
   const imgLeft2Ref = useRef<HTMLDivElement>(null);
   const imgRight1Ref = useRef<HTMLDivElement>(null);
   const imgRight2Ref = useRef<HTMLDivElement>(null);
+  const imgRight3Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,43 +47,68 @@ export function VisionSection() {
       const left1Y = progress * -(viewportHeight * 0.95);
       const left2Y = progress * -(viewportHeight * 0.90);
       const right1Y = progress * -(viewportHeight * 0.95);
-      const right2Y = progress * -(viewportHeight * 0.85);
+      const right2Y = progress * -(viewportHeight * 0.90);
+      const right3Y = progress * -(viewportHeight * 0.85);
 
       if (imgLeft1Ref.current) imgLeft1Ref.current.style.transform = `translate3d(0, ${left1Y}px, 0)`;
       if (imgLeft2Ref.current) imgLeft2Ref.current.style.transform = `translate3d(0, ${left2Y}px, 0)`;
       if (imgRight1Ref.current) imgRight1Ref.current.style.transform = `translate3d(0, ${right1Y}px, 0)`;
       if (imgRight2Ref.current) imgRight2Ref.current.style.transform = `translate3d(0, ${right2Y}px, 0)`;
+      if (imgRight3Ref.current) imgRight3Ref.current.style.transform = `translate3d(0, ${right3Y}px, 0)`;
 
       // 3. Update opacities dynamically (hidden at first scroll, fades in surprises)
       const isMobile = window.innerWidth < 768;
       const maxOpacity = isMobile ? 0.5 : 1.0;
 
-      // First set of images fades in from progress 0 to 0.1, fades out from 0.35 to 0.45
+      // Left 1 & Right 1: Visible from progress 0 to 0.4
       let opacity1 = 0;
-      if (progress > 0 && progress < 0.45) {
+      if (progress > 0 && progress < 0.4) {
         if (progress < 0.1) {
           opacity1 = (progress / 0.1) * maxOpacity;
-        } else if (progress > 0.35) {
-          opacity1 = ((0.45 - progress) / 0.1) * maxOpacity;
+        } else if (progress > 0.3) {
+          opacity1 = ((0.4 - progress) / 0.1) * maxOpacity;
         } else {
           opacity1 = maxOpacity;
         }
       }
 
-      // Second set of images fades in from progress 0.3 to 0.45, remains visible
-      let opacity2 = 0;
+      // Left 2 (IPL): Visible from progress 0.3 to 1.0
+      let opacityLeft2 = 0;
       if (progress > 0.3) {
         if (progress < 0.45) {
-          opacity2 = ((progress - 0.3) / 0.15) * maxOpacity;
+          opacityLeft2 = ((progress - 0.3) / 0.15) * maxOpacity;
         } else {
-          opacity2 = maxOpacity;
+          opacityLeft2 = maxOpacity;
+        }
+      }
+
+      // Right 2 (Woman/Frame): Visible from progress 0.3 to 0.7
+      let opacityRight2 = 0;
+      if (progress > 0.3 && progress < 0.7) {
+        if (progress < 0.4) {
+          opacityRight2 = ((progress - 0.3) / 0.1) * maxOpacity;
+        } else if (progress > 0.6) {
+          opacityRight2 = ((0.7 - progress) / 0.1) * maxOpacity;
+        } else {
+          opacityRight2 = maxOpacity;
+        }
+      }
+
+      // Right 3 (Group Photo): Visible from progress 0.6 to 1.0
+      let opacityRight3 = 0;
+      if (progress > 0.6) {
+        if (progress < 0.75) {
+          opacityRight3 = ((progress - 0.6) / 0.15) * maxOpacity;
+        } else {
+          opacityRight3 = maxOpacity;
         }
       }
 
       if (imgLeft1Ref.current) imgLeft1Ref.current.style.opacity = String(opacity1);
       if (imgRight1Ref.current) imgRight1Ref.current.style.opacity = String(opacity1);
-      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacity2);
-      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacity2);
+      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacityLeft2);
+      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacityRight2);
+      if (imgRight3Ref.current) imgRight3Ref.current.style.opacity = String(opacityRight3);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -96,7 +122,7 @@ export function VisionSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[300vh] bg-[#010502]">
+    <div ref={containerRef} className="relative w-full h-[360vh] bg-[#010502]">
       <section
         ref={sectionRef}
         id="about"
@@ -141,13 +167,21 @@ export function VisionSection() {
           <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        <div className="container mx-auto px-5 md:px-10 relative z-10 h-full flex flex-col justify-between items-center">
+        {/* Floating Right Image 3 (Group Photo, landscape) */}
+        <div
+          ref={imgRight3Ref}
+          className="absolute right-[3%] sm:right-[5%] top-[190vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+        >
+          <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-auto object-cover" alt="" />
+        </div>
+
+        <div className="container mx-auto px-5 md:px-10 relative z-10 h-full flex flex-col justify-center items-center">
           <span className="inline-flex items-center justify-center w-[95.3px] h-[34px] rounded-[20px] bg-white/[0.05] border border-white/10 text-[13.2px] text-white font-body font-medium tracking-[-0.28px] reveal">
             Our Vision
           </span>
 
           <p
-            className="relative max-w-[760px] mx-auto mt-[54px] px-6 sm:px-0 font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
+            className="relative max-w-[760px] mx-auto mt-[24px] md:mt-[54px] px-6 sm:px-0 font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
             style={{ '--d': '.1s' } as React.CSSProperties}
           >
             {/* Left Floral Accent */}
@@ -167,7 +201,7 @@ export function VisionSection() {
             />
           </p>
 
-          <div className="flex flex-row items-stretch justify-center gap-4 md:gap-[90px] mt-[70px] max-w-[800px] mx-auto px-4 md:px-0">
+          <div className="flex flex-row items-stretch justify-center gap-4 md:gap-[90px] mt-[40px] md:mt-[70px] max-w-[800px] mx-auto px-4 md:px-0">
             {spStats.map((s, i) => (
               <React.Fragment key={s.label}>
                 {i > 0 && <div className="w-[1px] bg-white/10 self-stretch my-2" />}
