@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { FONTS } from '../../utils/constants/fonts';
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -6,9 +7,24 @@ interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function InputField({ prefixText, className, ...props }: InputFieldProps) {
+  const location = useLocation();
+  const isSports = location.pathname.includes('/sports');
+  const isInfraEdge = location.pathname.includes('/infraedge');
+
+  let focusBorder = 'focus-within:border-[#c055e5]';
+  let focusInputBorder = 'focus:border-[#c055e5]';
+
+  if (isSports) {
+    focusBorder = 'focus-within:border-[#1ff9b8]';
+    focusInputBorder = 'focus:border-[#1ff9b8]';
+  } else if (isInfraEdge) {
+    focusBorder = 'focus-within:border-[#0055ff]';
+    focusInputBorder = 'focus:border-[#0055ff]';
+  }
+
   if (prefixText) {
     return (
-      <div className="flex w-full h-[48px] rounded-lg bg-white/5 border border-white/10 focus-within:border-[#c055e5] transition-colors overflow-hidden">
+      <div className={`flex w-full h-[48px] rounded-lg bg-white/5 border border-white/10 ${focusBorder} transition-colors overflow-hidden`}>
         <span className={`${FONTS.inter} flex items-center justify-center px-4 bg-white/5 border-r border-white/10 text-white/60 select-none text-[15px]`}>
           {prefixText}
         </span>
@@ -23,7 +39,7 @@ export function InputField({ prefixText, className, ...props }: InputFieldProps)
   return (
     <input
       {...props}
-      className={`${FONTS.inter} w-full h-[48px] px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors ${className || ''}`}
+      className={`${FONTS.inter} w-full h-[48px] px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none ${focusInputBorder} transition-colors ${className || ''}`}
     />
   );
 }

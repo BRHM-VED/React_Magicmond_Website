@@ -16,17 +16,41 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
     onClose
   );
 
+  const isSports = location.pathname.includes('/sports');
+  const isInfraEdge = location.pathname.includes('/infraedge');
+
+  // Dynamic theme colors
+  let checkBg = 'bg-[#c055e5]/10';
+  let checkText = 'text-[#c055e5]';
+  let nameHighlight = 'text-[#c055e5]';
+  let buttonClass = 'bg-gradient-to-r from-[#9c3fc2] to-[#c055e5] hover:from-[#ab4ad4] hover:to-[#cb64ef] text-white font-medium shadow-[0_0_15px_rgba(193,86,230,0.25)]';
+  let textareaFocus = 'focus:border-[#c055e5]';
+
+  if (isSports) {
+    checkBg = 'bg-[#1ff9b8]/10';
+    checkText = 'text-[#1ff9b8]';
+    nameHighlight = 'text-[#1ff9b8]';
+    buttonClass = 'bg-gradient-to-r from-[#00ac79] to-[#1ff9b8] hover:from-[#00c285] hover:to-[#22dfa0] text-[#010502] font-semibold shadow-[0_0_15px_rgba(31,249,184,0.3)]';
+    textareaFocus = 'focus:border-[#1ff9b8]';
+  } else if (isInfraEdge) {
+    checkBg = 'bg-[#0055ff]/10';
+    checkText = 'text-[#0055ff]';
+    nameHighlight = 'text-[#0055ff]';
+    buttonClass = 'bg-[#0055ff] hover:bg-[#3572f5] text-white font-medium shadow-[0_0_15px_rgba(0,85,255,0.4)]';
+    textareaFocus = 'focus:border-[#0055ff]';
+  }
+
   if (isSubmitted) {
     let buttonText = 'Back to Home';
-    if (location.pathname.includes('/sports')) {
+    if (isSports) {
       buttonText = 'Back to Sports';
-    } else if (location.pathname.includes('/infraedge')) {
+    } else if (isInfraEdge) {
       buttonText = 'Back to Infra Edge';
     }
 
     return (
       <div className="flex flex-col items-center justify-center text-center p-4 min-h-[60vh] md:min-h-0">
-        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#c055e5]/10 flex items-center justify-center text-[#c055e5] mb-6">
+        <div className={`w-14 h-14 md:w-16 md:h-16 rounded-full ${checkBg} flex items-center justify-center ${checkText} mb-6`}>
           <CheckCircle2 size={32} className="md:w-[38px] md:h-[38px] animate-bounce" />
         </div>
 
@@ -35,13 +59,13 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
         </h3>
 
         <p className={`${FONTS.inter} text-[15px] md:text-[16.5px] text-white/80 leading-relaxed mb-8 px-2`}>
-          Thank you, <span className="text-[#c055e5] font-semibold">{formData.name}</span>! We have successfully received your consultation request and will get in touch with you shortly.
+          Thank you, <span className={`${nameHighlight} font-semibold`}>{formData.name}</span>! We have successfully received your consultation request and will get in touch with you shortly.
         </p>
 
         <button
           type="button"
           onClick={handleClose}
-          className={`${FONTS.inter} w-full md:w-auto h-[48px] px-6 rounded-lg bg-gradient-to-r from-[#9c3fc2] to-[#c055e5] hover:from-[#ab4ad4] hover:to-[#cb64ef] text-white font-medium shadow-[0_0_15px_rgba(193,86,230,0.25)] transition-all flex items-center justify-center gap-2`}
+          className={`${FONTS.inter} w-full md:w-auto h-[48px] px-6 rounded-lg ${buttonClass} transition-all flex items-center justify-center gap-2`}
         >
           <Home size={18} />
           <span>{buttonText}</span>
@@ -102,7 +126,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
           rows={3}
           value={formData.message}
           onChange={handleChange as any}
-          className={`${FONTS.inter} w-full p-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors resize-none`}
+          className={`${FONTS.inter} w-full p-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none ${textareaFocus} transition-colors resize-none`}
         />
       </div>
 
@@ -116,7 +140,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className={`${FONTS.inter} w-full h-[48px] rounded-lg bg-gradient-to-r from-[#9c3fc2] to-[#c055e5] hover:from-[#ab4ad4] hover:to-[#cb64ef] text-white font-medium shadow-[0_0_15px_rgba(193,86,230,0.25)] transition-all disabled:opacity-50 flex items-center justify-center gap-2`}
+          className={`${FONTS.inter} w-full h-[48px] rounded-lg ${buttonClass} transition-all disabled:opacity-50 flex items-center justify-center gap-2`}
         >
           {loading ? (
             <>
