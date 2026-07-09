@@ -1,7 +1,7 @@
 export const spStats = [
-  { value: "7", symbol: "+", label: "years industry experience" },
-  { value: "40", symbol: "+", label: "projects successfully done" },
-  { value: "99", symbol: "%", label: "clients satisfaction rate" },
+  { value: "07", symbol: "+", label: "years industry experience" },
+  { value: "30", symbol: "+", label: "projects successfully done" },
+  { value: "45", symbol: "+", label: "franchises/athletes partners" },
 ];
 
 export const spServices = [

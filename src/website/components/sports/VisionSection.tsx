@@ -4,8 +4,11 @@ import { spStats } from '../../../data/sports/sportsData';
 export function VisionSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const leftReelRef = useRef<HTMLDivElement>(null);
-  const rightReelRef = useRef<HTMLDivElement>(null);
+
+  const imgLeft1Ref = useRef<HTMLDivElement>(null);
+  const imgLeft2Ref = useRef<HTMLDivElement>(null);
+  const imgRight1Ref = useRef<HTMLDivElement>(null);
+  const imgRight2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,52 +16,77 @@ export function VisionSection() {
 
       const containerRect = containerRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      const containerHeight = containerRect.height;
-      const totalScrollable = containerHeight - viewportHeight;
+      const totalScrollable = containerRect.height - viewportHeight;
 
       if (totalScrollable <= 0) return;
 
+      // Calculate progress (from 0 to 1) along the scroll track
+      const scrolled = -containerRect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / totalScrollable));
+
+      // 1. Update position of the fixed wrapper
       if (containerRect.top > 0) {
-        // Initial state: Absolute top (scrolling with page before reaching top of viewport)
+        // Before section: scroll inline at top
         sectionRef.current.style.position = 'absolute';
         sectionRef.current.style.top = '0';
         sectionRef.current.style.bottom = 'auto';
-
-        if (leftReelRef.current) leftReelRef.current.style.transform = 'translate3d(0, 0%, 0)';
-        if (rightReelRef.current) rightReelRef.current.style.transform = 'translate3d(0, 0%, 0)';
       } else if (containerRect.bottom < viewportHeight) {
-        // Past state: Absolute bottom (scrolling with page after finishing the image transitions)
+        // After section: scroll inline at bottom
         sectionRef.current.style.position = 'absolute';
         sectionRef.current.style.top = 'auto';
         sectionRef.current.style.bottom = '0';
-
-        if (leftReelRef.current) leftReelRef.current.style.transform = 'translate3d(0, -50%, 0)';
-        if (rightReelRef.current) rightReelRef.current.style.transform = 'translate3d(0, -50%, 0)';
       } else {
-        // Active state: Pinned to viewport (section remains completely fixed on screen)
+        // Within section: pin to viewport
         sectionRef.current.style.position = 'fixed';
         sectionRef.current.style.top = '0';
         sectionRef.current.style.bottom = 'auto';
+      }
 
-        const scrolled = -containerRect.top;
-        let progress = scrolled / totalScrollable;
-        progress = Math.max(0, Math.min(1, progress));
+      // 2. Translate floating images dynamically
+      const left1Y = progress * -(viewportHeight * 0.95);
+      const left2Y = progress * -(viewportHeight * 0.90);
+      const right1Y = progress * -(viewportHeight * 0.95);
+      const right2Y = progress * -(viewportHeight * 0.85);
 
-        // Reels scroll/translate from 0% (first image) to -50% (second image)
-        const translateVal = progress * -50;
+      if (imgLeft1Ref.current) imgLeft1Ref.current.style.transform = `translate3d(0, ${left1Y}px, 0)`;
+      if (imgLeft2Ref.current) imgLeft2Ref.current.style.transform = `translate3d(0, ${left2Y}px, 0)`;
+      if (imgRight1Ref.current) imgRight1Ref.current.style.transform = `translate3d(0, ${right1Y}px, 0)`;
+      if (imgRight2Ref.current) imgRight2Ref.current.style.transform = `translate3d(0, ${right2Y}px, 0)`;
 
-        if (leftReelRef.current) {
-          leftReelRef.current.style.transform = `translate3d(0, ${translateVal}%, 0)`;
-        }
-        if (rightReelRef.current) {
-          rightReelRef.current.style.transform = `translate3d(0, ${translateVal}%, 0)`;
+      // 3. Update opacities dynamically (hidden at first scroll, fades in surprises)
+      const isMobile = window.innerWidth < 768;
+      const maxOpacity = isMobile ? 0.5 : 1.0;
+
+      // First set of images fades in from progress 0 to 0.1, fades out from 0.35 to 0.45
+      let opacity1 = 0;
+      if (progress > 0 && progress < 0.45) {
+        if (progress < 0.1) {
+          opacity1 = (progress / 0.1) * maxOpacity;
+        } else if (progress > 0.35) {
+          opacity1 = ((0.45 - progress) / 0.1) * maxOpacity;
+        } else {
+          opacity1 = maxOpacity;
         }
       }
+
+      // Second set of images fades in from progress 0.3 to 0.45, remains visible
+      let opacity2 = 0;
+      if (progress > 0.3) {
+        if (progress < 0.45) {
+          opacity2 = ((progress - 0.3) / 0.15) * maxOpacity;
+        } else {
+          opacity2 = maxOpacity;
+        }
+      }
+
+      if (imgLeft1Ref.current) imgLeft1Ref.current.style.opacity = String(opacity1);
+      if (imgRight1Ref.current) imgRight1Ref.current.style.opacity = String(opacity1);
+      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacity2);
+      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacity2);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('resize', handleScroll);
-    // Initialize positioning
     handleScroll();
 
     return () => {
@@ -68,11 +96,11 @@ export function VisionSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[280vh] bg-[#010502]">
+    <div ref={containerRef} className="relative w-full h-[300vh] bg-[#010502]">
       <section
         ref={sectionRef}
         id="about"
-        className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20"
+        className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20 pt-[80px] md:pt-[149px] pb-[100px] md:pb-[182px]"
       >
         {/* Background Graphic Effect */}
         <img
@@ -81,41 +109,45 @@ export function VisionSection() {
           alt=""
         />
 
-        {/* Floating Left Reel (parelexPhoto1 -> parelexPhoto4) */}
+        {/* Floating Left Image 1 (Navjot Sidhu, square) */}
         <div
-          className="absolute left-[3%] sm:left-[5%] top-[10%] sm:top-[12%] w-[90px] sm:w-[140px] md:w-[280px] aspect-square rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
+          ref={imgLeft1Ref}
+          className="absolute left-[3%] sm:left-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <div ref={leftReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-          </div>
+          <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        {/* Floating Right Reel (parelexPhoto2 -> parelexPhoto5) */}
+        {/* Floating Left Image 2 (IPL photo, vertical) */}
         <div
-          className="absolute right-[3%] sm:right-[5%] bottom-[5%] sm:bottom-[10%] w-[90px] sm:w-[140px] md:w-[280px] aspect-[565/425] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
+          ref={imgLeft2Ref}
+          className="absolute left-[3%] sm:left-[5%] top-[110vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <div ref={rightReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-          </div>
+          <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        <div className="container mx-auto px-5 md:px-10 relative z-10">
+        {/* Floating Right Image 1 (Three partners, landscape) */}
+        <div
+          ref={imgRight1Ref}
+          className="absolute right-[3%] sm:right-[5%] top-[45vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+        >
+          <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
+        </div>
+
+        {/* Floating Right Image 2 (Woman/Frame, landscape) */}
+        <div
+          ref={imgRight2Ref}
+          className="absolute right-[3%] sm:right-[5%] top-[120vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+        >
+          <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
+        </div>
+
+        <div className="container mx-auto px-5 md:px-10 relative z-10 h-full flex flex-col justify-between items-center">
           <span className="inline-flex items-center justify-center w-[95.3px] h-[34px] rounded-[20px] bg-white/[0.05] border border-white/10 text-[13.2px] text-white font-body font-medium tracking-[-0.28px] reveal">
             Our Vision
           </span>
 
           <p
-            className="relative max-w-[760px] mx-auto mt-[54px] px-6 sm:px-0 font-head font-medium text-[16px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
+            className="relative max-w-[760px] mx-auto mt-[54px] px-6 sm:px-0 font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
             style={{ '--d': '.1s' } as React.CSSProperties}
           >
             {/* Left Floral Accent */}
