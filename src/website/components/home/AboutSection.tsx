@@ -55,14 +55,6 @@ export function AboutSection() {
               >
                 Know more
               </Button>
-              <div className="flex flex-col gap-0.5 shrink-0">
-                <div className="flex text-[#c055e5] gap-0.5 text-[14px] sm:text-[15px]">
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-                </div>
-                <span className="text-[11.5px] sm:text-[12.5px] text-white/60 font-inter font-medium tracking-wide">
-                  200+ Agencies Rated
-                </span>
-              </div>
             </div>
           </div>
         </div>
