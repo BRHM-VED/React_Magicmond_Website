@@ -111,7 +111,7 @@ export function ServiceCard({
         <div className="absolute inset-0 bg-gradient-to-b from-[#c156e6] to-[#3c0051]" />
         {/* Card image */}
         <img
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-bottom"
           src={image}
           alt={imageAlt}
         />

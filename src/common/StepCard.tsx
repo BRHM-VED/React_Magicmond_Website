@@ -131,8 +131,8 @@ export function StepCard({
           ) : null}
         </div>
 
-        {/* Purple border overlay (fully rounded and glowing) */}
-        <div className="absolute inset-0 pointer-events-none rounded-[21px] border border-[#c156e6] shadow-[0_0_15px_rgba(193,86,230,0.25)]" />
+        {/* Border overlay */}
+        <div className="absolute inset-0 pointer-events-none rounded-[21px] border border-white/10" />
       </div>
     </article>
   );

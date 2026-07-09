@@ -19,7 +19,7 @@ export default function Sports() {
   useReveal();
 
   return (
-    <div className="bg-[#010502] font-body text-white min-h-screen relative w-full overflow-hidden">
+    <div className="bg-[#010502] font-body text-white min-h-screen relative w-full overflow-x-hidden">
       <Navbar suffix="Sports" activePath="/sports" />
       <main>
         <HeroSection />
