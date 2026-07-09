@@ -6,20 +6,19 @@ export function ServicesSection() {
   return (
     <section id="service" className="bg-[#010502] pb-20 md:py-28 px-5 md:px-10 text-center overflow-hidden w-full relative">
       <div className="w-full md:container mx-auto px-0 max-w-[1240px] relative z-10">
-        <h2 className="font-body font-medium text-[26px] sm:text-[36px] md:text-[54px] leading-[1.25] md:leading-[1.15] tracking-[-0.8px] md:tracking-[-1.9px] text-white text-center max-w-[900px] mx-auto reveal">
-          Drive real
+        <h2 className="font-body font-medium text-[26px] sm:text-[36px] md:text-[54px] leading-[1.25] md:leading-[1.15] tracking-[-0.8px] md:tracking-[-1.9px] text-white text-center max-w-[950px] mx-auto reveal">
+          From Boundaries
           <img
             src="/assets/images/sports/leafSports.webp"
             className="h-[24px] sm:h-[34px] md:h-[42px] lg:h-[72px] w-auto inline-block align-middle mx-2.5 md:mx-3.5 select-none pointer-events-none"
             alt=""
           />
-          results with <br className="hidden md:block" />
-          <span className="font-serif italic text-[#1ff9b8]">creativity, strategy </span><span className="font-serif italic text-white">&</span><span className="font-serif italic text-[#1ff9b8]"> innovation</span>
+          to Brand <br className="hidden md:block" />
+          Stories — We Do It All.
         </h2>
 
-        <p className="text-white/95 md:text-[#aaaaaa] font-head font-normal text-[12px] md:text-[16.6px] leading-[1.65] text-center max-w-[620px] mx-auto mt-6 reveal" style={{ '--d': '.1s' } as React.CSSProperties}>
-          Backed by proven expertise, we transform businesses into <br className="hidden md:block" />
-          future-ready brands that thrive in a competitive market.
+        <p className="text-white/95 md:text-[#aaaaaa] font-head font-normal text-[12px] md:text-[16.6px] leading-[1.65] text-center max-w-[690px] mx-auto mt-6 reveal" style={{ '--d': '.1s' } as React.CSSProperties}>
+          Whether you want to be seen on the field, on the screen, or on the fan's feed — we make it happen.
         </p>
 
         <div className="mt-8 reveal flex justify-center w-full px-5 md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
