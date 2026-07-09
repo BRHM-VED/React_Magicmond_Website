@@ -32,11 +32,11 @@ export function FormBottomSheet({ isOpen, onClose, onSubmitSuccess }: FormBottom
 
       {/* Bottom Sheet Drawer */}
       <div
-        className={`relative w-full bg-[#0c0416] border-t border-white/10 rounded-t-3xl p-6 pb-20 shadow-2xl z-10 transition-transform duration-300 transform ${animate ? 'translate-y-0' : 'translate-y-full'
+        className={`relative w-full h-[90vh] flex flex-col bg-[#0c0416] border-t border-white/10 rounded-t-3xl p-6 pb-8 shadow-2xl z-10 transition-transform duration-300 transform ${animate ? 'translate-y-0' : 'translate-y-full'
           }`}
       >
         {/* Notch / Handle for bottom sheet */}
-        <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mb-5" />
+        <div className="w-12 h-1 bg-white/20 rounded-full mx-auto mb-5 flex-shrink-0" />
 
         <button
           onClick={onClose}
@@ -46,7 +46,9 @@ export function FormBottomSheet({ isOpen, onClose, onSubmitSuccess }: FormBottom
           <X size={20} />
         </button>
 
-        <BookingForm onSubmitSuccess={onSubmitSuccess} onClose={onClose} />
+        <div className="flex-1 overflow-y-auto pr-1 pb-6">
+          <BookingForm onSubmitSuccess={onSubmitSuccess} onClose={onClose} />
+        </div>
       </div>
     </div>
   );

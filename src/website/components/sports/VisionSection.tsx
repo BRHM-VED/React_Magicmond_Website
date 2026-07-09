@@ -61,45 +61,54 @@ export function VisionSection() {
       const maxOpacity = isMobile ? 0.5 : 1.0;
       const travelDistance = viewportHeight * 0.8;
 
-      // 2. Translate and Fade Left 1 (Three partners) & Right 1 (Sidhu)
-      // They start at 0 translation and translate up to -travelDistance, fading out from progress 0.25 to 0.35
-      const opacity1 = interpolate(progress, 0.0, 0.32, maxOpacity, 0);
-      const y1 = interpolate(progress, 0.0, 0.32, 0, -travelDistance);
+      // --- Choreographed Late-Scroll Parallax Timeline (Starts at progress 0.45) ---
+
+      // 2. Translate and Fade Left 1 (Sidhu) & Right 1 (Three partners)
+      // Fades in and slides up between 0.45 and 0.60. Fades out and slides up between 0.70 and 0.85.
+      let opacity1 = 0;
+      let y1 = travelDistance;
+      if (progress < 0.65) {
+        opacity1 = interpolate(progress, 0.45, 0.60, 0, maxOpacity);
+        y1 = interpolate(progress, 0.45, 0.60, travelDistance, 0);
+      } else {
+        opacity1 = interpolate(progress, 0.70, 0.85, maxOpacity, 0);
+        y1 = interpolate(progress, 0.70, 0.85, 0, -travelDistance);
+      }
 
       // 3. Translate and Fade Left 2 (Two Guys Standing)
-      // Starts off-screen (+travelDistance), slides up to 0, then slides up to -travelDistance and fades out from 0.55 to 0.7
+      // Fades in and slides up between 0.60 and 0.75. Fades out and slides up between 0.80 and 0.95.
       let opacityLeft2 = 0;
       let yLeft2 = travelDistance;
-      if (progress < 0.45) {
-        opacityLeft2 = interpolate(progress, 0.1, 0.35, 0, maxOpacity);
-        yLeft2 = interpolate(progress, 0.1, 0.35, travelDistance, 0);
+      if (progress < 0.78) {
+        opacityLeft2 = interpolate(progress, 0.60, 0.75, 0, maxOpacity);
+        yLeft2 = interpolate(progress, 0.60, 0.75, travelDistance, 0);
       } else {
-        opacityLeft2 = interpolate(progress, 0.55, 0.7, maxOpacity, 0);
-        yLeft2 = interpolate(progress, 0.55, 0.7, 0, -travelDistance);
+        opacityLeft2 = interpolate(progress, 0.80, 0.95, maxOpacity, 0);
+        yLeft2 = interpolate(progress, 0.80, 0.95, 0, -travelDistance);
       }
 
       // 4. Translate and Fade Left 3 (IPL Photo)
-      // Starts off-screen, slides up to 0, then slides up to -travelDistance and fades out from 0.85 to 1.0
+      // Fades in and slides up between 0.75 and 0.90. Fades out and slides up between 0.95 and 1.00.
       let opacityLeft3 = 0;
       let yLeft3 = travelDistance;
-      if (progress < 0.7) {
-        opacityLeft3 = interpolate(progress, 0.45, 0.7, 0, maxOpacity);
-        yLeft3 = interpolate(progress, 0.45, 0.7, travelDistance, 0);
+      if (progress < 0.92) {
+        opacityLeft3 = interpolate(progress, 0.75, 0.90, 0, maxOpacity);
+        yLeft3 = interpolate(progress, 0.75, 0.90, travelDistance, 0);
       } else {
-        opacityLeft3 = interpolate(progress, 0.85, 1.0, maxOpacity, 0);
-        yLeft3 = interpolate(progress, 0.85, 1.0, 0, -travelDistance);
+        opacityLeft3 = interpolate(progress, 0.95, 1.00, maxOpacity, 0);
+        yLeft3 = interpolate(progress, 0.95, 1.00, 0, -travelDistance);
       }
 
       // 5. Translate and Fade Right 2 (Woman/Frame)
-      // Starts off-screen, slides up to 0, then slides up to -travelDistance and fades out from 0.85 to 1.0
+      // Fades in and slides up between 0.60 and 0.75. Fades out and slides up between 0.95 and 1.00.
       let opacityRight2 = 0;
       let yRight2 = travelDistance;
-      if (progress < 0.5) {
-        opacityRight2 = interpolate(progress, 0.2, 0.5, 0, maxOpacity);
-        yRight2 = interpolate(progress, 0.2, 0.5, travelDistance, 0);
+      if (progress < 0.85) {
+        opacityRight2 = interpolate(progress, 0.60, 0.75, 0, maxOpacity);
+        yRight2 = interpolate(progress, 0.60, 0.75, travelDistance, 0);
       } else {
-        opacityRight2 = interpolate(progress, 0.85, 1.0, maxOpacity, 0);
-        yRight2 = interpolate(progress, 0.85, 1.0, 0, -travelDistance);
+        opacityRight2 = interpolate(progress, 0.95, 1.00, maxOpacity, 0);
+        yRight2 = interpolate(progress, 0.95, 1.00, 0, -travelDistance);
       }
 
       // Apply transforms
@@ -149,12 +158,12 @@ export function VisionSection() {
           alt=""
         />
 
-        {/* Floating Left Image 1 (Three Partners, landscape) */}
+        {/* Floating Left Image 1 (Navjot Sidhu, square) */}
         <div
           ref={imgLeft1Ref}
           className="absolute left-[3%] sm:left-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Left Image 2 (Two Guys Standing, vertical) */}
@@ -173,12 +182,12 @@ export function VisionSection() {
           <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        {/* Floating Right Image 1 (Navjot Sidhu, square) */}
+        {/* Floating Right Image 1 (Three partners, landscape) */}
         <div
           ref={imgRight1Ref}
           className="absolute right-[3%] sm:right-[5%] top-[40vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Right Image 2 (Woman/Frame, portrait) */}
