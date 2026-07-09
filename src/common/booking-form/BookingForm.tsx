@@ -57,7 +57,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
 
     try {
       await fetch(
-        (import.meta as any).env?.VITE_API_URL || 'https://api.magicmond.com/sheets/book-consultation',
+        (import.meta as any).env?.VITE_API_URL || 'http://187.127.152.186:3001/api/magicmondWebLeads',
         {
           method: 'POST',
           headers: {

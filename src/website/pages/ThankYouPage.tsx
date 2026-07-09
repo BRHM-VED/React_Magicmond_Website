@@ -26,11 +26,11 @@ export function ThankYouPage() {
         <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#c055e5]/10 flex items-center justify-center text-[#c055e5] mb-5 md:mb-6">
           <CheckCircle2 size={32} className="md:w-[38px] md:h-[38px] animate-bounce" />
         </div>
-        
+
         <h1 className={`${FONTS.head} text-[24px] md:text-[28px] font-bold text-white mb-2 md:mb-3`}>
           Submission Successful!
         </h1>
-        
+
         <p className={`${FONTS.inter} text-[14.5px] md:text-[16px] text-white/80 leading-relaxed mb-6 md:mb-8 px-2 md:px-0`}>
           Thank you, <span className="text-[#c055e5] font-semibold">{name}</span>! We have successfully received your consultation request and will get in touch with you shortly.
         </p>
