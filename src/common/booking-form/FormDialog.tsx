@@ -13,7 +13,7 @@ export function FormDialog({ isOpen, onClose, onSubmitSuccess }: FormDialogProps
   return (
     <div className="fixed inset-0 z-[1100] flex items-center justify-center p-4">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm cursor-pointer"
         onClick={onClose}
       />

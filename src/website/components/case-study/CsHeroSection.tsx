@@ -26,7 +26,7 @@ export function CsHeroSection({ study, heroImage }: Props) {
           <img
             src={heroImage}
             alt={`${study.brand.name} product dashboard`}
-            className="w-full object-cover object-top max-h-[480px] md:max-h-[560px] select-none pointer-events-none"
+            className="w-full object-cover object-bottom max-h-[480px] md:max-h-[560px] select-none pointer-events-none"
           />
         ) : (
           /* Placeholder until image path is provided */
