@@ -5,7 +5,7 @@ export { CALENDLY };
 
 export const navLinks: NavLink[] = [
   { label: "About", to: "/#about" },
-  { label: "InfraEdge", to: "/infraedge", badge: "Top Choice" },
+  { label: "InfraEdge", to: "/infraedge" },
   { label: "Sports", to: "/sports" },
   { label: "Services", to: "/#service" },
   { label: "Process", to: "/#process" },
