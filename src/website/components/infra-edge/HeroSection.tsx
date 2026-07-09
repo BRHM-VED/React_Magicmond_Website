@@ -1,6 +1,5 @@
 import { LightRays } from '../../../common/LightRays';
 import { CALENDLY } from '../../../utils/constants/constants';
-import { WatchVideoButton } from '../../../common/youtube/WatchVideoButton';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 
 export function HeroSection() {
@@ -29,7 +28,6 @@ export function HeroSection() {
           <InfraEdgeButton variant="small" href={CALENDLY}>
             Transform my business
           </InfraEdgeButton>
-          <WatchVideoButton videoUrl="https://www.youtube.com/watch?v=p4mArfDZEgc" />
         </div>
       </div>
 

@@ -1,6 +1,5 @@
 import { LightRays } from '../../../common/LightRays';
 import { CALENDLY } from '../../../utils/constants/constants';
-import { WatchVideoButton } from '../../../common/youtube/WatchVideoButton';
 import { Button } from '../../../common/button/homeButton';
 import { FONTS } from '../../../utils/constants/fonts';
 
@@ -31,7 +30,6 @@ export function HeroSection() {
           >
             Get Started Now
           </Button>
-          <WatchVideoButton />
         </div>
       </div>
     </section>
