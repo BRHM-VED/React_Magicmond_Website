@@ -6,7 +6,7 @@ export const onsiteCaseStudy: NewCaseStudy = {
   metaDescription: 'How Onsite went from 15-20L to 35-40L. A predictable pipeline for a construction SaaS platform. How we cut cost per qualified prospect by 25% and built a repeatable growth engine.',
   brand: {
     name: 'Onsite',
-    logo: '/assets/images/caseStudy/Onsite/dashboard.webp',
+    logo: '/assets/images/common/OneSiteLogo.webp',
     accentColor: '#0055cc',
     visitUrl: 'https://onsite.in/',
     category: 'SaaS',

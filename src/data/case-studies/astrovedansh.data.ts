@@ -6,7 +6,7 @@ export const astrovedanshCaseStudy: NewCaseStudy = {
   metaDescription: 'Astro Vedansh sees a 1200% Growth in Revenues in the very second month with MagicMond. ₹10 Crore annual revenue stream for Astro Vedansh.',
   brand: {
     name: 'AstroVedansh',
-    logo: '/assets/images/caseStudy/AstroVedansh/Growth.webp',
+    logo: '/assets/images/common/AstroVedanshLogo.svg',
     accentColor: '#c055e5',
     visitUrl: 'https://astrovedansh.com/',
     category: 'Creator',

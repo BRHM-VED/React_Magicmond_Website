@@ -106,7 +106,7 @@ export const caseSlides: CaseSlide[] = [
     metric: "3 Months",
   },
   {
-    logo: "/assets/images/home/logo-astrovedansh.webp",
+    logo: "/assets/images/common/AstroVedanshLogo.svg",
     titleLines: ["₹10 Crore Annual", "Revenue stream for"],
     serifLine: "AstroVedansh",
     description: "AstroVedansh sees 1200% Revenue growth in very second month with MagicMond.",
