@@ -4,7 +4,7 @@ import { spStats } from '../../../data/sports/sportsData';
 export function VisionSection() {
   const containerRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-  
+
   const imgLeft1Ref = useRef<HTMLDivElement>(null);
   const imgLeft2Ref = useRef<HTMLDivElement>(null);
   const imgLeft3Ref = useRef<HTMLDivElement>(null);
@@ -123,9 +123,9 @@ export function VisionSection() {
 
   return (
     <div ref={containerRef} className="relative w-full h-[360vh] bg-[#010502]">
-      <section 
-        ref={sectionRef} 
-        id="about" 
+      <section
+        ref={sectionRef}
+        id="about"
         className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20 pt-[80px] md:pt-[149px] pb-[100px] md:pb-[182px]"
       >
         {/* Background Graphic Effect */}
@@ -136,7 +136,7 @@ export function VisionSection() {
         />
 
         {/* Floating Left Image 1 (Navjot Sidhu, square) */}
-        <div 
+        <div
           ref={imgLeft1Ref}
           className="absolute left-[3%] sm:left-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
@@ -144,7 +144,7 @@ export function VisionSection() {
         </div>
 
         {/* Floating Left Image 2 (Two Guys Standing, vertical) */}
-        <div 
+        <div
           ref={imgLeft2Ref}
           className="absolute left-[3%] sm:left-[5%] top-[110vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
@@ -152,7 +152,7 @@ export function VisionSection() {
         </div>
 
         {/* Floating Left Image 3 (IPL photo, landscape) */}
-        <div 
+        <div
           ref={imgLeft3Ref}
           className="absolute left-[3%] sm:left-[5%] top-[180vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
@@ -160,7 +160,7 @@ export function VisionSection() {
         </div>
 
         {/* Floating Right Image 1 (Three partners, landscape) */}
-        <div 
+        <div
           ref={imgRight1Ref}
           className="absolute right-[3%] sm:right-[5%] top-[45vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
@@ -168,7 +168,7 @@ export function VisionSection() {
         </div>
 
         {/* Floating Right Image 2 (Woman/Frame, portrait) */}
-        <div 
+        <div
           ref={imgRight2Ref}
           className="absolute right-[3%] sm:right-[5%] top-[120vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
