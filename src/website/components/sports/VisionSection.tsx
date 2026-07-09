@@ -43,72 +43,86 @@ export function VisionSection() {
         sectionRef.current.style.bottom = 'auto';
       }
 
-      // 2. Translate floating images dynamically
-      const left1Y = progress * -(viewportHeight * 0.95);
-      const left2Y = progress * -(viewportHeight * 0.90);
-      const left3Y = progress * -(viewportHeight * 0.85);
-      const right1Y = progress * -(viewportHeight * 0.95);
-      const right2Y = progress * -(viewportHeight * 0.90);
+      // Helper function to interpolate values smoothly
+      const interpolate = (
+        p: number,
+        startProgress: number,
+        endProgress: number,
+        startVal: number,
+        endVal: number
+      ) => {
+        if (p <= startProgress) return startVal;
+        if (p >= endProgress) return endVal;
+        const ratio = (p - startProgress) / (endProgress - startProgress);
+        return startVal + ratio * (endVal - startVal);
+      };
 
-      if (imgLeft1Ref.current) imgLeft1Ref.current.style.transform = `translate3d(0, ${left1Y}px, 0)`;
-      if (imgLeft2Ref.current) imgLeft2Ref.current.style.transform = `translate3d(0, ${left2Y}px, 0)`;
-      if (imgLeft3Ref.current) imgLeft3Ref.current.style.transform = `translate3d(0, ${left3Y}px, 0)`;
-      if (imgRight1Ref.current) imgRight1Ref.current.style.transform = `translate3d(0, ${right1Y}px, 0)`;
-      if (imgRight2Ref.current) imgRight2Ref.current.style.transform = `translate3d(0, ${right2Y}px, 0)`;
-
-      // 3. Update opacities dynamically (hidden at first scroll, fades in surprises)
       const isMobile = window.innerWidth < 768;
       const maxOpacity = isMobile ? 0.5 : 1.0;
+      const travelDistance = viewportHeight * 0.8;
 
-      // Left 1 & Right 1: Fades in from progress 0 to 0.1, fades out from 0.3 to 0.4
-      let opacity1 = 0;
-      if (progress > 0 && progress < 0.4) {
-        if (progress < 0.1) {
-          opacity1 = (progress / 0.1) * maxOpacity;
-        } else if (progress > 0.3) {
-          opacity1 = ((0.4 - progress) / 0.1) * maxOpacity;
-        } else {
-          opacity1 = maxOpacity;
-        }
-      }
+      // 2. Translate and Fade Left 1 (Three partners) & Right 1 (Sidhu)
+      // They start at 0 translation and translate up to -travelDistance, fading out from progress 0.25 to 0.35
+      const opacity1 = interpolate(progress, 0.0, 0.32, maxOpacity, 0);
+      const y1 = interpolate(progress, 0.0, 0.32, 0, -travelDistance);
 
-      // Left 2 (Two Guys Standing): Fades in from progress 0.2 to 0.35, fades out from 0.6 to 0.7
+      // 3. Translate and Fade Left 2 (Two Guys Standing)
+      // Starts off-screen (+travelDistance), slides up to 0, then slides up to -travelDistance and fades out from 0.55 to 0.7
       let opacityLeft2 = 0;
-      if (progress > 0.2 && progress < 0.7) {
-        if (progress < 0.35) {
-          opacityLeft2 = ((progress - 0.2) / 0.15) * maxOpacity;
-        } else if (progress > 0.6) {
-          opacityLeft2 = ((0.7 - progress) / 0.1) * maxOpacity;
-        } else {
-          opacityLeft2 = maxOpacity;
-        }
+      let yLeft2 = travelDistance;
+      if (progress < 0.45) {
+        opacityLeft2 = interpolate(progress, 0.1, 0.35, 0, maxOpacity);
+        yLeft2 = interpolate(progress, 0.1, 0.35, travelDistance, 0);
+      } else {
+        opacityLeft2 = interpolate(progress, 0.55, 0.7, maxOpacity, 0);
+        yLeft2 = interpolate(progress, 0.55, 0.7, 0, -travelDistance);
       }
 
-      // Left 3 (IPL Photo): Fades in from progress 0.5 to 0.65, remains visible
+      // 4. Translate and Fade Left 3 (IPL Photo)
+      // Starts off-screen, slides up to 0, then slides up to -travelDistance and fades out from 0.85 to 1.0
       let opacityLeft3 = 0;
-      if (progress > 0.5) {
-        if (progress < 0.65) {
-          opacityLeft3 = ((progress - 0.5) / 0.15) * maxOpacity;
-        } else {
-          opacityLeft3 = maxOpacity;
-        }
+      let yLeft3 = travelDistance;
+      if (progress < 0.7) {
+        opacityLeft3 = interpolate(progress, 0.45, 0.7, 0, maxOpacity);
+        yLeft3 = interpolate(progress, 0.45, 0.7, travelDistance, 0);
+      } else {
+        opacityLeft3 = interpolate(progress, 0.85, 1.0, maxOpacity, 0);
+        yLeft3 = interpolate(progress, 0.85, 1.0, 0, -travelDistance);
       }
 
-      // Right 2 (Woman/Frame): Fades in from progress 0.2 to 0.35, remains visible
+      // 5. Translate and Fade Right 2 (Woman/Frame)
+      // Starts off-screen, slides up to 0, then slides up to -travelDistance and fades out from 0.85 to 1.0
       let opacityRight2 = 0;
-      if (progress > 0.2) {
-        if (progress < 0.35) {
-          opacityRight2 = ((progress - 0.2) / 0.15) * maxOpacity;
-        } else {
-          opacityRight2 = maxOpacity;
-        }
+      let yRight2 = travelDistance;
+      if (progress < 0.5) {
+        opacityRight2 = interpolate(progress, 0.2, 0.5, 0, maxOpacity);
+        yRight2 = interpolate(progress, 0.2, 0.5, travelDistance, 0);
+      } else {
+        opacityRight2 = interpolate(progress, 0.85, 1.0, maxOpacity, 0);
+        yRight2 = interpolate(progress, 0.85, 1.0, 0, -travelDistance);
       }
 
-      if (imgLeft1Ref.current) imgLeft1Ref.current.style.opacity = String(opacity1);
-      if (imgRight1Ref.current) imgRight1Ref.current.style.opacity = String(opacity1);
-      if (imgLeft2Ref.current) imgLeft2Ref.current.style.opacity = String(opacityLeft2);
-      if (imgLeft3Ref.current) imgLeft3Ref.current.style.opacity = String(opacityLeft3);
-      if (imgRight2Ref.current) imgRight2Ref.current.style.opacity = String(opacityRight2);
+      // Apply transforms
+      if (imgLeft1Ref.current) {
+        imgLeft1Ref.current.style.transform = `translate3d(0, ${y1}px, 0)`;
+        imgLeft1Ref.current.style.opacity = String(opacity1);
+      }
+      if (imgRight1Ref.current) {
+        imgRight1Ref.current.style.transform = `translate3d(0, ${y1}px, 0)`;
+        imgRight1Ref.current.style.opacity = String(opacity1);
+      }
+      if (imgLeft2Ref.current) {
+        imgLeft2Ref.current.style.transform = `translate3d(0, ${yLeft2}px, 0)`;
+        imgLeft2Ref.current.style.opacity = String(opacityLeft2);
+      }
+      if (imgLeft3Ref.current) {
+        imgLeft3Ref.current.style.transform = `translate3d(0, ${yLeft3}px, 0)`;
+        imgLeft3Ref.current.style.opacity = String(opacityLeft3);
+      }
+      if (imgRight2Ref.current) {
+        imgRight2Ref.current.style.transform = `translate3d(0, ${yRight2}px, 0)`;
+        imgRight2Ref.current.style.opacity = String(opacityRight2);
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -122,7 +136,7 @@ export function VisionSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[360vh] bg-[#010502]">
+    <div ref={containerRef} className="relative w-full h-[280vh] bg-[#010502]">
       <section
         ref={sectionRef}
         id="about"
@@ -135,18 +149,18 @@ export function VisionSection() {
           alt=""
         />
 
-        {/* Floating Left Image 1 (Navjot Sidhu, square) */}
+        {/* Floating Left Image 1 (Three Partners, landscape) */}
         <div
           ref={imgLeft1Ref}
           className="absolute left-[3%] sm:left-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Left Image 2 (Two Guys Standing, vertical) */}
         <div
           ref={imgLeft2Ref}
-          className="absolute left-[3%] sm:left-[5%] top-[110vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="absolute left-[3%] sm:left-[5%] top-[25vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-auto object-cover" alt="" />
         </div>
@@ -154,28 +168,28 @@ export function VisionSection() {
         {/* Floating Left Image 3 (IPL photo, landscape) */}
         <div
           ref={imgLeft3Ref}
-          className="absolute left-[3%] sm:left-[5%] top-[180vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="absolute left-[3%] sm:left-[5%] top-[48vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        {/* Floating Right Image 1 (Three partners, landscape) */}
+        {/* Floating Right Image 1 (Navjot Sidhu, square) */}
         <div
           ref={imgRight1Ref}
-          className="absolute right-[3%] sm:right-[5%] top-[45vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="absolute right-[3%] sm:right-[5%] top-[40vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
-          <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
+          <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
         {/* Floating Right Image 2 (Woman/Frame, portrait) */}
         <div
           ref={imgRight2Ref}
-          className="absolute right-[3%] sm:right-[5%] top-[120vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="absolute right-[3%] sm:right-[5%] top-[55vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        <div className="container mx-auto px-5 md:px-10 relative z-10 h-full flex flex-col justify-center items-center">
+        <div className="container mx-auto px-5 md:px-10 relative z-[25] md:z-10 h-full flex flex-col justify-center items-center">
           <span className="inline-flex items-center justify-center w-[95.3px] h-[34px] rounded-[20px] bg-white/[0.05] border border-white/10 text-[13.2px] text-white font-body font-medium tracking-[-0.28px] reveal">
             Our Vision
           </span>

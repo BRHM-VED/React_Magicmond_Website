@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export function useBookingForm(onSubmitSuccess?: () => void, onClose?: () => void) {
-  const navigate = useNavigate();
   const location = useLocation();
 
   const [formData, setFormData] = useState({
@@ -15,6 +14,7 @@ export function useBookingForm(onSubmitSuccess?: () => void, onClose?: () => voi
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Determine formTrack based on current page URL path
   let formTrack = 'Home';
@@ -55,10 +55,7 @@ export function useBookingForm(onSubmitSuccess?: () => void, onClose?: () => voi
     };
 
     try {
-      const apiUrl = (import.meta as any).env?.VITE_API_URL;
-      if (!apiUrl) {
-        throw new Error('VITE_API_URL environment variable is not defined.');
-      }
+      const apiUrl = (import.meta as any).env?.VITE_API_URL || "";
       await fetch(
         apiUrl,
         {
@@ -71,24 +68,31 @@ export function useBookingForm(onSubmitSuccess?: () => void, onClose?: () => voi
       );
 
       onSubmitSuccess?.();
-      onClose?.();
-      navigate(`/thank-you?name=${encodeURIComponent(formData.name)}`);
+      window.history.pushState({ name: formData.name, from: location.pathname }, '', '/thank-you');
+      setIsSubmitted(true);
     } catch (err: any) {
       console.warn('API error:', err);
-      // Fallback: navigate to success page for testing/demonstration if API fails
       onSubmitSuccess?.();
-      onClose?.();
-      navigate(`/thank-you?name=${encodeURIComponent(formData.name)}`);
+      window.history.pushState({ name: formData.name, from: location.pathname }, '', '/thank-you');
+      setIsSubmitted(true);
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleClose = () => {
+    window.history.pushState(null, '', location.pathname);
+    setIsSubmitted(false);
+    onClose?.();
   };
 
   return {
     formData,
     loading,
     error,
+    isSubmitted,
     handleChange,
     handleSubmit,
+    handleClose,
   };
 }

@@ -1,3 +1,5 @@
+import { useLocation } from 'react-router-dom';
+import { CheckCircle2, Home } from 'lucide-react';
 import { FONTS } from '../../utils/constants/fonts';
 import { InputField } from './InputField';
 import { useBookingForm } from './useBookingForm';
@@ -8,10 +10,45 @@ interface BookingFormProps {
 }
 
 export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
-  const { formData, loading, error, handleChange, handleSubmit } = useBookingForm(
+  const location = useLocation();
+  const { formData, loading, error, isSubmitted, handleChange, handleSubmit, handleClose } = useBookingForm(
     onSubmitSuccess,
     onClose
   );
+
+  if (isSubmitted) {
+    let buttonText = 'Back to Home';
+    if (location.pathname.includes('/sports')) {
+      buttonText = 'Back to Sports';
+    } else if (location.pathname.includes('/infraedge')) {
+      buttonText = 'Back to Infra Edge';
+    }
+
+    return (
+      <div className="flex flex-col items-center text-center p-4 pb-4">
+        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#c055e5]/10 flex items-center justify-center text-[#c055e5] mb-6">
+          <CheckCircle2 size={32} className="md:w-[38px] md:h-[38px] animate-bounce" />
+        </div>
+
+        <h3 className={`${FONTS.head} text-[24px] md:text-[28px] font-bold text-white mb-3`}>
+          Submission Successful!
+        </h3>
+
+        <p className={`${FONTS.inter} text-[15px] md:text-[16.5px] text-white/80 leading-relaxed mb-8 px-2`}>
+          Thank you, <span className="text-[#c055e5] font-semibold">{formData.name}</span>! We have successfully received your consultation request and will get in touch with you shortly.
+        </p>
+
+        <button
+          type="button"
+          onClick={handleClose}
+          className={`${FONTS.inter} w-full md:w-auto h-[48px] px-6 rounded-lg bg-gradient-to-r from-[#9c3fc2] to-[#c055e5] hover:from-[#ab4ad4] hover:to-[#cb64ef] text-white font-medium shadow-[0_0_15px_rgba(193,86,230,0.25)] transition-all flex items-center justify-center gap-2`}
+        >
+          <Home size={18} />
+          <span>{buttonText}</span>
+        </button>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-full">
@@ -97,3 +134,5 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
     </form>
   );
 }
+
+export default BookingForm;

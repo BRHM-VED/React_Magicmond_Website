@@ -32,7 +32,7 @@ export function FormBottomSheet({ isOpen, onClose, onSubmitSuccess }: FormBottom
 
       {/* Bottom Sheet Drawer */}
       <div
-        className={`relative w-full bg-[#0c0416] border-t border-white/10 rounded-t-3xl p-6 pb-10 shadow-2xl z-10 transition-transform duration-300 transform ${animate ? 'translate-y-0' : 'translate-y-full'
+        className={`relative w-full bg-[#0c0416] border-t border-white/10 rounded-t-3xl p-6 pb-20 shadow-2xl z-10 transition-transform duration-300 transform ${animate ? 'translate-y-0' : 'translate-y-full'
           }`}
       >
         {/* Notch / Handle for bottom sheet */}

@@ -6,8 +6,17 @@ export function ThankYouPage() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Get name from query parameters
-  const name = new URLSearchParams(location.search).get('name') || 'Customer';
+  // Get name and from path from query parameters
+  const searchParams = new URLSearchParams(location.search);
+  const name = searchParams.get('name') || 'Customer';
+  const fromPath = searchParams.get('from') || '/';
+
+  let buttonText = 'Back to Home';
+  if (fromPath.includes('/sports')) {
+    buttonText = 'Back to Sports';
+  } else if (fromPath.includes('/infraedge')) {
+    buttonText = 'Back to Infra Edge';
+  }
 
   return (
     <main className="relative min-h-screen bg-[#010502] flex flex-col items-center justify-center p-4 overflow-hidden">
@@ -36,11 +45,11 @@ export function ThankYouPage() {
         </p>
 
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate(fromPath)}
           className={`${FONTS.inter} w-full md:w-auto h-[48px] px-6 rounded-lg bg-gradient-to-r from-[#9c3fc2] to-[#c055e5] hover:from-[#ab4ad4] hover:to-[#cb64ef] text-white font-medium shadow-[0_0_15px_rgba(193,86,230,0.25)] transition-all flex items-center justify-center gap-2`}
         >
           <Home size={18} />
-          <span>Back to Home</span>
+          <span>{buttonText}</span>
         </button>
       </div>
     </main>
