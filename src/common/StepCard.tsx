@@ -131,8 +131,8 @@ export function StepCard({
           ) : null}
         </div>
 
-        {/* Border overlay */}
-        <div className="absolute inset-0 pointer-events-none rounded-[21px] border border-white/10" />
+        {/* Border overlay (top and sides only) */}
+        <div className="absolute inset-0 pointer-events-none rounded-[21px] border-t border-x border-b-0 border-white/10" />
       </div>
     </article>
   );

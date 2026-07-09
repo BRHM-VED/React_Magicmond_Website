@@ -21,7 +21,7 @@ export function VisionSection() {
       let progress = scrolled / totalScrollable;
       progress = Math.max(0, Math.min(1, progress));
 
-      // Translate reels from 0% (first image) to -50% (second image)
+      // Translate reels from 0% (first image) to -50% (second image sliding up from bottom)
       const translateVal = progress * -50;
 
       if (leftReelRef.current) {
@@ -41,7 +41,7 @@ export function VisionSection() {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full h-[220vh] bg-[#010502]">
+    <div ref={containerRef} className="relative w-full h-[280vh] bg-[#010502]">
       <section id="about" className="sticky top-0 h-screen flex flex-col justify-center items-center text-center overflow-hidden w-full">
         {/* Background Graphic Effect */}
         <img
@@ -50,30 +50,30 @@ export function VisionSection() {
           alt=""
         />
 
-        {/* Floating Left Reel (parelexPhoto1 -> parelexPhoto4) */}
-        <div
-          className="absolute left-[3%] sm:left-[5%] top-[10%] sm:top-[12%] w-[90px] sm:w-[140px] md:w-[280px] aspect-square rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
+        {/* Floating Left Reel (parelexPhoto2 -> parelexPhoto5) */}
+        <div 
+          className="absolute left-[3%] sm:left-[5%] top-[10%] sm:top-[12%] w-[90px] sm:w-[140px] md:w-[280px] aspect-[565/425] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
         >
           <div ref={leftReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-            <div className="w-full h-1/2">
-              <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-full object-cover" alt="" />
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Right Reel (parelexPhoto2 -> parelexPhoto5) */}
-        <div
-          className="absolute right-[3%] sm:right-[5%] bottom-[5%] sm:bottom-[10%] w-[90px] sm:w-[140px] md:w-[280px] aspect-[565/425] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
-        >
-          <div ref={rightReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
             <div className="w-full h-1/2">
               <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-full object-cover" alt="" />
             </div>
             <div className="w-full h-1/2">
               <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-full object-cover" alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* Floating Right Reel (parelexPhoto1 -> parelexPhoto4) */}
+        <div 
+          className="absolute right-[3%] sm:right-[5%] bottom-[5%] sm:bottom-[10%] w-[90px] sm:w-[140px] md:w-[280px] aspect-square rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-50 md:opacity-100"
+        >
+          <div ref={rightReelRef} className="flex flex-col w-full h-[200%] transition-transform duration-75 ease-out">
+            <div className="w-full h-1/2">
+              <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-full object-cover" alt="" />
+            </div>
+            <div className="w-full h-1/2">
+              <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-full object-cover" alt="" />
             </div>
           </div>
         </div>
