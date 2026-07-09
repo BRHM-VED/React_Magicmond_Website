@@ -25,7 +25,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
     }
 
     return (
-      <div className="flex flex-col items-center text-center p-4 pb-4">
+      <div className="flex flex-col items-center justify-center text-center p-4 min-h-[60vh] md:min-h-0">
         <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-[#c055e5]/10 flex items-center justify-center text-[#c055e5] mb-6">
           <CheckCircle2 size={32} className="md:w-[38px] md:h-[38px] animate-bounce" />
         </div>
