@@ -167,11 +167,6 @@ export function Navbar({ suffix, activePath }: Props) {
                   >
                     <span className="relative flex items-center">
                       <span className="nav__link-text">{l.label}</span>
-                      {l.badge && (
-                        <span className="absolute left-[calc(70%)] top-[-8px] bg-white text-[#c055e5] font-semibold text-[6px] px-1.5 py-[1px] rounded-[4px] shadow-[0_2px_6px_rgba(0,0,0,0.15)] whitespace-nowrap select-none">
-                          {l.badge}
-                        </span>
-                      )}
                     </span>
                     {isServices && isHomePage && (
                       <ChevronDown
@@ -252,11 +247,6 @@ export function Navbar({ suffix, activePath }: Props) {
                     >
                       <span className="relative flex items-center">
                         {l.label}
-                        {l.badge && (
-                          <span className="absolute left-[calc(100%+6px)] top-[-6px] bg-white text-[#c055e5] font-semibold text-[9px] px-1.5 py-[2px] rounded-[5px] shadow-[0_2px_8px_rgba(0,0,0,0.15)] whitespace-nowrap tracking-wide select-none">
-                            {l.badge}
-                          </span>
-                        )}
                       </span>
                       {isServices && isHomePage && (
                         <ChevronDown
