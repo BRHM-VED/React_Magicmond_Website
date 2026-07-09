@@ -4,6 +4,7 @@ import HomePage from '../website/pages/HomePage';
 import InfraEdgePage from '../website/pages/InfraEdgePage';
 import SportsPage from '../website/pages/SportsPage';
 import NewCaseStudyPage from '../website/pages/NewCaseStudyPage';
+import ThankYouPage from '../website/pages/ThankYouPage';
 import { onsiteCaseStudy, onsiteStripImages } from '../data/case-studies/onsiteData';
 import { shriYamunaCaseStudy, shriYamunaStripImages } from '../data/case-studies/shri-yamuna.data';
 import { astrovedanshCaseStudy, astrovedanshStripImages } from '../data/case-studies/astrovedansh.data';
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: '/sports',
         element: <SportsPage />,
+      },
+      {
+        path: '/thank-you',
+        element: <ThankYouPage />,
       },
       // New reusable case study pages
       {
