@@ -111,7 +111,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
           onChange={handleChange}
           className={`${FONTS.inter} w-full h-[48px] px-4 rounded-lg bg-white/5 border border-white/10 text-white placeholder-white/40 focus:outline-none focus:border-[#c055e5] transition-colors`}
         />
-        
+
         {/* Phone Input with +91 Prefix, Digits only, exactly 10 digits validation */}
         <div className="flex w-full h-[48px] rounded-lg bg-white/5 border border-white/10 focus-within:border-[#c055e5] transition-colors overflow-hidden">
           <span className={`${FONTS.inter} flex items-center justify-center px-4 bg-white/5 border-r border-white/10 text-white/60 select-none text-[15px]`}>
