@@ -24,8 +24,8 @@ export function ProcessSection() {
           Scale your brand without limits.
         </p>
 
-        <div className="mt-8 reveal flex justify-center w-full px-5 md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
-          <SportsButton variant="small" href={CALENDLY} className="w-full md:w-auto">
+        <div className="mt-8 reveal block md:flex md:justify-center w-full px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
+          <SportsButton variant="small" href={CALENDLY} className="w-full md:w-auto flex md:inline-flex justify-center items-center">
             Transform my business
           </SportsButton>
         </div>

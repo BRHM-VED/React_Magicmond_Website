@@ -208,12 +208,12 @@ export function VisionSection() {
           </span>
 
           <p
-            className="relative max-w-[900px] mx-auto mt-[40px] md:mt-[27px] font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
+            className="relative max-w-[900px] mx-auto mt-[40px] md:mt-[27px] font-head font-medium text-[12px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
             style={{ '--d': '.1s' } as React.CSSProperties}
           >
             {/* Left Floral Accent */}
             <img
-              className="absolute top-[0px] md:top-[-24px] w-[35px] md:w-[60px] lg:w-[86px] left-[-15px] sm:left-[-40px] md:left-[-70px] lg:left-[-140px] pointer-events-none select-none"
+              className="absolute top-[-10px] md:top-[-24px] w-[35px] md:w-[60px] lg:w-[86px] left-[-15px] sm:left-[-40px] md:left-[-70px] lg:left-[-140px] pointer-events-none select-none"
               src="/assets/images/sports/leftFlower.webp"
               alt=""
             />
@@ -222,7 +222,7 @@ export function VisionSection() {
 
             {/* Right Floral Accent */}
             <img
-              className="absolute top-[0px] md:top-[-24px] w-[35px] md:w-[60px] lg:w-[86px] right-[-15px] sm:right-[-40px] md:right-[-70px] lg:right-[-140px] pointer-events-none select-none"
+              className="absolute top-[-10px] md:top-[-24px] w-[35px] md:w-[60px] lg:w-[86px] right-[-15px] sm:right-[-40px] md:right-[-70px] lg:right-[-140px] pointer-events-none select-none"
               src="/assets/images/sports/rightFlower.webp"
               alt=""
             />

@@ -46,7 +46,7 @@ export function PartnersSection() {
       {/* Background radial overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,172,121,0.04),transparent_70%)] pointer-events-none" />
 
-      <div className="w-full max-w-[1240px] mx-auto px-5 md:px-10 relative z-10 flex flex-col gap-20 md:gap-28">
+      <div className="w-full max-w-[1240px] mx-auto pl-5 pr-0 md:px-10 relative z-10 flex flex-col gap-20 md:gap-28">
 
         {/* 1. Franchise Partners */}
         <div className="flex flex-col items-center text-center">

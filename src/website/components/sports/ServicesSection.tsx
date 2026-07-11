@@ -21,7 +21,7 @@ export function ServicesSection() {
           Whether you want to be seen on the field, on the screen, or on the fan's feed — we make it happen.
         </p>
 
-        <div className="mt-8 reveal block md:flex md:justify-center w-full px-5 md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
+        <div className="mt-8 reveal block md:flex md:justify-center w-full px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
           <SportsButton variant="small" href={CALENDLY} className="w-full md:w-auto flex md:inline-flex justify-center items-center">
             Transform my business
           </SportsButton>
