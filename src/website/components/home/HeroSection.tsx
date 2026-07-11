@@ -24,13 +24,14 @@ export function HeroSection() {
         </p>
         <div className="mt-10 reveal flex flex-row items-center justify-center gap-4 sm:gap-6" style={{ '--d': '.3s' } as React.CSSProperties}>
           <Button
-            variant="large"
+            variant="small"
             href={CALENDLY}
             className="!px-5 sm:!px-6 whitespace-nowrap"
           >
             Get Started Now
           </Button>
         </div>
+
       </div>
     </section>
   );
