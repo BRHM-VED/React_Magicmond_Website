@@ -6,22 +6,24 @@ import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 const WORDS = ["real estate", "architecture", "interior design", "construction"];
 
 export function HeroSection() {
-  const [index, setIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [visible, setVisible] = useState(true);
+  const [displayIndex, setDisplayIndex] = useState(0);
 
   useEffect(() => {
-    let timeoutId: any;
+    let timeoutId: ReturnType<typeof setTimeout>;
     const interval = setInterval(() => {
-      setFade(false);
+      // Slide out current word
+      setVisible(false);
       timeoutId = setTimeout(() => {
-        setIndex((prevIndex) => (prevIndex + 1) % WORDS.length);
-        setFade(true);
-      }, 500); // Wait for fade-out before switching text
-    }, 3000); // Rotate word every 3 seconds
+        // Switch word while hidden, then slide in
+        setDisplayIndex((prev) => (prev + 1) % WORDS.length);
+        setVisible(true);
+      }, 400);
+    }, 3000);
 
     return () => {
       clearInterval(interval);
-      if (timeoutId) clearTimeout(timeoutId);
+      clearTimeout(timeoutId);
     };
   }, []);
 
@@ -37,13 +39,25 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 max-w-[1025px] mx-auto px-5 md:px-0 flex flex-col items-center">
+        <style>{`
+          @keyframes wordSlideIn {
+            from { opacity: 0; transform: translateY(18px); filter: blur(4px); }
+            to   { opacity: 1; transform: translateY(0px);  filter: blur(0px); }
+          }
+          @keyframes wordSlideOut {
+            from { opacity: 1; transform: translateY(0px);  filter: blur(0px); }
+            to   { opacity: 0; transform: translateY(-18px); filter: blur(4px); }
+          }
+          .word-animate-in  { animation: wordSlideIn  0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+          .word-animate-out { animation: wordSlideOut 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards; }
+        `}</style>
         <h1 className="font-head font-medium text-[24px] sm:text-[34px] md:text-[48px] lg:text-[58px] xl:text-[72px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
           <span className="w-src">The future of</span>{' '}
           <span
-            className={`font-serif italic text-[#7ebaff] inline-block transition-all duration-500 transform ${fade ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 -translate-y-2 scale-95'
-              }`}
+            key={displayIndex}
+            className={`font-serif italic text-[#7ebaff] inline-block ${visible ? 'word-animate-in' : 'word-animate-out'}`}
           >
-            {WORDS[index]}
+            {WORDS[displayIndex]}
           </span>
           <br />
           <span className="w-src">growth starts here.</span>
