@@ -77,7 +77,7 @@ export function ProcessSection() {
           <aside className="hidden lg:block lg:-mt-[00px]">
             <div className="sticky top-[0px]">
               <div
-                className="relative w-full lg:w-[345px] h-[250px] lg:h-[309px] lg:ml-auto rounded-[28px] overflow-hidden border border-white/[0.07] flex items-center justify-center"
+                className="relative w-full lg:w-[345px] h-[250px] lg:h-[309px] lg:ml-auto rounded-[28px] overflow-hidden border border-[#c055e5]/30 flex items-center justify-center shadow-[0_0_35px_rgba(192,85,229,0.25),inset_0_1px_0_rgba(255,255,255,0.1)] transition-all duration-500 hover:shadow-[0_0_50px_rgba(192,85,229,0.4),inset_0_1px_0_rgba(255,255,255,0.2)] hover:border-[#c055e5]/50"
                 style={{
                   background:
                     'linear-gradient(135deg, #2a1240 0%, #12081f 55%, #0b0516 100%)',

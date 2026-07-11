@@ -23,14 +23,17 @@ export function InfraEdgeButton({
   const baseStyle = 'inline-flex items-center justify-center rounded-lg text-white font-head font-medium border border-white/15 transition-all duration-300 cursor-pointer text-center relative z-10 whitespace-nowrap';
 
   let variantStyle = '';
+  const hasHeight = className.includes('h-');
+  const hasText = className.includes('text-');
+
   if (variant === 'large') {
-    // Desktop: h-[52px], font-medium text-[16px]
-    // Mobile: h-[45px], text-[14px]
-    variantStyle = 'h-[45px] md:h-[52px] px-6 text-[14px] md:text-[16px] bg-[#0055ff] hover:bg-[#3572f5] shadow-[0_0_0_1px_rgba(0,85,255,0.12),0_6.43px_32.17px_rgba(0,85,255,0.75)] hover:shadow-[0_0_0_1px_rgba(0,85,255,0.25),0_8px_40px_rgba(0,85,255,0.9)]';
+    const heightStyle = hasHeight ? '' : 'h-[45px] md:h-[52px]';
+    const textStyle = hasText ? '' : 'text-[14px] md:text-[16px]';
+    variantStyle = `${heightStyle} px-6 ${textStyle} bg-[#0055ff] hover:bg-[#3572f5] shadow-[0_0_0_1px_rgba(0,85,255,0.12),0_6.43px_32.17px_rgba(0,85,255,0.75)] hover:shadow-[0_0_0_1px_rgba(0,85,255,0.25),0_8px_40px_rgba(0,85,255,0.9)]`;
   } else if (variant === 'small') {
-    // Desktop: h-[40px], text-[14px]
-    // Mobile: h-[38px], text-[13px]
-    variantStyle = 'h-[38px] md:h-[40px] px-4 md:px-5 text-[13px] md:text-[14px] tracking-[-0.5px] bg-[#0055ff] hover:bg-[#3572f5] shadow-[0_0_0_1px_rgba(0,85,255,0.12),0_6.43px_32.17px_rgba(0,85,255,0.75)] hover:shadow-[0_0_0_1px_rgba(0,85,255,0.25),0_8px_40px_rgba(0,85,255,0.9)]';
+    const heightStyle = hasHeight ? '' : 'h-[38px] md:h-[40px]';
+    const textStyle = hasText ? '' : 'text-[13px] md:text-[14px]';
+    variantStyle = `${heightStyle} px-4 md:px-5 ${textStyle} tracking-[-0.5px] bg-[#0055ff] hover:bg-[#3572f5] shadow-[0_0_0_1px_rgba(0,85,255,0.12),0_6.43px_32.17px_rgba(0,85,255,0.75)] hover:shadow-[0_0_0_1px_rgba(0,85,255,0.25),0_8px_40px_rgba(0,85,255,0.9)]`;
   }
 
   const combinedClassName = `${baseStyle} ${variantStyle} ${className}`.trim();

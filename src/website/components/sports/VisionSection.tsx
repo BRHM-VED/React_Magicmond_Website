@@ -15,9 +15,13 @@ export function VisionSection() {
     const handleScroll = () => {
       if (!containerRef.current || !sectionRef.current) return;
 
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) return;
+
       const containerRect = containerRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
-      const totalScrollable = containerRect.height - viewportHeight;
+      const sectionHeight = sectionRef.current.getBoundingClientRect().height;
+      const totalScrollable = containerRect.height - sectionHeight;
 
       if (totalScrollable <= 0) return;
 
@@ -31,7 +35,7 @@ export function VisionSection() {
         sectionRef.current.style.position = 'absolute';
         sectionRef.current.style.top = '0';
         sectionRef.current.style.bottom = 'auto';
-      } else if (containerRect.bottom < viewportHeight) {
+      } else if (containerRect.bottom < sectionHeight) {
         // After section: scroll inline at bottom
         sectionRef.current.style.position = 'absolute';
         sectionRef.current.style.top = 'auto';
@@ -57,9 +61,8 @@ export function VisionSection() {
         return startVal + ratio * (endVal - startVal);
       };
 
-      const isMobile = window.innerWidth < 768;
       const maxOpacity = isMobile ? 0.5 : 1.0;
-      const travelDistance = viewportHeight * 0.8;
+      const travelDistance = viewportHeight * 0.80;
 
       // --- Choreographed Late-Scroll Parallax Timeline (Starts at progress 0.45) ---
 
@@ -144,12 +147,13 @@ export function VisionSection() {
     };
   }, []);
 
+
   return (
-    <div ref={containerRef} className="relative w-full h-[15₹0vh] md:h-[280vh] bg-[#010502] mb-[0px]">
+    <div ref={containerRef} className="relative w-full h-auto md:h-[140vh] bg-[#010502] mb-[0px]">
       <section
         ref={sectionRef}
         id="about"
-        className="left-0 w-full h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20 pt-[30px] md:pt-[149px] pb-[20px] md:pb-[182px]"
+        className="left-0 w-full h-auto md:h-screen flex flex-col justify-center items-center text-center overflow-hidden z-20"
       >
         {/* Background Graphic Effect */}
         <img
@@ -198,13 +202,13 @@ export function VisionSection() {
           <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>
 
-        <div className="container mx-auto px-5 md:px-10 relative z-[25] md:z-10 h-full flex flex-col justify-center md:justify-between items-center">
+        <div className="relative z-[25] md:z-10 w-full max-w-[1200px] h-auto md:h-[688px] flex flex-col justify-start items-center pt-[40px] md:pt-[149px] pb-[40px] md:pb-[182.4px] px-5 md:px-0 mx-auto">
           <span className="inline-flex items-center justify-center w-[95.3px] h-[34px] rounded-[20px] bg-white/[0.05] border border-white/10 text-[13.2px] text-white font-body font-medium tracking-[-0.28px] reveal">
             Our Vision
           </span>
 
           <p
-            className="relative max-w-[760px] mx-auto mt-[24px] md:mt-[54px] px-6 sm:px-0 font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
+            className="relative max-w-[900px] mx-auto mt-[40px] md:mt-[27px] font-head font-medium text-[13px] sm:text-[22px] md:text-[32px] leading-[1.35] tracking-[-0.02em] text-white reveal"
             style={{ '--d': '.1s' } as React.CSSProperties}
           >
             {/* Left Floral Accent */}
@@ -224,7 +228,7 @@ export function VisionSection() {
             />
           </p>
 
-          <div className="flex flex-row items-stretch justify-center gap-4 md:gap-[90px] mt-[40px] md:mt-[70px] max-w-[800px] mx-auto px-4 md:px-0">
+          <div className="flex flex-row items-stretch justify-center gap-4 md:gap-[90px] mt-[50px] md:mt-[59px] max-w-[800px] mx-auto px-4 md:px-0">
             {spStats.map((s, i) => (
               <React.Fragment key={s.label}>
                 {i > 0 && <div className="w-[1px] bg-white/10 self-stretch my-2" />}

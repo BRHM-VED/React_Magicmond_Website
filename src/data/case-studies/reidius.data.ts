@@ -82,39 +82,10 @@ export const reidiusCaseStudy: NewCaseStudy = {
       label: 'RESULTS',
       layoutType: 'metrics-grid',
       metrics: [
-        {
-          label: 'Meeting alignment rate',
-          value: 'Upto 23% ((from 15% prior month, 12% earlier))',
-          prefix: 'Upto',
-          number: '23',
-          suffix: '%',
-          details: '(from 15% prior month, 12% earlier)',
-          isNumeric: true,
-        },
-        {
-          label: 'Cost per qualified meetings',
-          value: '4208% (On the top channels)',
-          number: '4208',
-          suffix: '%',
-          details: 'On the top channels',
-          isNumeric: true,
-        },
-        {
-          label: 'Cost per lead',
-          value: '1000% (Held under the)',
-          number: '1000',
-          suffix: '%',
-          details: 'Held under the',
-          isNumeric: true,
-        },
-        {
-          label: 'Sales closed',
-          value: '5 M ((Across channels))',
-          number: '5',
-          suffix: 'M',
-          details: '(Across channels)',
-          isNumeric: true,
-        },
+        { label: 'Total leads', value: '3200', number: '3200', isNumeric: true },
+        { label: 'Meeting aligned', value: '548', number: '548', isNumeric: true },
+        { label: 'Sales', value: '62+', number: '62', suffix: '+', isNumeric: true },
+        { label: 'Revenue', value: '54 Cr', number: '54', suffix: 'Cr', isNumeric: true },
       ],
       description: [
         'The primary campaign alone drove ~79% of leads at a healthy cost — clear proof the targeting was working.',
@@ -130,7 +101,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
     },
     {
       sectionNumber: '06',
-      label: 'TAILORED SOLUTION',
+      label: 'OUTCOME',
       layoutType: 'text-only',
       description: [
         'Reidius moved from running scattered marketing to operating a predictable, measurable growth system. Lead quality rose, meeting alignment climbed month over month, and they could finally see their pipeline clearly — which channel drove which sale, at what cost. To go deeper, we implemented call-tracking and CRM so sales management became data-driven instead of guesswork.',
@@ -139,7 +110,7 @@ export const reidiusCaseStudy: NewCaseStudy = {
     },
     {
       sectionNumber: '07',
-      label: 'RESEARCH & EXECUTION',
+      label: 'GROWTH PARTNERSHIP',
       layoutType: 'text-only',
       description: [
         'We\'re now long-term growth partners. Beyond marketing, we\'ve helped build a proprietary operating platform to manage the entire customer journey — from first enquiry to site execution — so the business can scale without breaking. Today Reidius is working toward franchise expansion and investment. The goal is no longer building houses. It\'s building a category-defining residential brand.',

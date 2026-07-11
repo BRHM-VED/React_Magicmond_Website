@@ -32,11 +32,22 @@ export function Navbar({ suffix, activePath }: Props) {
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
+  // Dynamic drawer background and text highlight based on page theme
+  let drawerBg = 'bg-[#1d072b]';
+  let activeText = 'text-[#c055e5] font-semibold';
+  if (suffix === 'Sports') {
+    drawerBg = 'bg-[#010502]';
+    activeText = 'text-[#1ff9b8] font-semibold';
+  } else if (suffix === 'InfraEdge') {
+    drawerBg = 'bg-[#04060f]';
+    activeText = 'text-[#0055ff] font-semibold';
+  }
+
   // Dynamically select the button component based on suffix
   const renderHeaderButton = (isMobileDrawer = false) => {
     const btnClass = isMobileDrawer
       ? "w-full h-[48px] rounded-[10px] flex items-center justify-center text-white font-head font-medium text-[16px]"
-      : "relative z-50 !h-[45px] md:!h-[46px] !py-0 !px-[15px] text-[14px] md:text-[16px]";
+      : "relative z-50 h-[36px] md:h-[46px] !py-0 !px-[12px] md:!px-[15px] text-[13px] md:text-[16px]";
 
     if (suffix === 'InfraEdge') {
       return (
@@ -69,7 +80,7 @@ export function Navbar({ suffix, activePath }: Props) {
       <HomeButton
         variant="header"
         href={CALENDLY}
-        className={isMobileDrawer ? "w-full h-[46px] rounded-[10px] bg-[#692083] hover:bg-[#7d279c] flex items-center justify-center text-white font-head font-medium text-[16px]" : "relative z-50"}
+        className={isMobileDrawer ? "w-full h-[46px] rounded-[10px] bg-[#692083] hover:bg-[#7d279c] flex items-center justify-center text-white font-head font-medium text-[16px]" : btnClass}
         onClick={() => isMobileDrawer && setOpen(false)}
       >
         Get Started
@@ -200,7 +211,7 @@ export function Navbar({ suffix, activePath }: Props) {
       {/* Fullscreen Mobile Drawer Overlay */}
       <div
         className={`
-          fixed inset-0 z-[1000] bg-[#1d072b] px-6 py-5 flex flex-col justify-between
+          fixed inset-0 z-[1000] ${drawerBg} px-6 py-5 flex flex-col justify-between
           transition-transform duration-300 ease-in-out md:hidden
           ${open ? "translate-x-0" : "-translate-x-full"}
         `}
@@ -238,9 +249,9 @@ export function Navbar({ suffix, activePath }: Props) {
                     <Link
                       className={`
                         font-inter font-medium text-[20px] tracking-[-0.37px] 
-                        text-white/90 hover:text-white transition-colors duration-200 
+                        transition-colors duration-200 
                         flex items-center justify-between w-full py-1
-                        ${activePath === l.to ? 'text-white font-semibold' : ''}
+                        ${activePath === l.to ? activeText : 'text-white/90 hover:text-white'}
                       `}
                       to={l.to}
                       onClick={isServices ? handleServicesClick : (e) => handleNavClick(l.to, e)}

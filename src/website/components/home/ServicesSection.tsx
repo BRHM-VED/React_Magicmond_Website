@@ -6,10 +6,10 @@ import { ServiceCard } from '../../../common/ServiceCard';
 const serviceIds = [
   'brand-identity',
   'website-design',
-  'content-marketing',
-  'creative-strategy',
+  'erp-solutions',
   'growth-marketing',
-  'erp-solutions'
+  'content-marketing',
+  'creative-strategy'
 ];
 
 export function ServicesSection() {

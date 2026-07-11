@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { CheckCircle2, Home } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 import { FONTS } from '../../utils/constants/fonts';
 import { InputField } from './InputField';
 import { useBookingForm } from './useBookingForm';
@@ -11,7 +11,7 @@ interface BookingFormProps {
 
 export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
   const location = useLocation();
-  const { formData, loading, error, isSubmitted, handleChange, handleSubmit, handleClose } = useBookingForm(
+  const { formData, loading, error, isSubmitted, handleChange, handleSubmit } = useBookingForm(
     onSubmitSuccess,
     onClose
   );
@@ -41,12 +41,6 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
   }
 
   if (isSubmitted) {
-    let buttonText = 'Back to Home';
-    if (isSports) {
-      buttonText = 'Back to Sports';
-    } else if (isInfraEdge) {
-      buttonText = 'Back to Infra Edge';
-    }
 
     return (
       <div className="flex flex-col items-center justify-center text-center p-4 min-h-[60vh] md:min-h-0">
@@ -62,14 +56,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
           Thank you, <span className={`${nameHighlight} font-semibold`}>{formData.name}</span>! We have successfully received your consultation request and will get in touch with you shortly.
         </p>
 
-        <button
-          type="button"
-          onClick={handleClose}
-          className={`${FONTS.inter} w-full md:w-auto h-[42px] px-6 rounded-lg ${buttonClass} transition-all flex items-center justify-center gap-2`}
-        >
-          <Home size={18} />
-          <span>{buttonText}</span>
-        </button>
+
       </div>
     );
   }

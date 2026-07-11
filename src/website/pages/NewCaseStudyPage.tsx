@@ -76,7 +76,7 @@ function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolea
     );
   }
 
-  const isGradientSuffix = finalSuffix === '%' || finalSuffix === 'M' || finalSuffix === 'Cr';
+  const isGradientSuffix = finalSuffix === '%' || finalSuffix === 'M' || finalSuffix.toUpperCase() === 'CR';
   const isLongSuffix = finalSuffix.length > 4;
 
   return (
@@ -124,28 +124,31 @@ function MetricRow({ metric, isLast }: { metric: CaseStudyMetric; isLast: boolea
 
 /** Text-only block: accent label on left, paragraphs on right */
 function TextBlock({ block }: { block: CaseStudyBlock }) {
-  const isGrowthPartnership = block.label.includes('GROWTH');
+  const renderLabel = (label: string) => {
+    const words = label.trim().split(/\s+/);
+    if (words.length <= 1) {
+      return <p className="mb-0">{label}</p>;
+    }
+    const lastWord = words.pop();
+    const firstLine = words.join(' ');
+    return (
+      <>
+        <p className="mb-0">{firstLine}</p>
+        <p className="mb-0">{lastWord}</p>
+      </>
+    );
+  };
 
   return (
     <div className="max-w-[1062px] mx-auto px-5 md:px-10">
       <div className="grid grid-cols-1 md:grid-cols-[301.76px_1fr] gap-x-6 gap-y-3 py-4 md:py-8">
         {/* Label */}
-        {isGrowthPartnership ? (
-          <div
-            className={`${FONTS.inter} font-semibold text-[14px] md:text-[20px] tracking-[0.08em] uppercase leading-tight pt-[2px]`}
-            style={{ color: '#3e0078' }}
-          >
-            <p className="mb-0">GROWTH</p>
-            <p>PARTNERSHIP</p>
-          </div>
-        ) : (
-          <p
-            className={`${FONTS.inter} font-semibold text-[14px] md:text-[20px] tracking-[0.08em] uppercase pt-[2px] leading-tight`}
-            style={{ color: '#3e0078' }}
-          >
-            {block.label}
-          </p>
-        )}
+        <div
+          className={`${FONTS.inter} font-semibold text-[14px] md:text-[20px] tracking-[0.08em] uppercase leading-tight pt-[2px]`}
+          style={{ color: '#3e0078' }}
+        >
+          {renderLabel(block.label)}
+        </div>
         {/* Text */}
         <div className="flex flex-col gap-5">
           {block.description.map((para, i) => (
@@ -248,11 +251,11 @@ function StripSection({ stripImages }: { stripImages: string[] }) {
 
   if (stripImages.length === 1) {
     return (
-      <div className="w-full overflow-hidden bg-[#f0f4fa] py-0 border-y border-[#dde4ee]">
+      <div className="max-w-[1280px] mx-auto px-5 md:px-10 py-6 md:py-8 flex flex-col items-center">
         <img
           src={stripImages[0]}
           alt="Ad creatives banner"
-          className="w-full h-auto object-cover select-none pointer-events-none block"
+          className="w-full h-auto object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none block"
         />
       </div>
     );

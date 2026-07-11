@@ -3,16 +3,16 @@ import type { NewCaseStudy } from '../common/types';
 export const onsiteCaseStudy: NewCaseStudy = {
   slug: 'case-study-onsite',
   title: 'Onsite Case Study — MagicMond',
-  metaDescription: 'How Onsite went from 15-20L to 35-40L. A predictable pipeline for a construction SaaS platform. How we cut cost per qualified prospect by 25% and built a repeatable growth engine.',
+  metaDescription: 'How Onsite went from 15 to 40L. A predictable pipeline for a construction SaaS platform. How we cut cost per qualified prospect by 25% and built a repeatable growth engine.',
   brand: {
     name: 'Onsite',
-    logo: '/assets/images/common/OneSiteLogo.webp',
+    logo: '/assets/images/caseStudy/Onsite/dashboard.webp',
     accentColor: '#0055cc',
     visitUrl: 'https://onsite.in/',
     category: 'SaaS',
     tagline: 'A predictable pipeline for a construction SaaS platform.',
   },
-  heroTitle: 'How Onsite went from\n15-20L to 35-40L',
+  heroTitle: 'How Onsite went from\n15 to 40L',
   heroSubtitle: 'How we cut cost per qualified prospect by 25% and built a repeatable\ngrowth engine — by selling to the buyer, not the user.',
   blocks: [
     {
@@ -70,10 +70,9 @@ export const onsiteCaseStudy: NewCaseStudy = {
       layoutType: 'metrics-grid',
       metrics: [
         { label: 'Total leads', value: '4900', number: '4900', isNumeric: true },
-        { label: 'Salees', value: '319', number: '319', isNumeric: true },
         { label: 'Demos', value: '2800+', number: '2800', suffix: '+', isNumeric: true },
-        { label: 'Cost per qualified lead', value: 'Down 7.7%', prefix: 'Down', number: '7.7', suffix: '%', isNumeric: true },
-        { label: 'Cost per strong prospect', value: 'Down 24.6%', prefix: 'Down', number: '24.6', suffix: '%', isNumeric: true },
+        { label: 'Sales', value: '319+', number: '319', suffix: '+', isNumeric: true },
+        { label: 'Revenue', value: '2.2 CR', number: '2.2', suffix: 'CR', isNumeric: true },
       ],
       description: [
         'Then we rebuilt the funnel around that insight. We focused on fit over volume, cut the campaigns bringing in the wrong people, and doubled down on what worked. The results:',

@@ -22,14 +22,17 @@ export function SportsButton({
   const baseStyle = 'inline-flex items-center justify-center rounded-[10px] text-white font-head font-medium transition-all duration-300 cursor-pointer text-center relative z-10 whitespace-nowrap';
 
   let variantStyle = '';
+  const hasHeight = className.includes('h-');
+  const hasText = className.includes('text-');
+
   if (variant === 'large') {
-    // Desktop: h-[52px], font-medium text-[16px]
-    // Mobile: h-[45px], text-[14px]
-    variantStyle = 'h-[45px] md:h-[52px] px-6 text-[14px] md:text-[16px] bg-[#57bd8b] hover:bg-[#64cf9a] shadow-[0_0_0_1px_rgba(255,255,255,0.22),0_0_26px_rgba(87,189,139,0.5)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.32),0_0_36px_rgba(87,189,139,0.7)]';
+    const heightStyle = hasHeight ? '' : 'h-[45px] md:h-[52px]';
+    const textStyle = hasText ? '' : 'text-[14px] md:text-[16px]';
+    variantStyle = `${heightStyle} px-6 ${textStyle} bg-[#57bd8b] hover:bg-[#64cf9a] shadow-[0_0_0_1px_rgba(255,255,255,0.22),0_0_26px_rgba(87,189,139,0.5)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.32),0_0_36px_rgba(87,189,139,0.7)]`;
   } else if (variant === 'small') {
-    // Desktop: h-[40px], text-[14px]
-    // Mobile: h-[38px], text-[13px]
-    variantStyle = 'h-[38px] md:h-[40px] px-4 md:px-5 text-[13px] md:text-[14px] tracking-[-0.5px] bg-[#57bd8b] hover:bg-[#64cf9a] shadow-[0_0_0_1px_rgba(255,255,255,0.22),0_0_26px_rgba(87,189,139,0.5)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.32),0_0_36px_rgba(87,189,139,0.7)]';
+    const heightStyle = hasHeight ? '' : 'h-[38px] md:h-[40px]';
+    const textStyle = hasText ? '' : 'text-[13px] md:text-[14px]';
+    variantStyle = `${heightStyle} px-4 md:px-5 ${textStyle} tracking-[-0.5px] bg-[#57bd8b] hover:bg-[#64cf9a] shadow-[0_0_0_1px_rgba(255,255,255,0.22),0_0_26px_rgba(87,189,139,0.5)] hover:shadow-[0_0_0_1px_rgba(255,255,255,0.32),0_0_36px_rgba(87,189,139,0.7)]`;
   }
 
   const combinedClassName = `${baseStyle} ${variantStyle} ${className}`.trim();

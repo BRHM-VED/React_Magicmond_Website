@@ -7,7 +7,7 @@ import { Button } from './button/homeButton';
 export function StepTag({ label }: { label: string }) {
   return (
     <div
-      className="h-[28px] md:h-[33px] inline-flex items-center px-2.5 md:px-4 rounded-full overflow-hidden border border-white/5 shrink-0"
+      className="h-[28px] md:h-[33px] inline-flex items-center px-2.5 md:px-4 rounded-full overflow-hidden border border-[#c156e6]/30 shadow-[0_0_12px_rgba(192,85,229,0.15)] shrink-0"
       style={{
         backgroundImage:
           'linear-gradient(0deg, rgba(143,57,133,0.2) 0%, rgba(153,153,153,0.1) 100%)',
@@ -75,7 +75,7 @@ export function StepCard({
             <div className="flex items-center justify-between">
               {/* Icon box */}
               <div
-                className="w-11 h-11 rounded-[10px] flex items-center justify-center border border-[rgba(143,57,133,0.15)] shadow-[inset_0px_9.5px_4.75px_-0.95px_rgba(255,255,255,0.08)]"
+                className="w-11 h-11 rounded-[10px] flex items-center justify-center border border-[#c156e6]/35 shadow-[0_0_15px_rgba(192,85,229,0.25),inset_0px_9.5px_4.75px_-0.95px_rgba(255,255,255,0.08)]"
                 style={{
                   background:
                     'radial-gradient(ellipse at center, rgba(15,9,18,0.15) 0%, rgba(12,9,18,1) 100%)',

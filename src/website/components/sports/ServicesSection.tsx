@@ -6,7 +6,7 @@ export function ServicesSection() {
   return (
     <section id="service" className="bg-[#010502] pb-20 md:py-28 px-5 md:px-10 text-center overflow-hidden w-full relative">
       <div className="w-full md:container mx-auto px-0 max-w-[1240px] relative z-10">
-        <h2 className="font-body font-medium text-[26px] sm:text-[36px] md:text-[54px] leading-[1.25] md:leading-[1.15] tracking-[-0.8px] md:tracking-[-1.9px] text-white text-center max-w-[950px] mx-auto reveal">
+        <h2 className="font-body font-medium text-[22px] sm:text-[36px] md:text-[54px] leading-[1.25] md:leading-[1.15] tracking-[-0.8px] md:tracking-[-1.9px] text-white text-center max-w-[950px] mx-auto reveal">
           From Boundaries
           <img
             src="/assets/images/sports/leafSports.webp"
@@ -21,8 +21,8 @@ export function ServicesSection() {
           Whether you want to be seen on the field, on the screen, or on the fan's feed — we make it happen.
         </p>
 
-        <div className="mt-8 reveal flex justify-center w-full px-5 md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
-          <SportsButton variant="small" href={CALENDLY} className="w-full md:w-auto">
+        <div className="mt-8 reveal block md:flex md:justify-center w-full px-5 md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
+          <SportsButton variant="small" href={CALENDLY} className="w-full md:w-auto flex md:inline-flex justify-center items-center">
             Transform my business
           </SportsButton>
         </div>
