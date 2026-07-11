@@ -65,7 +65,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
         <button
           type="button"
           onClick={handleClose}
-          className={`${FONTS.inter} w-full md:w-auto h-[48px] px-6 rounded-lg ${buttonClass} transition-all flex items-center justify-center gap-2`}
+          className={`${FONTS.inter} w-full md:w-auto h-[42px] px-6 rounded-lg ${buttonClass} transition-all flex items-center justify-center gap-2`}
         >
           <Home size={18} />
           <span>{buttonText}</span>
@@ -140,7 +140,7 @@ export function BookingForm({ onSubmitSuccess, onClose }: BookingFormProps) {
         <button
           type="submit"
           disabled={loading}
-          className={`${FONTS.inter} w-full h-[48px] rounded-lg ${buttonClass} transition-all disabled:opacity-50 flex items-center justify-center gap-2`}
+          className={`${FONTS.inter} w-full h-[42px] rounded-lg ${buttonClass} transition-all disabled:opacity-50 flex items-center justify-center gap-2`}
         >
           {loading ? (
             <>

@@ -1,6 +1,4 @@
 import { LightRays } from '../../../common/LightRays';
-import { CALENDLY } from '../../../utils/constants/constants';
-import { Button } from '../../../common/button/homeButton';
 import { FONTS } from '../../../utils/constants/fonts';
 
 export function HeroSection() {
@@ -22,15 +20,6 @@ export function HeroSection() {
         <p className={`text-[#aaaaaa] font-head font-normal text-[13px] md:text-[16.6px] leading-[1.7] max-w-[560px] mx-auto mt-6 reveal`} style={{ '--d': '.15s' } as React.CSSProperties}>
           We transform your traditional business into a digitally strong brand, enabling a 360° growth ecosystem to thrive in the new era.
         </p>
-        <div className="mt-10 reveal flex flex-row items-center justify-center gap-4 sm:gap-6" style={{ '--d': '.3s' } as React.CSSProperties}>
-          <Button
-            variant="small"
-            href={CALENDLY}
-            className="!px-5 sm:!px-6 whitespace-nowrap"
-          >
-            Get Started Now
-          </Button>
-        </div>
 
       </div>
     </section>
