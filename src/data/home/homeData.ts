@@ -131,7 +131,7 @@ export const caseSlides: CaseSlide[] = [
     logoClass: "onsite-name text-[#0055cc]",
     titleLines: ["Onsite: Predictable", "Growth Funnel for"],
     serifLine: "Construction SaaS",
-    description: "Scale marketing pipelines from 15-20L to 35-40L while cutting cost per sales.",
+    description: "Scale marketing pipelines from 15L to 40L while cutting cost per sales.",
     href: "/case-study-onsite",
     metricLabel: "Revenue Growth",
     metric: "150%",

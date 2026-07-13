@@ -71,13 +71,13 @@ export function PartnersSection() {
           <h2 className="font-head font-semibold text-[28px] sm:text-[36px] md:text-[48px] text-white leading-tight mb-8 md:mb-12 reveal">
             Channel <span className="font-serif italic text-[#00ac79]">partners</span>
           </h2>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-8 justify-items-center items-center md:flex md:flex-nowrap md:justify-center md:gap-12 lg:gap-14 reveal w-full">
+          <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-7 md:flex-nowrap md:gap-12 lg:gap-14 reveal w-full max-w-[340px] sm:max-w-[480px] md:max-w-none mx-auto px-4">
             {/* JioHoststar */}
             <div className="flex items-center justify-center">
               <img
                 src="/assets/images/sports/jioHoststar.webp"
                 alt="JioHoststar"
-                className="h-[30px] md:h-[58px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
+                className="h-[26px] sm:h-[30px] md:h-[58px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
             </div>
 
@@ -86,7 +86,7 @@ export function PartnersSection() {
               <img
                 src="/assets/images/sports/cricketGuru.webp"
                 alt="Cricket Guru"
-                className="h-[30px] md:h-[43px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
+                className="h-[26px] sm:h-[30px] md:h-[43px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
             </div>
 
@@ -95,7 +95,7 @@ export function PartnersSection() {
               <img
                 src="/assets/images/sports/sonyLiv.webp"
                 alt="Sony Liv"
-                className="h-[16px] md:h-[28px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
+                className="h-[14px] sm:h-[16px] md:h-[28px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
             </div>
 
@@ -104,16 +104,16 @@ export function PartnersSection() {
               <img
                 src="/assets/images/sports/fancode.webp"
                 alt="FanCode"
-                className="h-[28px] md:h-[56px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
+                className="h-[24px] sm:h-[28px] md:h-[56px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
             </div>
 
             {/* Star Sports */}
-            <div className="col-span-2 md:col-span-1 flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <img
                 src="/assets/images/sports/starSports.webp"
                 alt="Star Sports"
-                className="h-[24px] md:h-[46px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
+                className="h-[22px] sm:h-[24px] md:h-[46px] w-auto object-contain brightness-95 hover:brightness-100 hover:scale-105 transition-all duration-300 shrink-0"
               />
             </div>
           </div>
