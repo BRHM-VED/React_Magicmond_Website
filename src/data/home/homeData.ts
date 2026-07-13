@@ -133,8 +133,8 @@ export const caseSlides: CaseSlide[] = [
     serifLine: "Construction SaaS",
     description: "Scale marketing pipelines from 15L to 40L while cutting cost per sales.",
     href: "/case-study-onsite",
-    metricLabel: "Revenue Growth",
-    metric: "150%",
+    metricLabel: "Sales Revenue",
+    metric: "2-2.5x",
   },
   {
     logo: "/assets/images/common/ShriYamunaLogo.svg",
