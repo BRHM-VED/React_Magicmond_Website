@@ -12,7 +12,7 @@ export const onsiteCaseStudy: NewCaseStudy = {
     category: 'SaaS',
     tagline: 'A predictable pipeline for a construction SaaS platform.',
   },
-  heroTitle: 'How Onsite went from\n15 to 40L',
+  heroTitle: 'How Onsite went from\n15L to 40L',
   heroSubtitle: 'How we cut cost per sales by 25% and built a repeatable\ngrowth engine — by selling to the buyer, not the user.',
   blocks: [
     {
