@@ -3,7 +3,7 @@ import type { NewCaseStudy } from '../common/types';
 export const onsiteCaseStudy: NewCaseStudy = {
   slug: 'case-study-onsite',
   title: 'Onsite Case Study — MagicMond',
-  metaDescription: 'How Onsite went from 15 to 40L. A predictable pipeline for a construction SaaS platform. How we cut cost per sales by 25% and built a repeatable growth engine.',
+  metaDescription: 'How Onsite went from 15L to 40L. A predictable pipeline for a construction SaaS platform. How we cut cost per sales by 25% and built a repeatable growth engine.',
   brand: {
     name: 'Onsite',
     logo: '/assets/images/caseStudy/Onsite/dashboard.webp',

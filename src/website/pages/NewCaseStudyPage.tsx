@@ -251,11 +251,11 @@ function StripSection({ stripImages }: { stripImages: string[] }) {
 
   if (stripImages.length === 1) {
     return (
-      <div className="max-w-[1280px] mx-auto px-5 md:px-10 py-6 md:py-8 flex flex-col items-center">
+      <div className="w-full overflow-hidden bg-[#f0f4fa] py-0 border-y border-[#dde4ee]">
         <img
           src={stripImages[0]}
           alt="Ad creatives banner"
-          className="w-full h-auto object-cover rounded-[24px] shadow-[0_8px_30px_rgba(0,0,0,0.08)] select-none pointer-events-none block"
+          className="w-full h-auto object-cover select-none pointer-events-none block"
         />
       </div>
     );
