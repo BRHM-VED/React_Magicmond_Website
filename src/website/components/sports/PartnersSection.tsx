@@ -33,7 +33,7 @@ function AthleteCard({ name, image }: { name: string; image: string }) {
       </div>
 
       {/* Name */}
-      <p className="font-manrope font-semibold text-[22px] leading-[1.4] text-center text-white absolute top-[248px] w-full left-0 px-2 tracking-tight">
+      <p className="font-manrope font-semibold text-[17px] md:text-[22px] leading-[1.4] text-center text-white absolute top-[240px] md:top-[248px] w-full left-0 px-3 tracking-tight">
         {name}
       </p>
     </div>
@@ -42,11 +42,11 @@ function AthleteCard({ name, image }: { name: string; image: string }) {
 
 export function PartnersSection() {
   return (
-    <section className="bg-[#0d0817] py-16 md:py-24 overflow-hidden w-full relative border-t border-white/5">
+    <section className="bg-[#0d0817] pt-16 pb-20 md:py-24 overflow-hidden w-full relative border-t border-white/5">
       {/* Background radial overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,172,121,0.04),transparent_70%)] pointer-events-none" />
 
-      <div className="w-full max-w-[1240px] mx-auto pl-5 pr-0 md:px-10 relative z-10 flex flex-col gap-20 md:gap-28">
+      <div className="w-full max-w-[1240px] mx-auto px-5 md:px-10 relative z-10 flex flex-col gap-20 md:gap-28">
 
         {/* 1. Franchise Partners */}
         <div className="flex flex-col items-center text-center">
@@ -120,13 +120,13 @@ export function PartnersSection() {
         </div>
 
         {/* 3. Athletes Grid */}
-        <div className="flex flex-col items-center text-center">
+        <div className="flex flex-col items-stretch md:items-center text-center">
           <h2 className="font-head font-semibold text-[28px] sm:text-[36px] md:text-[48px] text-white leading-tight mb-10 md:mb-16 reveal">
             Athletes
           </h2>
 
           {/* Scrollable Container on Mobile, Grid on Desktop */}
-          <div className="w-full flex items-stretch overflow-x-auto gap-4 scrollbar-none pb-6 -mx-5 px-5 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:gap-3 md:overflow-x-visible md:pb-0 snap-x snap-mandatory justify-items-center max-w-[996px] mx-auto">
+          <div className="w-full flex items-stretch overflow-x-auto gap-4 scrollbar-none pb-12 -mx-5 pl-5 pr-0 md:mx-0 md:px-0 md:grid md:grid-cols-4 md:gap-3 md:overflow-x-visible md:pb-0 snap-x snap-mandatory justify-items-center max-w-[996px] mx-auto">
             {athletesList.map((athlete) => (
               <div key={athlete.name} className="shrink-0 snap-start flex justify-center">
                 <AthleteCard name={athlete.name} image={athlete.image} />

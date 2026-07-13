@@ -64,7 +64,7 @@ export function GlimpseSection() {
         <div className="flex flex-col items-center text-center gap-5 md:gap-6 mb-12 md:mb-16 px-5 md:px-10">
 
           {/* Heading */}
-          <h2 className="font-head font-normal text-[24px] xs:text-[26px] sm:text-[36px] md:text-[52px] text-white tracking-[-1px] md:tracking-[-1.9px] leading-[1.2] md:leading-[1.25]">
+          <h2 className="font-head font-semibold text-[24px] xs:text-[26px] sm:text-[36px] md:text-[52px] text-white tracking-[-1px] md:tracking-[-1.9px] leading-[1.2] md:leading-[1.25]">
             Glimpse of{' '}
             <span className="font-serif italic text-[#92b7ff]">creativity</span>
             {', '}

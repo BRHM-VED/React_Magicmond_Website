@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { LightRays } from '../../../common/LightRays';
-import { CALENDLY } from '../../../utils/constants/constants';
-import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 
 const WORDS = ["real estate", "architecture", "interior design", "construction"];
 
@@ -51,7 +49,7 @@ export function HeroSection() {
           .word-animate-in  { animation: wordSlideIn  0.42s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
           .word-animate-out { animation: wordSlideOut 0.35s cubic-bezier(0.55, 0, 1, 0.45) forwards; }
         `}</style>
-        <h1 className="font-head font-medium text-[24px] sm:text-[34px] md:text-[48px] lg:text-[58px] xl:text-[72px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
+        <h1 className="font-head font-medium text-[30px] sm:text-[34px] md:text-[48px] lg:text-[58px] xl:text-[72px] leading-[1.2] md:leading-[1.1] lg:leading-[1.05] tracking-[-1px] lg:tracking-[-1.66px] text-white words">
           <span className="w-src">The future of</span>{' '}
           <span
             key={displayIndex}
@@ -67,11 +65,7 @@ export function HeroSection() {
           We transform your traditional business into a digitally strong brand, enabling a 360° growth ecosystem to thrive in the new era.
         </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 reveal" style={{ '--d': '.3s' } as React.CSSProperties}>
-          <InfraEdgeButton variant="small" href={CALENDLY}>
-            Transform my business
-          </InfraEdgeButton>
-        </div>
+
       </div>
       <img
         className="relative block w-full max-w-[1440px] mx-auto mt-11 md:mt-12 px-0 md:px-10 reveal z-10"

@@ -7,7 +7,7 @@ export function MeetSection() {
     <section id="about" className="relative bg-[#0d0817] overflow-hidden w-full">
 
       {/* ── MOBILE layout (block, flex-col) ── hidden on md+ */}
-      <div className="flex flex-col md:hidden">
+      <div className="flex flex-col md:hidden pt-20 pb-8">
 
         {/* Top zone: hands + heading side-by-side */}
         <div className="relative w-full h-[120px] flex items-center justify-center overflow-hidden">

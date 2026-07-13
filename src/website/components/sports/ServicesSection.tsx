@@ -31,7 +31,7 @@ export function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_0.88fr] gap-6 max-w-[1240px] mx-auto mt-10 md:mt-16 text-left">
           {spServices.map((s, i) => {
             const cardClasses = `relative border-[1.5px] border-[#00ac79]/30 hover:border-[#00ac79]/60 bg-[#0e131e] bg-[radial-gradient(circle_at_bottom_right,rgba(0,172,121,0.12),transparent_65%)] p-6 md:p-6 rounded-[12px] transition-all duration-300 overflow-hidden min-h-[250px] flex flex-col justify-start reveal hover:shadow-[0_0_24px_rgba(0,172,121,0.15)] ${s.tall
-              ? 'lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:h-full lg:min-h-[524px] max-w-[360px] w-full mx-auto'
+              ? 'lg:col-start-3 lg:row-start-1 lg:row-span-2 lg:h-full lg:min-h-[524px] lg:max-w-[360px] w-full lg:mx-auto'
               : ''
               }`;
 

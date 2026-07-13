@@ -132,30 +132,27 @@ export function Navbar({ suffix, activePath }: Props) {
       <header className="md:absolute fixed md:bg-transparent md:border-none md:backdrop-blur-none bg-[#010502]/75 backdrop-blur-md border-b border-white/5 top-0 left-0 right-0 z-[999] h-[64px] flex items-center px-5 md:px-10 transition-colors duration-300">
         <div className="w-full flex items-center justify-between gap-5">
 
-          {/* Mobile: Hamburger Button on Left (2 lines) */}
-          <button
-            className="flex md:hidden flex-col gap-[6px] p-2 focus:outline-none relative z-50"
-            aria-label="Menu"
-            onClick={() => setOpen(true)}
-          >
-            <span className="w-[22px] h-[2px] bg-white rounded-sm"></span>
-            <span className="w-[22px] h-[2px] bg-white rounded-sm"></span>
-          </button>
+          {/* Left Group: Hamburger + Logo (shifted left on mobile) */}
+          <div className="flex items-center gap-1">
+            {/* Mobile: Hamburger Button on Left (2 lines) */}
+            <button
+              className="flex md:hidden flex-col gap-[6px] p-2 focus:outline-none relative z-50"
+              aria-label="Menu"
+              onClick={() => setOpen(true)}
+            >
+              <span className="w-[22px] h-[2px] bg-white rounded-sm"></span>
+              <span className="w-[22px] h-[2px] bg-white rounded-sm"></span>
+            </button>
 
-          {/* Desktop Logo on Left */}
-          <Link
-            className="hidden md:flex items-center gap-2 font-head font-semibold text-[18.9px] text-white select-none"
-            to="/"
-            onClick={() => { setOpen(false); setServicesExpanded(false); }}
-          >
-            <img src="/assets/icons/logo-wand.svg" alt="MagicMond" className="w-[28px] h-[28px]" />
-            <span>MagicMond</span>
-            {suffix && (
-              <>
-                &nbsp;<span className="font-normal opacity-95 text-white/80">{suffix}</span>
-              </>
-            )}
-          </Link>
+            {/* Logo Text (no icon, increased font size, shifted left) */}
+            <Link
+              className="flex items-center font-head font-semibold text-[18px] md:text-[22px] text-white select-none relative z-50 whitespace-nowrap pl-1 md:pl-0"
+              to="/"
+              onClick={() => { setOpen(false); setServicesExpanded(false); }}
+            >
+              <span>{suffix ? suffix : 'MagicMond'}</span>
+            </Link>
+          </div>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-8">

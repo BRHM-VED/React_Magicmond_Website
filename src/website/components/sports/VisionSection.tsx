@@ -229,25 +229,31 @@ export function VisionSection() {
           </p>
 
           <div className="flex flex-row items-stretch justify-center gap-4 md:gap-[90px] mt-[50px] md:mt-[59px] max-w-[800px] mx-auto px-4 md:px-0">
-            {spStats.map((s, i) => (
-              <React.Fragment key={s.label}>
-                {i > 0 && <div className="w-[1px] bg-white/10 self-stretch my-2" />}
-                <div
-                  className="flex-1 text-left reveal"
-                  style={{ '--d': `${0.15 + i * 0.1}s` } as React.CSSProperties}
-                >
-                  <div className="font-inter font-medium text-[36px] md:text-[72px] leading-none tracking-[-0.03em] text-white flex items-baseline justify-start">
-                    <span>{s.value}</span>
-                    <span className="text-[24px] md:text-[30px] text-[#1ff9b8] ml-0.5 font-medium tracking-[-0.64px] select-none self-start mt-0.5 md:mt-1">
-                      {s.symbol || '+'}
-                    </span>
+            {spStats.map((s, i) => {
+              const isLongValue = s.value.length > 5;
+              return (
+                <React.Fragment key={s.label}>
+                  {i > 0 && <div className="w-[1px] bg-white/10 self-stretch my-2" />}
+                  <div
+                    className="flex-1 text-left reveal"
+                    style={{ '--d': `${0.15 + i * 0.1}s` } as React.CSSProperties}
+                  >
+                    <div className={`font-inter font-medium leading-none tracking-[-0.03em] text-white flex items-baseline justify-start ${isLongValue
+                        ? 'text-[15px] sm:text-[22px] md:text-[46px]'
+                        : 'text-[36px] md:text-[72px]'
+                      }`}>
+                      <span>{s.value}</span>
+                      <span className="text-[20px] md:text-[30px] text-[#1ff9b8] ml-0.5 font-medium tracking-[-0.64px] select-none self-start mt-0.5 md:mt-1">
+                        {s.symbol || '+'}
+                      </span>
+                    </div>
+                    <div className="mt-2 md:mt-3 font-inter font-medium text-[10px] md:text-[15px] leading-[1.3] tracking-[-0.02em] text-white/60 max-w-[115px] md:max-w-[130px] mx-0 text-left">
+                      {s.label}
+                    </div>
                   </div>
-                  <div className="mt-2 md:mt-3 font-inter font-medium text-[10px] md:text-[15px] leading-[1.3] tracking-[-0.02em] text-white/60 max-w-[115px] md:max-w-[130px] mx-0 text-left">
-                    {s.label}
-                  </div>
-                </div>
-              </React.Fragment>
-            ))}
+                </React.Fragment>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -50,7 +50,7 @@ export function SportsCaseStudiesSection() {
             Explore stories of brands that shaped culture, elevated their presence, and unlocked commercial opportunities through our work.
           </p>
 
-          <div className="mt-8 reveal flex justify-center w-full px-5 md:px-0" style={{ '--d': '.15s' } as React.CSSProperties}>
+          <div className="mt-8 reveal flex justify-center w-full -mx-5 md:mx-0" style={{ '--d': '.15s' } as React.CSSProperties}>
             <SportsButton variant="small" href={CALENDLY} className="w-full md:w-auto">
               Let's collaborate
             </SportsButton>

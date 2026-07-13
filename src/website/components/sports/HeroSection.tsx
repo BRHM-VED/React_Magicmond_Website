@@ -1,6 +1,4 @@
 import { LightRays } from '../../../common/LightRays';
-import { CALENDLY } from '../../../utils/constants/constants';
-import { SportsButton } from '../../../common/button/SportsButton';
 
 export function HeroSection() {
   return (
@@ -24,11 +22,7 @@ export function HeroSection() {
           From global tournaments to digital cricket platforms — we help brands unlock visibility, engagement, and trust without breaking the bank.
         </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 reveal" style={{ '--d': '.3s' } as React.CSSProperties}>
-          <SportsButton variant="small" href={CALENDLY}>
-            Let's collaborate
-          </SportsButton>
-        </div>
+
       </div>
 
       <img

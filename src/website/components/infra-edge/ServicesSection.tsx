@@ -9,41 +9,7 @@ export function ServicesSection() {
   const scrollRef2 = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el1 = scrollRef1.current;
-    const el2 = scrollRef2.current;
-    if (!el1 || !el2) return;
-
-    // Initialize Row 2 scroll position to the rightmost edge on mobile
-    if (window.innerWidth < 768) {
-      setTimeout(() => {
-        el2.scrollLeft = el2.scrollWidth - el2.clientWidth;
-      }, 50);
-    }
-
-    const handleAutoScroll = () => {
-      if (window.innerWidth >= 768) return;
-
-      // Row 1: Scroll right (increasing scrollLeft)
-      const cardWidth1 = el1.firstElementChild ? (el1.firstElementChild as HTMLElement).offsetWidth + 24 : 304;
-      const maxScroll1 = el1.scrollWidth - el1.clientWidth;
-      let nextScroll1 = el1.scrollLeft + cardWidth1;
-      if (nextScroll1 > maxScroll1 + 10) {
-        nextScroll1 = 0;
-      }
-      el1.scrollTo({ left: nextScroll1, behavior: 'smooth' });
-
-      // Row 2: Scroll left (decreasing scrollLeft)
-      const cardWidth2 = el2.firstElementChild ? (el2.firstElementChild as HTMLElement).offsetWidth + 24 : 304;
-      const maxScroll2 = el2.scrollWidth - el2.clientWidth;
-      let nextScroll2 = el2.scrollLeft - cardWidth2;
-      if (nextScroll2 < -10) {
-        nextScroll2 = maxScroll2;
-      }
-      el2.scrollTo({ left: nextScroll2, behavior: 'smooth' });
-    };
-
-    const interval = setInterval(handleAutoScroll, 4000); // Auto scroll every 4 seconds
-    return () => clearInterval(interval);
+    // Auto-scroll disabled
   }, []);
 
   return (
@@ -71,10 +37,10 @@ export function ServicesSection() {
       <div className="relative w-full max-w-[1425px] mx-auto px-5 md:px-[120px] z-10">
 
         {/* Header Area */}
-        <div className="relative w-full flex flex-col items-center justify-center min-h-0 md:min-h-[300px] pt-8 pb-4 md:py-0 mb-0">
+        <div className="relative w-full flex flex-col items-center justify-center min-h-0 md:min-h-[300px] pt-2 pb-4 md:py-0 mb-0">
 
           {/* Heading */}
-          <h2 className="relative z-10 font-head font-normal text-[19px] xs:text-[22px] sm:text-[36px] md:text-[52px] text-white tracking-[-1px] md:tracking-[-1.9px] leading-[1.2] md:leading-[1.25]">
+          <h2 className="relative z-10 font-head font-semibold text-[24px] xs:text-[26px] sm:text-[36px] md:text-[52px] text-white tracking-[-1px] md:tracking-[-1.9px] leading-[1.2] md:leading-[1.25]">
             Drive real results with<br />
             <span className="font-serif italic text-[#92b7ff]">creativity</span>
             {', '}
@@ -84,7 +50,7 @@ export function ServicesSection() {
           </h2>
 
           {/* Sub */}
-          <p className="relative z-10 mt-16 md:mt-5 mx-auto max-w-[500px] md:max-w-[600px] text-[11.5px] leading-[18px] xs:text-[12.5px] xs:leading-[20px] sm:text-[15.5px] sm:leading-[24px] md:text-[16px] md:leading-[26px] text-white/60">
+          <p className="relative z-10 mt-20 md:mt-5 mx-auto max-w-[500px] md:max-w-[600px] text-[11.5px] leading-[18px] xs:text-[12.5px] xs:leading-[20px] sm:text-[15.5px] sm:leading-[24px] md:text-[16px] md:leading-[26px] text-white/60">
             Backed by proven expertise, we transform businesses into<br /> future-ready brands that thrive in a competitive market.
           </p>
 
