@@ -39,7 +39,21 @@ export default function InfraEdge() {
         <ServicesSection />
         <HowSection />
         <JourneySection />
-        <CaseStudiesCarousel slides={infraSlides} theme="infra" />
+        <CaseStudiesCarousel
+          slides={infraSlides}
+          bgClass="bg-[#04060f]/50"
+          sparkleColor="text-[#0055ff]"
+          dotActiveColor="bg-[#0055ff] shadow-[0_0_8px_#0055ff]"
+          serifColor="text-[#7dbaff]"
+          metricLabelColor="text-[#7dbaff]"
+          metricTextGrad="from-[#ffffff] to-[#7dbaff]"
+          metricLabelGrad="from-[#ffffff] to-[#7dbaff]"
+          buttonType="infra"
+          arrowStrokeColor="rgba(0, 85, 255, 0.4)"
+          arrowStartColor="#0055ff"
+          arrowStopColor="#002b80"
+          arrowEndColor="#04060f"
+        />
         <BrandsSection />
         <CtaSection />
       </main>

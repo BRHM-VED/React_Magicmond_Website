@@ -7,57 +7,65 @@ import { Button } from '../../../common/button/homeButton';
 import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 import { SportsButton } from '../../../common/button/SportsButton';
 
-const ArrowUpSvg = ({ id, theme }: { id: string; theme: 'home' | 'infra' | 'sports' }) => {
-  const isInfra = theme === 'infra';
-  const isSports = theme === 'sports';
-  const strokeColor = isInfra ? "rgba(0, 85, 255, 0.4)" : isSports ? "rgba(0, 172, 121, 0.4)" : "rgba(193, 86, 230, 0.4)";
-  const startColor = isInfra ? "#0055ff" : isSports ? "#00ac79" : "#C156E6";
-  const stopColor = isInfra ? "#002b80" : isSports ? "#00593e" : "#6B3080";
-  const endColor = isInfra ? "#04060f" : isSports ? "#0d0817" : "#0e081d";
+interface ArrowUpSvgProps {
+  id: string;
+  strokeColor: string;
+  startColor: string;
+  stopColor: string;
+  endColor: string;
+}
 
-  return (
-    <svg className="absolute top-0 left-1/2 -translate-x-1/2 w-[160px] lg:w-[260px] opacity-35 pointer-events-none z-0" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M100 20 L180 100 H130 V200 H70 V100 H20 Z" fill={`url(#${id})`} stroke={strokeColor} strokeWidth="3" strokeLinejoin="round" />
-      <defs>
-        <linearGradient id={id} x1="100" y1="20" x2="100" y2="200" gradientUnits="userSpaceOnUse">
-          <stop stopColor={startColor} />
-          <stop offset="0.5" stopColor={stopColor} />
-          <stop offset="1" stopColor={endColor} stopOpacity="0" />
-        </linearGradient>
-      </defs>
-    </svg>
-  );
-};
+const ArrowUpSvg = ({
+  id,
+  strokeColor,
+  startColor,
+  stopColor,
+  endColor,
+}: ArrowUpSvgProps) => (
+  <svg className="absolute top-0 left-1/2 -translate-x-1/2 w-[160px] lg:w-[260px] opacity-35 pointer-events-none z-0" viewBox="0 0 200 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M100 20 L180 100 H130 V200 H70 V100 H20 Z" fill={`url(#${id})`} stroke={strokeColor} strokeWidth="3" strokeLinejoin="round" />
+    <defs>
+      <linearGradient id={id} x1="100" y1="20" x2="100" y2="200" gradientUnits="userSpaceOnUse">
+        <stop stopColor={startColor} />
+        <stop offset="0.5" stopColor={stopColor} />
+        <stop offset="1" stopColor={endColor} stopOpacity="0" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 
 interface CaseStudiesCarouselProps {
   slides?: CaseSlide[];
-  theme?: 'home' | 'infra' | 'sports';
+  bgClass?: string;
+  sparkleColor?: string;
+  dotActiveColor?: string;
+  serifColor?: string;
+  metricLabelColor?: string;
+  metricTextGrad?: string;
+  metricLabelGrad?: string;
+  buttonType?: 'home' | 'infra' | 'sports';
+  arrowStrokeColor?: string;
+  arrowStartColor?: string;
+  arrowStopColor?: string;
+  arrowEndColor?: string;
 }
 
-export function CaseStudiesCarousel({ slides = caseSlides, theme = 'home' }: CaseStudiesCarouselProps) {
+export function CaseStudiesCarousel({
+  slides = caseSlides,
+  bgClass = 'bg-[#0e081d]/50',
+  sparkleColor = 'text-[#c156e6]',
+  dotActiveColor = 'bg-[#c156e6] shadow-[0_0_8px_#c156e6]',
+  serifColor = 'text-[#e0b6ff]',
+  metricLabelColor = 'text-[#ff73f0]',
+  metricTextGrad = 'from-[#e0b6ff] to-[#9747ff]',
+  metricLabelGrad = 'from-[#ffffff] to-[#e0b6ff]',
+  buttonType = 'home',
+  arrowStrokeColor = 'rgba(193, 86, 230, 0.4)',
+  arrowStartColor = '#C156E6',
+  arrowStopColor = '#6B3080',
+  arrowEndColor = '#0e081d',
+}: CaseStudiesCarouselProps) {
   const cases = useCarousel(slides.length, 5000);
-
-  const bgClass = theme === 'infra' ? 'bg-[#04060f]/50' : theme === 'sports' ? 'bg-[#0d0817]/50' : 'bg-[#0e081d]/50';
-  const sparkleColor = theme === 'infra' ? 'text-[#0055ff]' : theme === 'sports' ? 'text-[#00ac79]' : 'text-[#c156e6]';
-  const dotActiveColor = theme === 'infra' 
-    ? 'bg-[#0055ff] shadow-[0_0_8px_#0055ff]' 
-    : theme === 'sports' 
-    ? 'bg-[#00ac79] shadow-[0_0_8px_#00ac79]' 
-    : 'bg-[#c156e6] shadow-[0_0_8px_#c156e6]';
-  const serifColor = theme === 'infra' ? 'text-[#7dbaff]' : theme === 'sports' ? 'text-[#1ff9b8]' : 'text-[#e0b6ff]';
-  const metricLabelColor = theme === 'infra' ? 'text-[#7dbaff]' : theme === 'sports' ? 'text-[#1ff9b8]' : 'text-[#ff73f0]';
-  
-  const metricTextGrad = theme === 'infra' 
-    ? 'from-[#ffffff] to-[#7dbaff]' 
-    : theme === 'sports' 
-    ? 'from-[#ffffff] to-[#1ff9b8]' 
-    : 'from-[#e0b6ff] to-[#9747ff]';
-  
-  const metricLabelGrad = theme === 'infra'
-    ? 'from-[#ffffff] to-[#7dbaff]'
-    : theme === 'sports'
-    ? 'from-[#ffffff] to-[#1ff9b8]'
-    : 'from-[#ffffff] to-[#e0b6ff]';
 
   return (
     <section className="relative py-12 md:py-16 overflow-hidden max-w-[1240px] mx-auto px-0 md:px-12" id="case-studies">
@@ -84,17 +92,17 @@ export function CaseStudiesCarousel({ slides = caseSlides, theme = 'home' }: Cas
 
                 {/* Button */}
                 <div className="mt-7">
-                  {theme === 'infra' && (
+                  {buttonType === 'infra' && (
                     <InfraEdgeButton variant="small" href={slide.href}>
                       Know more
                     </InfraEdgeButton>
                   )}
-                  {theme === 'sports' && (
+                  {buttonType === 'sports' && (
                     <SportsButton variant="small" href={slide.href}>
                       Know more
                     </SportsButton>
                   )}
-                  {theme === 'home' && (
+                  {buttonType === 'home' && (
                     <Button variant="small" to={slide.href}>
                       Know more
                     </Button>
@@ -104,7 +112,13 @@ export function CaseStudiesCarousel({ slides = caseSlides, theme = 'home' }: Cas
 
               {/* Right Column: Visual Graphic */}
               <div className="relative flex flex-col items-center justify-center min-h-[220px] md:min-h-[300px] lg:min-h-[380px] z-10 select-none">
-                <ArrowUpSvg id={`arrgrad${i}`} theme={theme} />
+                <ArrowUpSvg
+                  id={`arrgrad${i}`}
+                  strokeColor={arrowStrokeColor}
+                  startColor={arrowStartColor}
+                  stopColor={arrowStopColor}
+                  endColor={arrowEndColor}
+                />
 
                 {/* Star Sparkles */}
                 <Sparkle className={`absolute left-[20%] top-[25%] ${sparkleColor} opacity-60 animate-pulse pointer-events-none`} size={18} />
@@ -160,4 +174,5 @@ export function CaseStudiesCarousel({ slides = caseSlides, theme = 'home' }: Cas
     </section>
   );
 }
+
 export default CaseStudiesCarousel;
