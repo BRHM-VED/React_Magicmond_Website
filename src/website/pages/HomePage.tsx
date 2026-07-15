@@ -1,8 +1,6 @@
 import { useReveal } from '../../hooks/useReveal';
 import { Navbar } from '../../common/Navbar';
 import { Footer } from '../../common/Footer';
-import { Seo } from '../../common/Seo';
-import { OrganizationSchema, WebPageSchema } from '../../common/JsonLd';
 import { HeroSection } from '../components/home/HeroSection';
 import { AboutSection } from '../components/home/AboutSection';
 import { ServicesSection } from '../components/home/ServicesSection';
@@ -19,17 +17,6 @@ export default function Home() {
 
   return (
     <>
-      <Seo
-        title="App Development &amp; Marketing Company in Delhi"
-        description="MagicMond is a Delhi-based app development, UI/UX design, website development &amp; performance marketing company. 20+ brands scaled. Get a free consultation."
-        canonical="https://magicmond.com/"
-      />
-      <OrganizationSchema />
-      <WebPageSchema
-        name="MagicMond — App Development &amp; Marketing Company in Delhi"
-        description="MagicMond is a Delhi-based app development, UI/UX design, website development &amp; performance marketing company. 20+ brands scaled."
-        url="https://magicmond.com/"
-      />
       <Navbar />
       <main>
         <HeroSection />
@@ -50,4 +37,3 @@ export default function Home() {
     </>
   );
 }
-

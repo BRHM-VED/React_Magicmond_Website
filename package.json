@@ -5,10 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc -b && vite build && vite build --config vite.config.ssr.ts && node prerender.mjs",
-    "build:client": "vite build",
-    "build:ssr": "vite build --config vite.config.ssr.ts",
-    "prerender": "node prerender.mjs",
+    "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {

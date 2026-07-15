@@ -1,8 +1,7 @@
 import { useReveal } from '../../hooks/useReveal';
+import { usePageMeta } from '../../hooks/usePageMeta';
 import { Navbar } from '../../common/Navbar';
 import { Footer } from '../../common/Footer';
-import { Seo } from '../../common/Seo';
-import { WebPageSchema } from '../../common/JsonLd';
 import { HeroSection } from '../components/infra-edge/HeroSection';
 import { OfferSection } from '../components/infra-edge/OfferSection';
 import { ProblemSection } from '../components/infra-edge/ProblemSection';
@@ -23,20 +22,13 @@ const infraSlides = caseSlides.filter(
 );
 
 export default function InfraEdge() {
+  const metaTitle = 'MagicMond InfraEdge';
+  const metaDesc = 'The future of real estate growth starts here. Transforming traditional businesses into digitally strong brands that thrive in today’s digital world.';
+  usePageMeta(metaTitle, metaDesc);
   useReveal();
 
   return (
     <div className="bg-[#04060f] min-h-screen text-white">
-      <Seo
-        title="InfraEdge — B2B Growth Engine for Construction &amp; Real Estate"
-        description="InfraEdge by MagicMond is a 90-day qualified meeting engine for construction and real estate businesses in India. 100 qualified meetings guaranteed."
-        canonical="https://magicmond.com/infraedge"
-      />
-      <WebPageSchema
-        name="InfraEdge — B2B Growth Engine for Construction &amp; Real Estate | MagicMond"
-        description="InfraEdge is MagicMond's B2B growth engine helping construction and real estate companies generate 100 qualified meetings in 90 days."
-        url="https://magicmond.com/infraedge"
-      />
       <Navbar suffix="InfraEdge" activePath="/infraedge" />
       <main>
         <HeroSection />

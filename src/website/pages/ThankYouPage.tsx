@@ -1,7 +1,6 @@
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FONTS } from '../../utils/constants/fonts';
 import { CheckCircle2, Home } from 'lucide-react';
-import { Seo } from '../../common/Seo';
 
 export function ThankYouPage() {
   const location = useLocation();
@@ -21,7 +20,6 @@ export function ThankYouPage() {
 
   return (
     <main className="relative min-h-screen bg-[#010502] flex flex-col items-center justify-center p-4 overflow-hidden">
-      <Seo title="Thank You" noIndex={true} />
       {/* Background Star Effect */}
       <img
         className="absolute top-0 left-0 w-full h-full object-cover opacity-30 pointer-events-none z-0"
