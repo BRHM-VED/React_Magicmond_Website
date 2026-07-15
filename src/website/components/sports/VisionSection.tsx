@@ -62,56 +62,56 @@ export function VisionSection() {
       };
 
       const maxOpacity = isMobile ? 0.5 : 1.0;
-      const travelDistance = viewportHeight * 0.30;
+      const travelDistance = viewportHeight * 0.35;
 
-      // --- Choreographed Late-Scroll Parallax Timeline (Starts at progress 0.45) ---
+      // --- Choreographed Early-to-Late Parallax Timeline (Centered around progress 0.50) ---
 
       // 2. Translate and Fade Left 1 (Sidhu) & Right 1 (Three partners)
-      // Fades in and slides up between 0.45 and 0.60. Fades out and slides up between 0.70 and 0.85.
+      // Fades in and slides up between 0.05 and 0.25. Fades out and slides up between 0.65 and 0.85.
       let opacity1 = 0;
       let y1 = travelDistance;
-      if (progress < 0.65) {
-        opacity1 = interpolate(progress, 0.45, 0.60, 0, maxOpacity);
-        y1 = interpolate(progress, 0.45, 0.60, travelDistance, 0);
+      if (progress < 0.50) {
+        opacity1 = interpolate(progress, 0.05, 0.25, 0, maxOpacity);
+        y1 = interpolate(progress, 0.05, 0.25, travelDistance, 0);
       } else {
-        opacity1 = interpolate(progress, 0.70, 0.85, maxOpacity, 0);
-        y1 = interpolate(progress, 0.70, 0.85, 0, -travelDistance);
+        opacity1 = interpolate(progress, 0.65, 0.85, maxOpacity, 0);
+        y1 = interpolate(progress, 0.65, 0.85, 0, -travelDistance);
       }
 
       // 3. Translate and Fade Left 2 (Two Guys Standing)
-      // Fades in and slides up between 0.60 and 0.75. Fades out and slides up between 0.80 and 0.95.
+      // Fades in and slides up between 0.15 and 0.35. Fades out and slides up between 0.75 and 0.95.
       let opacityLeft2 = 0;
       let yLeft2 = travelDistance;
-      if (progress < 0.78) {
-        opacityLeft2 = interpolate(progress, 0.60, 0.75, 0, maxOpacity);
-        yLeft2 = interpolate(progress, 0.60, 0.75, travelDistance, 0);
+      if (progress < 0.60) {
+        opacityLeft2 = interpolate(progress, 0.15, 0.35, 0, maxOpacity);
+        yLeft2 = interpolate(progress, 0.15, 0.35, travelDistance, 0);
       } else {
-        opacityLeft2 = interpolate(progress, 0.80, 0.95, maxOpacity, 0);
-        yLeft2 = interpolate(progress, 0.80, 0.95, 0, -travelDistance);
+        opacityLeft2 = interpolate(progress, 0.75, 0.95, maxOpacity, 0);
+        yLeft2 = interpolate(progress, 0.75, 0.95, 0, -travelDistance);
       }
 
       // 4. Translate and Fade Left 3 (IPL Photo)
-      // Fades in and slides up between 0.75 and 0.90. Fades out and slides up between 0.95 and 1.00.
+      // Fades in and slides up between 0.25 and 0.45. Fades out and slides up between 0.85 and 1.00.
       let opacityLeft3 = 0;
       let yLeft3 = travelDistance;
-      if (progress < 0.92) {
-        opacityLeft3 = interpolate(progress, 0.75, 0.90, 0, maxOpacity);
-        yLeft3 = interpolate(progress, 0.75, 0.90, travelDistance, 0);
+      if (progress < 0.70) {
+        opacityLeft3 = interpolate(progress, 0.25, 0.45, 0, maxOpacity);
+        yLeft3 = interpolate(progress, 0.25, 0.45, travelDistance, 0);
       } else {
-        opacityLeft3 = interpolate(progress, 0.95, 1.00, maxOpacity, 0);
-        yLeft3 = interpolate(progress, 0.95, 1.00, 0, -travelDistance);
+        opacityLeft3 = interpolate(progress, 0.85, 1.00, maxOpacity, 0);
+        yLeft3 = interpolate(progress, 0.85, 1.00, 0, -travelDistance);
       }
 
       // 5. Translate and Fade Right 2 (Woman/Frame)
-      // Fades in and slides up between 0.60 and 0.75. Fades out and slides up between 0.95 and 1.00.
+      // Fades in and slides up between 0.15 and 0.35. Fades out and slides up between 0.85 and 1.00.
       let opacityRight2 = 0;
       let yRight2 = travelDistance;
-      if (progress < 0.85) {
-        opacityRight2 = interpolate(progress, 0.60, 0.75, 0, maxOpacity);
-        yRight2 = interpolate(progress, 0.60, 0.75, travelDistance, 0);
+      if (progress < 0.60) {
+        opacityRight2 = interpolate(progress, 0.15, 0.35, 0, maxOpacity);
+        yRight2 = interpolate(progress, 0.15, 0.35, travelDistance, 0);
       } else {
-        opacityRight2 = interpolate(progress, 0.95, 1.00, maxOpacity, 0);
-        yRight2 = interpolate(progress, 0.95, 1.00, 0, -travelDistance);
+        opacityRight2 = interpolate(progress, 0.85, 1.00, maxOpacity, 0);
+        yRight2 = interpolate(progress, 0.85, 1.00, 0, -travelDistance);
       }
 
       // Apply transforms
@@ -149,7 +149,7 @@ export function VisionSection() {
 
 
   return (
-    <div ref={containerRef} className="relative w-full h-auto md:h-[140vh] bg-[#010502] mb-[0px]">
+    <div ref={containerRef} className="relative w-full h-auto md:h-[220vh] bg-[#010502] mb-[0px]">
       <section
         ref={sectionRef}
         id="about"
