@@ -22,9 +22,10 @@ const infraSlides = caseSlides.filter(
 );
 
 export default function InfraEdge() {
-  const metaTitle = 'MagicMond InfraEdge';
+  const metaTitle = 'InfraEdge | Digital Growth Partner for Construction & Real Estate';
   const metaDesc = 'The future of real estate growth starts here. Transforming traditional businesses into digitally strong brands that thrive in today’s digital world.';
-  usePageMeta(metaTitle, metaDesc);
+  const metaKeywords = 'InfraEdge, infra edge, construction marketing, real estate lead generation, infrastructure brand building, construction B2B marketing, real estate growth engine, qualified project meetings for builders, real estate sales pipeline';
+  usePageMeta(metaTitle, metaDesc, metaKeywords);
   useReveal();
 
   return (
@@ -38,7 +39,7 @@ export default function InfraEdge() {
         <GlimpseSection />
         <ServicesSection />
         <HowSection />
-        <JourneySection />
+        <JourneySection />xwx
         <CaseStudiesCarousel
           slides={infraSlides}
           bgClass="bg-[#04060f]/50"

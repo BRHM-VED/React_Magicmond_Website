@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
-/** Sets document title and meta description for the current page. */
-export function usePageMeta(title: string, description?: string) {
+/** Sets document title, meta description, and keywords for the current page. */
+export function usePageMeta(title: string, description?: string, keywords?: string) {
   useEffect(() => {
     document.title = title;
     if (description) {
@@ -13,5 +13,14 @@ export function usePageMeta(title: string, description?: string) {
       }
       meta.content = description;
     }
-  }, [title, description]);
+    if (keywords) {
+      let metaKeywords = document.querySelector<HTMLMetaElement>('meta[name="keywords"]');
+      if (!metaKeywords) {
+        metaKeywords = document.createElement("meta");
+        metaKeywords.name = "keywords";
+        document.head.appendChild(metaKeywords);
+      }
+      metaKeywords.content = keywords;
+    }
+  }, [title, description, keywords]);
 }
