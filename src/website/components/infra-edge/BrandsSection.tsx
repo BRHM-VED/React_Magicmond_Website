@@ -1,28 +1,17 @@
 import { CommonBrandsSection } from '../../../common/CommonBrandsSection';
 import { CALENDLY } from '../../../utils/constants/constants';
 
-const row1 = [
-  { image: "/assets/images/infraedge/brand-logo-01.svg", alt: "" },
-  { image: "/assets/images/infraedge/brand-logo-02.svg", alt: "" },
-  { image: "/assets/images/infraedge/brand-logo-03.svg", alt: "" },
-  { image: "/assets/icons/brand-r1-extra.svg", alt: "" },
+const rowItems = [
+  { image: "/assets/images/common/Ashiana.svg", alt: "Ashiana" },
+  { image: "/assets/images/common/NirmaanWorks.svg", alt: "Nirmaan Works" },
+  { image: "/assets/images/common/Onsite.svg", alt: "Onsite" },
+  { image: "/assets/images/common/ReidiusInfra.svg", alt: "Reidius Infra" },
+  { image: "/assets/images/common/ReidiusInfraGlobal.svg", alt: "Reidius Infra Global" },
+  { image: "/assets/images/common/RsInfra.svg", alt: "RS Infra" },
+  { image: "/assets/images/common/ShriYamunaInfra.svg", alt: "Shri Yamuna Infra" },
 ];
 
-const row2 = [
-  { image: "/assets/images/infraedge/brand-logo-04.webp", alt: "" },
-  { image: "/assets/icons/brand-makelen.svg", alt: "" },
-  { image: "/assets/icons/brand-onsite.svg", alt: "" },
-  { image: "/assets/icons/brand-r2-extra.svg", alt: "" },
-];
-
-const row3 = [
-  { image: "/assets/images/infraedge/brand-logo-02.svg", alt: "" },
-  { image: "/assets/icons/brand-fur.svg", alt: "" },
-  { image: "/assets/icons/brand-r3-extra.svg", alt: "" },
-  { image: "/assets/images/infraedge/brand-logo-01.svg", alt: "" },
-];
-
-const brandRows = [row1, row2, row3];
+const brandRows = [[...rowItems, ...rowItems, ...rowItems, ...rowItems]];
 
 export function BrandsSection() {
   return (
