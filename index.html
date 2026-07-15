@@ -63,6 +63,9 @@
     rel="stylesheet" />
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap" rel="stylesheet" />
 
+  <!-- Per-route: title, meta description, canonical, OG, Twitter, JSON-LD -->
+  <!-- Injected here by the prerender script at build time                  -->
+  <!--app-head-->
 </head>
 
 <body>
@@ -71,7 +74,7 @@
       style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div id="root"></div>
+  <div id="root"><!--app-html--></div>
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
