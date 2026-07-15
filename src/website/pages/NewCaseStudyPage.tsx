@@ -348,9 +348,8 @@ export default function NewCaseStudyPage({ study, stripImages = [] }: Props) {
         </section>
       </main>
       <Footer
-        gradientColor="rgba(0, 85, 200, 0.35)"
-        wordmarkColor="#3366cc"
-        backgroundColor="#0e1628"
+        gradientColor="rgba(193, 86, 230, 0.45)"
+        wordmarkColor="#C156E6"
       />
     </div>
   );
