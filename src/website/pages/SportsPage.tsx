@@ -1,7 +1,8 @@
 import { useReveal } from '../../hooks/useReveal';
-import { usePageMeta } from '../../hooks/usePageMeta';
 import { Navbar } from '../../common/Navbar';
 import { Footer } from '../../common/Footer';
+import { Seo } from '../../common/Seo';
+import { WebPageSchema } from '../../common/JsonLd';
 import { HeroSection } from '../components/sports/HeroSection';
 import { VisionSection } from '../components/sports/VisionSection';
 import { ServicesSection } from '../components/sports/ServicesSection';
@@ -12,14 +13,20 @@ import { BrandsSection } from '../components/sports/BrandsSection';
 import { CtaSection } from '../components/sports/CtaSection';
 
 export default function Sports() {
-  usePageMeta(
-    'MagicMond Sports',
-    'Connecting ambitious brands to the world of cricket. From global tournaments to digital cricket platforms — we help brands unlock visibility, engagement, and trust without breaking the bank.'
-  );
   useReveal();
 
   return (
     <div className="bg-[#010502] font-body text-white min-h-screen relative w-full overflow-x-hidden">
+      <Seo
+        title="Sports Marketing &amp; Cricket Sponsorship Agency in India"
+        description="MagicMond Sports connects brands to the world of cricket — IPL sponsorships, digital cricket platforms &amp; fan engagement. Grow with cricket without breaking the bank."
+        canonical="https://magicmond.com/sports"
+      />
+      <WebPageSchema
+        name="Sports Marketing &amp; Cricket Sponsorship Agency | MagicMond"
+        description="MagicMond Sports connects brands to cricket audiences through IPL sponsorships, digital platforms and fan engagement campaigns."
+        url="https://magicmond.com/sports"
+      />
       <Navbar suffix="Sports" activePath="/sports" />
       <main>
         <HeroSection />

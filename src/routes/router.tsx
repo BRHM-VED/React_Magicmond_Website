@@ -1,10 +1,11 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 import HomePage from '../website/pages/HomePage';
 import InfraEdgePage from '../website/pages/InfraEdgePage';
 import SportsPage from '../website/pages/SportsPage';
 import NewCaseStudyPage from '../website/pages/NewCaseStudyPage';
 import ThankYouPage from '../website/pages/ThankYouPage';
+import NotFoundPage from '../website/pages/NotFoundPage';
 import { onsiteCaseStudy, onsiteStripImages } from '../data/case-studies/onsiteData';
 import { shriYamunaCaseStudy, shriYamunaStripImages } from '../data/case-studies/shri-yamuna.data';
 import { astrovedanshCaseStudy, astrovedanshStripImages } from '../data/case-studies/astrovedansh.data';
@@ -55,7 +56,7 @@ export const router = createBrowserRouter([
 
       {
         path: '*',
-        element: <Navigate to="/" replace />,
+        element: <NotFoundPage />,
       },
     ],
   },

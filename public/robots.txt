@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Explicitly welcome AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Noindex pages (still allow crawl of assets)
+Disallow: /thank-you
+
+Sitemap: https://magicmond.com/sitemap.xml
