@@ -62,7 +62,7 @@ export function VisionSection() {
       };
 
       const maxOpacity = isMobile ? 0.5 : 1.0;
-      const travelDistance = viewportHeight * 0.80;
+      const travelDistance = viewportHeight * 0.30;
 
       // --- Choreographed Late-Scroll Parallax Timeline (Starts at progress 0.45) ---
 
@@ -239,8 +239,8 @@ export function VisionSection() {
                     style={{ '--d': `${0.15 + i * 0.1}s` } as React.CSSProperties}
                   >
                     <div className={`font-inter font-medium leading-none tracking-[-0.03em] text-white flex items-baseline justify-start ${isLongValue
-                        ? 'text-[15px] sm:text-[22px] md:text-[46px]'
-                        : 'text-[36px] md:text-[72px]'
+                      ? 'text-[15px] sm:text-[22px] md:text-[46px]'
+                      : 'text-[36px] md:text-[72px]'
                       }`}>
                       <span>{s.value}</span>
                       <span className="text-[20px] md:text-[30px] text-[#1ff9b8] ml-0.5 font-medium tracking-[-0.64px] select-none self-start mt-0.5 md:mt-1">
