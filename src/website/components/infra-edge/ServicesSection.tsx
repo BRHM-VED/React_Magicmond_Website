@@ -16,7 +16,7 @@ export function ServicesSection() {
     <section id="service" className="relative pt-10 pb-12 md:py-28 text-center overflow-hidden bg-[#0e081d]">
 
       {/* Left Wing (Blue PNG) - Placed directly in section for full viewport width */}
-      <div className="absolute left-[-20px] xs:left-[-30px] sm:left-[-40px] lg:left-0 top-[120px] lg:top-[146px] w-[110px] xs:w-[140px] sm:w-[220px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">
+      <div className="absolute left-[-20px] xs:left-[-30px] sm:left-[-40px] lg:left-0 top-[120px] md:top-[130px] lg:top-[146px] w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">
         <img
           src="/assets/images/infraedge/infra-edge-left-wings.webp"
           alt=""
@@ -25,7 +25,7 @@ export function ServicesSection() {
       </div>
 
       {/* Right Wing (Blue PNG) - Placed directly in section for full viewport width */}
-      <div className="absolute right-[-20px] xs:right-[-30px] sm:right-[-40px] lg:right-0 top-[120px] lg:top-[146px] w-[110px] xs:w-[140px] sm:w-[220px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">
+      <div className="absolute right-[-20px] xs:right-[-30px] sm:right-[-40px] lg:right-0 top-[120px] md:top-[130px] lg:top-[146px] w-[160px] xs:w-[190px] sm:w-[240px] md:w-[300px] lg:w-[567px] lg:h-[237px] pointer-events-none select-none z-0">
         <img
           src="/assets/images/infraedge/infra-edge-right-wings.webp"
           alt=""
@@ -40,7 +40,7 @@ export function ServicesSection() {
         <div className="relative w-full flex flex-col items-center justify-center min-h-0 md:min-h-[300px] pt-2 pb-4 md:py-0 mb-0">
 
           {/* Heading */}
-          <h2 className="relative z-10 font-head font-semibold text-[24px] xs:text-[26px] sm:text-[36px] md:text-[52px] text-white tracking-[-1px] md:tracking-[-1.9px] leading-[1.2] md:leading-[1.25]">
+          <h2 className="relative z-10 font-head font-semibold text-[24px] xs:text-[26px] sm:text-[36px] md:text-[52px] text-white tracking-[-1px] md:tracking-[-1.9px] leading-[1.2] md:leading-[1.25] pb-24 md:pb-0">
             Drive real results with<br />
             <span className="font-serif italic text-[#92b7ff]">creativity</span>
             {', '}
@@ -50,7 +50,7 @@ export function ServicesSection() {
           </h2>
 
           {/* Sub */}
-          <p className="relative z-10 mt-20 md:mt-5 mx-auto max-w-[500px] md:max-w-[600px] text-[11.5px] leading-[18px] xs:text-[12.5px] xs:leading-[20px] sm:text-[15.5px] sm:leading-[24px] md:text-[16px] md:leading-[26px] text-white/60">
+          <p className="relative z-10 mt-2 md:mt-5 mx-auto max-w-[500px] md:max-w-[600px] text-[11.5px] leading-[18px] xs:text-[12.5px] xs:leading-[20px] sm:text-[15.5px] sm:leading-[24px] md:text-[16px] md:leading-[26px] text-white/60">
             Backed by proven expertise, we transform businesses into<br /> future-ready brands that thrive in a competitive market.
           </p>
 

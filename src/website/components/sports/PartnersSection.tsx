@@ -66,10 +66,10 @@ export function PartnersSection() {
           </div>
         </div>
 
-        {/* 2. Channel Partners */}
+        {/* 2. Publishing Partners */}
         <div className="flex flex-col items-center text-center">
           <h2 className="font-head font-semibold text-[28px] sm:text-[36px] md:text-[48px] text-white leading-tight mb-8 md:mb-12 reveal">
-            Channel <span className="font-serif italic text-[#00ac79]">partners</span>
+            Publishing <span className="font-serif italic text-[#00ac79]">partners</span>
           </h2>
           <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-7 md:flex-nowrap md:gap-12 lg:gap-14 reveal w-full max-w-[340px] sm:max-w-[480px] md:max-w-none mx-auto px-4">
             {/* JioHoststar */}

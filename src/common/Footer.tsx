@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { CALENDLY } from '../utils/constants/constants';
 import { FONTS } from '../utils/constants/fonts';
 import { footerHomeLinks } from '../data/common/navData';
 
@@ -115,29 +114,6 @@ export function Footer({
                       </Link>
                     </li>
                   ))}
-                </ul>
-              </div>
-
-              {/* Column 2: Contact */}
-              <div className="flex flex-col">
-                <p className={`${FONTS.body} font-medium text-[18px] md:text-[26px] text-[#f0f1f4]`}>
-                  Contact
-                </p>
-                <ul className="mt-[10px] md:mt-[22px] flex flex-col gap-[12px] md:gap-[23.4px]">
-                  <li>
-                    <a href={CALENDLY} className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}>
-                      Contact
-                    </a>
-                  </li>
-                  <li>
-                    <Link
-                      to="/#faq"
-                      onClick={(e) => handleFooterLink('/#faq', e)}
-                      className={`${FONTS.body} text-[15px] md:text-[23.4px] text-[#a7adbe] hover:text-white transition-colors duration-250`}
-                    >
-                      FAQ's
-                    </Link>
-                  </li>
                 </ul>
               </div>
             </div>

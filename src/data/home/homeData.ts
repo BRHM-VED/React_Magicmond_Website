@@ -95,8 +95,8 @@ export const processSteps: ProcessStep[] = [
 
 export const caseSlides: CaseSlide[] = [
   {
-    logo: "/assets/icons/shoemonkies-mark.svg",
-    logoText: "ShoeMonkies",
+    logo: "/assets/images/common/ShowMonkies.svg",
+    logoText: "",
     logoClass: "shoemonkies-name",
     titleLines: ["ShoeMonkies:", "Amazon Business to"],
     serifLine: "D2C Brand",
@@ -158,23 +158,30 @@ export const founderPills = [
 
 export const brandRows: BrandTile[][] = [
   [
-    { image: "/assets/images/home/logo-meta.svg", alt: "Meta", meta: true },
-    { image: "/assets/icons/pw-logo.svg", alt: "Physics Wallah" },
-    { image: "/assets/icons/kr-logo.svg", alt: "KR" },
-    { image: "/assets/icons/brand-r1-extra.svg", alt: "" },
+    { image: "/assets/images/common/RsInfra.svg", alt: "RS Infra" },
+    { image: "/assets/images/common/ReidiusInfra.svg", alt: "Reidius Infra" },
+    { image: "/assets/images/common/ShriYamunaInfra.svg", alt: "Shri Yamuna Infra" },
+    { image: "/assets/images/common/PhysicsWallah.svg", alt: "Physics Wallah" },
+    { image: "/assets/images/common/ReidiusInfraGlobal.svg", alt: "Reidius Infra Global" },
+    { image: "/assets/images/common/OneCricket.svg", alt: "OneCricket" },
+    { image: "/assets/images/common/Ashiana.svg", alt: "Ashiana" },
   ],
   [
-    { image: "/assets/icons/parth-mark.svg", alt: "Parth" },
-    { image: "/assets/icons/av-mark.svg", alt: "AstroVedansh" },
-    { image: "/assets/icons/crex-mark.svg", alt: "CREX" },
-    { image: "/assets/icons/crex-mark2.svg", alt: "" },
-    { image: "/assets/icons/brand-r2-extra.svg", alt: "" },
+    { image: "/assets/images/common/Parth.svg", alt: "Parth" },
+    { image: "/assets/images/common/Velocity.svg", alt: "Velocity" },
+    { image: "/assets/images/common/KR_Ayurveda.svg", alt: "KR Ayurveda" },
+    { image: "/assets/images/common/Solrio.svg", alt: "Solrio" },
+    { image: "/assets/images/common/Makelen.svg", alt: "Makelen" },
+    { image: "/assets/images/common/MetaFur.svg", alt: "Meta Fur" },
+    { image: "/assets/images/common/ShowMonkies.svg", alt: "ShoeMonkies" },
   ],
   [
-    { image: "/assets/icons/brand-makelen.svg", alt: "Makelen" },
-    { image: "/assets/icons/brand-fur.svg", alt: "" },
-    { image: "/assets/icons/shoemonkies-mark.svg", alt: "ShoeMonkies" },
-    { image: "/assets/icons/brand-onsite.svg", alt: "Onsite" },
-    { image: "/assets/icons/brand-r3-extra.svg", alt: "" },
+    { image: "/assets/images/common/CricketExchangeFantasy.svg", alt: "Cricket Exchange Fantasy" },
+    { image: "/assets/images/common/CryptoVivaan.svg", alt: "Crypto Vivaan" },
+    { image: "/assets/images/common/Onsite.svg", alt: "Onsite" },
+    { image: "/assets/images/common/AstroVedanshLogo.svg", alt: "AstroVedansh" },
+    { image: "/assets/images/common/Crex.svg", alt: "CREX" },
+    { image: "/assets/images/common/NirmaanWorks.svg", alt: "Nirmaan Works" },
+    { image: "/assets/images/common/MaisonEvora.svg", alt: "Maison Evora" },
   ],
 ];

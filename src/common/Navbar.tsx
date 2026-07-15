@@ -189,10 +189,10 @@ export function Navbar({ suffix, activePath }: Props) {
                     <div className="hidden md:flex absolute top-full left-1/2 -translate-x-1/2 translate-y-3 bg-[#080412]/95 backdrop-blur-md border border-white/8 rounded-xl p-2.5 min-w-[280px] flex-col gap-0.5 shadow-2xl transition-all duration-200 z-[1000] opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-1">
                       <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#brand-identity" onClick={(e) => handleNavClick('/#brand-identity', e)}>Brand Identity Development</Link>
                       <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#website-design" onClick={(e) => handleNavClick('/#website-design', e)}>Website Design & Development</Link>
+                      <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#erp-solutions" onClick={(e) => handleNavClick('/#erp-solutions', e)}>ERP Solutions & App Development</Link>
+                      <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#growth-marketing" onClick={(e) => handleNavClick('/#growth-marketing', e)}>Performance / Growth Marketing</Link>
                       <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#content-marketing" onClick={(e) => handleNavClick('/#content-marketing', e)}>Content Marketing</Link>
                       <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#creative-strategy" onClick={(e) => handleNavClick('/#creative-strategy', e)}>Creative Strategy & Design</Link>
-                      <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#growth-marketing" onClick={(e) => handleNavClick('/#growth-marketing', e)}>Performance / Growth Marketing</Link>
-                      <Link className="font-inter text-[14.5px] font-medium text-white/80 hover:text-white px-3.5 py-2.5 rounded-lg hover:bg-white/8 transition-colors duration-200 text-left whitespace-nowrap" to="/#erp-solutions" onClick={(e) => handleNavClick('/#erp-solutions', e)}>ERP Solutions & App Development</Link>
                     </div>
                   )}
                 </div>
@@ -275,10 +275,10 @@ export function Navbar({ suffix, activePath }: Props) {
                     >
                       <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#brand-identity" onClick={(e) => handleNavClick('/#brand-identity', e)}>Brand Identity Development</Link>
                       <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#website-design" onClick={(e) => handleNavClick('/#website-design', e)}>Website Design & Development</Link>
+                      <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#erp-solutions" onClick={(e) => handleNavClick('/#erp-solutions', e)}>ERP Solutions & App Development</Link>
+                      <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#growth-marketing" onClick={(e) => handleNavClick('/#growth-marketing', e)}>Performance / Growth Marketing</Link>
                       <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#content-marketing" onClick={(e) => handleNavClick('/#content-marketing', e)}>Content Marketing</Link>
                       <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#creative-strategy" onClick={(e) => handleNavClick('/#creative-strategy', e)}>Creative Strategy & Design</Link>
-                      <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#growth-marketing" onClick={(e) => handleNavClick('/#growth-marketing', e)}>Performance / Growth Marketing</Link>
-                      <Link className="font-inter text-[15px] font-medium text-white/70 hover:text-white py-1 text-left" to="/#erp-solutions" onClick={(e) => handleNavClick('/#erp-solutions', e)}>ERP Solutions & App Development</Link>
                     </div>
                   )}
                 </div>
