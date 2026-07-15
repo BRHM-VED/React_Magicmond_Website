@@ -38,6 +38,7 @@ echo "✅ Dependencies installed."
 # ── Step 4: Build production bundle ───────────────────────
 echo ""
 echo "🔨 Building production bundle..."
+rm -rf dist
 npm run build
 echo "✅ Build complete. Output: $APP_DIR/dist"
 
