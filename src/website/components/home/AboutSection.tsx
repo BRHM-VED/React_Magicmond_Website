@@ -53,7 +53,7 @@ export function AboutSection() {
                 href={CALENDLY}
                 className="w-[160px] sm:w-[191px] border border-white/15 shadow-[0_4px_20px_rgba(105,32,131,0.3)] hover:shadow-[0_4px_25px_rgba(125,39,156,0.5)]"
               >
-                Know more
+                Talk to Expert
               </Button>
             </div>
           </div>

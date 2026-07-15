@@ -1,5 +1,4 @@
-import { memo } from 'react';
-import { useCarousel } from '../../../hooks/useCarousel';
+import { memo, useState, useEffect, useRef, useCallback } from 'react';
 import { caseSlides } from '../../../data/home/homeData';
 import { FONTS } from '../../../utils/constants/fonts';
 import { ChevronLeft, ChevronRight, Sparkle } from 'lucide-react';
@@ -66,14 +65,98 @@ export const CaseStudiesCarousel = memo(function CaseStudiesCarousel({
   arrowStopColor = '#6B3080',
   arrowEndColor = '#0e081d',
 }: CaseStudiesCarouselProps) {
-  const cases = useCarousel(slides.length, 5000);
+  const N = slides.length;
+  const clonedSlides = [slides[N - 1], ...slides, slides[0]];
+  const [index, setIndex] = useState(1);
+  const [duration, setDuration] = useState(700);
+  const autoplayTimer = useRef<ReturnType<typeof setInterval>>();
+  const touchX = useRef<number | null>(null);
+
+  const startAutoplay = useCallback(() => {
+    if (autoplayTimer.current) clearInterval(autoplayTimer.current);
+    autoplayTimer.current = setInterval(() => {
+      setDuration(700);
+      setIndex((prev) => prev + 1);
+    }, 5000);
+  }, []);
+
+  useEffect(() => {
+    startAutoplay();
+    return () => {
+      if (autoplayTimer.current) clearInterval(autoplayTimer.current);
+    };
+  }, [startAutoplay]);
+
+  const handleTransitionEnd = () => {
+    if (index === 0) {
+      setDuration(0);
+      setIndex(N);
+    } else if (index === N + 1) {
+      setDuration(0);
+      setIndex(1);
+    }
+  };
+
+  useEffect(() => {
+    if (duration === 0) {
+      const timer = setTimeout(() => {
+        setDuration(700);
+      }, 50);
+      return () => clearTimeout(timer);
+    }
+  }, [duration]);
+
+  const next = () => {
+    if (duration === 0) return;
+    setDuration(700);
+    setIndex((prev) => prev + 1);
+    startAutoplay();
+  };
+
+  const prev = () => {
+    if (duration === 0) return;
+    setDuration(700);
+    setIndex((prev) => prev - 1);
+    startAutoplay();
+  };
+
+  const select = (targetIdx: number) => {
+    setDuration(700);
+    setIndex(targetIdx + 1);
+    startAutoplay();
+  };
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    touchX.current = e.touches[0].clientX;
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (touchX.current === null) return;
+    const dx = e.changedTouches[0].clientX - touchX.current;
+    if (Math.abs(dx) > 50) {
+      if (dx < 0) next();
+      else prev();
+    }
+    touchX.current = null;
+  };
+
+  const activeDotIndex = index === 0 ? N - 1 : index === N + 1 ? 0 : index - 1;
 
   return (
     <section className="relative py-12 md:py-16 overflow-hidden max-w-[1240px] mx-auto px-0 md:px-12" id="case-studies">
       <div className={`relative overflow-hidden rounded-none md:rounded-[32px] ${bgClass} backdrop-blur-sm`}>
-        <div className="flex transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.2,1)]" style={{ transform: `translateX(-${cases.index * 100}%)` }} onTouchStart={cases.onTouchStart} onTouchEnd={cases.onTouchEnd}>
-          {slides.map((slide: CaseSlide, i: number) => (
-            <article className="flex-[0_0_100%] grid grid-cols-1 lg:grid-cols-2 items-center gap-[28px] lg:gap-10 px-5 py-7 md:px-16 md:py-14 lg:px-[90px] lg:py-[55px] min-h-0 lg:min-h-[500px]" key={slide.href}>
+        <div
+          className="flex"
+          style={{
+            transform: `translateX(-${index * 100}%)`,
+            transition: duration > 0 ? `transform ${duration}ms cubic-bezier(0.45, 0, 0.2, 1)` : 'none'
+          }}
+          onTransitionEnd={handleTransitionEnd}
+          onTouchStart={onTouchStart}
+          onTouchEnd={onTouchEnd}
+        >
+          {clonedSlides.map((slide: CaseSlide, i: number) => (
+            <article className="flex-[0_0_100%] grid grid-cols-1 lg:grid-cols-2 items-center gap-[28px] lg:gap-10 px-5 py-7 md:px-16 md:py-14 lg:px-[90px] lg:py-[55px] min-h-0 lg:min-h-[500px]" key={`${slide.href}-${i}`}>
               {/* Left Column: Info */}
               <div className="relative z-10 flex flex-col items-start text-left">
                 {/* Logo and Brand row */}
@@ -148,14 +231,14 @@ export const CaseStudiesCarousel = memo(function CaseStudiesCarousel({
         <button
           className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 items-center justify-center text-white/70 hover:text-white transition-all duration-200 left-4"
           aria-label="Previous case study"
-          onClick={cases.prev}
+          onClick={prev}
         >
           <ChevronLeft size={20} />
         </button>
         <button
           className="hidden md:flex absolute top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 items-center justify-center text-white/70 hover:text-white transition-all duration-200 right-4"
           aria-label="Next case study"
-          onClick={cases.next}
+          onClick={next}
         >
           <ChevronRight size={20} />
         </button>
@@ -166,9 +249,9 @@ export const CaseStudiesCarousel = memo(function CaseStudiesCarousel({
         {slides.map((_: any, i: number) => (
           <button
             key={i}
-            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === cases.index ? dotActiveColor + ' scale-110' : 'bg-white/20 hover:bg-white/40'}`}
+            className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === activeDotIndex ? dotActiveColor + ' scale-110' : 'bg-white/20 hover:bg-white/40'}`}
             aria-label={`Slide ${i + 1}`}
-            onClick={() => cases.select(i)}
+            onClick={() => select(i)}
           />
         ))}
       </div>

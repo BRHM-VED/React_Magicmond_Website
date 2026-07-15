@@ -129,7 +129,7 @@ export const caseSlides: CaseSlide[] = [
     logo: "/assets/images/common/OnsiteLogo.svg",
     logoText: "",
     logoClass: "onsite-name text-[#0055cc]",
-    titleLines: ["Onsite: 2-2.5x", "Sales Revenue for"],
+    titleLines: ["Onsite: 2.5x", "Sales Revenue for"],
     serifLine: "Construction SaaS",
     description: "Scale marketing pipelines from 15L to 40L while cutting cost per sales.",
     href: "/case-study-onsite",
