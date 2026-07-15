@@ -11,7 +11,15 @@ const rowItems = [
   { image: "/assets/images/common/ShriYamunaInfra.svg", alt: "Shri Yamuna Infra" },
 ];
 
-const brandRows = [[...rowItems, ...rowItems, ...rowItems, ...rowItems]];
+const row1Items = [...rowItems];
+const row2Items = [...rowItems.slice(2), ...rowItems.slice(0, 2)];
+const row3Items = [...rowItems.slice(4), ...rowItems.slice(0, 4)];
+
+const brandRows = [
+  [...row1Items, ...row1Items, ...row1Items],
+  [...row2Items, ...row2Items, ...row2Items],
+  [...row3Items, ...row3Items, ...row3Items],
+];
 
 export function BrandsSection() {
   return (
