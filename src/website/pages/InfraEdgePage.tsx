@@ -15,17 +15,17 @@ import { CtaSection } from '../components/infra-edge/CtaSection';
 import { CaseStudiesCarousel } from '../components/home/CaseStudiesCarousel';
 import { caseSlides } from '../../data/home/homeData';
 
+const infraSlides = caseSlides.filter(
+  (slide) =>
+    slide.href === '/case-study-reidius-infra' ||
+    slide.href === '/case-study-shri-yamuna-infra'
+);
+
 export default function InfraEdge() {
   const metaTitle = 'MagicMond InfraEdge';
   const metaDesc = 'The future of real estate growth starts here. Transforming traditional businesses into digitally strong brands that thrive in today’s digital world.';
   usePageMeta(metaTitle, metaDesc);
   useReveal();
-
-  const infraSlides = caseSlides.filter(
-    (slide) =>
-      slide.href === '/case-study-reidius-infra' ||
-      slide.href === '/case-study-shri-yamuna-infra'
-  );
 
   return (
     <div className="bg-[#04060f] min-h-screen text-white">

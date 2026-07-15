@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { useCarousel } from '../../../hooks/useCarousel';
 import { caseSlides } from '../../../data/home/homeData';
 import { FONTS } from '../../../utils/constants/fonts';
@@ -50,7 +51,7 @@ interface CaseStudiesCarouselProps {
   arrowEndColor?: string;
 }
 
-export function CaseStudiesCarousel({
+export const CaseStudiesCarousel = memo(function CaseStudiesCarousel({
   slides = caseSlides,
   bgClass = 'bg-[#0e081d]/50',
   sparkleColor = 'text-[#c156e6]',
@@ -173,6 +174,6 @@ export function CaseStudiesCarousel({
       </div>
     </section>
   );
-}
+});
 
 export default CaseStudiesCarousel;
