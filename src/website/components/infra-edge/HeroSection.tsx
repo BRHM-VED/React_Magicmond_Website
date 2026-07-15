@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LightRays } from '../../../common/LightRays';
 
-const WORDS = ["construction", "interior design", "architecture", "real estate"];
+const WORDS = ["Construction", "Interior Design", "Architecture", "Real Estate"];
 
 export function HeroSection() {
   const [visible, setVisible] = useState(true);

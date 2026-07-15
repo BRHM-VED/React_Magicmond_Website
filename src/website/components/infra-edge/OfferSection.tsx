@@ -2,9 +2,9 @@ import { InfraEdgeButton } from '../../../common/button/InfraEdgeButton';
 
 function OfferCard() {
   return (
-    <div className="relative w-full md:w-[368px] border border-[#4ea7e6] overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.6)] reveal-scale">
+    <div className="relative w-full md:w-[368px] h-full overflow-hidden reveal-scale">
       <img
-        className="w-full h-auto object-cover pointer-events-none block"
+        className="w-full h-full object-cover pointer-events-none block"
         src="/assets/images/infraedge/offer-image.webp"
         alt="100 Qualified Meetings in 90 Days Flagship Growth Offer"
       />
@@ -50,7 +50,7 @@ export function OfferSection() {
           {/* Right: image card — pinned to bottom of container */}
           <div className="relative md:w-[500px] md:h-[504px] flex-shrink-0 flex items-end justify-center px-5 md:px-0">
             {/* On mobile: normal flow image, no extra height */}
-            <div className="w-full md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-[368px] md:h-[451px]">
+            <div className="w-full h-[370px] md:h-full md:absolute md:bottom-0 md:left-1/2 md:-translate-x-1/2 md:w-[368px]">
               <OfferCard />
             </div>
           </div>
