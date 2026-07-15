@@ -18,14 +18,18 @@ const ArrowUpSvg = ({ id }: { id: string }) => (
   </svg>
 );
 
-export function CaseStudiesCarousel() {
-  const cases = useCarousel(caseSlides.length, 5000);
+interface CaseStudiesCarouselProps {
+  slides?: CaseSlide[];
+}
+
+export function CaseStudiesCarousel({ slides = caseSlides }: CaseStudiesCarouselProps) {
+  const cases = useCarousel(slides.length, 5000);
 
   return (
     <section className="relative py-12 md:py-16 overflow-hidden max-w-[1240px] mx-auto px-0 md:px-12" id="case-studies">
       <div className="relative overflow-hidden rounded-none md:rounded-[32px] bg-[#0e081d]/50 backdrop-blur-sm">
         <div className="flex transition-transform duration-700 ease-[cubic-bezier(0.45,0,0.2,1)]" style={{ transform: `translateX(-${cases.index * 100}%)` }} onTouchStart={cases.onTouchStart} onTouchEnd={cases.onTouchEnd}>
-          {caseSlides.map((slide: CaseSlide, i: number) => (
+          {slides.map((slide: CaseSlide, i: number) => (
             <article className="flex-[0_0_100%] grid grid-cols-1 lg:grid-cols-2 items-center gap-[28px] lg:gap-10 px-5 py-7 md:px-16 md:py-14 lg:px-[90px] lg:py-[55px] min-h-0 lg:min-h-[500px]" key={slide.href}>
               {/* Left Column: Info */}
               <div className="relative z-10 flex flex-col items-start text-left">
@@ -98,7 +102,7 @@ export function CaseStudiesCarousel() {
 
       {/* Pagination Dots */}
       <div className="flex justify-center gap-2 mt-5">
-        {caseSlides.map((_: any, i: number) => (
+        {slides.map((_: any, i: number) => (
           <button
             key={i}
             className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === cases.index ? 'bg-[#c156e6] scale-110 shadow-[0_0_8px_#c156e6]' : 'bg-white/20 hover:bg-white/40'}`}
