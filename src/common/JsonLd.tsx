@@ -23,7 +23,7 @@ export function OrganizationSchema() {
           url: 'https://magicmond.com/assets/icons/MagicmondLogo.png',
         },
         description:
-          'MagicMond is a software development and digital growth company in Mumbai, India, specialising in app development, website development, UI/UX design, ERP systems, and performance marketing.',
+          'MagicMond is a software development and digital growth company in Delhi, India, specialising in app development, website development, UI/UX design, ERP systems, and performance marketing.',
         email: 'hello@magicmond.com',
         sameAs: [
           'https://www.instagram.com/magicmond/',
@@ -37,12 +37,12 @@ export function OrganizationSchema() {
         url: 'https://magicmond.com',
         image: 'https://magicmond.com/og-image.png',
         description:
-          'MagicMond is an app development, UI/UX design, and digital marketing company in Mumbai, India.',
+          'MagicMond is an app development, UI/UX design, and digital marketing company in Delhi, India.',
         email: 'hello@magicmond.com',
         address: {
           '@type': 'PostalAddress',
-          addressLocality: 'Mumbai',
-          addressRegion: 'Maharashtra',
+          addressLocality: 'Delhi',
+          addressRegion: 'Delhi',
           addressCountry: 'IN',
         },
         areaServed: 'IN',

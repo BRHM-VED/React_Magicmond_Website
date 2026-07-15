@@ -27,11 +27,11 @@ export function Seo({
 }: SeoProps) {
   const fullTitle = title
     ? `${title} | MagicMond`
-    : 'App Development & Marketing Company in Mumbai | MagicMond';
+    : 'App Development & Marketing Company in Delhi | MagicMond';
 
   const metaDescription =
     description ??
-    'MagicMond is a Mumbai-based app development, UI/UX design, website development & performance marketing company. 20+ brands scaled. Get a free consultation.';
+    'MagicMond is a Delhi-based app development, UI/UX design, website development & performance marketing company. 20+ brands scaled. Get a free consultation.';
 
   return (
     <Helmet>

@@ -20,14 +20,14 @@ export default function Home() {
   return (
     <>
       <Seo
-        title="App Development &amp; Marketing Company in Mumbai"
-        description="MagicMond is a Mumbai-based app development, UI/UX design, website development &amp; performance marketing company. 20+ brands scaled. Get a free consultation."
+        title="App Development &amp; Marketing Company in Delhi"
+        description="MagicMond is a Delhi-based app development, UI/UX design, website development &amp; performance marketing company. 20+ brands scaled. Get a free consultation."
         canonical="https://magicmond.com/"
       />
       <OrganizationSchema />
       <WebPageSchema
-        name="MagicMond — App Development &amp; Marketing Company in Mumbai"
-        description="MagicMond is a Mumbai-based app development, UI/UX design, website development &amp; performance marketing company. 20+ brands scaled."
+        name="MagicMond — App Development &amp; Marketing Company in Delhi"
+        description="MagicMond is a Delhi-based app development, UI/UX design, website development &amp; performance marketing company. 20+ brands scaled."
         url="https://magicmond.com/"
       />
       <Navbar />
