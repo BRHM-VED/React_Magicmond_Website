@@ -16,7 +16,34 @@ export function VisionSection() {
       if (!containerRef.current || !sectionRef.current) return;
 
       const isMobile = window.innerWidth < 768;
-      if (isMobile) return;
+      if (isMobile) {
+        if (sectionRef.current) {
+          sectionRef.current.style.position = '';
+          sectionRef.current.style.top = '';
+          sectionRef.current.style.bottom = '';
+        }
+        if (imgLeft1Ref.current) {
+          imgLeft1Ref.current.style.transform = '';
+          imgLeft1Ref.current.style.opacity = '';
+        }
+        if (imgRight1Ref.current) {
+          imgRight1Ref.current.style.transform = '';
+          imgRight1Ref.current.style.opacity = '';
+        }
+        if (imgLeft2Ref.current) {
+          imgLeft2Ref.current.style.transform = '';
+          imgLeft2Ref.current.style.opacity = '';
+        }
+        if (imgLeft3Ref.current) {
+          imgLeft3Ref.current.style.transform = '';
+          imgLeft3Ref.current.style.opacity = '';
+        }
+        if (imgRight2Ref.current) {
+          imgRight2Ref.current.style.transform = '';
+          imgRight2Ref.current.style.opacity = '';
+        }
+        return;
+      }
 
       const containerRect = containerRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
@@ -165,7 +192,7 @@ export function VisionSection() {
         {/* Floating Left Image 1 (Navjot Sidhu, square) */}
         <div
           ref={imgLeft1Ref}
-          className="absolute left-[3%] sm:left-[5%] top-[6vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="hidden md:block absolute left-[3%] sm:left-[5%] top-[6vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto1.webp" className="w-full h-auto object-cover" alt="" />
         </div>
@@ -173,7 +200,7 @@ export function VisionSection() {
         {/* Floating Left Image 2 (Two Guys Standing, vertical) */}
         <div
           ref={imgLeft2Ref}
-          className="absolute left-[3%] sm:left-[5%] top-[30vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="hidden md:block absolute left-[3%] sm:left-[5%] top-[30vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto5.webp" className="w-full h-auto object-cover" alt="" />
         </div>
@@ -181,7 +208,7 @@ export function VisionSection() {
         {/* Floating Left Image 3 (IPL photo, landscape) */}
         <div
           ref={imgLeft3Ref}
-          className="absolute left-[3%] sm:left-[5%] top-[56vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="hidden md:block absolute left-[3%] sm:left-[5%] top-[56vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto4.webp" className="w-full h-auto object-cover" alt="" />
         </div>
@@ -189,7 +216,7 @@ export function VisionSection() {
         {/* Floating Right Image 1 (Three partners, landscape) */}
         <div
           ref={imgRight1Ref}
-          className="absolute right-[3%] sm:right-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="hidden md:block absolute right-[3%] sm:right-[5%] top-[12vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto2.webp" className="w-full h-auto object-cover" alt="" />
         </div>
@@ -197,7 +224,7 @@ export function VisionSection() {
         {/* Floating Right Image 2 (Woman/Frame, portrait) */}
         <div
           ref={imgRight2Ref}
-          className="absolute right-[3%] sm:right-[5%] top-[56vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
+          className="hidden md:block absolute right-[3%] sm:right-[5%] top-[56vh] w-[90px] sm:w-[140px] md:w-[280px] rounded-[12px] md:rounded-[20px] overflow-hidden border border-white/5 shadow-2xl z-0 md:z-20 pointer-events-none opacity-0"
         >
           <img src="/assets/images/common/parelexPhoto3.webp" className="w-full h-auto object-cover" alt="" />
         </div>

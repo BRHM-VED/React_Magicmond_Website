@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <Seo
         title="App Development & Marketing Company in Delhi"
-        description="MagicMond is a Delhi-based app development, UI/UX design, website development & performance marketing company. 20+ brands scaled. Get a free consultation."
+        description="MagicMond is a Delhi-based app development, UI/UX design, website development & performance marketing company. 50+ brands scaled. Get a free consultation."
         canonical="https://magicmond.com/"
       />
       <OrganizationSchema />
