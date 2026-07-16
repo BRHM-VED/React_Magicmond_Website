@@ -288,10 +288,14 @@ function StripSection({ stripImages }: { stripImages: string[] }) {
 
 /* ─────────────────────────── Page component ─────────────────────────── */
 
+import { Seo } from '../../common/Seo';
+import { ArticleSchema } from '../../common/JsonLd';
+
 export default function NewCaseStudyPage({ study, stripImages = [] }: Props) {
   usePageMeta(study.title, study.metaDescription);
   useReveal();
 
+  const canonicalUrl = `https://magicmond.com/${study.slug}`;
 
   // Find the OUTCOME/TAILORED SOLUTION block index (sectionNumber '06') so we know where to insert the strip
   const outcomeIndex = study.blocks.findIndex(
@@ -300,6 +304,16 @@ export default function NewCaseStudyPage({ study, stripImages = [] }: Props) {
 
   return (
     <div className="bg-white text-[#0e1628] min-h-screen relative w-full overflow-hidden">
+      <Seo
+        title={study.title}
+        description={study.metaDescription}
+        canonical={canonicalUrl}
+      />
+      <ArticleSchema
+        headline={study.title}
+        description={study.metaDescription}
+        url={canonicalUrl}
+      />
       <main>
         {/* Component 1: Hero — full-width screenshot with gradient fade + text overlay */}
         <CsHeroSection study={study} heroImage={study.brand.logo} />

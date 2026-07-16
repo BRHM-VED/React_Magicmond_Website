@@ -11,6 +11,8 @@ import { ProcessSection } from '../components/sports/ProcessSection';
 import { BrandsSection } from '../components/sports/BrandsSection';
 import { CtaSection } from '../components/sports/CtaSection';
 
+import { Seo } from '../../common/Seo';
+
 export default function Sports() {
   usePageMeta(
     'MagicMond Sports',
@@ -20,6 +22,11 @@ export default function Sports() {
 
   return (
     <div className="bg-[#010502] font-body text-white min-h-screen relative w-full overflow-x-hidden">
+      <Seo
+        title="MagicMond Sports"
+        description="Connecting ambitious brands to the world of cricket. From global tournaments to digital cricket platforms — we help brands unlock visibility, engagement, and trust without breaking the bank."
+        canonical="https://magicmond.com/sports"
+      />
       <Navbar suffix="Sports" activePath="/sports" />
       <main>
         <HeroSection />

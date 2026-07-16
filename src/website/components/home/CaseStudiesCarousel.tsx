@@ -66,11 +66,18 @@ export const CaseStudiesCarousel = memo(function CaseStudiesCarousel({
   arrowEndColor = '#0e081d',
 }: CaseStudiesCarouselProps) {
   const N = slides.length;
+  if (N === 0) return null;
   const clonedSlides = [slides[N - 1], ...slides, slides[0]];
   const [index, setIndex] = useState(1);
   const [duration, setDuration] = useState(700);
   const autoplayTimer = useRef<ReturnType<typeof setInterval>>();
   const touchX = useRef<number | null>(null);
+
+  // Reset index to 1 and duration to 0 when slides change to prevent out-of-bounds rendering
+  useEffect(() => {
+    setIndex(1);
+    setDuration(0);
+  }, [slides]);
 
   const startAutoplay = useCallback(() => {
     if (autoplayTimer.current) clearInterval(autoplayTimer.current);

@@ -12,11 +12,20 @@ import { CaseStudiesCarousel } from '../components/home/CaseStudiesCarousel';
 import { BrandsSection } from '../components/home/BrandsSection';
 import { CtaSection } from '../components/home/CtaSection';
 
+import { Seo } from '../../common/Seo';
+import { OrganizationSchema } from '../../common/JsonLd';
+
 export default function Home() {
   useReveal();
 
   return (
     <>
+      <Seo
+        title="App Development & Marketing Company in Delhi"
+        description="MagicMond is a Delhi-based app development, UI/UX design, website development & performance marketing company. 20+ brands scaled. Get a free consultation."
+        canonical="https://magicmond.com/"
+      />
+      <OrganizationSchema />
       <Navbar />
       <main>
         <HeroSection />

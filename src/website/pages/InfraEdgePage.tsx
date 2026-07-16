@@ -21,6 +21,8 @@ const infraSlides = caseSlides.filter(
     slide.href === '/case-study-shri-yamuna-infra'
 );
 
+import { Seo } from '../../common/Seo';
+
 export default function InfraEdge() {
   const metaTitle = 'InfraEdge | Digital Growth Partner for Construction & Real Estate';
   const metaDesc = 'The future of real estate growth starts here. Transforming traditional businesses into digitally strong brands that thrive in today’s digital world.';
@@ -30,6 +32,11 @@ export default function InfraEdge() {
 
   return (
     <div className="bg-[#04060f] min-h-screen text-white">
+      <Seo
+        title={metaTitle}
+        description={metaDesc}
+        canonical="https://magicmond.com/infraedge"
+      />
       <Navbar suffix="InfraEdge" activePath="/infraedge" />
       <main>
         <HeroSection />
@@ -39,7 +46,7 @@ export default function InfraEdge() {
         <GlimpseSection />
         <ServicesSection />
         <HowSection />
-        <JourneySection />xwx
+        <JourneySection />
         <CaseStudiesCarousel
           slides={infraSlides}
           bgClass="bg-[#04060f]/50"
