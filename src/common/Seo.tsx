@@ -31,7 +31,7 @@ export function Seo({
 
   const metaDescription =
     description ??
-    'MagicMond is a Delhi-based app development, UI/UX design, website development & performance marketing company. 20+ brands scaled. Get a free consultation.';
+    'MagicMond is a Delhi-based app development, UI/UX design, website development & performance marketing company. 50+ brands scaled. Get a free consultation.';
 
   return (
     <Helmet>

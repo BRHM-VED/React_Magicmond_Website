@@ -122,7 +122,7 @@ Cut fonts to 2–3 families max, `font-display: swap`, preload the hero image, l
 
 ```html
 <title>MagicMond | App Development & Digital Marketing Company in Mumbai</title>
-<meta name="description" content="MagicMond is a Mumbai-based app development, website development, UI/UX design & performance marketing company. 20+ brands scaled. Get a free consultation." />
+<meta name="description" content="MagicMond is a Mumbai-based app development, website development, UI/UX design & performance marketing company. 50+ brands scaled. Get a free consultation." />
 ```
 
 (≤60 chars for title, primary keyword + city near the front, one clear promise. Use real numbers you can prove.)
