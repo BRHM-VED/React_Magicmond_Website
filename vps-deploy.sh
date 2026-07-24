@@ -47,14 +47,27 @@ echo "✅ Build complete. Output: $APP_DIR/dist"
 # ── Step 5: Update Nginx config from repository ───────────
 echo ""
 echo "⚙️  Updating Nginx configuration from repository..."
-if [ -f "$NGINX_CONF_SRC" ]; then
-  sudo cp "$NGINX_CONF_SRC" "$NGINX_CONF_DEST"
-  if [ ! -L "$NGINX_CONF_LINK" ] && [ ! -f "$NGINX_CONF_LINK" ]; then
-    sudo ln -s "$NGINX_CONF_DEST" "$NGINX_CONF_LINK"
+
+# Detect Nginx config in ngix/ magicmond.com.conf
+if [ -f "$APP_DIR/ngix/magicmond.com.conf" ]; then
+  NGINX_CONF_SRC="$APP_DIR/ngix/magicmond.com.conf"
+elif [ -f "$APP_DIR/nginx/magicmond.com.conf" ]; then
+  NGINX_CONF_SRC="$APP_DIR/nginx/magicmond.com.conf"
+elif [ -f "$APP_DIR/nginx.conf" ]; then
+  NGINX_CONF_SRC="$APP_DIR/nginx.conf"
+fi
+
+if [ -n "$NGINX_CONF_SRC" ] && [ -f "$NGINX_CONF_SRC" ]; then
+  # Link or copy to sites-available and sites-enabled
+  sudo rm -f /etc/nginx/sites-available/magicmond-website
+  sudo ln -sf "$NGINX_CONF_SRC" /etc/nginx/sites-available/magicmond-website
+
+  if [ ! -L "/etc/nginx/sites-enabled/magicmond-website" ]; then
+    sudo ln -sf /etc/nginx/sites-available/magicmond-website /etc/nginx/sites-enabled/magicmond-website
   fi
-  echo "✅ Nginx config updated from $NGINX_CONF_SRC"
+  echo "✅ Nginx config linked to $NGINX_CONF_SRC"
 else
-  echo "⚠️  Warning: $NGINX_CONF_SRC not found, skipping Nginx config copy."
+  echo "⚠️  Warning: Nginx config file not found in repository."
 fi
 
 # ── Step 6: Test & Reload Nginx ───────────────────────────
