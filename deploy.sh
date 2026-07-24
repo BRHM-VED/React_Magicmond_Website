@@ -2,11 +2,14 @@
 
 # ============================================================
 # deploy.sh — LOCAL machine script
-# Pushes the latest code to GitHub so the VPS can pull it.
+# Pushes the latest code to GitHub & triggers VPS deployment.
 # Run: ./deploy.sh
 # ============================================================
 
 set -e  # Exit immediately on any error
+
+VPS_HOST="root@187.127.152.186"
+VPS_PATH="/Production/ReidiusInfra/ReactMagicmondWebsite"
 
 echo ""
 echo "🚀 MagicMond Website — Local Deploy Script"
@@ -23,8 +26,14 @@ if [[ -n $(git status --porcelain) ]]; then
   echo "📝 Uncommitted changes detected."
   git status --short
   echo ""
-  read -rp "Enter commit message (or press Enter for default): " COMMIT_MSG
-  COMMIT_MSG="${COMMIT_MSG:-"chore: update website content"}"
+  
+  if [ -t 0 ]; then
+    read -rp "Enter commit message (or press Enter for default): " COMMIT_MSG
+  else
+    COMMIT_MSG=""
+  fi
+  
+  COMMIT_MSG="${COMMIT_MSG:-"chore: update website content and deployment config"}"
 
   git add -A
   git commit -m "$COMMIT_MSG"
@@ -39,11 +48,14 @@ echo "📤 Pushing to GitHub..."
 git push origin master
 echo "✅ Code pushed to GitHub successfully."
 
+# ── Step 4: Execute deployment on VPS ──────────────────────
+echo ""
+echo "🖥️  Connecting to VPS ($VPS_HOST) and executing deployment..."
+ssh -o StrictHostKeyChecking=no "$VPS_HOST" "export NVM_DIR=\"\$HOME/.nvm\"; [ -s \"\$NVM_DIR/nvm.sh\" ] && \. \"\$NVM_DIR/nvm.sh\"; cd $VPS_PATH && chmod +x vps-deploy.sh && ./vps-deploy.sh"
+
 echo ""
 echo "============================================"
-echo "✅ Local deploy complete!"
-echo ""
-echo "👉 Next step: SSH into your VPS and run:"
-echo "   cd /Production/ReidiusInfra/ReactMagicmondWebsite && git pull && ./vps-deploy.sh"
+echo "✅ Local & VPS Deployment complete! 🎉"
+echo "   Site live at: https://magicmond.com"
 echo "============================================"
 echo ""
