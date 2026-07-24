@@ -73,6 +73,7 @@ const routes = [
   '/',
   '/infraedge',
   '/sports',
+  '/it-services',
   '/thank-you',
   '/case-study-onsite',
   '/case-study-shri-yamuna-infra',

@@ -10,6 +10,7 @@ import { MainLayout } from '../layouts/MainLayout';
 import HomePage from '../website/pages/HomePage';
 import InfraEdgePage from '../website/pages/InfraEdgePage';
 import SportsPage from '../website/pages/SportsPage';
+import ItServicesPage from '../website/pages/ItServicesPage';
 import NewCaseStudyPage from '../website/pages/NewCaseStudyPage';
 import ThankYouPage from '../website/pages/ThankYouPage';
 import NotFoundPage from '../website/pages/NotFoundPage';
@@ -34,6 +35,10 @@ export const routeConfig: RouteObject[] = [
       {
         path: '/sports',
         element: <SportsPage />,
+      },
+      {
+        path: '/it-services',
+        element: <ItServicesPage />,
       },
       {
         path: '/thank-you',
@@ -73,6 +78,7 @@ export const prerenderRoutes: string[] = [
   '/',
   '/infraedge',
   '/sports',
+  '/it-services',
   '/thank-you',
   `/${onsiteCaseStudy.slug}`,
   `/${shriYamunaCaseStudy.slug}`,

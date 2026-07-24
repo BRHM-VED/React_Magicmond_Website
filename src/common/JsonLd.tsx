@@ -135,3 +135,66 @@ export function ArticleSchema({
     </Helmet>
   );
 }
+
+// ---------------------------------------------------------------------------
+// Service (use on service pages, e.g. /it-services)
+// ---------------------------------------------------------------------------
+
+interface ServiceSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  serviceType: string[];
+  areaServed?: string;
+}
+
+export function ServiceSchema({
+  name,
+  description,
+  url,
+  serviceType,
+  areaServed = 'Delhi, IN',
+}: ServiceSchemaProps) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name,
+    description,
+    url,
+    serviceType,
+    areaServed,
+    provider: { '@id': 'https://magicmond.com/#organization' },
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+}
+
+// ---------------------------------------------------------------------------
+// FAQ (use alongside a visible FAQ section)
+// ---------------------------------------------------------------------------
+
+interface FaqSchemaProps {
+  faqs: { q: string; a: string }[];
+}
+
+export function FaqSchema({ faqs }: FaqSchemaProps) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
+
+  return (
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
+  );
+}
